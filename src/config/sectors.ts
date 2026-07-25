@@ -12,6 +12,8 @@ export type Sector = {
   slug: string;
   /** One-line positioning statement. */
   statement: string;
+  /** Fuller description of what the sector covers. */
+  summary: string;
   /** Sequential display number. */
   number: string;
   /**
@@ -33,6 +35,8 @@ export const sectors: Sector[] = [
     slug: "business",
     statement:
       "We build the operational foundation behind exceptional organizations.",
+    summary:
+      "Business operations, organizational development, hospitality strategy, HR systems, service standards, project implementation, and event management.",
     number: "01",
     accent: "burgundy",
     image: undefined, // PLACEHOLDER — /brand/sectors/business.jpg
@@ -42,6 +46,8 @@ export const sectors: Sector[] = [
     shortName: "Technology",
     slug: "technology",
     statement: "We make technology useful, intelligent, and human.",
+    summary:
+      "AI strategy, workflow automation, digital systems, executive technology, application development, and VelaXity.",
     number: "02",
     accent: "ink",
     image: undefined, // PLACEHOLDER — /brand/sectors/technology.jpg
@@ -52,6 +58,8 @@ export const sectors: Sector[] = [
     slug: "training",
     statement:
       "We develop the people responsible for delivering the promise.",
+    summary:
+      "Leadership development, hospitality training, team workshops, manager development, the LOAVES framework, and the 5LA Academy.",
     number: "03",
     accent: "green",
     image: undefined, // PLACEHOLDER — /brand/sectors/training.jpg
@@ -61,6 +69,8 @@ export const sectors: Sector[] = [
     shortName: "Media",
     slug: "media",
     statement: "We create stories and experiences that live beyond the moment.",
+    summary:
+      "Publishing, theater, original content, live experiences, brand storytelling, The Georgia B. Media Group, and Aunt Sarah’s Girls.",
     number: "04",
     accent: "gold",
     image: undefined, // PLACEHOLDER — /brand/sectors/media.jpg

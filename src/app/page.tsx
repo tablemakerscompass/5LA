@@ -1,51 +1,60 @@
-import Image from "next/image";
-import Link from "next/link";
-import Button from "@/components/ui/Button";
+import type { Metadata } from "next";
 import { site } from "@/config/site";
-import styles from "./holding.module.css";
+import Hero from "@/components/home/Hero";
+import Belief from "@/components/home/Belief";
+import Sectors from "@/components/home/Sectors";
+import Difference from "@/components/home/Difference";
+import Ecosystem from "@/components/home/Ecosystem";
+import Outcomes from "@/components/home/Outcomes";
+import Loaves from "@/components/home/Loaves";
+import Leadership from "@/components/home/Leadership";
+import InsightsPreview from "@/components/home/InsightsPreview";
+import CTABanner from "@/components/ui/CTABanner";
 
-/**
- * ROOT / — restrained holding state.
- *
- * The full homepage is intentionally NOT built in this phase. The hero visual
- * (5LA-branded, with the primary statement designed into it) stands in while
- * the homepage is designed and approved separately. A visually-hidden heading
- * keeps the message available to screen readers and search engines.
- */
-export default function HomeHolding() {
+const description =
+  "The 5 Loaves Agency is a multidisciplinary experience company helping organizations strengthen operations, develop people, implement technology, and create meaningful media and experiences.";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "The 5 Loaves Agency | Business, Technology, Training & Media",
+  },
+  description,
+  alternates: { canonical: `${site.url}/` },
+  openGraph: {
+    title: "The 5 Loaves Agency | Business, Technology, Training & Media",
+    description,
+    url: `${site.url}/`,
+    siteName: site.name,
+    type: "website",
+    // PLACEHOLDER social share image — replace /brand/og-image.png (1200×630).
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630, alt: site.name }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The 5 Loaves Agency | Business, Technology, Training & Media",
+    description,
+  },
+};
+
+export default function HomePage() {
   return (
-    <section className={styles.holding} data-surface="dark">
-      <div className={styles.inner}>
-        <h1 className="visually-hidden">
-          {site.name} — {site.brand.primaryStatement} {site.brand.supportingStatement}
-        </h1>
-
-        <Image
-          src="/brand/5la-hero.jpg"
-          alt={`${site.name}. ${site.brand.primaryStatement} ${site.brand.supportingStatement}`}
-          width={1024}
-          height={756}
-          priority
-          sizes="(min-width: 1100px) 1040px, 100vw"
-          className={styles.hero}
-        />
-
-        <div className={styles.actions}>
-          <Button href="/experience-sectors" variant="gold" size="lg">
-            Explore the Experience Sectors
-          </Button>
-          <Button href="/work-with-us" variant="outline" size="lg">
-            Work With Us
-          </Button>
-        </div>
-
-        <p className={styles.note}>
-          Our new homepage is in progress.{" "}
-          <Link href="/about" className={styles.noteLink}>
-            Learn about 5LA
-          </Link>
-        </p>
-      </div>
-    </section>
+    <>
+      <Hero />
+      <Belief />
+      <Sectors />
+      <Difference />
+      <Ecosystem />
+      <Outcomes />
+      <Loaves />
+      <Leadership />
+      <InsightsPreview />
+      <CTABanner
+        eyebrow="Let's Begin"
+        title="What Experience Are You Ready to Build?"
+        body="Whether you are strengthening an organization, developing your people, implementing technology, or bringing a story to life, 5LA begins by understanding the experience you want to create."
+        primary={{ label: "Work With 5LA", href: "/work-with-us" }}
+        secondary={{ label: "Start a Conversation", href: "/contact" }}
+      />
+    </>
   );
 }

@@ -2,8 +2,8 @@
  * Companies, platforms, and intellectual-property brands within the 5LA ecosystem.
  * Single source of truth — consumed by navigation and the Our Companies pages.
  *
- * NOTE: Descriptions are concise PLACEHOLDERS written to be easily replaced.
- * Do not treat them as final marketing copy.
+ * Descriptions are approved short copy; full profiles are built in a later phase.
+ * Do not invent logos for brands without approved logo files.
  */
 
 export type Company = {
@@ -11,7 +11,7 @@ export type Company = {
   slug: string;
   /** Ecosystem category label. */
   category: string;
-  /** Concise placeholder description — replace with final copy. */
+  /** Approved short description. */
   description: string;
   /**
    * PLACEHOLDER logo path — replace with final brand logo when available.
@@ -20,58 +20,63 @@ export type Company = {
   logo?: string;
   /** Whether the brand card is best presented on a dark surface. */
   dark?: boolean;
+  /** Feature this brand more prominently on the homepage ecosystem grid. */
+  featured?: boolean;
 };
 
 export const companies: Company[] = [
   {
     name: "The Georgia B. Media Group",
     slug: "georgia-b-media-group",
-    category: "Media",
+    category: "Media · Publishing · Productions",
     description:
-      "A media group within the 5LA ecosystem. Full description to be provided.",
-  },
-  {
-    name: "The Georgia B. Society",
-    slug: "georgia-b-society",
-    category: "Community & Membership",
-    description:
-      "A society and membership initiative within the 5LA ecosystem. Full description to be provided.",
-  },
-  {
-    name: "Aunt Sarah's Girls",
-    slug: "aunt-sarahs-girls",
-    category: "Media & Storytelling",
-    description:
-      "An original intellectual-property and storytelling brand. Full description to be provided.",
-  },
-  {
-    name: "The Sarah Method",
-    slug: "the-sarah-method",
-    category: "Training & Methodology",
-    description:
-      "A training methodology within the 5LA ecosystem. Full description to be provided.",
+      "The media, publishing, production, and storytelling division of The 5 Loaves Agency.",
+    featured: true,
   },
   {
     name: "VelaXity",
     slug: "velaxity",
-    category: "Technology",
+    category: "Artificial Intelligence · Leadership · Operations",
     description:
-      "A technology platform within the 5LA ecosystem. Full description to be provided.",
+      "An AI-powered executive operating system designed to support leadership, culture, performance, standards, and growth.",
     dark: true,
+    featured: true,
   },
   {
     name: "The 5LA Academy",
     slug: "5la-academy",
-    category: "Training & Education",
+    category: "Hospitality · Leadership · Workforce Development",
     description:
-      "The training and education arm of The 5 Loaves Agency. Full description to be provided.",
+      "Training experiences that equip professionals and organizations to lead, serve, and operate with excellence.",
+    featured: true,
+  },
+  {
+    name: "The Georgia B. Society",
+    slug: "georgia-b-society",
+    category: "Legacy · Community · Culture",
+    description:
+      "A legacy-centered initiative preserving stories, creating meaningful gatherings, and supporting community impact.",
+  },
+  {
+    name: "Aunt Sarah’s Girls",
+    slug: "aunt-sarahs-girls",
+    category: "Literary · Theatrical · Healing",
+    description:
+      "A storytelling and healing platform exploring truth, womanhood, family, survival, and legacy.",
+  },
+  {
+    name: "The Sarah Method",
+    slug: "the-sarah-method",
+    category: "Truth · Healing · Purpose",
+    description:
+      "A guided reflection and healing experience developed from the world and mission of Aunt Sarah’s Girls.",
   },
   {
     name: "Tablemakers",
     slug: "tablemakers",
-    category: "Business & Experience",
+    category: "Community · Thought Leadership · Professional Development",
     description:
-      "A business and experience initiative within the 5LA ecosystem. Full description to be provided.",
+      "A professional community and resource platform for those building stronger teams, cultures, and guest experiences.",
   },
 ];
 
