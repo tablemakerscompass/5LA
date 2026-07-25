@@ -23,8 +23,8 @@ const ASSETS: Record<
 > = {
   horizontal: {
     src: "/brand/5la-logo-horizontal.png",
-    width: 1536,
-    height: 1024,
+    width: 794,
+    height: 214,
     alt: `${site.name} — ${site.descriptor}`,
   },
   stacked: {
