@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import Logo from "@/components/layout/Logo";
 import Button from "@/components/ui/Button";
 import { site } from "@/config/site";
 import styles from "./holding.module.css";
@@ -7,21 +7,28 @@ import styles from "./holding.module.css";
 /**
  * ROOT / — restrained holding state.
  *
- * The full homepage is intentionally NOT built in this phase. This page shows
- * the brand foundation in context (header, footer, logo, buttons) while the
- * homepage is designed and approved separately.
+ * The full homepage is intentionally NOT built in this phase. The hero visual
+ * (5LA-branded, with the primary statement designed into it) stands in while
+ * the homepage is designed and approved separately. A visually-hidden heading
+ * keeps the message available to screen readers and search engines.
  */
 export default function HomeHolding() {
   return (
     <section className={styles.holding} data-surface="dark">
       <div className={styles.inner}>
-        <Logo variant="stacked" height={150} priority className={styles.logo} />
-
-        <p className={`eyebrow ${styles.eyebrow}`}>{site.descriptor}</p>
-        <h1 className={`hero-headline ${styles.headline}`}>
-          {site.brand.primaryStatement}
+        <h1 className="visually-hidden">
+          {site.name} — {site.brand.primaryStatement} {site.brand.supportingStatement}
         </h1>
-        <p className={`lead ${styles.lead}`}>{site.brand.supportingStatement}</p>
+
+        <Image
+          src="/brand/5la-hero.jpg"
+          alt={`${site.name}. ${site.brand.primaryStatement} ${site.brand.supportingStatement}`}
+          width={1024}
+          height={756}
+          priority
+          sizes="(min-width: 1100px) 1040px, 100vw"
+          className={styles.hero}
+        />
 
         <div className={styles.actions}>
           <Button href="/experience-sectors" variant="gold" size="lg">
