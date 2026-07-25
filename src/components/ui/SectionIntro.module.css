@@ -1,0 +1,20 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 46rem;
+}
+.center {
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+.rule {
+  margin-block: var(--space-1);
+}
+.title {
+  text-wrap: balance;
+}
+.center .lead {
+  margin-inline: auto;
+}

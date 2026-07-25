@@ -1,0 +1,38 @@
+.wrap {
+  width: 100%;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.link,
+.current {
+  font-size: var(--fs-caption);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.link {
+  color: var(--text-subtle);
+  transition: color var(--dur-fast) var(--ease);
+}
+.link:hover {
+  color: var(--burgundy-700);
+}
+.current {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.sep {
+  color: var(--gold-600);
+  font-size: var(--fs-caption);
+}
+[data-surface="dark"] .link:hover {
+  color: var(--gold-500);
+}

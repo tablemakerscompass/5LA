@@ -1,0 +1,26 @@
+{
+  "name": "the-5-loaves-agency",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The 5 Loaves Agency (5LA) — multidisciplinary experience company website.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "15.5.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "15.5.4",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,108 @@
+.card {
+  --accent-color: var(--burgundy-700);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+  height: 100%;
+}
+.card[data-accent="burgundy"] {
+  --accent-color: var(--burgundy-700);
+}
+.card[data-accent="gold"] {
+  --accent-color: var(--gold-700);
+}
+.card[data-accent="green"] {
+  --accent-color: var(--green-700);
+}
+.card[data-accent="ink"] {
+  --accent-color: var(--ink-800);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+
+.visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--accent-color) 92%, black),
+    var(--accent-color)
+  );
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-5);
+}
+.image {
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease);
+}
+.card:hover .image {
+  transform: scale(1.05);
+}
+.placeholderNote {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-5);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+.number {
+  position: relative;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 0.8;
+}
+.visual::after {
+  /* subtle gold hairline accent */
+  content: "";
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  width: 40px;
+  height: 2px;
+  background: var(--gold-500);
+  opacity: 0.85;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  flex: 1;
+}
+.name {
+  color: var(--heading);
+}
+.statement {
+  flex: 1;
+}
+.cue {
+  margin-top: var(--space-2);
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.arrow {
+  transition: transform var(--dur) var(--ease);
+}
+.card:hover .arrow {
+  transform: translateX(4px);
+}

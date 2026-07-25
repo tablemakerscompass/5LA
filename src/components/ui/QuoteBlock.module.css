@@ -1,0 +1,26 @@
+.inner {
+  max-width: 60rem;
+  margin-inline: auto;
+  text-align: center;
+  position: relative;
+}
+.quoteMark {
+  display: block;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(4rem, 9vw, 7rem);
+  line-height: 0.5;
+  color: var(--gold-600);
+  opacity: 0.55;
+  margin-bottom: var(--space-3);
+}
+.eyebrow {
+  margin-bottom: var(--space-5);
+}
+.quote {
+  text-wrap: balance;
+}
+.attribution {
+  margin-top: var(--space-6);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}

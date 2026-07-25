@@ -1,0 +1,29 @@
+.hero {
+  padding-block: clamp(2.5rem, 2rem + 4vw, 5rem) clamp(2.5rem, 2rem + 3vw, 4rem);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.hero[data-surface="dark"] {
+  background: var(--ink-900);
+  border-bottom-color: rgba(200, 164, 93, 0.2);
+}
+.crumbs {
+  margin-bottom: var(--space-6);
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 52rem;
+}
+.center .body {
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+.title {
+  text-wrap: balance;
+}
+.center .lead {
+  margin-inline: auto;
+}
