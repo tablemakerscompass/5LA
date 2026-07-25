@@ -1,0 +1,36 @@
+.wrap {
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgba(104, 22, 26, 0.5), transparent 55%),
+    radial-gradient(100% 100% at 100% 100%, rgba(24, 59, 45, 0.55), transparent 55%),
+    var(--ink-900);
+}
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.75rem, 4vw, 3rem);
+}
+.rule {
+  margin-block: var(--space-4);
+}
+.heading {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.9rem, 1.2rem + 3vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--cream-100);
+  text-wrap: balance;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: end;
+  }
+}

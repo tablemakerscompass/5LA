@@ -1,0 +1,72 @@
+.wrap {
+  background: var(--surface);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.figureCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.nameplate {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--gold-600);
+}
+.name {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  color: var(--heading);
+}
+.role {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+.rule {
+  margin-block: var(--space-2);
+}
+.quote {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-6);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.quoteText {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h4);
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--burgundy-700);
+}
+.signature {
+  display: block;
+  margin-top: var(--space-4);
+  font-family: var(--font-serif), serif;
+  font-size: 1.6rem;
+  font-style: normal;
+  color: var(--heading);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: clamp(3rem, 6vw, 5.5rem);
+  }
+}
