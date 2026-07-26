@@ -9,9 +9,19 @@ import { createMetadata } from "@/lib/seo";
 
 type Params = { slug: string };
 
-/** Pre-render one static page per sector. */
+/**
+ * Sectors with a dedicated, fully-built route under
+ * `app/experience-sectors/<slug>/`. Those static segments take precedence over
+ * this dynamic one, so they must not also be pre-rendered here.
+ * Remove a slug from this list only if its dedicated route is removed.
+ */
+const DEDICATED_ROUTES = new Set(["business"]);
+
+/** Pre-render one static page per sector still served by this placeholder. */
 export function generateStaticParams(): Params[] {
-  return sectors.map((s) => ({ slug: s.slug }));
+  return sectors
+    .filter((s) => !DEDICATED_ROUTES.has(s.slug))
+    .map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({
