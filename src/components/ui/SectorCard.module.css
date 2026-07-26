@@ -44,10 +44,24 @@
 }
 .image {
   object-fit: cover;
+  z-index: 0;
   transition: transform var(--dur-slow) var(--ease);
 }
 .card:hover .image {
   transform: scale(1.05);
+}
+.visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(23, 21, 20, 0.6) 0%,
+    rgba(23, 21, 20, 0.12) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
 }
 .placeholderNote {
   position: absolute;
@@ -60,6 +74,7 @@
 }
 .number {
   position: relative;
+  z-index: 2;
   font-size: clamp(3.5rem, 8vw, 5.5rem);
   color: rgba(255, 255, 255, 0.9);
   line-height: 0.8;

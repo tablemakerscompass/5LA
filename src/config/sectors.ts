@@ -39,7 +39,7 @@ export const sectors: Sector[] = [
       "Business operations, organizational development, hospitality strategy, HR systems, service standards, project implementation, and event management.",
     number: "01",
     accent: "burgundy",
-    image: undefined, // PLACEHOLDER — /brand/sectors/business.jpg
+    image: "/brand/sectors/business.jpg",
   },
   {
     name: "Technology Experience",
@@ -50,7 +50,7 @@ export const sectors: Sector[] = [
       "AI strategy, workflow automation, digital systems, executive technology, application development, and VelaXity.",
     number: "02",
     accent: "ink",
-    image: undefined, // PLACEHOLDER — /brand/sectors/technology.jpg
+    image: "/brand/sectors/technology.jpg",
   },
   {
     name: "Training Experience",
@@ -62,7 +62,7 @@ export const sectors: Sector[] = [
       "Leadership development, hospitality training, team workshops, manager development, the LOAVES framework, and the 5LA Academy.",
     number: "03",
     accent: "green",
-    image: undefined, // PLACEHOLDER — /brand/sectors/training.jpg
+    image: "/brand/sectors/training.jpg",
   },
   {
     name: "Media Experience",
@@ -73,7 +73,7 @@ export const sectors: Sector[] = [
       "Publishing, theater, original content, live experiences, brand storytelling, The Georgia B. Media Group, and Aunt Sarah’s Girls.",
     number: "04",
     accent: "gold",
-    image: undefined, // PLACEHOLDER — /brand/sectors/media.jpg
+    image: "/brand/sectors/media.jpg",
   },
 ];
 
