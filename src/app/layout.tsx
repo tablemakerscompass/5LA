@@ -38,6 +38,13 @@ export const metadata: Metadata = {
     title: `${site.name} — We Build the Experience Behind the Brand`,
     description: site.brand.metaDescription,
     url: site.url,
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630, alt: site.name }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — We Build the Experience Behind the Brand`,
+    description: site.brand.metaDescription,
+    images: ["/brand/og-image.png"],
   },
   robots: { index: true, follow: true },
 };

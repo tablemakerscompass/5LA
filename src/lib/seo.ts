@@ -27,14 +27,13 @@ export function createMetadata({
       url,
       siteName: site.name,
       type: "website",
-      // PLACEHOLDER social share image — replace /brand/og-image.png with a
-      // final 1200×630 asset before launch.
       images: [{ url: "/brand/og-image.png", width: 1200, height: 630, alt: site.name }],
     },
     twitter: {
       card: "summary_large_image",
       title: title ? `${title} — ${site.name}` : site.name,
       description: desc,
+      images: ["/brand/og-image.png"],
     },
   };
 }
