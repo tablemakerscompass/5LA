@@ -11,8 +11,8 @@ export default function Founder() {
           <Reveal className={styles.figureCol}>
             <div className={styles.imageFrame}>
               <Image
-                src="/brand/5la-founder.jpg"
-                alt="L.J., founder of The 5 Loaves Agency, leading a session"
+                src="/brand/5la-founder-headshot.jpg"
+                alt="Corporate headshot of L.J., founder of The 5 Loaves Agency"
                 width={1000}
                 height={1500}
                 sizes="(min-width: 900px) 34vw, 100vw"
