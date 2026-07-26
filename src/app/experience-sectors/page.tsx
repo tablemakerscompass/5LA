@@ -1,50 +1,72 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/layout/PageHero";
-import Section from "@/components/layout/Section";
-import SectorCard from "@/components/ui/SectorCard";
-import QuoteBlock from "@/components/ui/QuoteBlock";
-import CTABanner from "@/components/ui/CTABanner";
-import Reveal from "@/components/ui/Reveal";
-import { sectors } from "@/config/sectors";
 import { site } from "@/config/site";
-import { createMetadata } from "@/lib/seo";
-import styles from "./sectors.module.css";
+import { breadcrumbSchema } from "@/lib/seo";
+import SectorsHero from "@/components/sectors/SectorsHero";
+import ExperiencePrinciple from "@/components/sectors/ExperiencePrinciple";
+import SectorOverview from "@/components/sectors/SectorOverview";
+import SectorsConnect from "@/components/sectors/SectorsConnect";
+import CrossSectorExamples from "@/components/sectors/CrossSectorExamples";
+import StartingPoint from "@/components/sectors/StartingPoint";
+import SectorStandard from "@/components/sectors/SectorStandard";
+import SectorEcosystem from "@/components/sectors/SectorEcosystem";
+import CTABanner from "@/components/ui/CTABanner";
 
-export const metadata: Metadata = createMetadata({
-  title: "Experience Sectors",
-  path: "/experience-sectors",
-  description:
-    "The four connected experience sectors of The 5 Loaves Agency: Business, Technology, Training, and Media.",
-});
+const title = "Experience Sectors | Business, Technology, Training & Media | 5LA";
+const description =
+  "Explore the four connected Experience Sectors of The 5 Loaves Agency: Business, Technology, Training, and Media.";
+const url = `${site.url}/experience-sectors`;
+
+export const metadata: Metadata = {
+  title: { absolute: title },
+  description,
+  alternates: { canonical: url },
+  openGraph: {
+    title,
+    description,
+    url,
+    siteName: site.name,
+    type: "website",
+    images: [
+      { url: "/brand/og-image.png", width: 1200, height: 630, alt: site.name },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/brand/og-image.png"],
+  },
+};
 
 export default function ExperienceSectorsPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Experience Sectors"
-        title="Four connected sectors. One experience."
-        lead={site.brand.principle}
-        crumbs={[{ label: "Experience Sectors" }]}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { label: "Experience Sectors", path: "/experience-sectors" },
+            ])
+          ),
+        }}
       />
 
-      <Section>
-        <div className={styles.grid}>
-          {sectors.map((sector, i) => (
-            <Reveal key={sector.slug} delay={i * 80}>
-              <SectorCard sector={sector} />
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
-      <QuoteBlock quote={site.brand.belief} eyebrow="Our belief" />
+      <SectorsHero />
+      <ExperiencePrinciple />
+      <SectorOverview />
+      <SectorsConnect />
+      <CrossSectorExamples />
+      <StartingPoint />
+      <SectorStandard />
+      <SectorEcosystem />
 
       <CTABanner
-        eyebrow="Work with 5LA"
-        title="Explore how the sectors work together."
-        body="Every engagement draws on the systems, people, technology, and stories that shape a lasting experience."
-        primary={{ label: "Work With Us", href: "/work-with-us" }}
-        secondary={{ label: "About 5LA", href: "/about" }}
+        eyebrow="Begin Here"
+        title="What Part of the Experience Needs to Be Built, Strengthened, or Reimagined?"
+        body="Whether your need begins with operations, technology, people, or story, 5LA helps identify the structure required to move from vision to consistent experience."
+        primary={{ label: "Work With 5LA", href: "/work-with-us" }}
+        secondary={{ label: "Start a Conversation", href: "/contact" }}
       />
     </>
   );

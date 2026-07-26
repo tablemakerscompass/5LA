@@ -16,6 +16,9 @@
   --burgundy-500: #8b2a31;
 
   /* --- Warm Gold (accent — used sparingly) --- */
+  /* Deepest gold, reserved for gold-accented TEXT on light surfaces, where
+     --gold-700 does not reach the 4.5:1 contrast minimum. */
+  --gold-ink: #6f5219;
   --gold-700: #b88a3b;
   --gold-600: #c8a45d; /* primary gold */
   --gold-500: #d1b376;

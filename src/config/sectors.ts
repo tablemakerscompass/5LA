@@ -22,10 +22,18 @@ export type Sector = {
    */
   accent: "burgundy" | "gold" | "green" | "ink";
   /**
-   * PLACEHOLDER image path — replace with final editorial photography.
-   * Files are not yet present; cards fall back to a tasteful editorial panel.
+   * Editorial photography for the sector. Replaceable at any time — layouts
+   * crop responsively and fall back to an accent panel when absent.
    */
   image?: string;
+  /** Descriptive alt text for `image`. */
+  imageAlt?: string;
+  /** Approved long-form overview used on the Experience Sectors page. */
+  overview?: string;
+  /** Representative capabilities within the sector. */
+  capabilities?: string[];
+  /** What the organization is left with — the experience outcome. */
+  outcome?: string;
 };
 
 export const sectors: Sector[] = [
@@ -40,6 +48,26 @@ export const sectors: Sector[] = [
     number: "01",
     accent: "burgundy",
     image: "/brand/sectors/business.jpg",
+    imageAlt:
+      "A hospitality executive in a burgundy suit reviewing operating documents at a candlelit dining room table before service.",
+    overview:
+      "Business Experience focuses on how an organization operates, leads, communicates, serves, and delivers consistently. This sector strengthens the structure behind the customer experience and the environment in which employees perform.",
+    capabilities: [
+      "Business operations",
+      "Organizational development",
+      "Hospitality consulting",
+      "Guest-experience strategy",
+      "HR systems and processes",
+      "SOP development",
+      "Leadership alignment",
+      "Culture development",
+      "Service standards",
+      "Project implementation",
+      "Event strategy and management",
+      "Business launches",
+    ],
+    outcome:
+      "Clearer systems, stronger leadership, more consistent delivery, and an organization better prepared to support its people and customers.",
   },
   {
     name: "Technology Experience",
@@ -51,6 +79,26 @@ export const sectors: Sector[] = [
     number: "02",
     accent: "ink",
     image: "/brand/sectors/technology.jpg",
+    imageAlt:
+      "A diverse leadership team discussing performance dashboards on a wall screen in a dark, gold-accented boardroom.",
+    overview:
+      "Technology Experience helps organizations adopt AI, automation, digital systems, and executive tools that improve how people work, communicate, make decisions, and manage performance.",
+    capabilities: [
+      "AI strategy",
+      "AI implementation",
+      "Workflow automation",
+      "Digital-system planning",
+      "Business application development",
+      "Executive technology support",
+      "Process modernization",
+      "Organizational intelligence",
+      "Digital-product strategy",
+      "Technology adoption",
+      "Technology training",
+      "VelaXity",
+    ],
+    outcome:
+      "Practical technology that supports the organization’s actual work instead of creating another disconnected tool or process.",
   },
   {
     name: "Training Experience",
@@ -63,6 +111,26 @@ export const sectors: Sector[] = [
     number: "03",
     accent: "green",
     image: "/brand/sectors/training.jpg",
+    imageAlt:
+      "A facilitator presenting a development framework on a flip chart to an engaged group of professionals in an elegant, green-paneled room.",
+    overview:
+      "Training Experience prepares leaders, managers, employees, and teams to understand the standard, perform with confidence, and create more consistent experiences for the people they serve.",
+    capabilities: [
+      "Leadership development",
+      "Manager development",
+      "Hospitality training",
+      "Guest-service training",
+      "Team workshops",
+      "New-hire development",
+      "Workforce development",
+      "Customized organizational learning",
+      "Culture training",
+      "The LOAVES framework",
+      "The 5LA Academy",
+      "Tablemakers resources",
+    ],
+    outcome:
+      "Better-prepared leaders and employees who understand the expectations, possess the tools, and are equipped to carry the organization’s promise forward.",
   },
   {
     name: "Media Experience",
@@ -74,6 +142,27 @@ export const sectors: Sector[] = [
     number: "04",
     accent: "gold",
     image: "/brand/sectors/media.jpg",
+    imageAlt:
+      "A producer reviewing a script at a production desk while a performance is lit on the theater stage behind her.",
+    overview:
+      "Media Experience develops stories, publications, productions, content, and live experiences that create emotional connection, cultural meaning, and long-term audience engagement.",
+    capabilities: [
+      "Publishing",
+      "Theater",
+      "Film and digital theater",
+      "Original intellectual property",
+      "Story development",
+      "Content production",
+      "Brand storytelling",
+      "Live experiences",
+      "Conferences and community conversations",
+      "The Georgia B. Media Group",
+      "The Georgia B. Society",
+      "Aunt Sarah’s Girls",
+      "The Sarah Method",
+    ],
+    outcome:
+      "Stories and experiences that audiences remember, discuss, revisit, and carry forward.",
   },
 ];
 

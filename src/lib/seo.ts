@@ -38,6 +38,25 @@ export function createMetadata({
   };
 }
 
+/**
+ * BreadcrumbList structured data (JSON-LD). Pass the same trail rendered by
+ * the visible <Breadcrumbs> component; Home is prepended automatically.
+ */
+export function breadcrumbSchema(items: { label: string; path: string }[]) {
+  const trail = [{ label: "Home", path: "/" }, ...items];
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.label,
+      item: new URL(item.path, site.url).toString(),
+    })),
+  };
+}
+
 /** Organization structured data (JSON-LD) for the site root. */
 export function organizationSchema() {
   return {
