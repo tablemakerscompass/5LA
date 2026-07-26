@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
-import EditorialImage from "@/components/ui/EditorialImage";
 import styles from "./Leadership.module.css";
 
 export default function Leadership() {
@@ -10,11 +10,16 @@ export default function Leadership() {
       <Container>
         <div className={styles.grid}>
           <Reveal className={styles.figure}>
-            {/* PLACEHOLDER — replace with approved founder / leadership photo. */}
-            <EditorialImage
-              placeholderLabel="Founder / leadership photo"
-              aspect="4/3"
-            />
+            <div className={styles.imageFrame}>
+              <Image
+                src="/brand/5la-leadership.jpg"
+                alt="L.J., founder of The 5 Loaves Agency"
+                width={1200}
+                height={900}
+                sizes="(min-width: 900px) 42vw, 100vw"
+                className={styles.image}
+              />
+            </div>
           </Reveal>
 
           <Reveal delay={120} className={styles.text}>
