@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Reveal from "@/components/ui/Reveal";
-import EditorialImage from "@/components/ui/EditorialImage";
 import styles from "./BuiltFrom.module.css";
 
 export default function BuiltFrom() {
@@ -9,11 +9,16 @@ export default function BuiltFrom() {
       <Container>
         <div className={styles.grid}>
           <Reveal delay={120} className={styles.figure}>
-            {/* PLACEHOLDER — replace with approved leadership / operations photo. */}
-            <EditorialImage
-              placeholderLabel="Leadership / operations photo"
-              aspect="3/4"
-            />
+            <div className={styles.imageFrame}>
+              <Image
+                src="/brand/5la-built-from.jpg"
+                alt="A leader reviewing plans and material samples while an event space is prepared in the background"
+                width={1000}
+                height={1500}
+                sizes="(min-width: 900px) 42vw, 100vw"
+                className={styles.image}
+              />
+            </div>
           </Reveal>
 
           <Reveal className={styles.text}>
