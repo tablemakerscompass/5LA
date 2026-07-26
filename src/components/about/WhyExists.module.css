@@ -29,6 +29,20 @@
 .figure {
   width: 100%;
 }
+.imageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-lg);
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 @media (min-width: 900px) {
   .grid {

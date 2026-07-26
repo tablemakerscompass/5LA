@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Reveal from "@/components/ui/Reveal";
-import EditorialImage from "@/components/ui/EditorialImage";
 import styles from "./WhyExists.module.css";
 
 export default function WhyExists() {
@@ -34,10 +34,16 @@ export default function WhyExists() {
           </Reveal>
 
           <Reveal delay={120} className={styles.figure}>
-            <EditorialImage
-              placeholderLabel="Behind-the-scenes / operations imagery"
-              aspect="3/4"
-            />
+            <div className={styles.imageFrame}>
+              <Image
+                src="/brand/5la-why-exists.jpg"
+                alt="A leader reviewing plans and materials while a team prepares an elegant setting in the background"
+                width={1000}
+                height={1250}
+                sizes="(min-width: 900px) 40vw, 100vw"
+                className={styles.image}
+              />
+            </div>
           </Reveal>
         </div>
       </Container>
