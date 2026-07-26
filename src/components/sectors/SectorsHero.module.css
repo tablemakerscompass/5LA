@@ -1,0 +1,107 @@
+.hero {
+  background: var(--ink-900);
+  padding-block: clamp(2.5rem, 2rem + 4vw, 4.5rem) clamp(3rem, 2rem + 5vw, 6rem);
+  border-bottom: 1px solid rgba(200, 164, 93, 0.2);
+  overflow: hidden;
+}
+
+.crumbs {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 34rem;
+}
+.rule {
+  margin-top: var(--space-4);
+}
+.title {
+  text-wrap: balance;
+}
+.lead {
+  max-width: 34rem;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+.descriptor {
+  margin-top: var(--space-3);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+}
+
+/* --- Four-panel editorial composition ---------------------------------- */
+.figure {
+  width: 100%;
+}
+.composition {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: rgba(200, 164, 93, 0.28);
+  border: 1px solid rgba(200, 164, 93, 0.28);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.panel {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: var(--ink-800);
+  overflow: hidden;
+}
+.image {
+  object-fit: cover;
+  filter: saturate(0.94) contrast(1.03);
+}
+/* Unifying scrim so the four frames read as one composition, not four boxes. */
+.composition::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+      to bottom,
+      rgba(23, 21, 20, 0.42) 0%,
+      rgba(23, 21, 20, 0.08) 40%,
+      rgba(23, 21, 20, 0.5) 100%
+    ),
+    linear-gradient(
+      100deg,
+      rgba(78, 16, 19, 0.28) 0%,
+      transparent 45%,
+      rgba(23, 21, 20, 0.3) 100%
+    );
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
+    gap: clamp(2.5rem, 5vw, 5rem);
+  }
+  /* Flush frames, unequal columns — asymmetry without breaking the band. */
+  .composition {
+    grid-template-columns: 1.12fr 0.9fr 0.9fr 1.08fr;
+  }
+  .panel {
+    aspect-ratio: auto;
+    height: clamp(24rem, 40vw, 34rem);
+  }
+}

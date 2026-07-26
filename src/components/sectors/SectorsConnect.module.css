@@ -1,0 +1,119 @@
+.wrap {
+  background: var(--ink-900);
+}
+
+.note {
+  margin-top: var(--space-5);
+  max-width: 56ch;
+}
+
+/* --- Relationship composition ------------------------------------------ */
+.diagram {
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: clamp(1.5rem, 3vw, 2rem) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* On the near-black surface the sector accents are carried by the shared
+   gold rather than each sector's light-surface color, which would not hold
+   contrast here. Sector identity stays in the name and statement. */
+.panelNumber {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.2em;
+  color: var(--gold-500);
+}
+.panelName {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--heading);
+}
+.panelStatement {
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 34ch;
+}
+
+/* --- Central statement -------------------------------------------------- */
+.center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding-top: clamp(3rem, 6vw, 4.5rem);
+}
+/* Hairline dropping from the sector band into the shared result. */
+.center::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: clamp(2rem, 4vw, 3rem);
+  background: var(--border-strong);
+}
+.centerLabel {
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+}
+.centerWord {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h1);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--cream-100);
+}
+.centerLine {
+  display: block;
+  width: 56px;
+  height: 2px;
+  background: var(--gold-600);
+}
+.centerNote {
+  font-size: var(--fs-lead);
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+@media (min-width: 720px) {
+  .panels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+@media (min-width: 1000px) {
+  .panels {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .panel {
+    padding-block: clamp(1.75rem, 3vw, 2.25rem);
+  }
+  .panelStatement {
+    max-width: none;
+  }
+}
