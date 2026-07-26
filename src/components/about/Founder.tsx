@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Reveal from "@/components/ui/Reveal";
-import EditorialImage from "@/components/ui/EditorialImage";
 import styles from "./Founder.module.css";
 
 export default function Founder() {
@@ -9,8 +9,16 @@ export default function Founder() {
       <Container>
         <div className={styles.grid}>
           <Reveal className={styles.figureCol}>
-            {/* PLACEHOLDER — replace with approved founder photo of L.J. */}
-            <EditorialImage placeholderLabel="Founder photo — L.J." aspect="3/4" />
+            <div className={styles.imageFrame}>
+              <Image
+                src="/brand/5la-founder.jpg"
+                alt="L.J., founder of The 5 Loaves Agency, leading a session"
+                width={1000}
+                height={1500}
+                sizes="(min-width: 900px) 34vw, 100vw"
+                className={styles.image}
+              />
+            </div>
             <div className={styles.nameplate}>
               <p className={styles.name}>L.J.</p>
               <p className={styles.role}>Founder &amp; Experience Architect</p>
