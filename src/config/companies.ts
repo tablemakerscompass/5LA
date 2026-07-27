@@ -47,6 +47,7 @@ export const companies: Company[] = [
       "An AI-powered executive operating system designed to support leadership, culture, performance, standards, and growth.",
     dark: true,
     featured: true,
+    hasOwnPage: true,
   },
   {
     name: "The 5LA Academy",

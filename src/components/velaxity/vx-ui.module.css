@@ -1,0 +1,128 @@
+/* Small shared VelaXity primitives: status pills and interface-preview frames. */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  padding: 0.28rem 0.66rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Status is never carried by colour alone — the written label is the meaning
+   and the dot is decorative reinforcement. */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex: none;
+  background: currentColor;
+}
+
+.available {
+  color: #3d5a3d;
+  border-color: rgba(61, 90, 61, 0.45);
+}
+.inDevelopment {
+  color: var(--vx-gold-ink);
+  border-color: rgba(122, 90, 18, 0.42);
+}
+.planned {
+  color: var(--vx-maroon);
+  border-color: rgba(110, 43, 54, 0.42);
+}
+.future {
+  color: var(--text-subtle);
+}
+
+:global([data-surface="dark"]) .available {
+  color: #a8c0a8;
+}
+:global([data-surface="dark"]) .inDevelopment {
+  color: var(--vx-gold-bright);
+}
+:global([data-surface="dark"]) .planned {
+  color: var(--vx-gold-pale);
+}
+
+/* --- Interface preview frame --------------------------------------------- */
+.figure {
+  margin: 0;
+  width: 100%;
+}
+.frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-strong);
+  background: linear-gradient(165deg, var(--vx-black-700), var(--vx-sidebar));
+}
+.image {
+  object-fit: cover;
+}
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  text-align: center;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+/* A spare window outline — a marker for a missing capture, never a mock
+   dashboard that could be mistaken for the product. */
+.mark {
+  width: 64px;
+  height: 44px;
+  border: 1px solid rgba(196, 160, 82, 0.55);
+  border-radius: 4px;
+  position: relative;
+  flex: none;
+}
+.mark::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 9px;
+  border-bottom: 1px solid rgba(196, 160, 82, 0.4);
+}
+.mark::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: 9px;
+  width: 18px;
+  height: 1px;
+  background: rgba(196, 160, 82, 0.5);
+  box-shadow: 0 -6px 0 rgba(196, 160, 82, 0.5), 0 -12px 0 rgba(196, 160, 82, 0.35);
+}
+.label {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-subheading);
+  line-height: 1.3;
+  color: #faf8f4;
+  max-width: 26ch;
+}
+.note {
+  font-size: var(--fs-caption);
+  letter-spacing: 0.03em;
+  color: var(--vx-gold-pale);
+  max-width: 40ch;
+  line-height: 1.45;
+}
+.caption {
+  margin-top: var(--space-3);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--vx-gold);
+}

@@ -1,0 +1,122 @@
+.wrap {
+  background: var(--bg);
+}
+
+.list {
+  display: grid;
+  /* minmax(0, 1fr) — not plain 1fr — so a long capability label can never push
+     the track wider than the container on a narrow screen. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.panel {
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--vx-gold);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.panelHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  min-width: 0;
+}
+.index {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-subheading);
+  font-weight: 600;
+  color: var(--accent-strong);
+  line-height: 1;
+}
+.name {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--heading);
+}
+
+.positioning {
+  margin-top: var(--space-4);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 68ch;
+}
+
+.areasBlock {
+  margin-top: var(--space-5);
+}
+.areasLabel {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-subtle);
+  margin-bottom: var(--space-3);
+}
+.areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.area {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.7rem;
+  background: var(--surface);
+}
+.areaLabel {
+  min-width: 0;
+  font-size: var(--fs-small);
+  line-height: 1.3;
+  color: var(--text);
+}
+.areaPill {
+  font-size: 0.68rem;
+  padding: 0.16rem 0.5rem;
+}
+
+.limit {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 74ch;
+}
+.limitLabel {
+  font-weight: 700;
+  color: var(--heading);
+}
+
+@media (min-width: 1080px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  /* The first panel spans both columns so the section opens with weight. */
+  .panel:first-child {
+    grid-column: 1 / -1;
+  }
+}
