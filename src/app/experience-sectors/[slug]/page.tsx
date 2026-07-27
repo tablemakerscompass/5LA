@@ -15,7 +15,7 @@ type Params = { slug: string };
  * this dynamic one, so they must not also be pre-rendered here.
  * Remove a slug from this list only if its dedicated route is removed.
  */
-const DEDICATED_ROUTES = new Set(["business", "technology"]);
+const DEDICATED_ROUTES = new Set(["business", "technology", "training"]);
 
 /** Pre-render one static page per sector still served by this placeholder. */
 export function generateStaticParams(): Params[] {
