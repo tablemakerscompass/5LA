@@ -68,11 +68,6 @@
   color: var(--green-900);
   max-width: 60ch;
 }
-/* The shared button keeps labels on one line; this one is long enough to
-   overflow a 320px screen, so allow it to wrap here only. */
-.footer .cta {
-  white-space: normal;
-}
 
 @media (min-width: 700px) {
   .values {
