@@ -1,0 +1,57 @@
+.wrap {
+  background: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.rule {
+  margin-block: var(--space-1);
+}
+.heading {
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-self: end;
+}
+.paragraph {
+  max-width: 54ch;
+}
+
+/* Gold rules above and below give the quote a title-card feel. */
+.pullQuote {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-block: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-block: 1px solid var(--gold-600);
+  max-width: 50rem;
+  margin-inline: auto;
+  text-align: center;
+}
+.quote {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.28;
+  color: var(--burgundy-700);
+  text-wrap: balance;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: start;
+  }
+}

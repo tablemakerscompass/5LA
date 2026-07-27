@@ -1,0 +1,39 @@
+.wrap {
+  background: var(--surface);
+}
+
+.list {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.75rem, 3.5vw, 2.75rem) clamp(2rem, 4vw, 3.5rem);
+}
+
+/* Each challenge sits against its own green rule rather than a box. */
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-left: clamp(1rem, 2.5vw, 1.5rem);
+  border-left: 2px solid var(--green-700);
+}
+.n {
+  font-family: var(--font-serif), serif;
+  font-weight: 600;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.24em;
+  color: var(--green-700);
+}
+.title {
+  color: var(--heading);
+  text-wrap: pretty;
+}
+.body {
+  max-width: 48ch;
+}
+
+@media (min-width: 820px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

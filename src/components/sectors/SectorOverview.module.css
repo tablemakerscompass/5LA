@@ -46,6 +46,20 @@
 .image {
   object-fit: cover;
 }
+/* Legibility scrim behind the numeral — same treatment as the homepage. */
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(23, 21, 20, 0.6) 0%,
+    rgba(23, 21, 20, 0.12) 42%,
+    transparent 68%
+  );
+}
 .framePlaceholder {
   position: absolute;
   inset: auto auto var(--space-5) var(--space-5);
@@ -54,14 +68,15 @@
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
 }
-/* Oversized numeral anchored to the frame, half off the image edge. */
+/* Oversized numeral set on the image, over the scrim. */
 .number {
   position: absolute;
-  left: clamp(-0.4rem, -1vw, 0rem);
-  bottom: clamp(-1.1rem, -2.5vw, -0.6rem);
-  font-size: clamp(4.5rem, 13vw, 9rem);
+  z-index: 2;
+  left: clamp(1.25rem, 3vw, 2.25rem);
+  bottom: clamp(1rem, 2.5vw, 1.75rem);
+  font-size: clamp(4rem, 11vw, 7.5rem);
   line-height: 0.78;
-  color: var(--accent-color);
+  color: rgba(255, 255, 255, 0.92);
   pointer-events: none;
 }
 
@@ -180,10 +195,6 @@
   /* Alternate: even sectors place the visual on the right. */
   .sector:nth-child(even) .visual {
     order: 2;
-  }
-  .sector:nth-child(even) .number {
-    left: auto;
-    right: clamp(-0.4rem, -1vw, 0rem);
   }
   .frame {
     aspect-ratio: 5 / 4;

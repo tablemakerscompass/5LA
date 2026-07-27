@@ -1,45 +1,79 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/layout/PageHero";
-import Section from "@/components/layout/Section";
-import CompanyCard from "@/components/ui/CompanyCard";
+import { site } from "@/config/site";
+import { breadcrumbSchema } from "@/lib/seo";
+import CompaniesHero from "@/components/companies/CompaniesHero";
+import CompaniesParent from "@/components/companies/CompaniesParent";
+import CompaniesArchitecture from "@/components/companies/CompaniesArchitecture";
+import CompaniesPortfolio from "@/components/companies/CompaniesPortfolio";
+import CompaniesFoundations from "@/components/companies/CompaniesFoundations";
+import CompaniesIP from "@/components/companies/CompaniesIP";
+import CompaniesSectors from "@/components/companies/CompaniesSectors";
+import CompaniesPathways from "@/components/companies/CompaniesPathways";
+import CompaniesPartnerships from "@/components/companies/CompaniesPartnerships";
+import CompaniesLoaves from "@/components/companies/CompaniesLoaves";
 import CTABanner from "@/components/ui/CTABanner";
-import Reveal from "@/components/ui/Reveal";
-import { companies } from "@/config/companies";
-import { createMetadata } from "@/lib/seo";
-import styles from "./companies.module.css";
 
-export const metadata: Metadata = createMetadata({
-  title: "Our Companies",
-  path: "/our-companies",
-  description:
-    "The growing ecosystem of companies, platforms, and intellectual-property brands within The 5 Loaves Agency.",
-});
+const title = "Our Companies, Platforms & Properties | The 5 Loaves Agency";
+const description =
+  "Explore the companies, platforms, programs, communities, and original properties developed within The 5 Loaves Agency ecosystem.";
+const url = `${site.url}/our-companies`;
+
+export const metadata: Metadata = {
+  title: { absolute: title },
+  description,
+  alternates: { canonical: url },
+  openGraph: {
+    title,
+    description,
+    url,
+    siteName: site.name,
+    type: "website",
+    images: [
+      { url: "/brand/og-image.png", width: 1200, height: 630, alt: site.name },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/brand/og-image.png"],
+  },
+};
 
 export default function OurCompaniesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Our Companies"
-        title="A growing ecosystem of brands and platforms."
-        lead="The 5 Loaves Agency is the parent company behind a connected family of business services, technology, training programs, media projects, and original intellectual property."
-        crumbs={[{ label: "Our Companies" }]}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { label: "Our Companies", path: "/our-companies" },
+            ])
+          ),
+        }}
       />
 
-      <Section>
-        <div className={styles.grid}>
-          {companies.map((company, i) => (
-            <Reveal key={company.slug} delay={(i % 3) * 80}>
-              <CompanyCard company={company} />
-            </Reveal>
-          ))}
-        </div>
-      </Section>
+      <CompaniesHero />
+      <CompaniesParent />
+      <CompaniesArchitecture />
+      <CompaniesPortfolio />
+      <CompaniesFoundations />
+      <CompaniesIP />
+      <CompaniesSectors />
+      <CompaniesPathways />
+      <CompaniesPartnerships />
+      <CompaniesLoaves />
 
       <CTABanner
-        eyebrow="Work with 5LA"
-        title="One ecosystem, built to work together."
-        primary={{ label: "Work With Us", href: "/work-with-us" }}
-        secondary={{ label: "Experience Sectors", href: "/experience-sectors" }}
+        eyebrow="Begin Here"
+        title="Explore the Brand That Speaks to the Experience You Are Building."
+        body="Whether your interest begins with business, technology, training, media, community, healing, professional development, or original storytelling, every part of the 5LA ecosystem was created with purpose and room to grow."
+        primary={{ label: "Work With 5LA", href: "/work-with-us" }}
+        secondary={{
+          label: "Explore Our Experience Sectors",
+          href: "/experience-sectors",
+        }}
       />
     </>
   );

@@ -55,10 +55,10 @@ export default function SectorOverview() {
                         {sector.shortName} experience photography
                       </span>
                     )}
+                    <span className={`numeral ${styles.number}`} aria-hidden="true">
+                      {sector.number}
+                    </span>
                   </div>
-                  <span className={`numeral ${styles.number}`} aria-hidden="true">
-                    {sector.number}
-                  </span>
                 </Reveal>
 
                 <Reveal delay={100} className={styles.body}>

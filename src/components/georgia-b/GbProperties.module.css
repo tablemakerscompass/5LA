@@ -1,0 +1,111 @@
+.wrap {
+  background: var(--ink-900);
+}
+
+.list {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.inner {
+  --mark-bg: linear-gradient(150deg, var(--burgundy-900), var(--burgundy-700));
+  --accent-color: var(--gold-500);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  height: 100%;
+}
+.inner[data-accent="maroon"] {
+  --mark-bg: linear-gradient(150deg, #3d0f12, var(--burgundy-800));
+}
+.inner[data-accent="burgundy"] {
+  --mark-bg: linear-gradient(150deg, var(--burgundy-800), var(--burgundy-600));
+}
+.inner[data-accent="green"] {
+  --mark-bg: linear-gradient(150deg, var(--green-900), var(--green-500));
+}
+
+/* Text wordmark stands in until an approved brand asset exists. */
+.mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(200, 164, 93, 0.28);
+  background: var(--mark-bg);
+}
+.wordmark {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-wrap: balance;
+  color: var(--cream-100);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  flex: 1;
+}
+.category {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+}
+.name {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--cream-100);
+}
+.positioning {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-lead);
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--cream-200);
+}
+.overview {
+  flex: 1;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: var(--space-3);
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+}
+.cta:hover {
+  color: var(--cream-100);
+}
+.arrow {
+  transition: transform var(--dur) var(--ease);
+}
+.cta:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (min-width: 900px) {
+  .list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  .item {
+    display: flex;
+  }
+}

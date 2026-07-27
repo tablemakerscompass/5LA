@@ -1,0 +1,58 @@
+.wrap {
+  background: var(--ink-900);
+}
+
+.head {
+  max-width: 46rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.rule {
+  margin-block: var(--space-1);
+}
+.heading {
+  text-wrap: balance;
+}
+.intro {
+  max-width: 52ch;
+}
+
+.list {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+  align-items: baseline;
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+.n {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.16em;
+  color: var(--gold-500);
+}
+.text {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-subheading);
+  line-height: 1.3;
+  color: var(--cream-100);
+}
+
+@media (min-width: 760px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(2rem, 5vw, 4rem);
+  }
+  /* Keep the top rule reading as one continuous line across both columns. */
+  .item:nth-child(2) {
+    border-top: 0;
+  }
+}
