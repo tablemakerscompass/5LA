@@ -1,0 +1,43 @@
+.wrap {
+  background: var(--surface);
+}
+
+.copy {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.lead {
+  max-width: 56ch;
+  font-family: var(--font-serif), serif;
+  color: var(--heading);
+}
+.body {
+  max-width: 62ch;
+}
+
+/* Present and readable, but intentionally quiet. */
+.disclaimer {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--asg-tan);
+  border-radius: var(--radius);
+  background: transparent;
+}
+.disclaimerHeading {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: var(--space-2);
+}
+.disclaimerBody {
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 68ch;
+}

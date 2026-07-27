@@ -1,0 +1,185 @@
+.wrap {
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* Horizontal rail on small screens; wrapping gallery from tablet up. */
+.scroller {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding-block: var(--space-2) var(--space-5);
+  padding-inline: var(--container-pad);
+  -webkit-overflow-scrolling: touch;
+}
+.scroller:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: -2px;
+  border-radius: var(--radius);
+}
+
+.row {
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  width: max-content;
+  margin: 0;
+}
+
+.item {
+  scroll-snap-align: start;
+  width: min(72vw, 300px);
+  flex: none;
+  display: flex;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.linked {
+  transition: transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.linked:hover,
+.linked:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-strong);
+}
+
+/* --- Portrait ----------------------------------------------------------- */
+.portrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background:
+    linear-gradient(170deg, rgba(74, 16, 21, 0.9), rgba(36, 66, 47, 0.82)),
+    var(--asg-black-800);
+}
+.portraitImage {
+  object-fit: cover;
+  /* Keep faces high in the frame so nothing important is cropped on mobile. */
+  object-position: center 22%;
+}
+.portraitPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  text-align: center;
+  padding: var(--space-4);
+}
+.initial {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(2.75rem, 8vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--asg-amber-soft);
+  width: 4.25rem;
+  height: 4.25rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(215, 154, 82, 0.5);
+  border-radius: 50%;
+}
+.portraitNote {
+  font-size: var(--fs-caption);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--asg-tan-soft);
+}
+
+/* --- Name plate --------------------------------------------------------- */
+.plate {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border-top: 2px solid var(--asg-amber);
+  flex: 1;
+}
+.name {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--heading);
+}
+.aka {
+  display: block;
+  margin-top: var(--space-1);
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-subtle);
+}
+.theme {
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+.desc,
+.connection {
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+.pendingCopy {
+  font-style: italic;
+  color: var(--text-subtle);
+}
+.quote {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: var(--fs-small);
+  color: var(--heading);
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--asg-tan);
+}
+.cue {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.note {
+  margin-top: var(--space-5);
+  max-width: 62ch;
+}
+
+@media (min-width: 760px) {
+  .scroller {
+    overflow: visible;
+    padding-inline: 0;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
+  }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    width: auto;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+  }
+  .item {
+    width: auto;
+  }
+}

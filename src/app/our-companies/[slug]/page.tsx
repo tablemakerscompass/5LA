@@ -8,8 +8,12 @@ import { createMetadata } from "@/lib/seo";
 
 type Params = { slug: string };
 
+/**
+ * Brands with a hand-built page of their own are skipped here — their static
+ * route takes precedence, and generating the same path twice is avoided.
+ */
 export function generateStaticParams(): Params[] {
-  return companies.map((c) => ({ slug: c.slug }));
+  return companies.filter((c) => !c.hasOwnPage).map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({

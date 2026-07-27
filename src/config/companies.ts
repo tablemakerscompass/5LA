@@ -22,6 +22,12 @@ export type Company = {
   dark?: boolean;
   /** Feature this brand more prominently on the homepage ecosystem grid. */
   featured?: boolean;
+  /**
+   * True once the brand has its own hand-built route under /our-companies.
+   * Those slugs are excluded from the shared [slug] placeholder page so a
+   * single URL is never generated twice.
+   */
+  hasOwnPage?: boolean;
 };
 
 export const companies: Company[] = [
@@ -63,6 +69,7 @@ export const companies: Company[] = [
     category: "Literary · Theatrical · Healing",
     description:
       "A storytelling and healing platform exploring truth, womanhood, family, survival, and legacy.",
+    hasOwnPage: true,
   },
   {
     name: "The Sarah Method",
