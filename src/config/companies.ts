@@ -56,6 +56,7 @@ export const companies: Company[] = [
     description:
       "Training experiences that equip professionals and organizations to lead, serve, and operate with excellence.",
     featured: true,
+    hasOwnPage: true,
   },
   {
     name: "The Georgia B. Society",

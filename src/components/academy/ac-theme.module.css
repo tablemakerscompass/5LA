@@ -1,0 +1,79 @@
+/* ==========================================================================
+   THE 5LA ACADEMY — SCOPED BRAND THEME
+   Applied to a single wrapper on /our-companies/5la-academy.
+
+   The Academy has no separate palette of its own; it leans on the approved 5LA
+   colours with DEEP GREEN promoted to the lead accent, per brand direction.
+   Burgundy stays as the heading colour so the page reads as part of 5LA.
+
+   This file adds NO global rule and changes NO approved global token. It
+   re-points the existing semantic tokens inside this page only, so the shared
+   Section, Button, SectionIntro, Breadcrumbs, and CTABanner components adopt
+   the Academy identity without being modified. Typography is unchanged.
+   ========================================================================== */
+
+.theme {
+  /* --- Academy palette: approved 5LA greens, burgundies, creams --- */
+  --ac-green-900: #142f24;
+  --ac-green-800: #183b2d;
+  --ac-green-700: #214737;
+  --ac-green-500: #2c5140;
+  --ac-green-300: #6f9781;
+  --ac-green-200: #a8c4b1;
+  /* Deep green that clears 4.5:1 as TEXT on cream. */
+  --ac-green-ink: #1f4433;
+
+  --ac-burgundy: #68161a;
+  --ac-burgundy-deep: #4e1013;
+  --ac-gold: #c8a45d;
+  --ac-gold-soft: #dcc490;
+  /* Deepest gold, for accent text on cream. */
+  --ac-gold-ink: #6f5219;
+
+  --ac-cream: #f7f2e8;
+  --ac-cream-100: #fbf8f2;
+  --ac-ink: #171514;
+  --ac-ink-800: #1c1918;
+  --ac-ink-700: #211d1b;
+
+  /* --- Re-point the shared semantic tokens (light surfaces) --- */
+  --bg: var(--ac-cream);
+  --surface: var(--ac-cream-100);
+  --surface-raised: #ffffff;
+  --heading: var(--ac-burgundy-deep);
+  --accent: var(--ac-green-500);
+  --accent-strong: var(--ac-green-ink);
+  --primary: var(--ac-green-700);
+  --primary-hover: var(--ac-green-900);
+  --divider: var(--ac-green-500);
+  --focus-ring: var(--ac-green-700);
+  --selection-bg: var(--ac-green-200);
+  --selection-text: var(--ac-ink);
+
+  background-color: var(--bg);
+}
+
+/* --- Dark surfaces inside this page --- */
+.theme [data-surface="dark"] {
+  --bg: var(--ac-ink);
+  --surface: var(--ac-ink-800);
+  --surface-raised: var(--ac-ink-700);
+  --text: var(--ac-cream);
+  --text-muted: #c8bfb4;
+  --text-subtle: #9d9489;
+  --heading: var(--ac-cream-100);
+  --accent: var(--ac-green-200);
+  --accent-strong: var(--ac-green-200);
+  --primary: var(--ac-cream-100);
+  --primary-hover: #ffffff;
+  --divider: var(--ac-green-300);
+  --border: rgba(168, 196, 177, 0.24);
+  --border-strong: rgba(168, 196, 177, 0.42);
+  --focus-ring: var(--ac-green-200);
+}
+
+/* The global stylesheet hard-codes the 5LA gold for eyebrows on dark
+   surfaces; re-point it to the Academy green within this page only. */
+.theme [data-surface="dark"] :global(.eyebrow) {
+  color: var(--ac-green-200);
+}
