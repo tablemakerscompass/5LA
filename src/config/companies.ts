@@ -77,6 +77,7 @@ export const companies: Company[] = [
     category: "Truth · Healing · Purpose",
     description:
       "A guided reflection and healing experience developed from the world and mission of Aunt Sarah’s Girls.",
+    hasOwnPage: true,
   },
   {
     name: "Tablemakers",

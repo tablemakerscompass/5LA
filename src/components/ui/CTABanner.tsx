@@ -2,7 +2,12 @@ import Section from "@/components/layout/Section";
 import Button from "./Button";
 import styles from "./CTABanner.module.css";
 
-type CTAButton = { label: string; href: string };
+type CTAButton = {
+  label: string;
+  href: string;
+  /** Opens in a new tab with rel="noopener noreferrer". */
+  external?: boolean;
+};
 
 type CTABannerProps = {
   eyebrow?: string;
@@ -40,18 +45,32 @@ export default function CTABanner({
         {(primary || secondary) && (
           <div className={styles.actions}>
             {primary && (
-              <Button href={primary.href} variant={dark ? "gold" : "primary"} size="lg">
+              <Button
+                href={primary.href}
+                external={primary.external}
+                variant={dark ? "gold" : "primary"}
+                size="lg"
+              >
                 {primary.label}
               </Button>
             )}
             {secondary && (
-              <Button href={secondary.href} variant="outline" size="lg">
+              <Button
+                href={secondary.href}
+                external={secondary.external}
+                variant="outline"
+                size="lg"
+              >
                 {secondary.label}
               </Button>
             )}
             {tertiary && (
               <p className={styles.tertiary}>
-                <Button href={tertiary.href} variant="text">
+                <Button
+                  href={tertiary.href}
+                  external={tertiary.external}
+                  variant="text"
+                >
                   {tertiary.label}
                 </Button>
               </p>
