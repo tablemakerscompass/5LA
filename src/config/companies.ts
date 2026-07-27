@@ -87,6 +87,7 @@ export const companies: Company[] = [
     category: "Community · Thought Leadership · Professional Development",
     description:
       "A professional community and resource platform for those building stronger teams, cultures, and guest experiences.",
+    hasOwnPage: true,
   },
 ];
 

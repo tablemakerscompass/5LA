@@ -1,0 +1,79 @@
+/* ==========================================================================
+   TABLEMAKERS — SCOPED BRAND THEME
+   Applied to a single wrapper on /our-companies/tablemakers.
+
+   Deep green leads, per brand direction — a shade deeper and cooler than the
+   Academy's, so the two sibling brands read as related but distinct. Burgundy
+   stays as the heading colour so the page belongs to 5LA.
+
+   This file adds NO global rule and changes NO approved global token. It
+   re-points the existing semantic tokens inside this page only, so the shared
+   Section, Button, SectionIntro, Breadcrumbs, and CTABanner components adopt
+   the Tablemakers identity without being modified. Typography is unchanged.
+   ========================================================================== */
+
+.theme {
+  /* --- Tablemakers palette: approved 5LA greens, burgundies, creams --- */
+  --tm-green-900: #10281e;
+  --tm-green-800: #163426;
+  --tm-green-700: #1d4132;
+  --tm-green-500: #2a5741;
+  --tm-green-300: #6b9580;
+  --tm-green-200: #a2c3b0;
+  /* Deep green that clears 4.5:1 as TEXT on cream. */
+  --tm-green-ink: #1b4132;
+
+  --tm-burgundy: #68161a;
+  --tm-burgundy-deep: #4e1013;
+  --tm-gold: #c8a45d;
+  --tm-gold-soft: #dcc490;
+  /* Deepest gold, for accent text on cream. */
+  --tm-gold-ink: #6f5219;
+
+  --tm-cream: #f6f2ea;
+  --tm-cream-100: #fbf9f4;
+  --tm-ink: #14120f;
+  --tm-ink-800: #1a1714;
+  --tm-ink-700: #201c19;
+
+  /* --- Re-point the shared semantic tokens (light surfaces) --- */
+  --bg: var(--tm-cream);
+  --surface: var(--tm-cream-100);
+  --surface-raised: #ffffff;
+  --heading: var(--tm-burgundy-deep);
+  --accent: var(--tm-green-500);
+  --accent-strong: var(--tm-green-ink);
+  --primary: var(--tm-green-700);
+  --primary-hover: var(--tm-green-900);
+  --divider: var(--tm-green-500);
+  --focus-ring: var(--tm-green-700);
+  --selection-bg: var(--tm-green-200);
+  --selection-text: var(--tm-ink);
+
+  background-color: var(--bg);
+}
+
+/* --- Dark surfaces inside this page --- */
+.theme [data-surface="dark"] {
+  --bg: var(--tm-ink);
+  --surface: var(--tm-ink-800);
+  --surface-raised: var(--tm-ink-700);
+  --text: var(--tm-cream);
+  --text-muted: #c6bdb2;
+  --text-subtle: #9b9287;
+  --heading: var(--tm-cream-100);
+  --accent: var(--tm-green-200);
+  --accent-strong: var(--tm-green-200);
+  --primary: var(--tm-cream-100);
+  --primary-hover: #ffffff;
+  --divider: var(--tm-green-300);
+  --border: rgba(162, 195, 176, 0.24);
+  --border-strong: rgba(162, 195, 176, 0.42);
+  --focus-ring: var(--tm-green-200);
+}
+
+/* The global stylesheet hard-codes the 5LA gold for eyebrows on dark
+   surfaces; re-point it to the Tablemakers green within this page only. */
+.theme [data-surface="dark"] :global(.eyebrow) {
+  color: var(--tm-green-200);
+}
