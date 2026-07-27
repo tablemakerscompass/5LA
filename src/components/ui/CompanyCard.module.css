@@ -78,7 +78,13 @@
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-pill);
   padding: 0.3rem 0.7rem;
-  white-space: nowrap;
+  /* Long category labels ("Community · Thought Leadership · Professional
+     Development") cannot fit one line on a narrow screen. Keeping them
+     unbreakable forced the card past the viewport; they now wrap instead. */
+  text-align: center;
+}
+.head {
+  flex-wrap: wrap;
 }
 
 .body {
