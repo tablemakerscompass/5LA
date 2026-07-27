@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
-import EditorialImage from "@/components/ui/EditorialImage";
 import Reveal from "@/components/ui/Reveal";
 import styles from "./TechnologyVelaxity.module.css";
 
@@ -75,7 +75,8 @@ export default function TechnologyVelaxity() {
 
             <Reveal delay={240}>
               <Button
-                href="/our-companies/velaxity"
+                href="https://velaxity.com"
+                external
                 variant="gold"
                 size="lg"
               >
@@ -85,12 +86,16 @@ export default function TechnologyVelaxity() {
           </div>
 
           <Reveal delay={140} className={styles.figure}>
-            {/* PLACEHOLDER — replace with approved VelaXity platform imagery. */}
-            <EditorialImage
-              placeholderLabel="VelaXity platform imagery"
-              aspect="4/3"
-              className={styles.image}
-            />
+            <div className={styles.logoFrame}>
+              <Image
+                src="/brand/velaxity-logo.png"
+                alt="The VelaXity logo: a gold VX monogram inside a gold circle on deep burgundy."
+                width={1254}
+                height={1254}
+                sizes="(min-width: 1000px) 34vw, (min-width: 640px) 22rem, 80vw"
+                className={styles.logo}
+              />
+            </div>
           </Reveal>
         </div>
       </Container>
