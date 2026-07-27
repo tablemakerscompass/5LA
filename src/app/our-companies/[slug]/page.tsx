@@ -8,8 +8,18 @@ import { createMetadata } from "@/lib/seo";
 
 type Params = { slug: string };
 
+/**
+ * Brands with a dedicated, fully-built route under `app/our-companies/<slug>/`.
+ * Those static segments take precedence over this dynamic one, so they must
+ * not also be pre-rendered here. Add a slug as each brand page is built.
+ */
+const DEDICATED_ROUTES = new Set(["georgia-b-media-group"]);
+
+/** Pre-render one page per brand still served by this placeholder. */
 export function generateStaticParams(): Params[] {
-  return companies.map((c) => ({ slug: c.slug }));
+  return companies
+    .filter((c) => !DEDICATED_ROUTES.has(c.slug))
+    .map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({
