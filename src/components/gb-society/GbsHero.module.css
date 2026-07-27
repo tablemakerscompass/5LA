@@ -1,0 +1,75 @@
+.hero {
+  /* Deep green leads, with burgundy warmth beneath. */
+  background:
+    radial-gradient(95% 110% at 10% 0%, rgba(24, 59, 45, 0.75), transparent 58%),
+    radial-gradient(80% 90% at 100% 100%, rgba(104, 22, 26, 0.4), transparent 58%),
+    var(--ink-900);
+  overflow: hidden;
+}
+.inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: clamp(2rem, 2rem + 3vw, 3.5rem) var(--container-pad)
+    clamp(3.5rem, 3rem + 5vw, 6rem);
+}
+.crumbs {
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+/* Text wordmark — stands in until an approved logo exists. */
+.wordmark {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--gold-500);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(200, 164, 93, 0.35);
+}
+.headline {
+  color: var(--cream-100);
+  text-wrap: balance;
+}
+.lead {
+  color: var(--cream-200);
+  opacity: 0.9;
+  max-width: 40rem;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+.descriptor {
+  margin-top: var(--space-2);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+}
+
+.figure {
+  width: 100%;
+}
+.image {
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+  }
+}

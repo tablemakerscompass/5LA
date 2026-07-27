@@ -13,7 +13,10 @@ type Params = { slug: string };
  * Those static segments take precedence over this dynamic one, so they must
  * not also be pre-rendered here. Add a slug as each brand page is built.
  */
-const DEDICATED_ROUTES = new Set(["georgia-b-media-group"]);
+const DEDICATED_ROUTES = new Set([
+  "georgia-b-media-group",
+  "georgia-b-society",
+]);
 
 /** Pre-render one page per brand still served by this placeholder. */
 export function generateStaticParams(): Params[] {
