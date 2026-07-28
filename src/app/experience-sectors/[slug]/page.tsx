@@ -65,7 +65,10 @@ export default async function SectorPage({
       <CTABanner
         eyebrow="Work with 5LA"
         title={`Bring the ${sector.shortName} Experience to your organization.`}
-        primary={{ label: "Work With Us", href: "/work-with-us" }}
+        primary={{
+          label: "Work With Us",
+          href: `/work-with-us?interest=${sector.slug}`,
+        }}
         secondary={{ label: "All Sectors", href: "/experience-sectors" }}
       />
     </>

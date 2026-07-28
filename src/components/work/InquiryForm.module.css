@@ -1,0 +1,58 @@
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  max-width: 46rem;
+}
+.interest {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+.formSection {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.fields {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 46rem;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+.consent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  margin-top: var(--space-2);
+}
+
+/* Honeypot — removed from the layout without display:none, which some bots
+   detect and skip. Hidden from assistive technology via aria-hidden. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (min-width: 720px) {
+  .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

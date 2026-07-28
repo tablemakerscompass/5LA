@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/privacy-policy",
     "/terms-of-service",
+    "/accessibility",
   ];
 
   const sectorRoutes = sectors.map((s) => `/experience-sectors/${s.slug}`);
