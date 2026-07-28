@@ -552,3 +552,41 @@ ol {
 .no-scroll {
   overflow: hidden;
 }
+
+/* --------------------------------------------------------------------------
+   8. PRINT — used mainly by the legal and accessibility pages
+   -------------------------------------------------------------------------- */
+@media print {
+  /* Site chrome adds nothing to a printed document. */
+  body > header,
+  body > footer,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .page-title {
+    font-size: 22pt;
+  }
+
+  /* Reveal-on-scroll must never hide content on paper. */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  a {
+    color: #000;
+  }
+}

@@ -1,0 +1,295 @@
+/* Restrained legal-document layout: one comfortable measure, fine dividers,
+   no photography, no marketing calls to action. */
+
+.page {
+  padding-block: clamp(2.5rem, 2rem + 4vw, 5rem) var(--space-section);
+}
+.crumbs {
+  margin-bottom: var(--space-6);
+}
+
+/* Everything is constrained to a readable measure. */
+.header,
+.toc,
+.body,
+.pageFooter {
+  max-width: 44rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.eyebrow {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  line-height: 1.2;
+  /* --gold-ink is the palette's accessible gold for text on light surfaces. */
+  color: var(--gold-ink);
+}
+.rule {
+  margin: 0;
+}
+.title {
+  text-wrap: balance;
+}
+
+.dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-7);
+  margin-top: var(--space-2);
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.dateItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.dateTerm {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+}
+.dateValue {
+  font-size: var(--fs-small);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.intro {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: var(--warm-700);
+}
+.reviewNotice {
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--warm-700);
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface);
+  border-left: 3px solid var(--gold-600);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+/* ---------------------------------------------------------- contents */
+.toc {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding: var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.tocHeading {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+  margin-bottom: var(--space-4);
+}
+.tocList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+.tocItem {
+  break-inside: avoid;
+}
+.tocLink {
+  display: flex;
+  gap: var(--space-3);
+  align-items: baseline;
+  padding: 0.35rem 0;
+  font-size: var(--fs-small);
+  line-height: 1.45;
+  color: var(--warm-700);
+  border-bottom: 1px solid transparent;
+  transition: color var(--dur-fast) var(--ease);
+}
+.tocLink:hover {
+  color: var(--burgundy-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tocNumber {
+  flex: none;
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 600;
+  color: var(--gold-ink);
+}
+
+/* ------------------------------------------------------------- body */
+.body {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 3.5rem);
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  /* Anchor links land clear of the sticky header. */
+  scroll-margin-top: calc(var(--header-height) + var(--space-5));
+}
+.h2 {
+  display: flex;
+  gap: var(--space-4);
+  align-items: baseline;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--heading);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-strong);
+  text-wrap: balance;
+}
+.sectionNumber {
+  flex: none;
+  font-size: 0.72em;
+  color: var(--gold-ink);
+}
+.h3 {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+  margin-top: var(--space-3);
+}
+.p {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--warm-700);
+  text-wrap: pretty;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-left: var(--space-2);
+}
+.list li {
+  position: relative;
+  padding-left: var(--space-5);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--warm-700);
+}
+.list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 1px;
+  background: var(--gold-700);
+}
+.note {
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--warm-700);
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface);
+  border-left: 3px solid var(--green-700);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+/* Links inside legal copy stay obviously link-like. */
+.p a,
+.list a,
+.note a {
+  color: var(--burgundy-700);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.p a:hover,
+.list a:hover,
+.note a:hover {
+  color: var(--burgundy-900);
+}
+
+/* ----------------------------------------------------------- footer */
+.pageFooter {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.legalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+}
+.legalLink {
+  font-size: var(--fs-small);
+  color: var(--burgundy-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding-block: 0.2rem;
+}
+.legalLink:hover {
+  color: var(--burgundy-900);
+}
+.updated {
+  font-size: var(--fs-caption);
+  color: var(--warm-600);
+}
+
+@media (min-width: 720px) {
+  .tocList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2) var(--space-6);
+  }
+}
+
+/* ------------------------------------------------------------ print */
+@media print {
+  .page {
+    padding: 0;
+  }
+  .crumbs,
+  .toc {
+    display: none;
+  }
+  .header,
+  .body,
+  .pageFooter {
+    max-width: none;
+  }
+  .section {
+    break-inside: avoid-page;
+  }
+  .h2 {
+    break-after: avoid-page;
+  }
+  .reviewNotice,
+  .note {
+    border-left-width: 2px;
+    background: none;
+    padding-left: var(--space-4);
+  }
+  .p,
+  .list li,
+  .intro {
+    color: #000;
+  }
+  /* Expand link targets so a printed copy stays useful. */
+  .legalLink::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+  }
+}

@@ -33,6 +33,24 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
+/* Legal acknowledgement shown immediately above the submit button. */
+.legalNote {
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--warm-600);
+  max-width: 40rem;
+}
+.legalLink {
+  color: var(--burgundy-700);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  /* Keeps the inline target comfortably tall. */
+  padding-block: 0.15rem;
+}
+.legalLink:hover {
+  color: var(--burgundy-900);
+}
+
 .actions {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
@@ -438,6 +439,19 @@ export default function InquiryForm() {
             </div>
 
             {formError && <FormMessage variant="error">{formError}</FormMessage>}
+
+            <p className={styles.legalNote}>
+              By submitting this form, you acknowledge that you have read the{" "}
+              <Link href="/privacy-policy" className={styles.legalLink}>
+                Privacy Policy
+              </Link>{" "}
+              and understand that submission does not create a client or
+              contractual relationship. Use of this website is subject to our{" "}
+              <Link href="/terms-of-service" className={styles.legalLink}>
+                Terms of Service
+              </Link>
+              .
+            </p>
 
             <div className={styles.actions}>
               <Button type="submit" variant="primary" size="lg" disabled={sending}>
