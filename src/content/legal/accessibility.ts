@@ -135,7 +135,8 @@ export const accessibilitySections: LegalSection[] = [
     blocks: [
       "The following are known to us from our most recent review. We are listing them because a statement that claimed none would not be accurate.",
       { h3: "Testing coverage" },
-      "Our review combined automated checks with manual keyboard testing in a single browser. We have not carried out formal testing with screen readers, magnification software, voice-control software, or switch devices, and we have not commissioned an independent audit. There may be barriers we have not found, and this is the limitation we would most like to close.",
+      "Our review combined automated checks, manual keyboard testing, and inspection of the accessibility tree — the structured information a browser exposes to assistive technology, covering the role, name, and state of every element. That tells us what a screen reader should announce.",
+      "It does not tell us how the site actually sounds and feels in use. We have not tested with real screen readers, magnification software, voice-control software, or switch devices, we have not tested with disabled users, and we have not commissioned an independent audit. There may be barriers we have not found, and this is the limitation we would most like to close.",
       { h3: "Decorative imagery" },
       "A few pages place large decorative numerals over photography. These are hidden from screen readers and the same information appears as ordinary text beside them, but their legibility depends on the photograph behind them rather than on a fixed colour pair.",
       { h3: "Third-party destinations" },
@@ -196,7 +197,7 @@ export const accessibilitySections: LegalSection[] = [
     blocks: [
       "This website is built with standard HTML, CSS, and JavaScript, and is designed to work with current versions of major web browsers on desktop and mobile devices.",
       "It is built to follow the semantic and accessibility conventions that assistive technologies rely on — landmark regions, proper heading structure, labelled form controls, and standard interactive elements rather than custom substitutes.",
-      "We have not completed testing with specific screen readers or other assistive technologies, so we are not naming particular products as supported. If you use assistive technology and encounter a problem here, we would genuinely like to hear about it.",
+      "We have verified that every interactive element exposes a correct role, name, and state to the browser's accessibility layer, that form errors are announced, and that the submission confirmation is announced and receives focus. We have not completed testing with specific screen readers, so we are not naming particular products as supported. If you use assistive technology and encounter a problem here, we would genuinely like to hear about it.",
       "The website does not require JavaScript to read its content. It does require JavaScript to submit the inquiry form; if that is a barrier for you, please contact us by email or telephone instead.",
     ],
   },
