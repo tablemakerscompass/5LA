@@ -28,9 +28,6 @@ export default function InsightsPreview() {
               <Link href={post.href} className={styles.card}>
                 <div className={styles.cardTop}>
                   <span className={styles.category}>{post.category}</span>
-                  {post.placeholder && (
-                    <span className={styles.tag}>Coming soon</span>
-                  )}
                 </div>
                 <h3 className={`subheading ${styles.title}`}>{post.title}</h3>
                 <span className={styles.readMore} aria-hidden="true">

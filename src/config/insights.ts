@@ -1,36 +1,22 @@
 /**
- * Insights preview data.
+ * Insights preview data used by the homepage section.
  *
- * PLACEHOLDER content — these are NOT real published articles. They exist so the
- * homepage Insights section has a realistic shape and can later be swapped for a
- * CMS/blog source. Each entry is clearly marked `placeholder: true`; no article
- * bodies, dates, or authors are fabricated.
+ * Derived from the published article library (`./articles`) so the homepage
+ * always links to real, live articles and there is no second list to keep
+ * in sync.
  */
+
+import { articles } from "./articles";
 
 export type Insight = {
   category: string;
   title: string;
   href: string;
-  placeholder: boolean;
 };
 
-export const insights: Insight[] = [
-  {
-    category: "Leadership",
-    title: "What it means to build the experience behind the brand.",
-    href: "/insights",
-    placeholder: true,
-  },
-  {
-    category: "Hospitality",
-    title: "Service standards as an operating system, not a rulebook.",
-    href: "/insights",
-    placeholder: true,
-  },
-  {
-    category: "Technology",
-    title: "Making technology human: intelligence that supports people.",
-    href: "/insights",
-    placeholder: true,
-  },
-];
+/** The three most recent articles, in publication order. */
+export const insights: Insight[] = articles.slice(0, 3).map((article) => ({
+  category: article.category,
+  title: article.title,
+  href: `/insights/${article.slug}`,
+}));
