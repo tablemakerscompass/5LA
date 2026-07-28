@@ -59,7 +59,7 @@ export default function MediaHero() {
                 >
                   Explore Media Capabilities
                 </Button>
-                <Button href="/work-with-us" variant="outline" size="lg">
+                <Button href="/work-with-us?interest=media" variant="outline" size="lg">
                   Work With 5LA
                 </Button>
               </div>

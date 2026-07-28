@@ -76,7 +76,7 @@ export default function TechnologyExperiencePage() {
         eyebrow="Begin Here"
         title="Is Your Technology Supporting the Work—or Making It Harder?"
         body="5LA helps organizations identify where AI, automation, digital systems, or executive technology can create practical value without losing clarity, accountability, or human connection."
-        primary={{ label: "Work With 5LA", href: "/work-with-us" }}
+        primary={{ label: "Work With 5LA", href: "/work-with-us?interest=technology" }}
         secondary={{ label: "Start a Conversation", href: "/contact" }}
       />
     </>

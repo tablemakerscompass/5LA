@@ -55,7 +55,7 @@ export default function GbHero() {
                 <Button href="#creative-areas" variant="gold" size="lg">
                   Explore What We Create
                 </Button>
-                <Button href="/work-with-us" variant="outline" size="lg">
+                <Button href="/work-with-us?interest=georgia-b-media-group" variant="outline" size="lg">
                   Discuss a Creative Partnership
                 </Button>
               </div>

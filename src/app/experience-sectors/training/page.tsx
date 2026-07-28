@@ -81,7 +81,7 @@ export default function TrainingExperiencePage() {
         eyebrow="Begin Here"
         title="Are Your People Being Asked to Deliver a Standard They Have Not Been Equipped to Carry?"
         body="5LA develops learning experiences that help leaders, managers, employees, and professionals understand what excellence requires and how to apply it in the real work."
-        primary={{ label: "Work With 5LA", href: "/work-with-us" }}
+        primary={{ label: "Work With 5LA", href: "/work-with-us?interest=training" }}
         secondary={{ label: "Start a Conversation", href: "/contact" }}
       />
     </>

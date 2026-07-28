@@ -63,7 +63,7 @@ export default function GbPathways() {
         </ul>
 
         <Reveal delay={140} className={styles.ctaWrap}>
-          <Button href="/work-with-us" variant="gold" size="lg">
+          <Button href="/work-with-us?interest=georgia-b-media-group" variant="gold" size="lg">
             Discuss a Creative Partnership
           </Button>
         </Reveal>

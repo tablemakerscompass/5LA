@@ -66,8 +66,8 @@ export const vxBrand = {
   aiNote:
     "Today the platform's intelligence is derived from an organization’s own records inside VelaXity — its standards, team information, learning activity, and operating signals. Generative and conversational AI features are in development and are not part of the platform yet.",
 
-  /** Demo route. The inquiry form itself is built in a later phase. */
-  demoPath: "/work-with-us",
+  /** Demo route. Preselects VelaXity on the Work With Us inquiry form. */
+  demoPath: "/work-with-us?interest=velaxity",
 } as const;
 
 /**

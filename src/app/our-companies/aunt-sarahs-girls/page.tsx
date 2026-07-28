@@ -176,7 +176,7 @@ export default function AuntSarahsGirlsPage() {
         title="Come On In. The Story Is Ready to Be Told—and the Conversation Is Ready to Begin."
         body="Explore the novel, follow the theatrical journey, experience the women’s stories, or discuss bringing Aunt Sarah’s Girls into your organization, community, venue, or book club."
         primary={{ label: "Explore the Story", href: "#the-novel" }}
-        secondary={{ label: "Discuss a Partnership", href: "/work-with-us" }}
+        secondary={{ label: "Discuss a Partnership", href: "/work-with-us?interest=aunt-sarahs-girls" }}
         tertiary={{
           label: "Continue With The Sarah Method",
           href: "/our-companies/the-sarah-method",

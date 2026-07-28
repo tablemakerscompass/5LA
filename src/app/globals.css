@@ -181,6 +181,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   min-height: 100vh;
+  /* Inherited by everything. A long unbroken word (a brand name, a compound
+     term) can otherwise be wider than its grid track and push the page into
+     horizontal scrolling — most visibly at large text sizes. This only ever
+     applies when a word genuinely cannot fit; ordinary text is unaffected. */
+  overflow-wrap: break-word;
 }
 
 img,

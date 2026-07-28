@@ -22,7 +22,7 @@
 }
 .n {
   font-size: clamp(1.5rem, 3.5vw, 2.25rem);
-  color: var(--gold-700);
+  color: var(--accent-strong);
   line-height: 1;
   flex: none;
 }

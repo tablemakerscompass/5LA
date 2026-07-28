@@ -68,7 +68,7 @@ export default function GbsPathways() {
             tax-deductible. Support conversations are about partnership,
             programming, and shared work rather than donations.
           </p>
-          <Button href="/work-with-us" variant="gold" size="lg">
+          <Button href="/work-with-us?interest=georgia-b-society" variant="gold" size="lg">
             Discuss a Community Partnership
           </Button>
         </Reveal>

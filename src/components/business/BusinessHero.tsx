@@ -54,7 +54,7 @@ export default function BusinessHero() {
                 <Button href="#capabilities" variant="gold" size="lg">
                   Explore Business Capabilities
                 </Button>
-                <Button href="/work-with-us" variant="outline" size="lg">
+                <Button href="/work-with-us?interest=business" variant="outline" size="lg">
                   Work With 5LA
                 </Button>
               </div>

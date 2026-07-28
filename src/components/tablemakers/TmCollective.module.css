@@ -54,6 +54,12 @@
   padding-block: var(--space-4);
   border-bottom: 1px solid var(--border);
 }
+.format,
+.format > * {
+  /* Flex children default to min-width:auto and refuse to shrink below
+     their content, pushing the row past its grid track at large text sizes. */
+  min-width: 0;
+}
 .formatTitle {
   font-family: var(--font-serif), serif;
   font-size: var(--fs-subheading);

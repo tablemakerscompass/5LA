@@ -14,7 +14,10 @@
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-strong);
   color: var(--text-muted);
-  white-space: nowrap;
+  /* Wraps rather than overflowing: at large text sizes a two-word status
+     pill was wider than its column and pushed the row off-screen. */
+  white-space: normal;
+  text-align: center;
 }
 
 /* Status is never carried by colour alone — the written label is the meaning

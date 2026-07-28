@@ -49,7 +49,7 @@ export default function SmCommunity() {
 
         <Reveal delay={80} className={styles.ctaWrap}>
           <Button
-            href="/work-with-us"
+            href="/work-with-us?interest=the-sarah-method"
             variant="gold"
             size="lg"
             className={styles.cta}

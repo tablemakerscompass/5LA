@@ -181,7 +181,7 @@ export default function TheSarahMethodPage() {
         }}
         tertiary={{
           label: "Discuss a Community or Organizational Partnership",
-          href: "/work-with-us",
+          href: "/work-with-us?interest=the-sarah-method",
         }}
       />
     </div>

@@ -16,7 +16,7 @@
   align-items: center;
 }
 .rowInner[data-accent="burgundy"] { --accent-color: var(--burgundy-700); }
-.rowInner[data-accent="gold"] { --accent-color: var(--gold-700); }
+.rowInner[data-accent="gold"] { --accent-color: var(--accent-strong); }
 .rowInner[data-accent="green"] { --accent-color: var(--green-700); }
 .rowInner[data-accent="ink"] { --accent-color: var(--ink-800); }
 

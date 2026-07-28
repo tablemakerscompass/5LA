@@ -58,7 +58,7 @@ export default function GbsHero() {
                 <Button href="#purpose" variant="gold" size="lg">
                   Explore the Society’s Purpose
                 </Button>
-                <Button href="/work-with-us" variant="outline" size="lg">
+                <Button href="/work-with-us?interest=georgia-b-society" variant="outline" size="lg">
                   Discuss a Community Partnership
                 </Button>
               </div>

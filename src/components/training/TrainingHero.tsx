@@ -54,7 +54,7 @@ export default function TrainingHero() {
                 <Button href="#capabilities" variant="gold" size="lg">
                   Explore Training Capabilities
                 </Button>
-                <Button href="/work-with-us" variant="outline" size="lg">
+                <Button href="/work-with-us?interest=training" variant="outline" size="lg">
                   Work With 5LA
                 </Button>
               </div>

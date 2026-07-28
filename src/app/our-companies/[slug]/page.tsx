@@ -73,7 +73,10 @@ export default async function CompanyPage({
         eyebrow="The 5LA ecosystem"
         title="Explore the rest of the ecosystem."
         primary={{ label: "All Companies", href: "/our-companies" }}
-        secondary={{ label: "Work With Us", href: "/work-with-us" }}
+        secondary={{
+          label: "Work With Us",
+          href: `/work-with-us?interest=${company.slug}`,
+        }}
       />
     </>
   );

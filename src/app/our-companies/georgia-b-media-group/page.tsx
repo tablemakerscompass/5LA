@@ -100,7 +100,7 @@ export default function GeorgiaBMediaGroupPage() {
         eyebrow="Begin Here"
         title="What Story, Production, or Original Property Are You Ready to Build?"
         body="The Georgia B. Media Group begins with the story, the audience, and the reason the work must exist—then builds the structure required to bring it forward with purpose."
-        primary={{ label: "Discuss a Creative Partnership", href: "/work-with-us" }}
+        primary={{ label: "Discuss a Creative Partnership", href: "/work-with-us?interest=georgia-b-media-group" }}
         secondary={{
           label: "Explore the 5LA Media Experience",
           href: "/experience-sectors/media",

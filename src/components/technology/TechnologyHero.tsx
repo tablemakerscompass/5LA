@@ -53,7 +53,7 @@ export default function TechnologyHero() {
                 <Button href="#capabilities" variant="gold" size="lg">
                   Explore Technology Capabilities
                 </Button>
-                <Button href="/work-with-us" variant="outline" size="lg">
+                <Button href="/work-with-us?interest=technology" variant="outline" size="lg">
                   Work With 5LA
                 </Button>
               </div>

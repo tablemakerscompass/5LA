@@ -73,7 +73,7 @@ export default function BusinessExperiencePage() {
         eyebrow="Begin Here"
         title="Is the Experience Stronger Than the Structure Behind It?"
         body="5LA helps organizations identify the gaps between what they promise, how they operate, and what people actually experience."
-        primary={{ label: "Work With 5LA", href: "/work-with-us" }}
+        primary={{ label: "Work With 5LA", href: "/work-with-us?interest=business" }}
         secondary={{ label: "Start a Conversation", href: "/contact" }}
       />
     </>

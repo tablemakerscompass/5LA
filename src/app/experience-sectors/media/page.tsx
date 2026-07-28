@@ -83,7 +83,7 @@ export default function MediaExperiencePage() {
         eyebrow="Begin Here"
         title="What Story, Property, or Experience Are You Ready to Bring to Life?"
         body="5LA helps creators, organizations, and communities move from idea to structure, from structure to production, and from production to lasting audience connection."
-        primary={{ label: "Work With 5LA", href: "/work-with-us" }}
+        primary={{ label: "Work With 5LA", href: "/work-with-us?interest=media" }}
         secondary={{ label: "Start a Conversation", href: "/contact" }}
       />
     </>

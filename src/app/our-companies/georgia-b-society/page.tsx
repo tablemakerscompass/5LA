@@ -104,7 +104,7 @@ export default function GeorgiaBSocietyPage() {
         body="The Georgia B. Society welcomes aligned conversations with families, organizations, communities, and creative partners interested in preserving stories, honoring legacy, and creating meaningful experiences."
         primary={{
           label: "Discuss a Community Partnership",
-          href: "/work-with-us",
+          href: "/work-with-us?interest=georgia-b-society",
         }}
         secondary={{
           label: "Explore The Georgia B. Media Group",

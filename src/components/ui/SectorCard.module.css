@@ -14,7 +14,7 @@
   --accent-color: var(--burgundy-700);
 }
 .card[data-accent="gold"] {
-  --accent-color: var(--gold-700);
+  --accent-color: var(--accent-strong);
 }
 .card[data-accent="green"] {
   --accent-color: var(--green-700);

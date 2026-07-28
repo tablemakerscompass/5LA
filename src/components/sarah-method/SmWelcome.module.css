@@ -53,7 +53,8 @@
   top: -0.08em;
   font-size: 1.9em;
   line-height: 1;
-  color: var(--sm-gold);
+  /* --sm-gold-ink is this theme's accessible gold for text on cream. */
+  color: var(--sm-gold-ink);
 }
 
 @media (min-width: 900px) {
