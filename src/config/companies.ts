@@ -14,6 +14,15 @@ export type Company = {
   /** Approved short description. */
   description: string;
   /**
+   * Longer profile copy for the brand's own page, as an array of paragraphs.
+   * EMPTY BY DESIGN — no profile copy has been approved yet, and none is
+   * invented here. The brand page renders this section only when it is filled
+   * in, so supplying copy is the only step needed to deepen the page.
+   */
+  overview?: string[];
+  /** Optional list of what the brand offers or contains. Same rule as above. */
+  highlights?: string[];
+  /**
    * PLACEHOLDER logo path — replace with final brand logo when available.
    * Cards fall back to a monogram-style initial treatment when absent.
    */

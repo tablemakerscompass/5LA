@@ -1,0 +1,201 @@
+/* --gold-ink is the palette's accessible gold for text on light surfaces. */
+.eyebrow {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  line-height: 1.2;
+  color: var(--gold-ink);
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  max-width: 46rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: start;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+.highlights li {
+  position: relative;
+  padding-left: var(--space-5);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--warm-700);
+}
+.highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 1px;
+  background: var(--gold-700);
+}
+.principle {
+  margin-top: var(--space-3);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border);
+  color: var(--text-subtle);
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------- aside */
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.sectorCard,
+.metaCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.asideLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+}
+.metaCard .asideLabel + .metaValue {
+  margin-bottom: var(--space-3);
+}
+.metaValue {
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--text);
+}
+.sectorName {
+  color: var(--heading);
+}
+.sectorStatement {
+  color: var(--text-muted);
+}
+.sectorLink {
+  margin-top: var(--space-2);
+  display: inline-block;
+  padding-block: 0.3rem;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--burgundy-700);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.sectorLink:hover {
+  border-bottom-color: var(--gold-600);
+}
+
+/* ------------------------------------------------------------- related */
+.relatedSection {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.related {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+  padding: var(--space-6);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+.cardCategory {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+}
+.cardName {
+  color: var(--heading);
+}
+.cardDesc {
+  color: var(--text-muted);
+  flex: 1;
+}
+.cardCue {
+  margin-top: var(--space-2);
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--burgundy-700);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.arrow {
+  transition: transform var(--dur) var(--ease);
+}
+.card:hover .arrow {
+  transform: translateX(4px);
+}
+.allLink {
+  margin-top: var(--space-6);
+}
+.textLink {
+  display: inline-block;
+  padding-block: 0.3rem;
+  font-size: var(--fs-small);
+  color: var(--burgundy-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.textLink:hover {
+  color: var(--burgundy-900);
+}
+
+@media (min-width: 640px) {
+  .related {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: var(--space-9);
+  }
+  .related {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

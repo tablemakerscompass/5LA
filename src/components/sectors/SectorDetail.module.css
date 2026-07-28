@@ -1,0 +1,240 @@
+/* --gold-ink is the palette's accessible gold for text on light surfaces. */
+.eyebrow {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  line-height: 1.2;
+  color: var(--gold-ink);
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  max-width: 46rem;
+}
+
+/* ------------------------------------------------------ image + overview */
+.overviewGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: center;
+}
+.imageFrame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--cream-300);
+  aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow);
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.overviewText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+.summary {
+  color: var(--text-subtle);
+}
+
+/* ------------------------------------------------------------ capabilities */
+.capsSection {
+  background: var(--surface);
+  border-block: 1px solid var(--border);
+}
+.capabilities {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+.capability {
+  padding: var(--space-4) 0 var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--warm-700);
+  position: relative;
+  overflow-wrap: break-word;
+}
+.capability::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.55em;
+  width: 10px;
+  height: 1px;
+  background: var(--gold-700);
+}
+
+/* ----------------------------------------------------------------- outcome */
+.outcome {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  max-width: 46rem;
+}
+.outcomeText {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  line-height: 1.28;
+  color: var(--heading);
+  text-wrap: pretty;
+}
+
+/* ------------------------------------------------------------------ brands */
+.brandsSection {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.brands {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+}
+.brandCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+  padding: var(--space-6);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+.brandCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+.brandCategory {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+}
+.brandName {
+  color: var(--heading);
+}
+.brandDesc {
+  color: var(--text-muted);
+  flex: 1;
+}
+.brandCue {
+  margin-top: var(--space-2);
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--burgundy-700);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.arrow {
+  transition: transform var(--dur) var(--ease);
+}
+.brandCard:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* -------------------------------------------------------- other sectors */
+.otherHeading {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+.others {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+.otherLink {
+  display: flex;
+  gap: var(--space-5);
+  align-items: baseline;
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--border);
+  transition: color var(--dur-fast) var(--ease);
+}
+.otherLink:hover .otherName {
+  color: var(--burgundy-700);
+  border-bottom-color: var(--gold-600);
+}
+.otherNumber {
+  flex: none;
+  font-size: var(--fs-h4);
+  color: var(--gold-ink);
+}
+.otherName {
+  display: block;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--heading);
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.otherStatement {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+@media (min-width: 640px) {
+  .brands {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Capability labels are single long words that cannot wrap narrower than
+   themselves, so these breakpoints are in em: they respond to text zoom and
+   drop back to one column at 200%, instead of overflowing the column. */
+@media (min-width: 40em) {
+  .capabilities {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-8);
+  }
+}
+@media (min-width: 56.25em) {
+  .capabilities {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .overviewGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .others {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-8);
+  }
+  .otherLink {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}

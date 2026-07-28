@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/layout/PageHero";
-import Section from "@/components/layout/Section";
-import EditorialImage from "@/components/ui/EditorialImage";
+import SectorDetail from "@/components/sectors/SectorDetail";
 import CTABanner from "@/components/ui/CTABanner";
 import { sectors, getSector } from "@/config/sectors";
-import { createMetadata } from "@/lib/seo";
+import { site } from "@/config/site";
+import { breadcrumbSchema } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -22,11 +22,34 @@ export async function generateMetadata({
   const { slug } = await params;
   const sector = getSector(slug);
   if (!sector) return {};
-  return createMetadata({
-    title: sector.name,
-    path: `/experience-sectors/${sector.slug}`,
-    description: sector.statement,
-  });
+
+  const title = `${sector.name} | The 5 Loaves Agency`;
+  const description = sector.overview ?? sector.summary;
+  const url = `${site.url}/experience-sectors/${sector.slug}`;
+
+  return {
+    title: { absolute: title },
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: site.name,
+      type: "website",
+      images: [
+        sector.image
+          ? { url: sector.image, alt: sector.imageAlt ?? sector.name }
+          : { url: "/brand/og-image.png", width: 1200, height: 630, alt: site.name },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [sector.image ?? "/brand/og-image.png"],
+    },
+  };
 }
 
 export default async function SectorPage({
@@ -40,6 +63,18 @@ export default async function SectorPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { label: "Experience Sectors", path: "/experience-sectors" },
+              { label: sector.name, path: `/experience-sectors/${sector.slug}` },
+            ])
+          ),
+        }}
+      />
+
       <PageHero
         eyebrow={`Experience Sector · ${sector.number}`}
         title={sector.name}
@@ -50,26 +85,17 @@ export default async function SectorPage({
         ]}
       />
 
-      <Section>
-        <EditorialImage
-          placeholderLabel={`${sector.shortName} experience imagery`}
-          aspect="21/9"
-        />
-        <p className="body" style={{ marginTop: "var(--space-6)" }}>
-          The full {sector.name} overview — capabilities, approach, and outcomes —
-          is being developed in a later phase. This page is part of the site
-          architecture with the brand foundation in place.
-        </p>
-      </Section>
+      <SectorDetail sector={sector} />
 
       <CTABanner
         eyebrow="Work with 5LA"
-        title={`Bring the ${sector.shortName} Experience to your organization.`}
+        title={`Bring the ${sector.name} to your organization.`}
+        body={sector.outcome}
         primary={{
-          label: "Work With Us",
+          label: "Work With 5LA",
           href: `/work-with-us?interest=${sector.slug}`,
         }}
-        secondary={{ label: "All Sectors", href: "/experience-sectors" }}
+        secondary={{ label: "All Experience Sectors", href: "/experience-sectors" }}
       />
     </>
   );

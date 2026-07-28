@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/layout/PageHero";
-import Section from "@/components/layout/Section";
+import CompanyProfile from "@/components/companies/CompanyProfile";
 import CTABanner from "@/components/ui/CTABanner";
 import { companies, getCompany } from "@/config/companies";
-import { createMetadata } from "@/lib/seo";
+import { sectorForCompany } from "@/config/ecosystem";
+import { site } from "@/config/site";
+import { breadcrumbSchema } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -20,11 +22,32 @@ export async function generateMetadata({
   const { slug } = await params;
   const company = getCompany(slug);
   if (!company) return {};
-  return createMetadata({
-    title: company.name,
-    path: `/our-companies/${company.slug}`,
-    description: company.description,
-  });
+
+  const title = `${company.name} | The 5 Loaves Agency`;
+  const description = company.description;
+  const url = `${site.url}/our-companies/${company.slug}`;
+
+  return {
+    title: { absolute: title },
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: site.name,
+      type: "website",
+      images: [
+        { url: "/brand/og-image.png", width: 1200, height: 630, alt: site.name },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/brand/og-image.png"],
+    },
+  };
 }
 
 export default async function CompanyPage({
@@ -36,35 +59,47 @@ export default async function CompanyPage({
   const company = getCompany(slug);
   if (!company) notFound();
 
+  const sector = sectorForCompany(company);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { label: "Our Companies", path: "/our-companies" },
+              { label: company.name, path: `/our-companies/${company.slug}` },
+            ])
+          ),
+        }}
+      />
+
       <PageHero
         eyebrow={company.category}
         title={company.name}
+        lead={company.description}
         crumbs={[
           { label: "Our Companies", href: "/our-companies" },
           { label: company.name },
         ]}
       />
 
-      <Section narrow>
-        {/* PLACEHOLDER — replace with the brand's full profile in a later phase. */}
-        <p className="lead">{company.description}</p>
-        <p className="body" style={{ marginTop: "var(--space-5)" }}>
-          A full profile for {company.name} within the 5LA ecosystem is being
-          developed. This page is part of the site architecture with the brand
-          foundation in place.
-        </p>
-      </Section>
+      <CompanyProfile company={company} />
 
       <CTABanner
-        eyebrow="The 5LA ecosystem"
-        title="Explore the rest of the ecosystem."
-        primary={{ label: "All Companies", href: "/our-companies" }}
-        secondary={{
-          label: "Work With Us",
+        eyebrow="Work with 5LA"
+        title={`Start a conversation about ${company.name}.`}
+        body={
+          sector
+            ? `${company.name} sits within ${sector.name}. ${sector.statement}`
+            : undefined
+        }
+        primary={{
+          label: "Work With 5LA",
           href: `/work-with-us?interest=${company.slug}`,
         }}
+        secondary={{ label: "All Companies", href: "/our-companies" }}
       />
     </>
   );
