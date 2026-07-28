@@ -1,0 +1,95 @@
+.wrap {
+  background: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: center;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.rule {
+  margin-block: var(--space-1);
+}
+.heading {
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.body {
+  max-width: 54ch;
+}
+.figure {
+  width: 100%;
+}
+
+/* --- Pull quote --------------------------------------------------------- */
+.quoteWrap {
+  position: relative;
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding: clamp(2rem, 4vw, 3.25rem) 0 0;
+  border-top: 1px solid var(--border);
+  max-width: 30ch;
+  margin-inline: auto;
+  text-align: center;
+}
+.quoteMark {
+  display: block;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 0.6;
+  color: var(--asg-amber);
+  margin-bottom: var(--space-3);
+}
+.quote {
+  margin-inline: auto;
+  font-style: italic;
+  text-wrap: balance;
+}
+.attribution {
+  margin-top: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+
+/* --- Visual detail row -------------------------------------------------- */
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3) var(--space-5);
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  border-top: 1px solid var(--border);
+}
+.detail {
+  font-size: var(--fs-caption);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+.detail:not(:last-child)::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--asg-tan);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+  .quoteWrap {
+    max-width: 46ch;
+  }
+}

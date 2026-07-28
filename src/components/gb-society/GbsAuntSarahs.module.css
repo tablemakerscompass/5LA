@@ -1,0 +1,81 @@
+.wrap {
+  background: var(--ink-900);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: center;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+.rule {
+  margin-block: var(--space-4);
+}
+.heading {
+  max-width: 24ch;
+  text-wrap: balance;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.paragraph {
+  max-width: 54ch;
+}
+/* The distinction between the two brands is stated, not implied. */
+.distinction {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  color: var(--cream-200);
+  max-width: 54ch;
+}
+
+.figure {
+  width: 100%;
+}
+/* Aunt Sarah's Girls keeps its own field rather than borrowing the
+   Society's — the brands are related, not merged. */
+.mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  aspect-ratio: 4 / 3;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(200, 164, 93, 0.28);
+  background: linear-gradient(150deg, #3d0f12, var(--burgundy-800));
+  text-align: center;
+}
+.markLabel {
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+}
+.wordmark {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--cream-100);
+  text-wrap: balance;
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(3rem, 5vw, 5rem);
+  }
+}

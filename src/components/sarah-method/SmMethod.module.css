@@ -1,0 +1,78 @@
+.wrap {
+  background: var(--surface);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--border);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4) clamp(1.25rem, 3vw, 2.5rem);
+  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+
+/* A serif capital in a fine gold rule — the letters spell SARAH down the page. */
+.marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  width: clamp(3rem, 8vw, 4.25rem);
+}
+.letter {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(2rem, 1.2rem + 2.4vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--sm-maroon);
+  width: 100%;
+  text-align: center;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--sm-gold);
+}
+.index {
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--sm-gold-ink);
+}
+
+.itemBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: 0.15em;
+}
+.title {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--heading);
+}
+.copy {
+  max-width: 64ch;
+}
+
+.note {
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  max-width: 64ch;
+  padding-left: clamp(0.9rem, 2vw, 1.25rem);
+  border-left: 2px solid var(--sm-gold);
+}
+
+@media (min-width: 860px) {
+  .item {
+    grid-template-columns: auto 1fr;
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+    padding-inline: clamp(0.5rem, 2vw, 1.5rem);
+  }
+}

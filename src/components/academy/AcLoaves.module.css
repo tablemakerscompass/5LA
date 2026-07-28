@@ -1,0 +1,94 @@
+.wrap {
+  background:
+    radial-gradient(70% 80% at 0% 0%, rgba(33, 71, 55, 0.6), transparent 60%),
+    var(--ac-ink-800);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+.rule {
+  margin-block: var(--space-1);
+}
+.heading {
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.body {
+  max-width: 56ch;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 clamp(2rem, 4vw, 3.5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--border);
+}
+.item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-4) clamp(1rem, 2.5vw, 1.75rem);
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+/* A large serif capital, the way the approved 5LA framework sets it. */
+.letter {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(2.25rem, 1.4rem + 2.6vw, 3.4rem);
+  font-weight: 600;
+  line-height: 0.9;
+  color: var(--ac-green-200);
+  flex: none;
+  width: 1.4ch;
+  text-align: center;
+}
+.itemBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.word {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--heading);
+}
+.def {
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 48ch;
+}
+
+.note {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  max-width: 66ch;
+  padding-left: clamp(0.9rem, 2vw, 1.25rem);
+  border-left: 2px solid var(--ac-green-300);
+}
+
+@media (min-width: 900px) {
+  .head {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+  }
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1200px) {
+  .list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

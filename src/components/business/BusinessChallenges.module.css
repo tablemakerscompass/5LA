@@ -1,0 +1,51 @@
+.wrap {
+  background: var(--surface);
+}
+
+.list {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: start;
+  padding-block: clamp(1.5rem, 3vw, 2rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.n {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--burgundy-700);
+  opacity: 0.55;
+  line-height: 1;
+  width: 2.2ch;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.title {
+  color: var(--heading);
+}
+.body {
+  max-width: 52ch;
+}
+
+@media (min-width: 860px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(2.5rem, 5vw, 4.5rem);
+  }
+  /* Keep the top rule continuous across both columns. */
+  .item:nth-child(2) {
+    border-top: 0;
+  }
+}

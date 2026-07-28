@@ -21,6 +21,26 @@
   flex-wrap: wrap;
   gap: var(--space-4);
 }
+/* Buttons keep labels on one line by default. A long CTA label has to be free
+   to wrap here or it pushes past the viewport on a 320px screen; short labels
+   are unaffected because they never reach the wrap point. */
+.actions a {
+  white-space: normal;
+}
+/* Optional quiet text link — always drops to its own line under the buttons. */
+/* `width: 0` keeps this long label out of the actions column's intrinsic
+   width, so it can never squeeze the heading beside it; `flex-basis: 100%`
+   still gives it the full row once the column is laid out. */
+.tertiary {
+  flex-basis: 100%;
+  width: 0;
+  min-width: 0;
+}
+/* Buttons keep labels on one line by default; a long tertiary label has to be
+   free to wrap or it overflows narrow screens. */
+.tertiary a {
+  white-space: normal;
+}
 
 @media (min-width: 860px) {
   .inner {

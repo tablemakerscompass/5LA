@@ -85,7 +85,12 @@ export default function SectorsHero() {
                       alt=""
                       fill
                       priority
-                      sizes="(min-width: 1100px) 15vw, (min-width: 900px) 13vw, 45vw"
+                      quality={72}
+                      /* These panels are tall crops of a landscape source, so
+                         the resolution needed is set by their HEIGHT, not their
+                         width. Requesting a panel-width candidate here loads a
+                         far-too-small file and the crop renders soft. */
+                      sizes="(min-width: 900px) 700px, 95vw"
                       style={{ objectPosition: crop[sector.slug] ?? "center" }}
                       className={styles.image}
                     />

@@ -1,0 +1,74 @@
+.wrap {
+  background:
+    radial-gradient(70% 80% at 0% 0%, rgba(196, 160, 82, 0.13), transparent 60%),
+    radial-gradient(80% 90% at 100% 100%, rgba(110, 43, 54, 0.55), transparent 62%),
+    var(--vx-black-800);
+}
+
+.intro {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.body {
+  max-width: 64ch;
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 clamp(2rem, 4vw, 3.5rem);
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--border);
+}
+.principle {
+  padding-block: clamp(1.25rem, 2.5vw, 1.85rem);
+  border-bottom: 1px solid var(--border);
+}
+.term {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--heading);
+}
+.desc {
+  margin: var(--space-3) 0 0;
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 44ch;
+}
+
+.note {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-small);
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 78ch;
+}
+.noteLabel {
+  display: block;
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--vx-gold-bright);
+  margin-bottom: var(--space-3);
+}
+
+@media (min-width: 760px) {
+  .principles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1080px) {
+  .principles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

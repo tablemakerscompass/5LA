@@ -1,0 +1,75 @@
+.wrap {
+  background: var(--bg);
+}
+
+.head {
+  max-width: 46rem;
+}
+.rule {
+  margin-block: var(--space-4);
+}
+.heading {
+  text-wrap: balance;
+}
+
+.principles {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.principle {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "n title"
+    ". body";
+  column-gap: clamp(1rem, 3vw, 1.75rem);
+  row-gap: var(--space-2);
+  padding-block: clamp(1.25rem, 2.5vw, 1.75rem);
+  border-bottom: 1px solid var(--border);
+}
+.n {
+  grid-area: n;
+  font-family: var(--font-serif), serif;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+  line-height: 1.2;
+  color: var(--green-700);
+  width: 2.2ch;
+}
+.title {
+  grid-area: title;
+  color: var(--heading);
+}
+.body {
+  grid-area: body;
+  max-width: 60ch;
+}
+
+@media (min-width: 900px) {
+  .principle {
+    grid-template-columns: auto minmax(0, 16rem) minmax(0, 1fr);
+    grid-template-areas: "n title body";
+    align-items: baseline;
+    column-gap: clamp(1.5rem, 4vw, 3rem);
+  }
+  /* A stepped indent gives the sequence direction without arrows. */
+  .principle:nth-child(2) {
+    padding-left: 2%;
+  }
+  .principle:nth-child(3) {
+    padding-left: 4%;
+  }
+  .principle:nth-child(4) {
+    padding-left: 6%;
+  }
+  .principle:nth-child(5) {
+    padding-left: 8%;
+  }
+  .principle:nth-child(6) {
+    padding-left: 10%;
+  }
+}

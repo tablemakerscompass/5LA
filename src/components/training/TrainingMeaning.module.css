@@ -1,0 +1,59 @@
+.wrap {
+  background: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.rule {
+  margin-block: var(--space-1);
+}
+.heading {
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-self: end;
+}
+.paragraph {
+  max-width: 54ch;
+}
+
+/* Pull quote carried on a deep-green rule — this sector's accent. */
+.pullQuote {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-left: clamp(1.5rem, 4vw, 3rem);
+  border-left: 2px solid var(--green-700);
+  max-width: 46rem;
+}
+.quote {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.28;
+  color: var(--green-900);
+  text-wrap: balance;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: start;
+  }
+  .pullQuote {
+    margin-left: auto;
+    margin-right: clamp(0rem, 4vw, 4rem);
+  }
+}

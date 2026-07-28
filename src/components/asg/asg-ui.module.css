@@ -1,0 +1,80 @@
+/* Small shared ASG primitives: status pills and pending-action chips. */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  background: transparent;
+  white-space: nowrap;
+}
+
+/* Status is never communicated by colour alone — the label carries the
+   meaning and the dot is decorative reinforcement. */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex: none;
+  background: currentColor;
+}
+
+.available {
+  color: var(--asg-green-500);
+  border-color: color-mix(in srgb, var(--asg-green-500) 45%, transparent);
+}
+.inDevelopment {
+  color: var(--asg-amber-ink);
+  border-color: color-mix(in srgb, var(--asg-amber-ink) 40%, transparent);
+}
+.planned {
+  color: var(--asg-red);
+  border-color: color-mix(in srgb, var(--asg-red) 38%, transparent);
+}
+.future {
+  color: var(--text-subtle);
+}
+
+:global([data-surface="dark"]) .available {
+  color: var(--asg-green-300);
+}
+:global([data-surface="dark"]) .inDevelopment {
+  color: var(--asg-amber-soft);
+}
+:global([data-surface="dark"]) .planned {
+  color: var(--asg-tan-soft);
+}
+
+/* --- Pending action ---------------------------------------------------- */
+/* A call to action whose destination has not been approved yet. Rendered as
+   inert text, never as a link or a button that does nothing. */
+.pending {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.7rem 1.1rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background: transparent;
+  max-width: 100%;
+}
+.pendingLabel {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+.pendingNote {
+  font-size: var(--fs-caption);
+  color: var(--text-subtle);
+  line-height: 1.3;
+}

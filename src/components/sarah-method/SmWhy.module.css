@@ -1,0 +1,37 @@
+.wrap {
+  background:
+    radial-gradient(80% 70% at 100% 0%, rgba(74, 21, 24, 0.65), transparent 62%),
+    radial-gradient(70% 80% at 0% 100%, rgba(47, 74, 58, 0.4), transparent 60%),
+    var(--sm-black);
+}
+
+.copy {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.body {
+  max-width: 62ch;
+}
+
+.quoteWrap {
+  margin-top: clamp(2.5rem, 5vw, 3.75rem);
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.quoteMark {
+  display: block;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(2.75rem, 5vw, 4rem);
+  line-height: 0.6;
+  color: var(--sm-gold);
+  margin-bottom: var(--space-4);
+}
+.quote {
+  font-style: italic;
+  max-width: 34ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}

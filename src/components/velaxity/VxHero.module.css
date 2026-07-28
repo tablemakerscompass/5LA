@@ -1,0 +1,110 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(105% 120% at 6% 0%, rgba(110, 43, 54, 0.6), transparent 58%),
+    radial-gradient(70% 80% at 98% 10%, rgba(196, 160, 82, 0.16), transparent 60%),
+    var(--vx-black);
+}
+
+.container {
+  padding-block: clamp(2rem, 1.5rem + 3vw, 3.25rem) clamp(3.5rem, 3rem + 5vw, 6.5rem);
+}
+.crumbs {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+  max-width: 42rem;
+}
+
+/* Monogram + serif wordmark, the way the application sets its own lockup. */
+.lockup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.monogram {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  flex: none;
+}
+.wordmark {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #faf8f4;
+  line-height: 1;
+}
+
+.eyebrow {
+  color: var(--vx-gold-bright);
+}
+.headline {
+  color: #faf8f4;
+  font-size: clamp(2.2rem, 1.5rem + 2.7vw, 3.9rem);
+  max-width: 16ch;
+  text-wrap: balance;
+}
+.accent {
+  font-style: italic;
+  color: var(--vx-gold-bright);
+}
+.lead {
+  color: #e6e0d6;
+  max-width: 48ch;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+.actions a {
+  white-space: normal;
+}
+.tertiary {
+  margin-top: calc(var(--space-2) * -1);
+}
+
+.figure {
+  width: 100%;
+}
+.frame {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(196, 160, 82, 0.3);
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.85);
+}
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 980px) {
+  .inner {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(3rem, 6vw, 5.5rem);
+  }
+  .frame {
+    margin-inline: 0 auto;
+  }
+}

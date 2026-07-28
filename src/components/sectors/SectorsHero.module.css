@@ -63,6 +63,10 @@
 .panel {
   position: relative;
   aspect-ratio: 3 / 4;
+  /* The source photos are 1200x900. A taller crop than this would need more
+     vertical pixels than the originals hold and would render soft on retina
+     screens. Raise these caps when higher-resolution assets land. */
+  max-height: 440px;
   background: var(--ink-800);
   overflow: hidden;
 }
@@ -102,6 +106,7 @@
   }
   .panel {
     aspect-ratio: auto;
-    height: clamp(24rem, 40vw, 34rem);
+    height: clamp(22rem, 30vw, 27.5rem);
+    max-height: none;
   }
 }

@@ -1,0 +1,80 @@
+.wrap {
+  background:
+    radial-gradient(70% 80% at 100% 100%, rgba(29, 65, 50, 0.5), transparent 62%),
+    var(--tm-ink);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+.rule {
+  margin-block: var(--space-1);
+}
+.heading {
+  max-width: 24ch;
+  text-wrap: balance;
+}
+.statusRow {
+  margin-top: var(--space-4);
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.body {
+  max-width: 60ch;
+}
+
+.themesBlock {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-top: 1px solid var(--border);
+}
+.subhead {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--tm-green-200);
+}
+.themesNote {
+  margin-top: var(--space-3);
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+.themes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 clamp(2rem, 4vw, 3.5rem);
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-top: 1px solid var(--border);
+}
+.theme {
+  padding-block: clamp(0.9rem, 2vw, 1.25rem);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-subheading);
+  line-height: 1.35;
+  color: var(--heading);
+}
+
+.actions {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+@media (min-width: 860px) {
+  .head {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+  }
+  .themes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

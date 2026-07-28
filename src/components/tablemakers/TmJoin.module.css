@@ -1,0 +1,52 @@
+.wrap {
+  background:
+    radial-gradient(80% 85% at 100% 0%, rgba(29, 65, 50, 0.5), transparent 62%),
+    var(--tm-ink-800);
+}
+
+.rule {
+  margin-block: var(--space-4);
+}
+.heading {
+  max-width: 24ch;
+  text-wrap: balance;
+}
+.body {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  max-width: 62ch;
+}
+
+.subhead {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--tm-green-200);
+  margin-bottom: var(--space-4);
+}
+
+.live {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-top: 1px solid var(--border);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+.actions a {
+  white-space: normal;
+}
+
+.pending {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-top: 1px solid var(--border);
+}
+.pendingRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}

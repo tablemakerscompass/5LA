@@ -1,0 +1,76 @@
+.wrap {
+  background: var(--bg);
+}
+
+.head {
+  max-width: 46rem;
+}
+.rule {
+  margin-block: var(--space-4);
+}
+.heading {
+  text-wrap: balance;
+}
+
+.stages {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+  counter-reset: stage;
+}
+
+.stage {
+  position: relative;
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--burgundy-700);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+/* The rule shortens progressively, giving the ladder a sense of direction. */
+.stage:nth-child(2) {
+  border-top-color: color-mix(in srgb, var(--burgundy-700) 82%, transparent);
+}
+.stage:nth-child(3) {
+  border-top-color: color-mix(in srgb, var(--burgundy-700) 66%, transparent);
+}
+.stage:nth-child(4) {
+  border-top-color: color-mix(in srgb, var(--burgundy-700) 52%, transparent);
+}
+.stage:nth-child(5) {
+  border-top-color: color-mix(in srgb, var(--burgundy-700) 40%, transparent);
+}
+.stage:nth-child(6) {
+  border-top-color: var(--gold-600);
+}
+
+.n {
+  font-family: var(--font-serif), serif;
+  font-weight: 600;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.22em;
+  color: var(--accent-strong);
+}
+.title {
+  color: var(--heading);
+}
+.body {
+  max-width: 44ch;
+}
+
+@media (min-width: 720px) {
+  .stages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3.5rem);
+  }
+}
+@media (min-width: 1080px) {
+  .stages {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  /* Intentional asymmetry — the second row sits slightly lower. */
+  .stage:nth-child(n + 4) {
+    margin-top: clamp(0.5rem, 2vw, 1.5rem);
+  }
+}

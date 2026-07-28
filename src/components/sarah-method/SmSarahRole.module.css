@@ -1,0 +1,83 @@
+.wrap {
+  background: var(--surface);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: center;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.rule {
+  margin-block: var(--space-1);
+}
+.heading {
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.body {
+  max-width: 56ch;
+}
+
+/* The approved monogram, unaltered, on the cream ground it was drawn for. */
+.markWrap {
+  display: flex;
+  justify-content: center;
+}
+.mark {
+  width: clamp(180px, 40vw, 300px);
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+
+.principlesBlock {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-top: 1px solid var(--border);
+}
+.subhead {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-strong);
+  margin-bottom: var(--space-5);
+}
+.principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+.principle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 2px solid var(--sm-gold);
+}
+.term {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-subheading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--heading);
+}
+.desc {
+  margin: 0;
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+}
