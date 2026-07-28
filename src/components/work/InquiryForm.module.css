@@ -44,8 +44,9 @@
   color: var(--burgundy-700);
   text-decoration: underline;
   text-underline-offset: 2px;
-  /* Keeps the inline target comfortably tall. */
-  padding-block: 0.15rem;
+  /* 24px minimum target height (WCAG 2.2 AA 2.5.8). */
+  display: inline-block;
+  padding-block: 0.3rem;
 }
 .legalLink:hover {
   color: var(--burgundy-900);

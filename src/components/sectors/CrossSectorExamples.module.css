@@ -34,7 +34,7 @@
   font-weight: 600;
   font-size: clamp(1.5rem, 4vw, 2.25rem);
   line-height: 1;
-  color: var(--gold-600);
+  color: var(--gold-ink);
   flex: none;
   width: 2.2ch;
 }

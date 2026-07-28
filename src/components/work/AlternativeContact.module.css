@@ -58,6 +58,9 @@
   gap: var(--space-3) var(--space-5);
 }
 .legalLink {
+  display: inline-block;
+  /* 24px minimum target height (WCAG 2.2 AA 2.5.8). */
+  padding-block: 0.35rem;
   font-size: var(--fs-caption);
   letter-spacing: 0.06em;
   color: var(--text-subtle);

@@ -45,6 +45,12 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
+  /* Flex items default to min-width:auto and refuse to shrink below their
+     longest word — which pushed the card past its grid column at 200% zoom. */
+  min-width: 0;
+}
+.head > * {
+  min-width: 0;
 }
 .mark {
   display: inline-flex;
@@ -78,7 +84,11 @@
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-pill);
   padding: 0.3rem 0.7rem;
-  white-space: nowrap;
+  /* Wraps on narrow screens; long category strings previously forced the
+     card grid past the viewport. */
+  white-space: normal;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .body {

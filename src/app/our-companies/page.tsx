@@ -25,7 +25,12 @@ export default function OurCompaniesPage() {
         crumbs={[{ label: "Our Companies" }]}
       />
 
-      <Section>
+      <Section aria-labelledby="companies-heading">
+        {/* Gives the listing a named region and keeps the heading outline
+            sequential — the cards below are h3. */}
+        <h2 id="companies-heading" className="visually-hidden">
+          Companies and platforms in the 5LA ecosystem
+        </h2>
         <div className={styles.grid}>
           {companies.map((company, i) => (
             <Reveal key={company.slug} delay={(i % 3) * 80}>

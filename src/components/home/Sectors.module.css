@@ -112,6 +112,8 @@
   align-items: center;
   gap: 0.5rem;
   margin-top: var(--space-1);
+  /* Padding brings the target to the 24px minimum (WCAG 2.2 AA 2.5.8). */
+  padding-block: 0.3rem;
   font-size: var(--fs-caption);
   font-weight: 700;
   letter-spacing: 0.12em;

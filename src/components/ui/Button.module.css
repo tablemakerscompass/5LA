@@ -19,7 +19,10 @@
     background-color var(--dur) var(--ease), color var(--dur) var(--ease),
     border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
   text-align: center;
-  white-space: nowrap;
+  /* Deliberately allowed to wrap: `nowrap` here set a min-content width that
+     long labels ("Explore Our Experience Sectors") pushed past the viewport
+     at 320px and at 200% text zoom, dragging their whole grid with them. */
+  max-width: 100%;
 }
 .btn:hover {
   transform: translateY(-2px);
@@ -34,6 +37,7 @@
 }
 
 .label {
+  min-width: 0;
   display: inline-block;
 }
 .arrow {

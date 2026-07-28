@@ -53,6 +53,9 @@
   gap: 0.7rem;
 }
 .colLink {
+  display: inline-block;
+  /* Padding brings the target to the 24px minimum (WCAG 2.2 AA 2.5.8). */
+  padding-block: 0.3rem;
   font-size: 0.95rem;
   color: var(--cream-200);
   opacity: 0.85;
@@ -102,6 +105,9 @@
   gap: var(--space-5);
 }
 .legalLink {
+  display: inline-block;
+  /* Padding brings the target to the 24px minimum (WCAG 2.2 AA 2.5.8). */
+  padding-block: 0.35rem;
   font-size: var(--fs-caption);
   color: var(--text-subtle);
   transition: color var(--dur-fast) var(--ease);
