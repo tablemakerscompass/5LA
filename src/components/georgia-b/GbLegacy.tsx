@@ -6,11 +6,9 @@ import styles from "./GbLegacy.module.css";
 /**
  * Section 3 — the legacy behind the name.
  *
- * The approved photograph of Georgia B. is not in the repository. A labeled
- * placeholder holds its position; when the authorized photo is supplied, drop
- * it in `public/brand/` and swap the EditorialImage for an Image with
- * respectful alt text. No portrait is generated, and no biographical detail
- * beyond the approved copy appears here.
+ * Uses the approved photograph of Georgia B. (`public/brand/georgia-b-portrait.jpg`).
+ * No portrait is generated or altered, and no biographical detail beyond the
+ * approved copy appears here.
  */
 export default function GbLegacy() {
   return (
@@ -23,7 +21,8 @@ export default function GbLegacy() {
         <div className={styles.grid}>
           <Reveal className={styles.figure}>
             <EditorialImage
-              placeholderLabel="Approved photograph of Georgia B."
+              src="/brand/georgia-b-portrait.jpg"
+              alt="Portrait of Georgia B., the woman the Media Group is named in honor of."
               aspect="3/4"
               className={styles.image}
             />

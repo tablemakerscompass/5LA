@@ -6,11 +6,9 @@ import styles from "./GbsLegacy.module.css";
 /**
  * Section 3 — the legacy behind the name.
  *
- * The approved photograph of Georgia B. is not in the repository. A labeled
- * placeholder holds its position; when the authorized photo is supplied, drop
- * it in `public/brand/` and swap the EditorialImage for an Image with
- * respectful alt text. No portrait is generated, no face altered, no dates or
- * personal family details are added, and nothing here reads as a memorial.
+ * Uses the approved photograph of Georgia B. (`public/brand/georgia-b-portrait.jpg`).
+ * No portrait is generated, no face altered, no dates or personal family
+ * details are added, and nothing here reads as a memorial.
  */
 export default function GbsLegacy() {
   return (
@@ -65,7 +63,8 @@ export default function GbsLegacy() {
 
           <Reveal delay={100} className={styles.figure}>
             <EditorialImage
-              placeholderLabel="Approved photograph of Georgia B."
+              src="/brand/georgia-b-portrait.jpg"
+              alt="Portrait of Georgia B., the woman the Society is named in honor of."
               aspect="3/4"
               className={styles.image}
             />
