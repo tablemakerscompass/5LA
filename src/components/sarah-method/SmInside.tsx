@@ -62,7 +62,7 @@ export default function SmInside() {
           <Reveal className={styles.figure}>
             <SmImageFrame
               src={smAssets.appScreens}
-              alt="A screen from The Sarah Method application: Aunt Sarah’s greeting, the prompt “What’s been sitting heavy on your heart today?” with an empty entry box, and a row of topics to choose from."
+              alt="A screen from The Sarah Method application: Aunt Sarah greets the reader by name, the prompt “What’s been sitting heavy on your heart today?” sits above an empty entry box, and a row of topics follows."
               placeholderLabel="Real screenshots from the application"
               placeholderNote="Asset required: captured from the live app, personal entries removed — never a mocked-up interface"
               aspect="1/1"
