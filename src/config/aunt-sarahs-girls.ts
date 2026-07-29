@@ -74,8 +74,11 @@ export const asgBrand = {
 export const asgAssets: Record<string, string | undefined> = {
   /** Official ASG logo (horizontal or stacked lockup). */
   logo: undefined,
-  /** Hero: Aunt Sarah’s family home, black front door, green trees, amber haze. */
-  hero: undefined,
+  /**
+   * Hero: the approved key art — the family home at golden hour beneath the
+   * women of the story, titled and dated. Shown whole; never cropped into.
+   */
+  hero: "/brand/asg/asg-key-art.jpg",
   /** Story world: the house exterior or a warm sitting-room interior. */
   house: undefined,
   /** Approved book cover artwork for “Aunt Sarah’s Girls: Legacy & Secrets”. */

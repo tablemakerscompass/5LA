@@ -80,7 +80,7 @@ export default function AsgHero() {
               {asgAssets.hero ? (
                 <Image
                   src={asgAssets.hero}
-                  alt="Aunt Sarah’s family home at golden hour — a path leading to the black front door, framed by green trees."
+                  alt="Aunt Sarah’s Girls key art: the family home at golden hour beneath the silhouettes of the women of the story. Titled “Aunt Sarah’s Girls: Legacy & Secrets”, coming 2027, written by L.J."
                   fill
                   priority
                   sizes="(min-width: 980px) 46vw, 100vw"
