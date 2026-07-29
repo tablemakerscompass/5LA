@@ -77,10 +77,10 @@ export const smAssets = {
   /** Warm interior / journaling still for the welcome section. NOT SUPPLIED. */
   welcome: undefined as string | undefined,
   /**
-   * Real screenshots from the live application, with any personal data removed.
-   * NOT SUPPLIED. Never fabricate an interface or a journal entry.
+   * Real capture from the live application — no journal entry is shown.
+   * Never fabricate an interface or a journal entry.
    */
-  appScreens: undefined as string | undefined,
+  appScreens: "/brand/sarah-method/sarah-method-app.png" as string | undefined,
   /** Social-sharing card for this page. NOT SUPPLIED. */
   ogImage: undefined as string | undefined,
 };

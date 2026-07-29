@@ -74,6 +74,10 @@
 .image {
   object-fit: cover;
 }
+/* App captures are letterboxed against the frame so no interface is cropped. */
+.imageContain {
+  object-fit: contain;
+}
 .placeholder {
   position: absolute;
   inset: 0;

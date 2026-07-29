@@ -11,6 +11,8 @@ type SmImageFrameProps = {
   /** Art-direction note for whoever supplies the asset. */
   placeholderNote?: string;
   aspect?: "4/3" | "3/2" | "3/4" | "1/1" | "16/9";
+  /** "contain" letterboxes the asset — use for app captures that must not crop. */
+  fit?: "cover" | "contain";
   priority?: boolean;
   className?: string;
 };
@@ -26,6 +28,7 @@ export default function SmImageFrame({
   placeholderLabel,
   placeholderNote,
   aspect = "3/2",
+  fit = "cover",
   priority = false,
   className = "",
 }: SmImageFrameProps) {
@@ -43,7 +46,9 @@ export default function SmImageFrame({
             priority={priority}
             loading={priority ? undefined : "lazy"}
             sizes="(min-width: 900px) 640px, 100vw"
-            className={styles.image}
+            className={`${styles.image} ${
+              fit === "contain" ? styles.imageContain : ""
+            }`}
           />
         ) : (
           <div className={styles.placeholder}>
