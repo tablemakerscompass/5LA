@@ -32,15 +32,14 @@ export const site = {
   },
 
   /**
-   * Contact details. Email and phone are the approved business values supplied
-   * by 5LA. `location` is still blank — nothing fabricated is published.
+   * Contact details — the approved business email and phone. No address or
+   * service area is published; contact is by email and phone only.
    */
   contact: {
     email: "admin@the5loavesagency.com",
     phone: "470-252-8258",
     /** E.164 form used for `tel:` links. */
     phoneHref: "+14702528258",
-    location: "", // PLACEHOLDER — add service area / location
   },
 
   /**

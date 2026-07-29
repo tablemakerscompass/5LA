@@ -17,6 +17,16 @@
   object-fit: cover;
 }
 
+/* Credit line beneath the image — reads as a caption, never as body copy. */
+.caption {
+  margin-top: var(--space-3);
+  font-size: var(--fs-caption);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: rgba(238, 226, 208, 0.72);
+}
+
 .placeholder {
   position: absolute;
   inset: 0;

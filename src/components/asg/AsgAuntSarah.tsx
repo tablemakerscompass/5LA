@@ -50,6 +50,7 @@ export default function AsgAuntSarah() {
               placeholderLabel="Approved Aunt Sarah editorial artwork"
               placeholderNote="Asset required, or an approved text-based editorial treatment"
               aspect="3/4"
+              caption="Supreme Lioness as Aunt Sarah"
             />
           </Reveal>
         </div>

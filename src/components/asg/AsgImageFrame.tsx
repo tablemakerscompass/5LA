@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import styles from "./AsgImageFrame.module.css";
 
 type AsgImageFrameProps = {
@@ -11,6 +12,8 @@ type AsgImageFrameProps = {
   /** Art-direction note for whoever supplies the asset. */
   placeholderNote?: string;
   aspect?: "4/3" | "3/2" | "3/4" | "1/1" | "16/9";
+  /** Credit or caption line shown directly beneath the image. */
+  caption?: ReactNode;
   priority?: boolean;
   className?: string;
 };
@@ -27,6 +30,7 @@ export default function AsgImageFrame({
   placeholderLabel,
   placeholderNote,
   aspect = "3/2",
+  caption,
   priority = false,
   className = "",
 }: AsgImageFrameProps) {
@@ -56,6 +60,7 @@ export default function AsgImageFrame({
           </div>
         )}
       </div>
+      {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
     </figure>
   );
 }
