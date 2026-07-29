@@ -89,11 +89,14 @@ export const acAssets = {
   heroAlt:
     "A facilitator presenting a development framework on a flip chart to an engaged group of professionals seated around a table in a green-panelled room.",
   /**
-   * Dedicated Academy photography, curriculum previews, and a social card.
-   * NOT SUPPLIED. Never fabricate a certificate, course dashboard, or
-   * completion screen.
+   * Approved Tablemakers photography — a roundtable of professionals in
+   * discussion, per the section's imagery direction. Never a restaurant scene.
    */
-  tablemakers: undefined as string | undefined,
+  tablemakers: "/brand/academy/tablemakers-roundtable.jpg" as string | undefined,
+  /**
+   * Curriculum previews and a social card. NOT SUPPLIED. Never fabricate a
+   * certificate, course dashboard, or completion screen.
+   */
   curriculumPreview: undefined as string | undefined,
   ogImage: undefined as string | undefined,
 };
