@@ -53,7 +53,7 @@ export default function AsgStage() {
           <Reveal delay={120} className={styles.figure}>
             <AsgImageFrame
               src={asgAssets.stage}
-              alt="The Aunt Sarah’s Girls ensemble in performance on an intimate living-room set under warm stage light."
+              alt="The Aunt Sarah’s Girls ensemble in performance, gathered around a sofa on the living-room set under stage light."
               placeholderLabel="Approved production or rehearsal photography"
               placeholderNote="Asset required: black-box setting, living-room set, warm stage light"
               aspect="3/2"

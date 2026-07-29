@@ -89,8 +89,11 @@ export const asgAssets: Record<string, string | undefined> = {
    * art, cropped to 2:3 with the “Coming 2027” and writing-credit bands removed.
    */
   bookCover: "/brand/asg/asg-book-cover.jpg",
-  /** Approved stage/rehearsal photography from the theatrical work. */
-  stage: undefined,
+  /**
+   * Approved production photography from the theatrical work, cropped to 3:2.
+   * Supplied at 640px wide — replace if a higher-resolution capture is found.
+   */
+  stage: "/brand/asg/asg-stage.jpg",
   /** Approved editorial image or text treatment for the Aunt Sarah section. */
   auntSarah: undefined,
   /** Approved Sarah Method branding. */
