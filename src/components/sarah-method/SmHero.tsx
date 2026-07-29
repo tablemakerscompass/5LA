@@ -98,7 +98,7 @@ export default function SmHero() {
           <Reveal delay={160} className={styles.figure}>
             <SmImageFrame
               src={smAssets.hero}
-              alt="A quiet sitting room in Aunt Sarah’s home — a warm lamp, a comfortable chair, and an open journal waiting on the table."
+              alt="A quiet sitting room — a lamplit table with an open journal and pen, a lit candle, a Sarah Method mug, and an armchair with a cushion reading “Come on in. I’ve been waiting for you.”"
               placeholderLabel="A quiet room, a warm lamp, an open journal"
               placeholderNote="Asset required: warm sitting-room photography, or a real screenshot of the application with personal data removed"
               aspect="4/3"

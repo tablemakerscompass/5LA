@@ -72,11 +72,8 @@ export const smAssets = {
   logo: "/brand/sarah-method/sarah-method-logo.png",
   /** Simplified crowned-S monogram for small placements. */
   monogram: "/brand/sarah-method/sarah-method-monogram.png",
-  /**
-   * Editorial hero photography — a quiet sitting room, warm lamp, journal.
-   * NOT YET SUPPLIED. Leave undefined to render a labelled placeholder.
-   */
-  hero: undefined as string | undefined,
+  /** Editorial hero photography — a quiet sitting room, warm lamp, journal. */
+  hero: "/brand/sarah-method/sarah-method-room.jpg" as string | undefined,
   /** Warm interior / journaling still for the welcome section. NOT SUPPLIED. */
   welcome: undefined as string | undefined,
   /**
