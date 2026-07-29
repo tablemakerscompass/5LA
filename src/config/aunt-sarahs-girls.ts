@@ -81,8 +81,11 @@ export const asgAssets: Record<string, string | undefined> = {
   hero: "/brand/asg/asg-key-art.jpg",
   /** Story world: the house exterior or a warm sitting-room interior. */
   house: undefined,
-  /** Approved book cover artwork for “Aunt Sarah’s Girls: Legacy & Secrets”. */
-  bookCover: undefined,
+  /**
+   * Cover artwork for “Aunt Sarah’s Girls: Legacy & Secrets” — the approved key
+   * art, cropped to 2:3 with the “Coming 2027” and writing-credit bands removed.
+   */
+  bookCover: "/brand/asg/asg-book-cover.jpg",
   /** Approved stage/rehearsal photography from the theatrical work. */
   stage: undefined,
   /** Approved editorial image or text treatment for the Aunt Sarah section. */
