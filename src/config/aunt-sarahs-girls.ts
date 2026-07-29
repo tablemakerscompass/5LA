@@ -94,8 +94,8 @@ export const asgAssets: Record<string, string | undefined> = {
    * Supplied at 640px wide — replace if a higher-resolution capture is found.
    */
   stage: "/brand/asg/asg-stage.jpg",
-  /** Approved editorial image or text treatment for the Aunt Sarah section. */
-  auntSarah: undefined,
+  /** Approved editorial portrait of Aunt Sarah, cropped to the frame's 3:4. */
+  auntSarah: "/brand/asg/asg-aunt-sarah.jpg",
   /** Approved Sarah Method branding. */
   sarahMethod: undefined,
   /** Social-sharing image for /our-companies/aunt-sarahs-girls. */

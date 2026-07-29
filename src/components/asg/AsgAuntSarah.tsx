@@ -46,7 +46,7 @@ export default function AsgAuntSarah() {
           <Reveal delay={120} className={styles.figure}>
             <AsgImageFrame
               src={asgAssets.auntSarah}
-              alt="Aunt Sarah seated in her front room, the door open behind her in warm evening light."
+              alt="Editorial portrait of Aunt Sarah in a deep burgundy gown and layered beaded necklaces, candlelight and a gilded frame behind her."
               placeholderLabel="Approved Aunt Sarah editorial artwork"
               placeholderNote="Asset required, or an approved text-based editorial treatment"
               aspect="3/4"
