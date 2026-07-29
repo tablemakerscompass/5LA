@@ -84,13 +84,17 @@ export const vxAssets = {
   /** Approved executive photography used by the application itself. */
   hero: "/brand/velaxity/velaxity-hero.webp",
   /**
-   * Real interface screenshots. NOT SUPPLIED — the application repository
-   * contains no captured dashboard imagery. Never fabricate a screenshot or
+   * Real interface screenshots, captured from the running application with the
+   * signed-in account identity blurred out. Never fabricate a screenshot or
    * present a mockup as a live screen.
    */
-  screenExecutive: undefined as string | undefined,
-  screenAi: undefined as string | undefined,
-  screenStandards: undefined as string | undefined,
+  screenExecutive: "/brand/velaxity/velaxity-executive-hub.png" as
+    | string
+    | undefined,
+  screenAi: "/brand/velaxity/velaxity-ai-hub.png" as string | undefined,
+  screenStandards: "/brand/velaxity/velaxity-standards-hub.png" as
+    | string
+    | undefined,
   /** Social-sharing card for this page. NOT SUPPLIED. */
   ogImage: undefined as string | undefined,
 };

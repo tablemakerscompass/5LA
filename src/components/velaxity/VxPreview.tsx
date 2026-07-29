@@ -8,13 +8,13 @@ import styles from "./VxPreview.module.css";
 /**
  * Section 12 — Platform preview.
  *
- * The application repository contains no captured interface imagery, so all
- * three slots render labelled placeholders. Nothing here is a mockup dressed
- * up as a live screen, and no dashboard is filled with invented client data.
+ * All three slots show real captures from the running application, with the
+ * signed-in account identity blurred out. Nothing here is a mockup dressed up
+ * as a live screen, and no dashboard is filled with invented client data.
  *
- * FOR EDITORS: capture from the running application, remove client and personal
- * data, then set the paths in `vxAssets`. Keep the captions — they name which
- * screen each image shows.
+ * FOR EDITORS: recapture from the running application, remove client and
+ * personal data, then update the paths in `vxAssets`. Keep the captions — they
+ * name which screen each image shows.
  */
 export default function VxPreview() {
   return (
@@ -41,7 +41,8 @@ export default function VxPreview() {
             alt="The VelaXity Executive Hub overview, showing organizational priorities and pulse."
             placeholderLabel="Executive Hub — overview"
             placeholderNote="Screenshot required: capture the Executive Hub overview from the running application, with client and personal data removed"
-            aspect="16/10"
+            aspect="16/9"
+            priority
             caption="Executive Hub — the leadership overview, where priorities and organizational pulse are gathered."
           />
         </Reveal>
@@ -53,7 +54,7 @@ export default function VxPreview() {
               alt="The VelaXity AI Hub, showing insights derived from workspace records."
               placeholderLabel="AI Hub — insights"
               placeholderNote="Screenshot required: capture from the running application, with client and personal data removed"
-              aspect="4/3"
+              aspect="16/9"
               caption="AI Hub — insights derived from the workspace’s own records."
             />
           </Reveal>
@@ -63,7 +64,7 @@ export default function VxPreview() {
               alt="The VelaXity Standards Hub, showing the SOP library."
               placeholderLabel="Standards Hub — SOP library"
               placeholderNote="Screenshot required: capture from the running application, with client and personal data removed"
-              aspect="4/3"
+              aspect="16/9"
               caption="Standards Hub — the SOP library and its version history."
             />
           </Reveal>
@@ -71,10 +72,9 @@ export default function VxPreview() {
 
         <Reveal delay={100}>
           <p className={`caption ${styles.note}`}>
-            Interface imagery will be published here only once it has been
-            captured from the current application and cleared of client and
-            personal information. No mockups or sample dashboards are shown in
-            the meantime.
+            These are real screens from the current application, captured with
+            the signed-in account identity removed. No mockups or sample
+            dashboards are shown.
           </p>
         </Reveal>
       </Container>

@@ -44,7 +44,7 @@ export default function VxScreenFrame({
             priority={priority}
             loading={priority ? undefined : "lazy"}
             sizes="(min-width: 1100px) 900px, 100vw"
-            className={styles.image}
+            className={`${styles.image} ${styles.screenImage}`}
           />
         ) : (
           <div className={styles.placeholder}>

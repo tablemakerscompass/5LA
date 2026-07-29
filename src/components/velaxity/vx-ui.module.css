@@ -69,6 +69,10 @@
 .image {
   object-fit: cover;
 }
+/* Interface captures are letterboxed against the frame so no UI is cropped. */
+.screenImage {
+  object-fit: contain;
+}
 .placeholder {
   position: absolute;
   inset: 0;
