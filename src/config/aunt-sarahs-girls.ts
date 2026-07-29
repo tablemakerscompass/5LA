@@ -79,8 +79,11 @@ export const asgAssets: Record<string, string | undefined> = {
    * women of the story, titled and dated. Shown whole; never cropped into.
    */
   hero: "/brand/asg/asg-key-art.jpg",
-  /** Story world: the house exterior or a warm sitting-room interior. */
-  house: undefined,
+  /**
+   * Story world: the house exterior at dusk, cropped out of the approved
+   * artwork so that only the house shows — no title, tagline, or credit lines.
+   */
+  house: "/brand/asg/asg-house.jpg",
   /**
    * Cover artwork for “Aunt Sarah’s Girls: Legacy & Secrets” — the approved key
    * art, cropped to 2:3 with the “Coming 2027” and writing-credit bands removed.

@@ -47,7 +47,7 @@ export default function AsgStoryWorld() {
           <Reveal delay={120} className={styles.figure}>
             <AsgImageFrame
               src={asgAssets.house}
-              alt="Aunt Sarah’s family home — the black front door open to the porch, framed by green trees in warm afternoon light."
+              alt="Aunt Sarah’s family home at dusk — lamplit windows, a black front door, and green trees against a gold sky."
               placeholderLabel="Aunt Sarah’s house — approved exterior or sitting-room artwork"
               placeholderNote="Asset required: black front door, green trees, warm light, a path to the porch"
               aspect="4/3"
