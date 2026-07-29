@@ -74,8 +74,8 @@ export const smAssets = {
   monogram: "/brand/sarah-method/sarah-method-monogram.png",
   /** Editorial hero photography — a quiet sitting room, warm lamp, journal. */
   hero: "/brand/sarah-method/sarah-method-room.jpg" as string | undefined,
-  /** Warm interior / journaling still for the welcome section. NOT SUPPLIED. */
-  welcome: undefined as string | undefined,
+  /** Warm interior still for the welcome section — chair, window, cup of tea. */
+  welcome: "/brand/sarah-method/sarah-method-welcome.jpg" as string | undefined,
   /**
    * Real capture from the live application — no journal entry is shown.
    * Never fabricate an interface or a journal entry.

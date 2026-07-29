@@ -39,7 +39,7 @@ export default function SmWelcome() {
           <Reveal delay={120} className={styles.figure}>
             <SmImageFrame
               src={smAssets.welcome}
-              alt="A comfortable chair beside a window, a cup of tea and a journal set out on a small table."
+              alt="A deep red armchair beside a curtained window, a book resting on the seat and a cup of tea on the side table."
               placeholderLabel="A chair, a window, a cup of tea"
               placeholderNote="Asset required: warm, unhurried interior photography"
               aspect="3/4"
