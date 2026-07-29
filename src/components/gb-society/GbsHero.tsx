@@ -10,11 +10,9 @@ import styles from "./GbsHero.module.css";
  * The Society has no approved logo, so its name is set as a text wordmark;
  * add `logo` to this brand in `config/companies.ts` when a mark is approved.
  *
- * The hero image is a labeled placeholder: none of the existing approved
- * photography depicts legacy, family, or intergenerational gathering, and
- * substituting a business or theater image would misrepresent the Society.
- * Drop the final asset in `public/brand/` and swap the EditorialImage for an
- * Image with descriptive alt text.
+ * The hero image is the approved Society gathering photograph. It is the one
+ * piece of photography here that depicts legacy and intergenerational
+ * gathering — never substitute a business or theater image in its place.
  */
 export default function GbsHero() {
   return (
@@ -70,8 +68,10 @@ export default function GbsHero() {
 
           <Reveal delay={160} className={styles.figure}>
             <EditorialImage
-              placeholderLabel="Society legacy & gathering imagery"
+              src="/brand/gb-society/society-gathering.jpg"
+              alt="Women of several generations gathered in conversation around a candlelit table."
               aspect="4/3"
+              priority
               className={styles.image}
             />
           </Reveal>
