@@ -96,8 +96,8 @@ export const asgAssets: Record<string, string | undefined> = {
   stage: "/brand/asg/asg-stage.jpg",
   /** Approved editorial portrait of Aunt Sarah, cropped to the frame's 3:4. */
   auntSarah: "/brand/asg/asg-aunt-sarah.jpg",
-  /** Approved Sarah Method branding. */
-  sarahMethod: undefined,
+  /** Approved Sarah Method branding — the same logo the Sarah Method page uses. */
+  sarahMethod: "/brand/sarah-method/sarah-method-logo.png",
   /** Social-sharing image for /our-companies/aunt-sarahs-girls. */
   ogImage: undefined,
 };
