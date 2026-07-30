@@ -42,14 +42,14 @@ export const site = {
     phoneHref: "+14702528258",
   },
 
-  /**
-   * Social links — PLACEHOLDER. `href: "#"` renders a disabled-looking link.
-   * Replace `href` with the real profile URLs when available.
-   */
+  /** Approved social profiles. LinkedIn is the founder's personal profile. */
   social: [
-    { label: "LinkedIn", href: "#", placeholder: true },
-    { label: "Instagram", href: "#", placeholder: true },
-    { label: "TikTok", href: "#", placeholder: true },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/armentha-tubbs-a1053137a",
+    },
+    { label: "Instagram", href: "https://www.instagram.com/the5loavesagency" },
+    { label: "TikTok", href: "https://www.tiktok.com/@the5loavesagency" },
   ],
 } as const;
 

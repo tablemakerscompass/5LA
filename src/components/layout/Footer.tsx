@@ -39,7 +39,7 @@ export default function Footer() {
               </nav>
             ))}
 
-            {/* Connect column: internal links + social (placeholders marked) */}
+            {/* Connect column: internal links + social profiles */}
             <nav className={styles.column} aria-label={footerNav.connect.heading}>
               <h2 className={styles.colHeading}>{footerNav.connect.heading}</h2>
               <ul>
@@ -52,14 +52,11 @@ export default function Footer() {
                 ))}
                 {site.social.map((s) => (
                   <li key={s.label}>
-                    {/* PLACEHOLDER social link — replace href in config/site.ts */}
                     <a
                       href={s.href}
                       className={styles.colLink}
-                      data-placeholder={s.placeholder ? "true" : undefined}
-                      {...(s.href !== "#"
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : { "aria-disabled": true })}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       {s.label}
                     </a>

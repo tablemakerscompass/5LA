@@ -87,11 +87,11 @@ export const tmBrand = {
  */
 export const tmAssets = {
   /**
-   * Hero: a roundtable of professionals in conversation. NOT SUPPLIED — no
-   * such approved image exists in the repository, and the Academy's facilitator
-   * photograph belongs to that page. Renders a labelled placeholder.
+   * Hero: a roundtable of professionals in conversation. Shares the approved
+   * roundtable photograph with the Academy's Tablemakers section — the same
+   * image is intended for both, so it lives under `brand/academy/`.
    */
-  hero: undefined as string | undefined,
+  hero: "/brand/academy/tablemakers-roundtable.jpg" as string | undefined,
   /** Community gathering photography. NOT SUPPLIED. */
   gathering: undefined as string | undefined,
   /** Social-sharing card for this page. NOT SUPPLIED. */

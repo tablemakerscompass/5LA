@@ -67,11 +67,6 @@
   opacity: 1;
   padding-left: 4px;
 }
-.colLink[data-placeholder="true"] {
-  /* Marked so it's easy to spot un-linked social handles. */
-  font-style: italic;
-}
-
 .divider {
   border: 0;
   height: 1px;
