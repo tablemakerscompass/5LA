@@ -13,6 +13,10 @@
  *     INQUIRY_FROM_EMAIL  required — an address on a domain verified in Resend
  *     INQUIRY_TO_EMAIL    optional — defaults to the site contact address
  *
+ *   Before a domain is verified, Resend's sandbox sends only from
+ *   onboarding@resend.dev and only to the address the account was registered
+ *   with. That combination works for a real inbox but reaches no one else.
+ *
  *   Webhook (Zapier, Make, n8n, or your own endpoint)
  *     INQUIRY_WEBHOOK_URL     required — receives the inquiry as JSON
  *     INQUIRY_WEBHOOK_SECRET  optional — sent as the X-5LA-Signature header
