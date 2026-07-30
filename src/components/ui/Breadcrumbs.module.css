@@ -19,6 +19,9 @@
   text-transform: uppercase;
 }
 .link {
+  display: inline-block;
+  /* Padding brings the target to the 24px minimum (WCAG 2.2 AA 2.5.8). */
+  padding-block: 0.25rem;
   color: var(--text-subtle);
   transition: color var(--dur-fast) var(--ease);
 }
@@ -30,9 +33,14 @@
   font-weight: 600;
 }
 .sep {
-  color: var(--gold-600);
+  /* --gold-ink is the palette's accessible gold for text on cream. */
+  color: var(--gold-ink);
   font-size: var(--fs-caption);
 }
 [data-surface="dark"] .link:hover {
+  color: var(--gold-500);
+}
+[data-surface="dark"] .sep {
+  /* --gold-ink is for light surfaces; on near-black it drops to 2.5:1. */
   color: var(--gold-500);
 }

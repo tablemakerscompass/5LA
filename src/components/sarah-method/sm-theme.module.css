@@ -1,0 +1,85 @@
+/* ==========================================================================
+   THE SARAH METHOD — SCOPED BRAND THEME
+   Applied to a single wrapper on /our-companies/the-sarah-method.
+
+   Palette values are taken verbatim from the shipped application's own
+   stylesheet, so the brand page and the product read as one identity.
+
+   This file adds NO global rule and changes NO approved global token. It
+   re-points the existing semantic tokens inside this page only, so the shared
+   Section, Button, SectionIntro, Breadcrumbs, and CTABanner components adopt
+   the Sarah Method identity without being modified.
+
+   Typography is deliberately NOT changed: the page keeps the approved 5LA
+   serif/sans pairing. Only colour, surface, and accent shift.
+   ========================================================================== */
+
+.theme {
+  /* --- Sarah Method palette (from the application) --- */
+  --sm-maroon: #4a1518;
+  --sm-maroon-deep: #380f12;
+  --sm-maroon-soft: #6b2a2e;
+  --sm-gold: #c9a35c;
+  --sm-gold-soft: #dcc08b;
+  --sm-gold-pale: #efe3c6;
+  --sm-cream: #f7f1e4;
+  --sm-cream-warm: #fdf9f0;
+  --sm-brown: #6b4a2f;
+  --sm-green: #2f4a3a;
+  --sm-green-soft: #4a6b58;
+  --sm-green-pale: #86a894;
+  --sm-ink: #3a2a22;
+  --sm-ink-soft: #6a584a;
+  --sm-line: #e6d9c2;
+  --sm-black: #17110f;
+  --sm-black-800: #1e1714;
+  /* Deepest gold, reserved for accent TEXT on cream, where the display golds
+     fall short of the 4.5:1 minimum. */
+  --sm-gold-ink: #7e5b16;
+
+  /* --- Re-point the shared semantic tokens (light surfaces) --- */
+  --bg: var(--sm-cream);
+  --surface: var(--sm-cream-warm);
+  --surface-raised: #fffdf8;
+  --text: var(--sm-ink);
+  --text-muted: #55463c;
+  --text-subtle: var(--sm-ink-soft);
+  --heading: var(--sm-maroon);
+  --accent: var(--sm-gold);
+  --accent-strong: var(--sm-gold-ink);
+  --primary: var(--sm-maroon);
+  --primary-hover: var(--sm-maroon-deep);
+  --divider: var(--sm-gold);
+  --border: var(--sm-line);
+  --border-strong: #d5c19f;
+  --focus-ring: var(--sm-maroon);
+  --selection-bg: var(--sm-gold-pale);
+  --selection-text: var(--sm-ink);
+
+  background-color: var(--bg);
+}
+
+/* --- Dark surfaces inside this page --- */
+.theme [data-surface="dark"] {
+  --bg: var(--sm-black);
+  --surface: var(--sm-black-800);
+  --surface-raised: #251d19;
+  --text: var(--sm-cream);
+  --text-muted: #cec0ad;
+  --text-subtle: #a1907e;
+  --heading: var(--sm-cream-warm);
+  --accent: var(--sm-gold-soft);
+  --accent-strong: var(--sm-gold-soft);
+  --primary: var(--sm-cream-warm);
+  --primary-hover: #ffffff;
+  --divider: var(--sm-gold);
+  --border: rgba(201, 163, 92, 0.24);
+  --border-strong: rgba(201, 163, 92, 0.45);
+  --focus-ring: var(--sm-gold-soft);
+}
+
+/* The global stylesheet hard-codes the 5LA gold for eyebrows on dark
+   surfaces; re-point it to the Sarah Method gold within this page only. */
+.theme [data-surface="dark"] :global(.eyebrow) {
+  color: var(--sm-gold-soft);
+}

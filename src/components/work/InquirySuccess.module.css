@@ -1,0 +1,24 @@
+.wrap {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  max-width: 40rem;
+}
+.title {
+  text-wrap: balance;
+}
+.title:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 6px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}

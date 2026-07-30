@@ -19,7 +19,12 @@
     background-color var(--dur) var(--ease), color var(--dur) var(--ease),
     border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
   text-align: center;
-  white-space: nowrap;
+  /* Labels stay on one line whenever they fit; they wrap instead of
+     overflowing when the container is narrower than the label. Combined with
+     max-width, this keeps long labels from forcing horizontal scroll on small
+     screens. Buttons that already fit are unaffected. */
+  white-space: normal;
+  max-width: 100%;
 }
 .btn:hover {
   transform: translateY(-2px);

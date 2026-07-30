@@ -55,7 +55,11 @@
   --text-subtle: var(--warm-500);
   --heading: var(--burgundy-800);
   --accent: var(--gold-600);
-  --accent-strong: var(--gold-700);
+  /* Gold TEXT on light surfaces uses --gold-ink, the only gold in the palette
+     that clears 4.5:1 on cream. --gold-700 sits at ~2.8:1 and is kept for
+     borders, rules, and other non-text accents. Dark surfaces override this
+     below, where the lighter golds have plenty of contrast. */
+  --accent-strong: var(--gold-ink);
   --primary: var(--burgundy-700);
   --primary-hover: var(--burgundy-800);
   --border: var(--cream-400);
@@ -135,6 +139,8 @@
   --text-muted: #c4bbb0;
   --text-subtle: #9a9088;
   --heading: var(--cream-100);
+  /* On near-black, the light golds have the contrast; --gold-ink would not. */
+  --accent-strong: var(--gold-500);
   --border: rgba(200, 164, 93, 0.22);
   --border-strong: rgba(200, 164, 93, 0.4);
   --primary: var(--cream-100);
@@ -175,6 +181,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   min-height: 100vh;
+  /* Inherited by everything. A long unbroken word (a brand name, a compound
+     term) can otherwise be wider than its grid track and push the page into
+     horizontal scrolling — most visibly at large text sizes. This only ever
+     applies when a word genuinely cannot fit; ordinary text is unaffected. */
+  overflow-wrap: break-word;
 }
 
 img,
@@ -551,4 +562,42 @@ ol {
 }
 .no-scroll {
   overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   8. PRINT — used mainly by the legal and accessibility pages
+   -------------------------------------------------------------------------- */
+@media print {
+  /* Site chrome adds nothing to a printed document. */
+  body > header,
+  body > footer,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .page-title {
+    font-size: 22pt;
+  }
+
+  /* Reveal-on-scroll must never hide content on paper. */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  a {
+    color: #000;
+  }
 }

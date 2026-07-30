@@ -1,0 +1,88 @@
+.wrap {
+  background: var(--surface);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.column {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+}
+/* The heading carries the distinction; the accent edge only reinforces it. */
+.isFor {
+  border-top: 3px solid var(--sm-green-soft);
+}
+.isNot {
+  border-top: 3px solid var(--sm-maroon-soft);
+}
+
+.columnHeading {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--heading);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.listItem {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--text-muted);
+  padding-left: var(--space-4);
+  position: relative;
+}
+.listItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.66em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sm-gold);
+}
+
+/* Readable at body size, clearly framed, never visually buried. */
+.disclaimer {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid var(--border-strong);
+  border-left: 4px solid var(--sm-maroon);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+}
+.disclaimerHeading {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sm-maroon);
+  margin-bottom: var(--space-3);
+}
+.disclaimerBody {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--text);
+  max-width: 76ch;
+}
+
+@media (min-width: 820px) {
+  .columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -46,6 +46,12 @@
   justify-content: space-between;
   gap: var(--space-4);
 }
+.head,
+.head > * {
+  /* Flex children default to min-width:auto and refuse to shrink below
+     their content, pushing the row past its grid track at large text sizes. */
+  min-width: 0;
+}
 .mark {
   display: inline-flex;
   align-items: center;
@@ -78,7 +84,13 @@
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-pill);
   padding: 0.3rem 0.7rem;
-  white-space: nowrap;
+  /* Long category labels ("Community · Thought Leadership · Professional
+     Development") cannot fit one line on a narrow screen. Keeping them
+     unbreakable forced the card past the viewport; they now wrap instead. */
+  text-align: center;
+}
+.head {
+  flex-wrap: wrap;
 }
 
 .body {

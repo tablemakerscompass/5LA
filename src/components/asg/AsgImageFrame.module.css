@@ -1,0 +1,72 @@
+.figure {
+  margin: 0;
+  width: 100%;
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-strong);
+  background:
+    linear-gradient(165deg, rgba(74, 16, 21, 0.9), rgba(36, 66, 47, 0.85)),
+    var(--asg-black-800);
+}
+.image {
+  object-fit: cover;
+}
+
+/* Credit line beneath the image — reads as a caption, never as body copy. */
+.caption {
+  margin-top: var(--space-3);
+  font-size: var(--fs-caption);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: rgba(238, 226, 208, 0.72);
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  text-align: center;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+.mark {
+  width: 46px;
+  height: 62px;
+  border: 1px solid rgba(215, 154, 82, 0.6);
+  border-radius: 3px 3px 0 0;
+  position: relative;
+  flex: none;
+}
+.mark::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--asg-amber);
+}
+.label {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-subheading);
+  line-height: 1.3;
+  color: var(--asg-cream-100);
+  max-width: 24ch;
+}
+.note {
+  font-size: var(--fs-caption);
+  letter-spacing: 0.04em;
+  color: var(--asg-tan-soft);
+  max-width: 34ch;
+  line-height: 1.4;
+}

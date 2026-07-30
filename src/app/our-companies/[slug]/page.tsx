@@ -8,8 +8,20 @@ import { createMetadata } from "@/lib/seo";
 
 type Params = { slug: string };
 
+/**
+ * Brands with a dedicated, hand-built route under `app/our-companies/<slug>/`
+ * are skipped here: those static segments take precedence over this dynamic
+ * one, so pre-rendering them twice would generate the same URL from two
+ * places. The `hasOwnPage` flag on each brand is the single source of truth,
+ * so adding a brand page means setting one field rather than editing a list
+ * kept in a second file.
+ *
+ * Every brand now has its own page, so this placeholder pre-renders nothing —
+ * it remains as the fallback for any brand added to the config before its
+ * page is built.
+ */
 export function generateStaticParams(): Params[] {
-  return companies.map((c) => ({ slug: c.slug }));
+  return companies.filter((c) => !c.hasOwnPage).map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({
@@ -61,7 +73,10 @@ export default async function CompanyPage({
         eyebrow="The 5LA ecosystem"
         title="Explore the rest of the ecosystem."
         primary={{ label: "All Companies", href: "/our-companies" }}
-        secondary={{ label: "Work With Us", href: "/work-with-us" }}
+        secondary={{
+          label: "Work With Us",
+          href: `/work-with-us?interest=${company.slug}`,
+        }}
       />
     </>
   );

@@ -1,0 +1,69 @@
+.wrap {
+  background:
+    radial-gradient(80% 60% at 100% 0%, rgba(74, 16, 21, 0.55), transparent 62%),
+    var(--asg-black);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--border);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4) clamp(1.25rem, 3vw, 2.25rem);
+  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+
+.number {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--asg-amber-soft);
+  padding-top: 0.15em;
+}
+
+.itemBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.title {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--heading);
+}
+
+.copy {
+  max-width: 56ch;
+}
+
+/* Alternating panels: every other entry is inset and tinted. */
+.item:nth-child(even) {
+  background: linear-gradient(
+    90deg,
+    rgba(215, 154, 82, 0.06),
+    transparent 70%
+  );
+}
+
+@media (min-width: 900px) {
+  .list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(2.5rem, 5vw, 4.5rem);
+  }
+  .item {
+    padding-inline: clamp(0.5rem, 1.5vw, 1.25rem);
+  }
+}

@@ -1,0 +1,109 @@
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  max-width: 46rem;
+}
+.grid {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem) var(--space-8);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  height: 100%;
+}
+.imageLink {
+  display: block;
+}
+.imageFrame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--cream-300);
+  aspect-ratio: 3 / 2;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.imageFrame:hover .image {
+  transform: scale(1.03);
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+.category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+.title {
+  text-wrap: balance;
+}
+.titleLink {
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--dur) var(--ease);
+}
+.titleLink:hover {
+  border-bottom-color: var(--gold-600);
+}
+.excerpt {
+  color: var(--text-muted);
+}
+.readMore {
+  margin-top: var(--space-1);
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--burgundy-700);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.arrow {
+  transition: transform var(--dur) var(--ease);
+}
+.card:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (min-width: 860px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .wideItem {
+    grid-column: 1 / -1;
+  }
+  .wide {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-8);
+  }
+  .wide .imageLink {
+    flex: 1 1 52%;
+    min-width: 0;
+  }
+  .wide .body {
+    flex: 1 1 48%;
+    min-width: 0;
+  }
+  .wideFrame {
+    aspect-ratio: 16 / 10;
+  }
+  .wide .title {
+    font-size: var(--fs-h3);
+  }
+}

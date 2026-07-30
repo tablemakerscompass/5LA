@@ -1,0 +1,79 @@
+/* ==========================================================================
+   AUNT SARAH'S GIRLS — SCOPED BRAND THEME
+   Applied to a single wrapper on /our-companies/aunt-sarahs-girls.
+
+   This file adds NO new global rules and changes NO approved global token.
+   It re-points the existing semantic tokens (--heading, --accent, --divider,
+   --bg, --surface, --focus-ring) inside the ASG page only, so every shared
+   component — Section, Button, SectionIntro, Breadcrumbs, CTABanner — adopts
+   the ASG identity without being modified.
+   ========================================================================== */
+
+.theme {
+  /* --- ASG palette --- */
+  --asg-maroon: #4a1015;
+  --asg-red: #78191f;
+  --asg-red-soft: #91343a;
+  --asg-brown: #58392a;
+  --asg-tan: #c9a684;
+  --asg-tan-soft: #ddc3a8;
+  --asg-cream: #f7f0e5;
+  --asg-cream-100: #fbf6ee;
+  --asg-green: #24422f;
+  --asg-green-500: #3c6449;
+  --asg-green-300: #7ea287;
+  --asg-amber: #d79a52;
+  --asg-amber-soft: #e6bd86;
+  /* Deepest amber, reserved for accent TEXT on cream surfaces where the
+     display ambers do not reach the 4.5:1 minimum. */
+  --asg-amber-ink: #8a5718;
+  --asg-black: #14100f;
+  --asg-black-800: #1b1614;
+  --asg-black-700: #221b18;
+
+  /* --- Re-point the shared semantic tokens (light surfaces) --- */
+  --bg: var(--asg-cream);
+  --surface: var(--asg-cream-100);
+  --surface-raised: #fffaf3;
+  --heading: var(--asg-maroon);
+  --accent: var(--asg-amber);
+  --accent-strong: var(--asg-amber-ink);
+  --primary: var(--asg-red);
+  --primary-hover: var(--asg-maroon);
+  --divider: var(--asg-amber);
+  --border: #e3d5c1;
+  --border-strong: #cfba9e;
+  --focus-ring: var(--asg-maroon);
+  --selection-bg: var(--asg-tan-soft);
+
+  background-color: var(--bg);
+}
+
+/* --- Dark surfaces inside the ASG page ---
+   Higher specificity than the global [data-surface="dark"] block so ASG
+   sections read maroon/amber rather than the 5LA gold. */
+.theme [data-surface="dark"],
+.theme .surfaceDark {
+  --bg: var(--asg-black);
+  --surface: var(--asg-black-800);
+  --surface-raised: var(--asg-black-700);
+  --text: var(--asg-cream);
+  --text-muted: #cbbcac;
+  --text-subtle: #9d8f81;
+  --heading: var(--asg-cream-100);
+  --accent: var(--asg-amber-soft);
+  --accent-strong: var(--asg-amber-soft);
+  --primary: var(--asg-cream-100);
+  --primary-hover: #ffffff;
+  --divider: var(--asg-amber);
+  --border: rgba(215, 154, 82, 0.24);
+  --border-strong: rgba(215, 154, 82, 0.44);
+  --focus-ring: var(--asg-amber-soft);
+}
+
+/* The global stylesheet hard-codes the 5LA gold for eyebrows on dark
+   surfaces; re-point it to the ASG amber within this page only. */
+.theme [data-surface="dark"] :global(.eyebrow),
+.theme .surfaceDark :global(.eyebrow) {
+  color: var(--asg-amber-soft);
+}

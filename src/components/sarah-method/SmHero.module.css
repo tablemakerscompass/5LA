@@ -1,0 +1,98 @@
+/* A light, warm hero — the brief asks for a welcoming room, not a dark one. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(90% 80% at 88% 0%, rgba(201, 163, 92, 0.22), transparent 60%),
+    radial-gradient(80% 90% at 0% 100%, rgba(47, 74, 58, 0.12), transparent 62%),
+    var(--sm-cream-warm);
+  border-bottom: 1px solid var(--border);
+}
+
+.container {
+  padding-block: clamp(2rem, 1.5rem + 3vw, 3.25rem) clamp(3.5rem, 3rem + 5vw, 6rem);
+}
+.crumbs {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+  max-width: 42rem;
+}
+
+.logoWrap {
+  width: clamp(140px, 26vw, 210px);
+}
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+.eyebrow {
+  color: var(--sm-gold-ink);
+}
+.headline {
+  color: var(--sm-maroon);
+  font-size: clamp(2.15rem, 1.5rem + 2.5vw, 3.7rem);
+  max-width: 17ch;
+  text-wrap: balance;
+}
+.accent {
+  font-style: italic;
+  color: var(--sm-maroon-soft);
+}
+.lead {
+  max-width: 46ch;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+.actions a {
+  white-space: normal;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-caption);
+  color: var(--text-subtle);
+}
+.metaDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--sm-gold);
+}
+.external {
+  font-weight: 600;
+}
+.tertiary {
+  margin-top: calc(var(--space-2) * -1);
+}
+
+.figure {
+  width: 100%;
+}
+
+@media (min-width: 980px) {
+  .inner {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(3rem, 6vw, 5.5rem);
+  }
+}

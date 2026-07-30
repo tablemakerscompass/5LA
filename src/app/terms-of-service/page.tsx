@@ -1,21 +1,55 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/layout/PlaceholderPage";
-import { createMetadata } from "@/lib/seo";
+import { site } from "@/config/site";
+import { breadcrumbSchema } from "@/lib/seo";
+import LegalPage from "@/components/legal/LegalPage";
+import { termsIntro, termsSections } from "@/content/legal/terms";
 
-export const metadata: Metadata = createMetadata({
-  title: "Terms of Service",
-  path: "/terms-of-service",
-  description: "Terms of Service for The 5 Loaves Agency, LLC.",
-});
+const title = "Terms of Service | The 5 Loaves Agency";
+const description =
+  "Review the terms governing use of The 5 Loaves Agency website, content, forms, links, and digital resources.";
+const url = `${site.url}/terms-of-service`;
+
+export const metadata: Metadata = {
+  title: { absolute: title },
+  description,
+  alternates: { canonical: url },
+  openGraph: {
+    title,
+    description,
+    url,
+    siteName: site.name,
+    type: "website",
+    images: [
+      { url: "/brand/og-image.png", width: 1200, height: 630, alt: site.name },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/brand/og-image.png"],
+  },
+};
 
 export default function TermsOfServicePage() {
   return (
-    <PlaceholderPage
-      eyebrow="Legal"
-      title="Terms of Service"
-      crumbs={[{ label: "Terms of Service" }]}
-      note="The Terms of Service will be provided by The 5 Loaves Agency, LLC. No legal language has been drafted here — final terms will be supplied for a later phase."
-      cta={false}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([{ label: "Terms of Service", path: "/terms-of-service" }])
+          ),
+        }}
+      />
+      <LegalPage
+        eyebrow="Legal"
+        title="Terms of Service"
+        crumb="Terms of Service"
+        intro={termsIntro}
+        sections={termsSections}
+        
+      />
+    </>
   );
 }

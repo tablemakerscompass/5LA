@@ -32,13 +32,14 @@ export const site = {
   },
 
   /**
-   * Contact details — PLACEHOLDER. Replace with verified values.
-   * Left intentionally blank so nothing fabricated is published.
+   * Contact details — the approved business email and phone. No address or
+   * service area is published; contact is by email and phone only.
    */
   contact: {
-    email: "", // PLACEHOLDER — add verified contact email
-    phone: "", // PLACEHOLDER — add verified phone number
-    location: "", // PLACEHOLDER — add service area / location
+    email: "admin@the5loavesagency.com",
+    phone: "470-252-8258",
+    /** E.164 form used for `tel:` links. */
+    phoneHref: "+14702528258",
   },
 
   /**

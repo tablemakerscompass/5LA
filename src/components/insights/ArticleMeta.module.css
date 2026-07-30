@@ -1,0 +1,32 @@
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.7rem;
+  font-size: var(--fs-caption);
+  line-height: 1.5;
+  color: var(--text-subtle);
+  letter-spacing: 0.02em;
+}
+.author {
+  color: var(--text-muted);
+}
+.authorLink {
+  color: var(--burgundy-700);
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.authorLink:hover {
+  border-bottom-color: var(--gold-600);
+}
+[data-surface="dark"] .authorLink {
+  color: var(--gold-500);
+}
+.dot {
+  width: 3px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--gold-600);
+  flex: none;
+}

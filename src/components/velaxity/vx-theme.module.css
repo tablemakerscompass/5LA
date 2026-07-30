@@ -1,0 +1,85 @@
+/* ==========================================================================
+   VELAXITY — SCOPED BRAND THEME
+   Applied to a single wrapper on /our-companies/velaxity.
+
+   Palette values are taken from the application's own theme.css, so the brand
+   page and the product read as one identity.
+
+   This file adds NO global rule and changes NO approved global token. It
+   re-points the existing semantic tokens inside this page only, so the shared
+   Section, Button, SectionIntro, Breadcrumbs, and CTABanner components adopt
+   the VelaXity identity without being modified. The approved 5LA serif/sans
+   pairing is kept — only colour and surface shift.
+   ========================================================================== */
+
+.theme {
+  /* --- VelaXity palette (from the application) --- */
+  --vx-maroon: #6e2b36;
+  --vx-maroon-deep: #4a1c24;
+  --vx-maroon-soft: #8c3a44;
+  --vx-sidebar: #241a1b;
+  --vx-gold: #c4a052;
+  --vx-gold-bright: #e4c069;
+  --vx-gold-pale: #ece3d4;
+  --vx-cream: #f8f5ef;
+  --vx-cream-2: #efe9df;
+  --vx-green: #4a5f4a;
+  --vx-green-soft: #7a8b7a;
+  --vx-ink: #221e1e;
+  --vx-ink-2: #4a4442;
+  --vx-muted: #6e655f;
+  --vx-line: #e4ddd1;
+  --vx-line-strong: #c3b7a5;
+  --vx-black: #171414;
+  --vx-black-800: #1e1a1a;
+  --vx-black-700: #2a2626;
+  /* Deepest gold, reserved for accent TEXT on cream, where the display golds
+     fall short of the 4.5:1 minimum. */
+  --vx-gold-ink: #7a5a12;
+
+  /* --- Re-point the shared semantic tokens (light surfaces) --- */
+  --bg: var(--vx-cream);
+  --surface: #fdfbf7;
+  --surface-raised: #ffffff;
+  --text: var(--vx-ink);
+  --text-muted: var(--vx-ink-2);
+  --text-subtle: var(--vx-muted);
+  --heading: var(--vx-maroon-deep);
+  --accent: var(--vx-gold);
+  --accent-strong: var(--vx-gold-ink);
+  --primary: var(--vx-maroon);
+  --primary-hover: var(--vx-maroon-deep);
+  --divider: var(--vx-gold);
+  --border: var(--vx-line);
+  --border-strong: var(--vx-line-strong);
+  --focus-ring: var(--vx-maroon);
+  --selection-bg: var(--vx-gold-pale);
+  --selection-text: var(--vx-ink);
+
+  background-color: var(--bg);
+}
+
+/* --- Dark surfaces inside this page --- */
+.theme [data-surface="dark"] {
+  --bg: var(--vx-black);
+  --surface: var(--vx-black-800);
+  --surface-raised: var(--vx-black-700);
+  --text: #f4f1ea;
+  --text-muted: #cdc6bd;
+  --text-subtle: #9d948a;
+  --heading: #faf8f4;
+  --accent: var(--vx-gold-bright);
+  --accent-strong: var(--vx-gold-bright);
+  --primary: #faf8f4;
+  --primary-hover: #ffffff;
+  --divider: var(--vx-gold);
+  --border: rgba(196, 160, 82, 0.24);
+  --border-strong: rgba(196, 160, 82, 0.45);
+  --focus-ring: var(--vx-gold-bright);
+}
+
+/* The global stylesheet hard-codes the 5LA gold for eyebrows on dark
+   surfaces; re-point it to the VelaXity gold within this page only. */
+.theme [data-surface="dark"] :global(.eyebrow) {
+  color: var(--vx-gold-bright);
+}

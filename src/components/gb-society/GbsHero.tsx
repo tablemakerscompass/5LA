@@ -1,0 +1,82 @@
+import Button from "@/components/ui/Button";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import EditorialImage from "@/components/ui/EditorialImage";
+import Reveal from "@/components/ui/Reveal";
+import styles from "./GbsHero.module.css";
+
+/**
+ * Hero.
+ *
+ * The Society has no approved logo, so its name is set as a text wordmark;
+ * add `logo` to this brand in `config/companies.ts` when a mark is approved.
+ *
+ * The hero image is the approved Society gathering photograph. It is the one
+ * piece of photography here that depicts legacy and intergenerational
+ * gathering — never substitute a business or theater image in its place.
+ */
+export default function GbsHero() {
+  return (
+    <section
+      className={styles.hero}
+      data-surface="dark"
+      aria-labelledby="gbs-hero-heading"
+    >
+      <div className={styles.inner}>
+        <Breadcrumbs
+          items={[
+            { label: "Our Companies", href: "/our-companies" },
+            { label: "The Georgia B. Society" },
+          ]}
+          className={styles.crumbs}
+        />
+
+        <div className={styles.grid}>
+          <div className={styles.content}>
+            <Reveal>
+              <p className="eyebrow">A 5LA Legacy &amp; Community Initiative</p>
+            </Reveal>
+            <Reveal delay={70}>
+              <p className={styles.wordmark}>The Georgia B. Society</p>
+            </Reveal>
+            <Reveal delay={110}>
+              <h1 id="gbs-hero-heading" className={`page-title ${styles.headline}`}>
+                Preserving Stories. Honoring Legacy. Making Room for Community.
+              </h1>
+            </Reveal>
+            <Reveal delay={180}>
+              <p className={`lead ${styles.lead}`}>
+                The Georgia B. Society creates space for family stories,
+                cultural memory, meaningful gatherings, intergenerational
+                connection, and community experiences rooted in care,
+                hospitality, truth, and service.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <div className={styles.actions}>
+                <Button href="#purpose" variant="gold" size="lg">
+                  Explore the Society’s Purpose
+                </Button>
+                <Button href="/work-with-us?interest=georgia-b-society" variant="outline" size="lg">
+                  Discuss a Community Partnership
+                </Button>
+              </div>
+            </Reveal>
+            <Reveal delay={320}>
+              <p className={styles.descriptor}>Legacy · Community · Culture</p>
+            </Reveal>
+          </div>
+
+          <Reveal delay={160} className={styles.figure}>
+            <EditorialImage
+              src="/brand/gb-society/society-gathering.jpg"
+              alt="Women of several generations gathered in conversation around a candlelit table."
+              aspect="4/3"
+              priority
+              className={styles.image}
+            />
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}

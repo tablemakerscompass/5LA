@@ -16,6 +16,8 @@ type SectionProps = {
   id?: string;
   className?: string;
   style?: React.CSSProperties;
+  /** Names the region, for sections whose heading is visually hidden. */
+  "aria-labelledby"?: string;
 };
 
 /**
@@ -33,6 +35,7 @@ export default function Section({
   id,
   className = "",
   style,
+  "aria-labelledby": ariaLabelledBy,
 }: SectionProps) {
   const classes = [tight ? "section-tight" : "section", className]
     .filter(Boolean)
@@ -46,6 +49,7 @@ export default function Section({
   return (
     <Tag
       id={id}
+      aria-labelledby={ariaLabelledBy}
       className={classes}
       data-surface={dark ? "dark" : undefined}
       style={surfaceStyle}

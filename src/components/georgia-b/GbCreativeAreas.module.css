@@ -1,0 +1,130 @@
+.wrap {
+  background: var(--surface);
+}
+
+.list {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--border-strong);
+}
+.item {
+  border-bottom: 1px solid var(--border-strong);
+}
+.itemHeading {
+  margin: 0;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1.25rem, 2.5vw, 1.85rem) 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  color: var(--heading);
+  transition: color var(--dur-fast) var(--ease);
+}
+.trigger:hover {
+  color: var(--burgundy-700);
+}
+.n {
+  font-family: var(--font-serif), serif;
+  font-weight: 600;
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  line-height: 1;
+  color: var(--gold-ink);
+  flex: none;
+  width: 2.2ch;
+}
+.title {
+  font-family: var(--font-serif), serif;
+  font-weight: 600;
+  font-size: var(--fs-h4);
+  line-height: 1.2;
+  flex: 1;
+}
+.icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  flex: none;
+  align-self: center;
+}
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  background: var(--burgundy-700);
+  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+.icon::before {
+  top: 7px;
+  left: 0;
+  width: 16px;
+  height: 2px;
+}
+.icon::after {
+  left: 7px;
+  top: 0;
+  width: 2px;
+  height: 16px;
+}
+.item[data-open="true"] .icon::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.panel {
+  padding: 0 0 clamp(1.75rem, 3vw, 2.5rem);
+  padding-left: calc(2.2ch + clamp(1rem, 3vw, 2rem));
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+/* `display: grid` would otherwise override the `hidden` attribute. */
+.panel[hidden] {
+  display: none;
+}
+.statement {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-lead);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--burgundy-700);
+  max-width: 34ch;
+}
+.items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2) var(--space-5);
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+}
+.areaItem {
+  position: relative;
+  padding-left: 1.1rem;
+  line-height: 1.55;
+}
+.areaItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 6px;
+  height: 1px;
+  background: var(--gold-700);
+}
+
+@media (min-width: 560px) {
+  .items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 960px) {
+  .panel {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+}

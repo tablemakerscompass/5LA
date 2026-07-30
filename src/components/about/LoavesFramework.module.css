@@ -48,13 +48,14 @@
   font-weight: 600;
   font-size: clamp(2rem, 5vw, 3.25rem);
   line-height: 1;
-  color: var(--gold-600);
+  color: var(--gold-ink);
   width: 1.3em;
   text-align: center;
   flex: none;
 }
 .item[data-open="true"] .letter {
-  color: var(--gold-700);
+  /* --gold-700 sits at 2.94:1 here, just under the 3:1 large-text minimum. */
+  color: var(--burgundy-700);
 }
 .word {
   font-family: var(--font-serif), serif;

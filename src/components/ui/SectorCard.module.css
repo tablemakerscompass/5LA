@@ -14,7 +14,7 @@
   --accent-color: var(--burgundy-700);
 }
 .card[data-accent="gold"] {
-  --accent-color: var(--gold-700);
+  --accent-color: var(--accent-strong);
 }
 .card[data-accent="green"] {
   --accent-color: var(--green-700);
@@ -111,6 +111,8 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-strong);
+  /* Padding brings the target to the 24px minimum (WCAG 2.2 AA 2.5.8). */
+  padding-block: 0.3rem;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;

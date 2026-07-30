@@ -1,0 +1,93 @@
+.wrap {
+  background:
+    radial-gradient(75% 80% at 100% 0%, rgba(22, 52, 38, 0.75), transparent 62%),
+    radial-gradient(70% 80% at 0% 100%, rgba(78, 16, 19, 0.4), transparent 60%),
+    var(--tm-ink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.rule {
+  margin-block: var(--space-1);
+}
+.heading {
+  max-width: 16ch;
+  text-wrap: balance;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.body {
+  max-width: 60ch;
+}
+.emphasis {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-h4);
+  line-height: 1.35;
+  color: var(--tm-green-200);
+}
+
+.quoteWrap {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(1.75rem, 3.5vw, 2.75rem);
+  border-top: 1px solid var(--border);
+}
+.quote {
+  max-width: 30ch;
+  font-style: italic;
+  text-wrap: balance;
+  padding-left: clamp(1rem, 2.5vw, 1.75rem);
+  border-left: 3px solid var(--tm-green-300);
+}
+
+.rolesBlock {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-top: 1px solid var(--border);
+}
+.subhead {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--tm-green-200);
+  margin-bottom: var(--space-5);
+}
+.roles {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3) clamp(1.5rem, 3vw, 3rem);
+}
+.role {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-subheading);
+  line-height: 1.35;
+  color: var(--heading);
+  padding-left: var(--space-4);
+  border-left: 1px solid var(--border-strong);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+  .quote {
+    max-width: 40ch;
+  }
+  .roles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,109 @@
+.grid,
+.inquiry {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: start;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  max-width: 36rem;
+}
+
+/* The palette's accessible gold for text on light surfaces. */
+.eyebrow {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  line-height: 1.2;
+  color: var(--gold-ink);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--border);
+}
+.term {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+}
+.link {
+  display: inline-block;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--heading);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease);
+  word-break: break-word;
+  padding-block: 0.15rem;
+}
+.link:hover {
+  border-bottom-color: var(--gold-600);
+}
+.plain {
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.inquirySection {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.action {
+  display: flex;
+}
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border);
+}
+.legalLink {
+  display: inline-block;
+  font-size: var(--fs-small);
+  color: var(--burgundy-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding-block: 0.25rem;
+}
+.legalLink:hover {
+  color: var(--burgundy-900);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: var(--space-9);
+  }
+  .inquiry {
+    grid-template-columns: minmax(0, 1.1fr) auto;
+    align-items: center;
+    gap: var(--space-8);
+  }
+}

@@ -1,21 +1,55 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/layout/PlaceholderPage";
-import { createMetadata } from "@/lib/seo";
+import { site } from "@/config/site";
+import { breadcrumbSchema } from "@/lib/seo";
+import LegalPage from "@/components/legal/LegalPage";
+import { privacyIntro, privacySections } from "@/content/legal/privacy";
 
-export const metadata: Metadata = createMetadata({
-  title: "Privacy Policy",
-  path: "/privacy-policy",
-  description: "Privacy Policy for The 5 Loaves Agency, LLC.",
-});
+const title = "Privacy Policy | The 5 Loaves Agency";
+const description =
+  "Learn how The 5 Loaves Agency collects, uses, shares, stores, and protects information submitted through its website.";
+const url = `${site.url}/privacy-policy`;
+
+export const metadata: Metadata = {
+  title: { absolute: title },
+  description,
+  alternates: { canonical: url },
+  openGraph: {
+    title,
+    description,
+    url,
+    siteName: site.name,
+    type: "website",
+    images: [
+      { url: "/brand/og-image.png", width: 1200, height: 630, alt: site.name },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/brand/og-image.png"],
+  },
+};
 
 export default function PrivacyPolicyPage() {
   return (
-    <PlaceholderPage
-      eyebrow="Legal"
-      title="Privacy Policy"
-      crumbs={[{ label: "Privacy Policy" }]}
-      note="The Privacy Policy will be provided by The 5 Loaves Agency, LLC. No legal language has been drafted here — final policy text will be supplied for a later phase."
-      cta={false}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([{ label: "Privacy Policy", path: "/privacy-policy" }])
+          ),
+        }}
+      />
+      <LegalPage
+        eyebrow="Legal"
+        title="Privacy Policy"
+        crumb="Privacy Policy"
+        intro={privacyIntro}
+        sections={privacySections}
+        
+      />
+    </>
   );
 }

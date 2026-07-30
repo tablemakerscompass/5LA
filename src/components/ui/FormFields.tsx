@@ -34,7 +34,7 @@ export function Field({ label, htmlFor, required, hint, error, children }: Field
       {hint && <span className="field-hint">{hint}</span>}
       {children}
       {error && (
-        <span className="field-error" role="alert">
+        <span id={`${htmlFor}-error`} className="field-error" role="alert">
           {error}
         </span>
       )}

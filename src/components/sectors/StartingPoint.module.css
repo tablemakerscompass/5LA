@@ -89,4 +89,9 @@
     justify-content: space-between;
     gap: clamp(2rem, 5vw, 4rem);
   }
+  /* Keep the CTA on one line here; the paragraph beside it absorbs the
+     remaining width instead. */
+  .footer > :last-child {
+    flex: none;
+  }
 }

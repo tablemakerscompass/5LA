@@ -56,11 +56,6 @@
 .body {
   max-width: 52ch;
 }
-/* The shared button keeps labels on one line; this label is long enough to
-   overflow a 320px screen, so allow it to wrap here only. */
-.copy .cta {
-  white-space: normal;
-}
 
 @media (min-width: 900px) {
   .grid {

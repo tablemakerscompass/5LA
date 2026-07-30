@@ -1,0 +1,134 @@
+/* Small shared Sarah Method primitives: status pills and asset frames. */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  /* Wraps rather than overflowing: at large text sizes a two-word status
+     pill was wider than its column and pushed the row off-screen. */
+  white-space: normal;
+  text-align: center;
+}
+
+/* Status is never carried by colour alone — the written label is the meaning
+   and the dot is decorative reinforcement. */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex: none;
+  background: currentColor;
+}
+
+.available {
+  color: #33604a;
+  border-color: rgba(51, 96, 74, 0.45);
+}
+.inDevelopment {
+  color: var(--sm-gold-ink);
+  border-color: rgba(126, 91, 22, 0.4);
+}
+.planned {
+  color: var(--sm-maroon-soft);
+  border-color: rgba(107, 42, 46, 0.4);
+}
+.future {
+  color: var(--text-subtle);
+}
+
+:global([data-surface="dark"]) .available {
+  color: var(--sm-green-pale);
+}
+:global([data-surface="dark"]) .inDevelopment {
+  color: var(--sm-gold-soft);
+}
+:global([data-surface="dark"]) .planned {
+  color: var(--sm-gold-pale);
+}
+
+/* --- Image frame --------------------------------------------------------- */
+.figure {
+  margin: 0;
+  width: 100%;
+}
+.frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-strong);
+  background:
+    linear-gradient(168deg, rgba(74, 21, 24, 0.92), rgba(47, 74, 58, 0.85)),
+    var(--sm-black-800);
+}
+.image {
+  object-fit: cover;
+}
+/* App captures are letterboxed against the frame so no interface is cropped. */
+.imageContain {
+  object-fit: contain;
+}
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  text-align: center;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+/* A journal and pen — the brand's own object, drawn in CSS only as a
+   placeholder marker, never as a permanent graphic. */
+.mark {
+  width: 54px;
+  height: 40px;
+  border: 1px solid rgba(201, 163, 92, 0.6);
+  border-radius: 2px 4px 4px 2px;
+  position: relative;
+  flex: none;
+}
+.mark::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  inset-block: 0;
+  width: 1px;
+  background: rgba(201, 163, 92, 0.5);
+}
+.mark::after {
+  content: "";
+  position: absolute;
+  right: -7px;
+  bottom: -7px;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--sm-gold);
+  transform: rotate(-40deg);
+}
+.label {
+  font-family: var(--font-serif), serif;
+  font-size: var(--fs-subheading);
+  line-height: 1.3;
+  color: var(--sm-cream-warm);
+  max-width: 24ch;
+}
+.note {
+  font-size: var(--fs-caption);
+  letter-spacing: 0.04em;
+  color: var(--sm-gold-pale);
+  max-width: 36ch;
+  line-height: 1.4;
+}

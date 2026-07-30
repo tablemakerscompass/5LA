@@ -57,6 +57,44 @@ export function breadcrumbSchema(items: { label: string; path: string }[]) {
   };
 }
 
+/** Article structured data (JSON-LD) for an individual Insights article. */
+export function articleSchema({
+  title,
+  description,
+  path,
+  datePublished,
+  image,
+  authorName,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  image: string;
+  authorName: string;
+}) {
+  const url = new URL(path, site.url).toString();
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    datePublished,
+    image: [new URL(image, site.url).toString()],
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    author: { "@type": "Person", name: authorName },
+    publisher: {
+      "@type": "Organization",
+      name: site.legalName,
+      logo: {
+        "@type": "ImageObject",
+        url: new URL("/brand/5la-logo-stacked.png", site.url).toString(),
+      },
+    },
+  };
+}
+
 /** Organization structured data (JSON-LD) for the site root. */
 export function organizationSchema() {
   return {

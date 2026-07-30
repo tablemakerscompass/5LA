@@ -80,7 +80,8 @@
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--warm-500);
+  /* --warm-500 falls just under 4.5:1 on this panel's cream-300 fill. */
+  color: var(--warm-600);
   opacity: 0.8;
 }
 

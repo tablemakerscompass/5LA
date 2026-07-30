@@ -1,0 +1,53 @@
+.wrap {
+  background: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.rule {
+  margin-block: var(--space-1);
+}
+.heading {
+  max-width: 17ch;
+  text-wrap: balance;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.body {
+  max-width: 60ch;
+}
+
+.quoteWrap {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(1.75rem, 3.5vw, 2.75rem);
+  border-top: 1px solid var(--border);
+}
+.quote {
+  max-width: 28ch;
+  font-style: italic;
+  text-wrap: balance;
+  padding-left: clamp(1rem, 2.5vw, 1.75rem);
+  border-left: 3px solid var(--vx-gold);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+  .quote {
+    max-width: 34ch;
+  }
+}

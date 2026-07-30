@@ -1,0 +1,129 @@
+/* A warm, light hero — the Academy reads as a room you are welcomed into. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(95% 85% at 92% 0%, rgba(33, 71, 55, 0.16), transparent 60%),
+    radial-gradient(80% 90% at 0% 100%, rgba(200, 164, 93, 0.14), transparent 62%),
+    var(--ac-cream-100);
+  border-bottom: 1px solid var(--border);
+}
+
+.container {
+  padding-block: clamp(2rem, 1.5rem + 3vw, 3.25rem) clamp(3.5rem, 3rem + 5vw, 6rem);
+}
+.crumbs {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+  max-width: 42rem;
+}
+
+/* Official monogram on the light tile it was drawn for, beside a serif
+   wordmark. The note keeps the treatment honestly labelled. */
+.lockup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.monogramTile {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  flex: none;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px;
+}
+.monogram {
+  width: 100%;
+  height: auto;
+}
+.wordmarkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.wordmark {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.35rem, 1rem + 1.3vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--heading);
+}
+.wordmarkNote {
+  font-size: var(--fs-caption);
+  line-height: 1.35;
+  color: var(--text-subtle);
+}
+
+.eyebrow {
+  color: var(--ac-green-ink);
+}
+.headline {
+  font-size: clamp(2.15rem, 1.5rem + 2.6vw, 3.75rem);
+  max-width: 18ch;
+  text-wrap: balance;
+}
+.accent {
+  font-style: italic;
+  color: var(--ac-green-700);
+}
+.lead {
+  max-width: 48ch;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+.actions a {
+  white-space: normal;
+}
+.descriptor {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ac-green-ink);
+}
+
+.figure {
+  width: 100%;
+}
+.frame {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow);
+}
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 980px) {
+  .inner {
+    grid-template-columns: 1.02fr 0.98fr;
+    gap: clamp(3rem, 6vw, 5.5rem);
+  }
+}
