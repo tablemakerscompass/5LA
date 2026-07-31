@@ -200,9 +200,10 @@ export const asgCastTagline =
   "Every woman has a secret. Some were buried to keep the family standing.";
 
 /**
- * Cast gallery, in running order. Card 1 is the revealed Aunt Sarah portrait;
- * cards 2–9 are the numbered cast photographs (ASG Cast Photos 1–8), which stay
- * nameless for now. Fill each `portrait` in as the photograph lands.
+ * Cast gallery, in the order the cards appear. Card 1 is the revealed Aunt
+ * Sarah portrait; the rest are the cast photographs, which stay nameless for
+ * now. Each `id` keeps the numbering of its source photograph, so the ids run
+ * out of sequence wherever the running order has been rearranged.
  */
 export const asgCast: AsgCastCard[] = [
   {
@@ -211,11 +212,6 @@ export const asgCast: AsgCastCard[] = [
     portraitAlt:
       "Cast portrait — a woman in a deep red gown, photographed in candlelight.",
     credit: "Supreme Lioness as Aunt Sarah",
-  },
-  {
-    id: "cast-01",
-    portrait: "/brand/asg/cast/asg-cast-01.jpg",
-    portraitAlt: "Cast portrait — character not yet revealed.",
   },
   {
     id: "cast-02",
@@ -240,6 +236,11 @@ export const asgCast: AsgCastCard[] = [
   {
     id: "cast-06",
     portrait: "/brand/asg/cast/asg-cast-06.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-01",
+    portrait: "/brand/asg/cast/asg-cast-01.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
   },
   {
