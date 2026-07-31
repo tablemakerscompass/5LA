@@ -115,7 +115,20 @@ async function deliverViaResend(inquiry: InquiryPayload): Promise<DeliveryResult
     }),
   });
 
-  return res.ok ? { ok: true, transport: "resend" } : { ok: false, reason: "failed" };
+  if (res.ok) return { ok: true, transport: "resend" };
+
+  // Log why Resend refused — its own error name and message, never the
+  // inquiry contents. Without this the cause is invisible in production.
+  let detail = "";
+  try {
+    const body = (await res.json()) as { name?: string; message?: string };
+    detail = [body.name, body.message].filter(Boolean).join(" — ").slice(0, 300);
+  } catch {
+    // Non-JSON error body; the status code alone still tells us something.
+  }
+  console.error(`[inquiry] resend refused ${res.status}${detail ? `: ${detail}` : ""}`);
+
+  return { ok: false, reason: "failed" };
 }
 
 async function deliverViaWebhook(inquiry: InquiryPayload): Promise<DeliveryResult> {
@@ -149,8 +162,11 @@ export async function deliverInquiry(
     return transport === "resend"
       ? await deliverViaResend(inquiry)
       : await deliverViaWebhook(inquiry);
-  } catch {
-    // Intentionally swallow the error object: it can echo request contents.
+  } catch (error) {
+    // Log the error type only — the object itself can echo request contents.
+    console.error(
+      `[inquiry] ${transport} threw ${error instanceof Error ? error.name : "unknown error"}`
+    );
     return { ok: false, reason: "failed" };
   }
 }
