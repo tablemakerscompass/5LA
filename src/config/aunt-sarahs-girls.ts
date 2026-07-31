@@ -164,46 +164,94 @@ export const productionElements: string[] = [
 /* -------------------------------------------------------------------------
    SECTION 6 — The women of Aunt Sarah's Girls
    ------------------------------------------------------------------------- */
-export type AsgCharacter = {
-  /** Approved public character name. */
-  name: string;
-  /** Approved alternate name, if one has been made public. */
-  alsoKnownAs?: string;
+/**
+ * The gallery is deliberately anonymous. Only Aunt Sarah has been revealed;
+ * every other card shows the cast portrait alone so readers can guess who is
+ * who. Character names are NOT rendered — do not add one to a card until that
+ * role has been publicly announced.
+ */
+export type AsgCastCard = {
+  /** Stable key for the card. Never rendered — keep it free of role names. */
+  id: string;
   /**
-   * Approved portrait path. LEAVE UNDEFINED until approved artwork is
-   * supplied — the gallery renders a labeled placeholder instead.
-   * Never alter approved faces, skin tones, hairstyles, or clothing.
+   * Approved portrait path. LEAVE UNDEFINED until the approved photograph is
+   * dropped into /public/brand/asg/cast/ — the gallery renders an unlabelled
+   * placeholder instead. Never alter approved faces, skin tones, hairstyles,
+   * or clothing.
    */
   portrait?: string;
-  /** Alt text for the approved portrait. Required whenever `portrait` is set. */
+  /**
+   * Alt text for the portrait. Keep it anonymous while the role is unrevealed:
+   * describe the photograph, never the character.
+   */
   portraitAlt?: string;
-  /** Short, spoiler-free description. Awaiting approved copy. */
-  description?: string;
-  /** Emotional theme. Awaiting approved copy — do not infer one. */
-  theme?: string;
-  /** Connection to the family or story. Awaiting approved copy. */
-  connection?: string;
-  /** Optional approved quote. */
-  quote?: string;
-  /** Future character detail route. Omit until the route exists. */
-  href?: string;
+  /**
+   * Approved cast credit, shown beneath the portrait in gold — e.g.
+   * "Supreme Lioness as Aunt Sarah". Set ONLY once that casting has been
+   * announced; leaving it undefined is what keeps the card a guessing game.
+   */
+  credit?: string;
 };
 
 /**
- * Approved public character names only. Every descriptive field is deliberately
- * blank pending approved copy and artwork — see the note at the top of this file.
+ * The single line carried under every card while the cast is unrevealed.
  */
-export const asgCharacters: AsgCharacter[] = [
-  { name: "Aunt Sarah" },
-  { name: "Crystal", alsoKnownAs: "Peaches" },
-  { name: "April" },
-  { name: "Rayann" },
-  { name: "Shannon" },
-  { name: "Stephanie" },
-  { name: "Terry" },
-  { name: "Kayona" },
-  { name: "Lori" },
-  { name: "Cailin" },
+export const asgCastTagline =
+  "Every woman has a secret. Some were buried to keep the family standing.";
+
+/**
+ * Cast gallery, in running order. Card 1 is the revealed Aunt Sarah portrait;
+ * cards 2–9 are the numbered cast photographs (ASG Cast Photos 1–8), which stay
+ * nameless for now. Fill each `portrait` in as the photograph lands.
+ */
+export const asgCast: AsgCastCard[] = [
+  {
+    id: "aunt-sarah",
+    portrait: "/brand/asg/asg-aunt-sarah.jpg",
+    portraitAlt:
+      "Cast portrait — a woman in a deep red gown, photographed in candlelight.",
+    credit: "Supreme Lioness as Aunt Sarah",
+  },
+  {
+    id: "cast-01",
+    portrait: "/brand/asg/cast/asg-cast-01.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-02",
+    portrait: "/brand/asg/cast/asg-cast-02.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-03",
+    portrait: "/brand/asg/cast/asg-cast-03.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-04",
+    portrait: "/brand/asg/cast/asg-cast-04.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-05",
+    portrait: "/brand/asg/cast/asg-cast-05.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-06",
+    portrait: "/brand/asg/cast/asg-cast-06.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-07",
+    portrait: "/brand/asg/cast/asg-cast-07.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-08",
+    portrait: "/brand/asg/cast/asg-cast-08.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
 ];
 
 /* -------------------------------------------------------------------------

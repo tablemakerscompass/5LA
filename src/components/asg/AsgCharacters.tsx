@@ -1,105 +1,45 @@
 import Image from "next/image";
-import Link from "next/link";
 import Container from "@/components/layout/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/ui/Reveal";
-import { asgCharacters, type AsgCharacter } from "@/config/aunt-sarahs-girls";
+import { asgCast, asgCastTagline, type AsgCastCard } from "@/config/aunt-sarahs-girls";
 import styles from "./AsgCharacters.module.css";
 
 /**
- * One character in the gallery. Every descriptive field is optional: until
- * approved, spoiler-free copy and approved artwork are supplied, the card shows
- * the approved public name and a clearly-labelled placeholder. Nothing about a
- * character is inferred or invented.
+ * One card in the cast gallery. The gallery is anonymous by design: apart from
+ * the announced Aunt Sarah credit, a card carries a photograph and the shared
+ * tagline and nothing else, so readers can guess who is who. Nothing here —
+ * including alt text — may name an unrevealed character.
  */
-function CharacterCard({ character }: { character: AsgCharacter }) {
-  const fullName = character.alsoKnownAs
-    ? `${character.name}, also known as ${character.alsoKnownAs}`
-    : character.name;
-
-  const body = (
-    <>
-      <div className={styles.portrait}>
-        {character.portrait ? (
-          <Image
-            src={character.portrait}
-            alt={
-              character.portraitAlt ??
-              `Approved character portrait of ${fullName} from Aunt Sarah’s Girls.`
-            }
-            fill
-            sizes="(min-width: 900px) 300px, 70vw"
-            loading="lazy"
-            className={styles.portraitImage}
-          />
-        ) : (
-          <div className={styles.portraitPlaceholder}>
-            <span className={styles.initial} aria-hidden="true">
-              {character.name.charAt(0)}
-            </span>
-            <span className={styles.portraitNote}>
-              Approved portrait required
-            </span>
-          </div>
-        )}
-      </div>
-
-      <div className={styles.plate}>
-        <h3 className={styles.name}>
-          {character.name}
-          {character.alsoKnownAs && (
-            <span className={styles.aka}>
-              also known as {character.alsoKnownAs}
-            </span>
-          )}
-        </h3>
-
-        {character.theme && (
-          <p className={styles.theme}>{character.theme}</p>
-        )}
-
-        <p className={styles.desc}>
-          {character.description ?? (
-            <span className={styles.pendingCopy}>
-              Character description pending approval.
-            </span>
-          )}
-        </p>
-
-        {character.connection && (
-          <p className={styles.connection}>{character.connection}</p>
-        )}
-
-        {character.quote && (
-          <blockquote className={styles.quote}>
-            &ldquo;{character.quote}&rdquo;
-          </blockquote>
-        )}
-
-        {character.href && (
-          <span className={styles.cue}>
-            Read more <span aria-hidden="true">&rarr;</span>
-          </span>
-        )}
-      </div>
-    </>
-  );
-
-  if (character.href) {
-    return (
-      <li className={styles.item}>
-        <Link href={character.href} className={`${styles.card} ${styles.linked}`}>
-          {body}
-        </Link>
-      </li>
-    );
-  }
-
+function CastCard({ card }: { card: AsgCastCard }) {
   return (
     <li className={styles.item}>
-      <article className={styles.card} aria-label={fullName}>
-        {body}
-      </article>
+      <figure className={styles.card}>
+        <div className={styles.portrait}>
+          {card.portrait ? (
+            <Image
+              src={card.portrait}
+              alt={card.portraitAlt ?? "Cast portrait — character not yet revealed."}
+              fill
+              sizes="(min-width: 900px) 300px, 70vw"
+              loading="lazy"
+              className={styles.portraitImage}
+            />
+          ) : (
+            <div className={styles.portraitPlaceholder}>
+              <span className={styles.mark} aria-hidden="true">
+                ?
+              </span>
+              <span className={styles.portraitNote}>Portrait coming soon</span>
+            </div>
+          )}
+        </div>
+
+        <figcaption className={styles.plate}>
+          {card.credit && <p className={styles.credit}>{card.credit}</p>}
+          <p className={styles.desc}>{asgCastTagline}</p>
+        </figcaption>
+      </figure>
     </li>
   );
 }
@@ -121,7 +61,7 @@ export default function AsgCharacters() {
               Buried.
             </span>
           }
-          lead="Approved public names are listed below. Portraits and spoiler-free descriptions are added as each is approved for release."
+          lead="The cast, one portrait at a time. Names are staying behind the curtain for now — see who you can place."
           divider
         />
       </Container>
@@ -134,11 +74,11 @@ export default function AsgCharacters() {
           className={styles.scroller}
           tabIndex={0}
           role="group"
-          aria-label="Character gallery — scrollable"
+          aria-label="Cast gallery — scrollable"
         >
           <ul className={styles.row}>
-            {asgCharacters.map((character) => (
-              <CharacterCard key={character.name} character={character} />
+            {asgCast.map((card) => (
+              <CastCard key={card.id} card={card} />
             ))}
           </ul>
         </div>
@@ -146,8 +86,8 @@ export default function AsgCharacters() {
 
       <Container>
         <p className={`caption ${styles.note}`}>
-          Character artwork, biographies, relationships, and story details are
-          released only as approved. Nothing on this page reveals story outcomes.
+          Casting, character artwork, and story details are released only as
+          approved. Nothing on this page reveals story outcomes.
         </p>
       </Container>
     </section>
