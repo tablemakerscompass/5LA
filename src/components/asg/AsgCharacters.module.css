@@ -37,21 +37,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 0;
   background: var(--surface-raised);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-}
-.linked {
-  transition: transform var(--dur) var(--ease),
-    box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
-}
-.linked:hover,
-.linked:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--border-strong);
 }
 
 /* --- Portrait ----------------------------------------------------------- */
@@ -79,7 +70,9 @@
   text-align: center;
   padding: var(--space-4);
 }
-.initial {
+/* Deliberately anonymous: a question mark, never an initial, so the placeholder
+   gives nothing away about which woman the card belongs to. */
+.mark {
   font-family: var(--font-serif), serif;
   font-size: clamp(2.75rem, 8vw, 3.75rem);
   font-weight: 600;
@@ -119,55 +112,12 @@
   color: var(--accent-strong);
 }
 
-.name {
+.desc {
   font-family: var(--font-serif), serif;
-  font-size: var(--fs-h4);
-  font-weight: 600;
-  line-height: 1.15;
-  color: var(--heading);
-}
-.aka {
-  display: block;
-  margin-top: var(--space-1);
-  font-family: var(--font-sans), sans-serif;
-  font-size: var(--fs-caption);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--text-subtle);
-}
-.theme {
-  font-size: var(--fs-caption);
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-strong);
-}
-.desc,
-.connection {
+  font-style: italic;
   font-size: var(--fs-small);
   line-height: 1.55;
   color: var(--text-muted);
-}
-.pendingCopy {
-  font-style: italic;
-  color: var(--text-subtle);
-}
-.quote {
-  font-family: var(--font-serif), serif;
-  font-style: italic;
-  font-size: var(--fs-small);
-  color: var(--heading);
-  padding-left: var(--space-3);
-  border-left: 2px solid var(--asg-tan);
-}
-.cue {
-  margin-top: auto;
-  padding-top: var(--space-3);
-  font-size: var(--fs-caption);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-strong);
 }
 
 .note {
