@@ -8,6 +8,14 @@
  *
  * Configure ONE of the following:
  *
+ *   Email (SMTP — Zoho, or any mailbox provider)
+ *     SMTP_USER           required — the full mailbox address
+ *     SMTP_PASSWORD       required — an app password, never the login password
+ *     SMTP_HOST           optional — defaults to smtp.zoho.com
+ *     SMTP_PORT           optional — defaults to 465 (implicit TLS)
+ *     INQUIRY_FROM_EMAIL  optional — defaults to SMTP_USER
+ *     INQUIRY_TO_EMAIL    optional — defaults to the site contact address
+ *
  *   Email (Resend)
  *     RESEND_API_KEY      required — https://resend.com API key
  *     INQUIRY_FROM_EMAIL  required — an address on a domain verified in Resend
@@ -29,14 +37,17 @@ import { interestLabel } from "@/config/inquiry";
 import { site } from "@/config/site";
 import type { InquiryPayload } from "./inquiry";
 
+type Transport = "smtp" | "resend" | "webhook";
+
 export type DeliveryResult =
-  | { ok: true; transport: "resend" | "webhook" }
+  | { ok: true; transport: Transport }
   | { ok: false; reason: "unconfigured" | "failed" };
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 
-/** Which transport is configured, if any. */
-export function configuredTransport(): "resend" | "webhook" | null {
+/** Which transport is configured, if any. SMTP wins when both are present. */
+export function configuredTransport(): Transport | null {
+  if (process.env.SMTP_USER && process.env.SMTP_PASSWORD) return "smtp";
   if (process.env.RESEND_API_KEY && process.env.INQUIRY_FROM_EMAIL) return "resend";
   if (process.env.INQUIRY_WEBHOOK_URL) return "webhook";
   return null;
@@ -93,6 +104,42 @@ function htmlBody(inquiry: InquiryPayload) {
 <p style="margin:0 0 16px;font-weight:600;">New Work With Us inquiry</p>
 <table cellpadding="0" cellspacing="0">${cells}</table>
 </div>`;
+}
+
+/**
+ * Send through the mailbox provider's own SMTP server. Preferred over an API
+ * transport when the domain already has a mailbox: the notification arrives
+ * from a real address on the domain, with no separate sending service to
+ * verify. The credential must be an app password — providers reject the
+ * account login password for SMTP once MFA is on.
+ */
+async function deliverViaSmtp(inquiry: InquiryPayload): Promise<DeliveryResult> {
+  const to = process.env.INQUIRY_TO_EMAIL || site.contact.email;
+  if (!to) return { ok: false, reason: "unconfigured" };
+
+  const port = Number(process.env.SMTP_PORT ?? 465);
+  const nodemailer = (await import("nodemailer")).default;
+
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST ?? "smtp.zoho.com",
+    port,
+    secure: port === 465,
+    auth: {
+      user: process.env.SMTP_USER as string,
+      pass: process.env.SMTP_PASSWORD as string,
+    },
+  });
+
+  await transporter.sendMail({
+    from: process.env.INQUIRY_FROM_EMAIL || (process.env.SMTP_USER as string),
+    to,
+    replyTo: inquiry.email,
+    subject: `Inquiry — ${interestLabel(inquiry.interest)} — ${inquiry.organization}`,
+    text: textBody(inquiry),
+    html: htmlBody(inquiry),
+  });
+
+  return { ok: true, transport: "smtp" };
 }
 
 async function deliverViaResend(inquiry: InquiryPayload): Promise<DeliveryResult> {
@@ -159,14 +206,18 @@ export async function deliverInquiry(
   if (!transport) return { ok: false, reason: "unconfigured" };
 
   try {
-    return transport === "resend"
-      ? await deliverViaResend(inquiry)
-      : await deliverViaWebhook(inquiry);
+    if (transport === "smtp") return await deliverViaSmtp(inquiry);
+    if (transport === "resend") return await deliverViaResend(inquiry);
+    return await deliverViaWebhook(inquiry);
   } catch (error) {
-    // Log the error type only — the object itself can echo request contents.
-    console.error(
-      `[inquiry] ${transport} threw ${error instanceof Error ? error.name : "unknown error"}`
-    );
+    // Log the error type and any transport code (EAUTH, ECONNECTION, …) — not
+    // the message, which can echo addresses from the request.
+    const name = error instanceof Error ? error.name : "unknown error";
+    const code =
+      typeof error === "object" && error !== null && "code" in error
+        ? String((error as { code: unknown }).code)
+        : "";
+    console.error(`[inquiry] ${transport} threw ${name}${code ? ` (${code})` : ""}`);
     return { ok: false, reason: "failed" };
   }
 }
