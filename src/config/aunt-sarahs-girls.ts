@@ -212,14 +212,46 @@ export const asgCast: AsgCastCard[] = [
       "Cast portrait — a woman in a deep red gown, photographed in candlelight.",
     credit: "Supreme Lioness as Aunt Sarah",
   },
-  { id: "cast-01", portraitAlt: "Cast portrait — character not yet revealed." },
-  { id: "cast-02", portraitAlt: "Cast portrait — character not yet revealed." },
-  { id: "cast-03", portraitAlt: "Cast portrait — character not yet revealed." },
-  { id: "cast-04", portraitAlt: "Cast portrait — character not yet revealed." },
-  { id: "cast-05", portraitAlt: "Cast portrait — character not yet revealed." },
-  { id: "cast-06", portraitAlt: "Cast portrait — character not yet revealed." },
-  { id: "cast-07", portraitAlt: "Cast portrait — character not yet revealed." },
-  { id: "cast-08", portraitAlt: "Cast portrait — character not yet revealed." },
+  {
+    id: "cast-01",
+    portrait: "/brand/asg/cast/asg-cast-01.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-02",
+    portrait: "/brand/asg/cast/asg-cast-02.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-03",
+    portrait: "/brand/asg/cast/asg-cast-03.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-04",
+    portrait: "/brand/asg/cast/asg-cast-04.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-05",
+    portrait: "/brand/asg/cast/asg-cast-05.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-06",
+    portrait: "/brand/asg/cast/asg-cast-06.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-07",
+    portrait: "/brand/asg/cast/asg-cast-07.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
+  {
+    id: "cast-08",
+    portrait: "/brand/asg/cast/asg-cast-08.jpg",
+    portraitAlt: "Cast portrait — character not yet revealed.",
+  },
 ];
 
 /* -------------------------------------------------------------------------
