@@ -211,12 +211,13 @@ export const asgCastTagline =
  * cards 2–9 are the numbered cast photographs (ASG Cast Photos 1–8), which stay
  * nameless for now. Fill each `portrait` in as the photograph lands.
  *
- * Descriptions were approved BY GRID POSITION, counting Aunt Sarah as the first
- * photo: she and cast photos 1–3 make up the top row on screen, cast photos 4–7
- * the second. Note that this puts the cast-photo numbers one slot out of step
- * with the visual rows, because Aunt Sarah leads the gallery — cast photo 1 is
- * the top row's *second* card. REORDERING THIS ARRAY PUTS COPY UNDER THE WRONG
- * PORTRAIT — re-check every pairing if the running order changes.
+ * The gallery lays out four across, so this array order IS the on-screen order:
+ * slots 1–4 are the top row, 5–8 the second, and slot 9 wraps alone. The
+ * cast-photo file numbers deliberately no longer run in sequence — Aunt Sarah
+ * leads the gallery, and cast photos 1 and 5 were swapped by request — so read
+ * the slot, not the filename. Each description travels with its own portrait,
+ * so REORDERING THIS ARRAY MOVES COPY BETWEEN SLOTS; re-check the pairings
+ * whenever the running order changes.
  */
 export const asgCast: AsgCastCard[] = [
   {
@@ -229,11 +230,11 @@ export const asgCast: AsgCastCard[] = [
       "She knows what was buried, what was protected, and what it cost to keep the family standing. Some women hold the house. She held the silence too.",
   },
   {
-    id: "cast-01",
-    portrait: "/brand/asg/cast/asg-cast-01.jpg",
+    id: "cast-05",
+    portrait: "/brand/asg/cast/asg-cast-05.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
     description:
-      "She learned how to smile through pain and call it strength. But what happens when the version of yourself that survived is no longer the version that can heal?",
+      "She mastered the art of surviving without being seen. But survival and healing are not the same thing—and eventually, the difference demands to be faced.",
   },
   {
     id: "cast-02",
@@ -250,7 +251,7 @@ export const asgCast: AsgCastCard[] = [
       "She wears confidence like armor, but even the strongest women grow tired of carrying what no one ever asked them about.",
   },
 
-  /* ---- Second row on screen — cast photos 4–7 ---- */
+  /* ---- Second row on screen — slots 5–8 ---- */
   {
     id: "cast-04",
     portrait: "/brand/asg/cast/asg-cast-04.jpg",
@@ -259,11 +260,11 @@ export const asgCast: AsgCastCard[] = [
       "She still has softness in her eyes, but life has already asked her to grow up too quickly. Some truths don’t wait until you’re ready.",
   },
   {
-    id: "cast-05",
-    portrait: "/brand/asg/cast/asg-cast-05.jpg",
+    id: "cast-01",
+    portrait: "/brand/asg/cast/asg-cast-01.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
     description:
-      "She mastered the art of surviving without being seen. But survival and healing are not the same thing—and eventually, the difference demands to be faced.",
+      "She learned how to smile through pain and call it strength. But what happens when the version of yourself that survived is no longer the version that can heal?",
   },
   {
     id: "cast-06",
@@ -280,7 +281,7 @@ export const asgCast: AsgCastCard[] = [
       "She looks like she’s already tired of pretending. And maybe that’s where truth begins—when performance ends and honesty finally gets a room.",
   },
 
-  /* ---- Third row on screen — cast photo 8, alone ---- */
+  /* ---- Third row on screen — slot 9, alone ---- */
   {
     id: "cast-08",
     portrait: "/brand/asg/cast/asg-cast-08.jpg",
