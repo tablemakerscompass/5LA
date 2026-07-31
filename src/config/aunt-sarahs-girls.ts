@@ -177,6 +177,11 @@ export type AsgCharacter = {
   portrait?: string;
   /** Alt text for the approved portrait. Required whenever `portrait` is set. */
   portraitAlt?: string;
+  /**
+   * Approved cast credit — the performer announced for the role. Set only once
+   * casting has been made public; the card renders it beneath the portrait.
+   */
+  portrayedBy?: string;
   /** Short, spoiler-free description. Awaiting approved copy. */
   description?: string;
   /** Emotional theme. Awaiting approved copy — do not infer one. */
@@ -194,7 +199,13 @@ export type AsgCharacter = {
  * blank pending approved copy and artwork — see the note at the top of this file.
  */
 export const asgCharacters: AsgCharacter[] = [
-  { name: "Aunt Sarah" },
+  {
+    name: "Aunt Sarah",
+    portrait: "/brand/asg/asg-aunt-sarah.jpg",
+    portraitAlt:
+      "Approved portrait of Aunt Sarah in a deep red gown, seated in candlelight.",
+    portrayedBy: "Supreme Lioness",
+  },
   { name: "Crystal", alsoKnownAs: "Peaches" },
   { name: "April" },
   { name: "Rayann" },

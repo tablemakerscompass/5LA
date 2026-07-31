@@ -108,6 +108,17 @@
   border-top: 2px solid var(--asg-amber);
   flex: 1;
 }
+/* Cast credit, sitting directly beneath the portrait in the show's gold. */
+.credit {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  /* The ASG gold, resolved per surface so it stays legible on light and dark. */
+  color: var(--accent-strong);
+}
+
 .name {
   font-family: var(--font-serif), serif;
   font-size: var(--fs-h4);

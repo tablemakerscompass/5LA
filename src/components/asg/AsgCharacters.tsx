@@ -45,6 +45,12 @@ function CharacterCard({ character }: { character: AsgCharacter }) {
       </div>
 
       <div className={styles.plate}>
+        {character.portrayedBy && (
+          <p className={styles.credit}>
+            {character.portrayedBy} as {character.name}
+          </p>
+        )}
+
         <h3 className={styles.name}>
           {character.name}
           {character.alsoKnownAs && (
