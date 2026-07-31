@@ -191,10 +191,17 @@ export type AsgCastCard = {
    * announced; leaving it undefined is what keeps the card a guessing game.
    */
   credit?: string;
+  /**
+   * Approved character description shown under the portrait. Written to stay
+   * anonymous — it describes the woman, never names the role. A card without
+   * one falls back to `asgCastTagline`.
+   */
+  description?: string;
 };
 
 /**
- * The single line carried under every card while the cast is unrevealed.
+ * The fallback line, carried under any card that has no approved description
+ * of its own.
  */
 export const asgCastTagline =
   "Every woman has a secret. Some were buried to keep the family standing.";
@@ -203,6 +210,13 @@ export const asgCastTagline =
  * Cast gallery, in running order. Card 1 is the revealed Aunt Sarah portrait;
  * cards 2–9 are the numbered cast photographs (ASG Cast Photos 1–8), which stay
  * nameless for now. Fill each `portrait` in as the photograph lands.
+ *
+ * Descriptions were approved BY GRID POSITION, counting Aunt Sarah as the first
+ * photo: she and cast photos 1–3 make up the top row on screen, cast photos 4–7
+ * the second. Note that this puts the cast-photo numbers one slot out of step
+ * with the visual rows, because Aunt Sarah leads the gallery — cast photo 1 is
+ * the top row's *second* card. REORDERING THIS ARRAY PUTS COPY UNDER THE WRONG
+ * PORTRAIT — re-check every pairing if the running order changes.
  */
 export const asgCast: AsgCastCard[] = [
   {
@@ -211,46 +225,72 @@ export const asgCast: AsgCastCard[] = [
     portraitAlt:
       "Cast portrait — a woman in a deep red gown, photographed in candlelight.",
     credit: "Supreme Lioness as Aunt Sarah",
+    description:
+      "She knows what was buried, what was protected, and what it cost to keep the family standing. Some women hold the house. She held the silence too.",
   },
   {
     id: "cast-01",
     portrait: "/brand/asg/cast/asg-cast-01.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
+    description:
+      "She learned how to smile through pain and call it strength. But what happens when the version of yourself that survived is no longer the version that can heal?",
   },
   {
     id: "cast-02",
     portrait: "/brand/asg/cast/asg-cast-02.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
+    description:
+      "Some daughters inherit more than features and family names. They inherit questions, wounds, and silence that never belonged to them in the first place.",
   },
   {
     id: "cast-03",
     portrait: "/brand/asg/cast/asg-cast-03.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
+    description:
+      "She wears confidence like armor, but even the strongest women grow tired of carrying what no one ever asked them about.",
   },
+
+  /* ---- Second row on screen — cast photos 4–7 ---- */
   {
     id: "cast-04",
     portrait: "/brand/asg/cast/asg-cast-04.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
+    description:
+      "She still has softness in her eyes, but life has already asked her to grow up too quickly. Some truths don’t wait until you’re ready.",
   },
   {
     id: "cast-05",
     portrait: "/brand/asg/cast/asg-cast-05.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
+    description:
+      "She mastered the art of surviving without being seen. But survival and healing are not the same thing—and eventually, the difference demands to be faced.",
   },
   {
     id: "cast-06",
     portrait: "/brand/asg/cast/asg-cast-06.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
+    description:
+      "She carries herself with control, but some of the deepest battles are fought quietly. Not every breaking point makes a sound.",
   },
   {
     id: "cast-07",
     portrait: "/brand/asg/cast/asg-cast-07.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
+    description:
+      "She looks like she’s already tired of pretending. And maybe that’s where truth begins—when performance ends and honesty finally gets a room.",
   },
+
+  /* ---- Third row on screen — cast photo 8, alone ---- */
   {
     id: "cast-08",
     portrait: "/brand/asg/cast/asg-cast-08.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
+    /*
+     * NO APPROVED DESCRIPTION YET. The approved copy covered a "top row" and
+     * "bottom row" of four, which — with Aunt Sarah leading the gallery —
+     * accounts for the first eight cards. This ninth portrait wraps onto a row
+     * of its own and falls back to `asgCastTagline` until copy is written.
+     */
   },
 ];
 

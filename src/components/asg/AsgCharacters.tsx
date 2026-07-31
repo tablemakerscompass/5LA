@@ -7,9 +7,10 @@ import styles from "./AsgCharacters.module.css";
 
 /**
  * One card in the cast gallery. The gallery is anonymous by design: apart from
- * the announced Aunt Sarah credit, a card carries a photograph and the shared
- * tagline and nothing else, so readers can guess who is who. Nothing here —
- * including alt text — may name an unrevealed character.
+ * the announced Aunt Sarah credit, a card carries a photograph and its approved
+ * description and nothing else, so readers can guess who is who. Cards without
+ * an approved description fall back to the shared tagline. Nothing here —
+ * including alt text and descriptions — may name an unrevealed character.
  */
 function CastCard({ card }: { card: AsgCastCard }) {
   return (
@@ -37,7 +38,7 @@ function CastCard({ card }: { card: AsgCastCard }) {
 
         <figcaption className={styles.plate}>
           {card.credit && <p className={styles.credit}>{card.credit}</p>}
-          <p className={styles.desc}>{asgCastTagline}</p>
+          <p className={styles.desc}>{card.description ?? asgCastTagline}</p>
         </figcaption>
       </figure>
     </li>
