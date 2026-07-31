@@ -9,6 +9,7 @@ import Outcomes from "@/components/home/Outcomes";
 import Loaves from "@/components/home/Loaves";
 import Leadership from "@/components/home/Leadership";
 import InsightsPreview from "@/components/home/InsightsPreview";
+import Clients from "@/components/home/Clients";
 import CTABanner from "@/components/ui/CTABanner";
 
 const description =
@@ -48,6 +49,7 @@ export default function HomePage() {
       <Loaves />
       <Leadership />
       <InsightsPreview />
+      <Clients />
       <CTABanner
         eyebrow="Let's Begin"
         title="What Experience Are You Ready to Build?"
