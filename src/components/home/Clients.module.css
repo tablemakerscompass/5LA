@@ -1,0 +1,120 @@
+.wrap {
+  background: var(--surface);
+  border-block: 1px solid var(--border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: var(--space-7);
+  list-style: none;
+  padding: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.cell {
+  background: var(--surface);
+  /*
+   * Hairlines are drawn as a 1px shadow ring on each cell rather than as grid
+   * gaps: a gap lands on fractional pixels at these column widths and drops out
+   * entirely on some boundaries. Rings take no layout space and overlap their
+   * neighbors exactly, so every seam paints. `overflow: hidden` on the grid
+   * clips the outermost ring into the section's outer border.
+   */
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  /* Shorter when stacked one-per-row, so six entries don't become dead air. */
+  min-height: 88px;
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+  text-decoration: none;
+  transition: background var(--dur) var(--ease);
+}
+
+a.item:hover,
+a.item:focus-visible {
+  background: var(--surface-raised);
+}
+
+/* Logo treatment — muted at rest, full color on hover of its cell. */
+.logo {
+  width: auto;
+  max-width: 100%;
+  height: clamp(30px, 4vw, 44px);
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.62;
+  transition:
+    filter var(--dur) var(--ease),
+    opacity var(--dur) var(--ease);
+}
+
+a.item:hover .logo,
+a.item:focus-visible .logo {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* Name treatment — used whenever a logo isn't cleared or available. */
+.name {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: var(--heading);
+  text-wrap: balance;
+  transition: color var(--dur) var(--ease);
+}
+
+a.item:hover .name,
+a.item:focus-visible .name {
+  color: var(--primary);
+}
+
+.descriptor {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-subtle);
+}
+
+.footnote {
+  margin-top: var(--space-5);
+  text-align: center;
+  color: var(--text-subtle);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .item {
+    min-height: 116px;
+  }
+}
+
+/*
+ * Three across, not six: these organization names are long enough that six
+ * columns would wrap every one of them to three lines. Two rows of three keeps
+ * each name on one or two lines and stays balanced at exactly six entries.
+ */
+@media (min-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .item {
+    min-height: 132px;
+  }
+}
