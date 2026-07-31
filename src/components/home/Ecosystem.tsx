@@ -14,7 +14,15 @@ export default function Ecosystem() {
     <section className={`section ${styles.wrap}`} aria-labelledby="ecosystem-heading">
       <Container>
         <SectionIntro
-          eyebrow="Our Companies & Initiatives"
+          /*
+           * "The 5LA Ecosystem" rather than "Our Companies & Initiatives":
+           * further down this same page, the Clients section lists
+           * organizations 5LA has *served*, and "our companies" reads as
+           * either owned-or-served. This section's own lead and CTA already
+           * say "ecosystem", so the label is native vocabulary and pairs
+           * cleanly against "Who We've Worked With".
+           */
+          eyebrow="The 5LA Ecosystem"
           title={
             <span id="ecosystem-heading">
               Built Under One Vision. Created for Different Experiences.
