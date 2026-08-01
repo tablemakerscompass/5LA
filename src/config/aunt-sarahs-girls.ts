@@ -208,18 +208,26 @@ export const asgCastTagline =
 
 /**
  * Cast gallery, in running order. Card 1 is the revealed Aunt Sarah portrait;
- * cards 2–9 are the numbered cast photographs (ASG Cast Photos 1–8), which stay
- * nameless for now. Fill each `portrait` in as the photograph lands.
+ * cards 2–9 are the cast photographs, which stay nameless on screen.
  *
  * The gallery lays out four across, so this array order IS the on-screen order:
  * slots 1–4 are the top row, 5–8 the second, and slot 9 wraps alone. The
  * cast-photo file numbers deliberately no longer run in sequence — Aunt Sarah
  * leads the gallery, and cast photos 1 and 5 were swapped by request — so read
- * the slot, not the filename. Each description travels with its own portrait,
- * so REORDERING THIS ARRAY MOVES COPY BETWEEN SLOTS; re-check the pairings
- * whenever the running order changes.
+ * the slot, not the filename. Each description belongs to the portrait it sits
+ * with, so REORDERING THIS ARRAY MOVES COPY BETWEEN SLOTS; re-check every
+ * pairing whenever the running order changes.
+ *
+ * The character each description was written for is recorded in a comment
+ * above its card. Those names are supplied for editing only. They are NOT
+ * rendered and NOT part of the data — comments never reach the browser — and
+ * apart from the announced Aunt Sarah credit no name may appear on the page
+ * until that role has been publicly revealed.
  */
 export const asgCast: AsgCastCard[] = [
+  /* ---- Top row on screen — slots 1–4 ---- */
+
+  /* Slot 1 — Aunt Sarah (revealed) */
   {
     id: "aunt-sarah",
     portrait: "/brand/asg/asg-aunt-sarah.jpg",
@@ -229,6 +237,8 @@ export const asgCast: AsgCastCard[] = [
     description:
       "She knows what was buried, what was protected, and what it cost to keep the family standing. Some women hold the house. She held the silence too.",
   },
+
+  /* Slot 2 — Riley */
   {
     id: "cast-05",
     portrait: "/brand/asg/cast/asg-cast-05.jpg",
@@ -236,6 +246,8 @@ export const asgCast: AsgCastCard[] = [
     description:
       "She mastered the art of surviving without being seen. But survival and healing are not the same thing—and eventually, the difference demands to be faced.",
   },
+
+  /* Slot 3 — Rayann */
   {
     id: "cast-02",
     portrait: "/brand/asg/cast/asg-cast-02.jpg",
@@ -243,6 +255,8 @@ export const asgCast: AsgCastCard[] = [
     description:
       "Some daughters inherit more than features and family names. They inherit questions, wounds, and silence that never belonged to them in the first place.",
   },
+
+  /* Slot 4 — Crystal */
   {
     id: "cast-03",
     portrait: "/brand/asg/cast/asg-cast-03.jpg",
@@ -252,20 +266,26 @@ export const asgCast: AsgCastCard[] = [
   },
 
   /* ---- Second row on screen — slots 5–8 ---- */
+
+  /* Slot 5 — Kayonna */
   {
     id: "cast-04",
     portrait: "/brand/asg/cast/asg-cast-04.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
     description:
-      "She still has softness in her eyes, but life has already asked her to grow up too quickly. Some truths don’t wait until you’re ready.",
+      "She still has softness in her eyes, but life has already asked her to grow up too quickly. Some truths do not wait until you are ready.",
   },
+
+  /* Slot 6 — Stephanie */
   {
     id: "cast-01",
     portrait: "/brand/asg/cast/asg-cast-01.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
     description:
-      "She learned how to smile through pain and call it strength. But what happens when the version of yourself that survived is no longer the version that can heal?",
+      "She learned how to smile through pain and call it strength. But what happens when the version of you that survived is no longer the version that can heal?",
   },
+
+  /* Slot 7 — Terry */
   {
     id: "cast-06",
     portrait: "/brand/asg/cast/asg-cast-06.jpg",
@@ -273,25 +293,25 @@ export const asgCast: AsgCastCard[] = [
     description:
       "She carries herself with control, but some of the deepest battles are fought quietly. Not every breaking point makes a sound.",
   },
+
+  /* Slot 8 — Shannon */
   {
     id: "cast-07",
     portrait: "/brand/asg/cast/asg-cast-07.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
     description:
-      "She looks like she’s already tired of pretending. And maybe that’s where truth begins—when performance ends and honesty finally gets a room.",
+      "She looks tired of pretending. Maybe that is where truth begins—when performance ends and honesty finally has room to enter.",
   },
 
   /* ---- Third row on screen — slot 9, alone ---- */
+
+  /* Slot 9 — April */
   {
     id: "cast-08",
     portrait: "/brand/asg/cast/asg-cast-08.jpg",
     portraitAlt: "Cast portrait — character not yet revealed.",
-    /*
-     * NO APPROVED DESCRIPTION YET. The approved copy covered a "top row" and
-     * "bottom row" of four, which — with Aunt Sarah leading the gallery —
-     * accounts for the first eight cards. This ninth portrait wraps onto a row
-     * of its own and falls back to `asgCastTagline` until copy is written.
-     */
+    description:
+      "She has spent years holding pieces of everyone else together. The question is what remains of her when she finally stops carrying what was never hers.",
   },
 ];
 
