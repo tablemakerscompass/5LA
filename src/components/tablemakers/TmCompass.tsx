@@ -1,23 +1,30 @@
+import Link from "next/link";
 import Container from "@/components/layout/Container";
+import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import TmPendingAction from "./TmPendingAction";
 import TmStatusPill from "./TmStatusPill";
 import { compassThemes } from "@/config/tablemakers";
+import {
+  compassArticles,
+  formatDate,
+  readingMinutes,
+} from "@/config/articles";
 import styles from "./TmCompass.module.css";
 
 /**
  * Section 7 — The Tablemakers Compass.
  *
- * VERIFIED: no Compass article has been published. The 5LA site's own insights
- * data is explicitly placeholder, the Drive holds no Compass documents, and no
- * publication URL exists anywhere in the three repositories.
- *
- * So this section shows THEMES the publication will explore — never articles.
- * There are no cards dressed as posts, no dates, no read times, no author
- * lines, and no links. When real pieces exist, add an `articles` export with
- * exact titles, dates, and URLs, and render them here instead.
+ * Published pieces come from `compassArticles` — real articles in the 5LA
+ * Insights library, carrying their own titles, dates, and routes. Nothing here
+ * is dressed up: when that list is empty the section falls back to the THEMES
+ * the publication will explore, with no cards posing as posts and no link to a
+ * destination that does not exist.
  */
 export default function TmCompass() {
+  const published = compassArticles;
+  const latest = published[0];
+
   return (
     <section
       id="the-compass"
@@ -35,7 +42,7 @@ export default function TmCompass() {
               Experience
             </h2>
             <p className={styles.statusRow}>
-              <TmStatusPill status="in-development" />
+              <TmStatusPill status={latest ? "available" : "in-development"} />
             </p>
           </Reveal>
           <Reveal delay={100} className={styles.intro}>
@@ -51,11 +58,34 @@ export default function TmCompass() {
           </Reveal>
         </div>
 
+        {published.length > 0 && (
+          <Reveal delay={60} className={styles.publishedBlock}>
+            <h3 className={styles.subhead}>Published</h3>
+            <ul className={styles.published}>
+              {published.map((article) => (
+                <li key={article.slug} className={styles.publishedItem}>
+                  <Link
+                    href={`/insights/${article.slug}`}
+                    className={styles.publishedLink}
+                  >
+                    {article.title}
+                  </Link>
+                  <p className={styles.publishedMeta}>
+                    {formatDate(article.date)} · {readingMinutes(article)} min
+                    read
+                  </p>
+                  <p className={styles.publishedExcerpt}>{article.excerpt}</p>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        )}
+
         <Reveal delay={60} className={styles.themesBlock}>
-          <h3 className={styles.subhead}>The themes it will follow</h3>
+          <h3 className={styles.subhead}>The themes it follows</h3>
           <p className={styles.themesNote}>
-            These are the questions the Compass is being written around. They are
-            subjects, not published pieces — nothing has been released yet.
+            These are the questions the Compass is written around. They are
+            subjects, not a publication schedule.
           </p>
           <ul className={styles.themes}>
             {compassThemes.map((theme) => (
@@ -67,10 +97,16 @@ export default function TmCompass() {
         </Reveal>
 
         <Reveal delay={100} className={styles.actions}>
-          <TmPendingAction
-            label="Read The Tablemakers Compass"
-            note="No article has been published yet — this opens with the first piece"
-          />
+          {latest ? (
+            <Button href={`/insights/${latest.slug}`} variant="gold" size="lg">
+              Read The Tablemakers Compass
+            </Button>
+          ) : (
+            <TmPendingAction
+              label="Read The Tablemakers Compass"
+              note="No article has been published yet — this opens with the first piece"
+            />
+          )}
         </Reveal>
       </Container>
     </section>

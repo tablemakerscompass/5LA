@@ -3,17 +3,21 @@ import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import TmPendingAction from "./TmPendingAction";
 import { tmBrand } from "@/config/tablemakers";
+import { compassArticles } from "@/config/articles";
 import styles from "./TmJoin.module.css";
 
 /**
  * Section 17 — Join or follow Tablemakers.
  *
- * Only two live actions exist, and both are real routes: a conversation through
- * Work With Us, and the Academy page. The Collective and the Compass appear as
- * inert text with the reason, because neither has a destination. No signup, no
- * newsletter, no membership, no event calendar — none of that has been built.
+ * Every live action is a real route: a conversation through Work With Us, the
+ * Academy page, and — once a Compass piece exists — the published Compass. The
+ * Collective and upcoming gatherings stay inert text with the reason, because
+ * neither has a destination. No signup, no membership, no event calendar —
+ * none of that has been built.
  */
 export default function TmJoin() {
+  const latestCompass = compassArticles[0];
+
   return (
     <section
       id="join-tablemakers"
@@ -46,6 +50,15 @@ export default function TmJoin() {
             <Button href="/our-companies/5la-academy" variant="outline" size="lg">
               Explore The 5LA Academy
             </Button>
+            {latestCompass && (
+              <Button
+                href={`/insights/${latestCompass.slug}`}
+                variant="outline"
+                size="lg"
+              >
+                Read The Tablemakers Compass
+              </Button>
+            )}
           </div>
         </Reveal>
 
@@ -56,10 +69,12 @@ export default function TmJoin() {
               label="Join the Tablemakers Collective"
               note="No community destination yet"
             />
-            <TmPendingAction
-              label="Follow The Tablemakers Compass"
-              note="No article published yet"
-            />
+            {!latestCompass && (
+              <TmPendingAction
+                label="Follow The Tablemakers Compass"
+                note="No article published yet"
+              />
+            )}
             <TmPendingAction
               label="Attend an upcoming conversation"
               note="No gathering scheduled yet"

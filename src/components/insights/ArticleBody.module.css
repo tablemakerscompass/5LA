@@ -19,6 +19,21 @@
   color: var(--text);
 }
 
+/* Section subhead for articles written in labelled sections. */
+.subhead {
+  margin-top: var(--space-4);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(1.35rem, 1.15rem + 0.7vw, 1.65rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: var(--heading);
+  text-wrap: balance;
+}
+.subhead:first-child {
+  margin-top: 0;
+}
+
 .list {
   display: flex;
   flex-direction: column;

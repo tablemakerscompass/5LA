@@ -7,9 +7,10 @@
  *
  * EDITOR NOTES
  * - `body` is an ordered list of blocks. A plain string is a paragraph;
- *   `{ list }` renders a bulleted list; `{ quote }` renders a pull quote.
- *   Pull quotes are lifted from the article's own text and are NOT repeated
- *   in the surrounding paragraphs.
+ *   `{ list }` renders a bulleted list; `{ quote }` renders a pull quote;
+ *   `{ heading }` renders a section subhead for pieces written in labelled
+ *   sections. Pull quotes are lifted from the article's own text and are NOT
+ *   repeated in the surrounding paragraphs.
  * - `readingMinutes()` is calculated from the real word count of `body` —
  *   never hand-written.
  * - `date` values are the editorial publication dates. Update them to the
@@ -21,7 +22,11 @@
  */
 
 /** A single block of article body content. */
-export type Block = string | { list: string[] } | { quote: string };
+export type Block =
+  | string
+  | { list: string[] }
+  | { quote: string }
+  | { heading: string };
 
 export type Article = {
   /** URL slug (route: /insights/[slug]). */
@@ -60,6 +65,81 @@ export const author = {
 
 export const articles: Article[] = [
   /* ------------------------------------------------------------------ 01 */
+  {
+    slug: "she-got-the-degree-part-one",
+    category: "The Tablemakers Compass",
+    title:
+      "She Got the Degree. She Built the Career. Then the Job Disappeared.",
+    dek: "Part One: What happened to Black women in the workforce? The labor market changed around us, and the numbers deserve our attention.",
+    excerpt:
+      "Fourteen percent of the female workforce. More than half of the losses. That deserves a conversation.",
+    date: "2026-08-12",
+    image: "/brand/insights/she-got-the-degree.jpg",
+    imageAlt:
+      "A Black woman executive in a burgundy suit reviewing documents and notes at a table in a warm, candlelit dining room.",
+    body: [
+      "For generations, the instructions were clear.",
+      "Go to school. Get the degree. Find a good job. Work hard. Move up. Build your retirement. Create a better life for your family.",
+      "And for many Black women, that is exactly what we did.",
+      "We earned the degrees. We entered industries where they were often one of very few. We became managers, directors, analysts, HR professionals, project leaders, administrators and government leaders.",
+      "We built careers.",
+      "And then, for a significant number of us, the job disappeared.",
+      "Not because our degrees expired. Not because twenty years of experience suddenly meant nothing.",
+      "The labor market changed around us.",
+      "And the numbers deserve our attention.",
+
+      { heading: "Let’s get the numbers right." },
+      "You may have seen claims online that “600,000 Black women were laid off.”",
+      "That is not a statistic I am comfortable repeating.",
+      "Being laid off, becoming unemployed, losing employment and leaving the labor force are related but they are not the same thing.",
+      "What we can document is still significant.",
+      "According to the Institute for Women’s Policy Research, Black women had 251,000 fewer jobs in August 2025 than they did in January 2025.",
+      "During that same period, Black women represented only 14.1% of the female workforce, yet accounted for 54.7% of the employment losses among women.",
+      "By December, some employment had returned, but there were still 113,000 fewer employed Black women than there had been in January.",
+      {
+        quote:
+          "Fourteen percent of the female workforce. More than half of the losses. That deserves a conversation.",
+      },
+
+      { heading: "And these weren’t simply entry-level workers." },
+      "One of the most striking findings came from the Economic Policy Institute.",
+      "Black women with bachelor’s degrees experienced a 3.5-percentage-point decline in their employment-to-population ratio between 2024 and 2025—the largest decline among the education groups examined.",
+      "Their labor-force participation rate also declined.",
+      "That matters because education has long been presented as one of the clearest paths to security.",
+      "Get the degree and you’ll have options. Get into management and you’ll be safer. Build seniority and you’ll have stability.",
+      "But what happens when the woman with the degree, certifications, leadership experience and fifteen years with an organization walks into work and learns that her position has been eliminated or given to someone else? Where exactly is the promised security then?",
+
+      { heading: "The public sector was hit especially hard." },
+      "This story also requires some honesty about where the losses occurred.",
+      "It would be easy to say corporate America eliminated hundreds of thousands of Black women’s jobs.",
+      "The data does not support that simple conclusion.",
+      "EPI found that much of the overall decline was driven by the public sector.",
+      "Black women’s public-sector employment fell by approximately 155,656, including about 95,371 fewer Black women employed by the federal government.",
+      "There were also significant declines in areas such as financial activities, professional and business services and manufacturing.",
+      "At the same time, gains in education and health services helped offset some of those losses.",
+      "The story isn’t that every industry stopped hiring Black women.",
+      "The story is that some of the career paths long viewed as stable suddenly became considerably less stable.",
+      "And that should make all of us pay attention.",
+
+      { heading: "The Compass Point" },
+      "Maybe this isn’t simply a story about layoffs.",
+      "Maybe it is a story about what happens when an entire generation of professionals realizes that doing everything “right” does not guarantee that the institution will protect the life they built around it.",
+      "The degree still matters. Experience still matters. Leadership still matters.",
+      "But perhaps we need to have a different conversation about security.",
+      "Because having a good job and being economically secure are not always the same thing.",
+
+      { heading: "Friday in Part Two: What happens when the salary disappears?" },
+      "We’re going to talk about the nearly 2 million Black women earning $75,000 or more, long-term unemployment, the real household cost of losing a professional salary—and why today’s workers may need to start thinking differently about career security.",
+      "Because the question may no longer be:",
+      "“Do you have a good job?”",
+      "The better question might be:",
+      "“If that job disappeared tomorrow, what would you still have?”",
+      "The Tablemakers Compass — where leadership, hospitality, business and the human experience meet.",
+      "Sources: U.S. Bureau of Labor Statistics; Economic Policy Institute; Institute for Women’s Policy Research.",
+    ],
+  },
+
+  /* ------------------------------------------------------------------ 02 */
   {
     slug: "future-of-events-is-more-meaningful",
     category: "Events & Experience",
@@ -135,7 +215,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 02 */
+  /* ------------------------------------------------------------------ 03 */
   {
     slug: "hospitality-basics-are-disappearing",
     category: "Hospitality",
@@ -224,7 +304,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 03 */
+  /* ------------------------------------------------------------------ 04 */
   {
     slug: "people-cannot-carry-an-untaught-standard",
     category: "Training & Workforce Development",
@@ -332,7 +412,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 04 */
+  /* ------------------------------------------------------------------ 05 */
   {
     slug: "ai-should-support-leadership",
     category: "Artificial Intelligence & Leadership",
@@ -440,7 +520,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 05 */
+  /* ------------------------------------------------------------------ 06 */
   {
     slug: "culture-after-the-meeting",
     category: "Culture & Leadership",
@@ -554,7 +634,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 06 */
+  /* ------------------------------------------------------------------ 07 */
   {
     slug: "strong-story-needs-strong-structure",
     category: "Media & Storytelling",
@@ -680,6 +760,18 @@ export const featuredArticle = articles[0];
 /** The remaining articles, in publication order. */
 export const supportingArticles = articles.slice(1);
 
+/** Editorial category used by pieces published under The Tablemakers Compass. */
+export const COMPASS_CATEGORY = "The Tablemakers Compass";
+
+/**
+ * Published Compass pieces, newest first. The Tablemakers page reads this to
+ * decide whether the Compass has anything to link to — when it is empty, that
+ * page shows themes only and never implies a publication exists.
+ */
+export const compassArticles = articles.filter(
+  (a) => a.category === COMPASS_CATEGORY
+);
+
 /** Look up a single article by slug. */
 export function getArticle(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);
@@ -700,6 +792,7 @@ export function wordCount(article: Article): number {
     .map((block) => {
       if (typeof block === "string") return block;
       if ("list" in block) return block.list.join(" ");
+      if ("heading" in block) return block.heading;
       return block.quote;
     })
     .join(" ");
