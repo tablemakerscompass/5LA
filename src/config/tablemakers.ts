@@ -19,8 +19,12 @@
  * - The Tablemakers brand identity itself (the organization operates as
  *   "tablemakerscompass").
  *
+ * WHAT NOW EXISTS (2026-08-12):
+ * - Published Tablemakers Compass writing, held in the 5LA Insights library
+ *   (`src/config/articles.ts`) and surfaced here through `compassArticles`.
+ *   The Compass links only ever point at pieces in that library.
+ *
  * WHAT DOES NOT YET EXIST — and must therefore never be linked or implied:
- * - A published Tablemakers Compass article. Not one.
  * - A Collective community destination (no Meetup, no group, no forum).
  * - A newsletter or signup function.
  * - Any scheduled gathering, event, or roundtable.
@@ -214,10 +218,10 @@ export const collectiveFormats: { title: string; status: TmStatus }[] = [
 
 /* -------------------------------------------------------------------------
    SECTION 7 — The Tablemakers Compass
-   IMPORTANT: no article has been published. The entries below are THEMES the
-   publication will explore — never presented as articles, never given a date,
-   an author, a read time, or a link. When real pieces are published, add an
-   `articles` export with exact titles, dates, and URLs.
+   The entries below are THEMES the publication explores — never presented as
+   articles, never given a date, an author, a read time, or a link.
+   Published Compass pieces live in `src/config/articles.ts` and are read from
+   `compassArticles` there; add new ones to that library, not to this list.
    ------------------------------------------------------------------------- */
 export const compassThemes: string[] = [
   "The future of events is not bigger—it is more meaningful",

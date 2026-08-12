@@ -3,7 +3,8 @@ import styles from "./ArticleBody.module.css";
 
 /**
  * Renders an article body from its block list. Strings become paragraphs,
- * `{ list }` becomes a bulleted list, and `{ quote }` becomes a pull quote.
+ * `{ list }` becomes a bulleted list, `{ quote }` becomes a pull quote, and
+ * `{ heading }` becomes a section subhead.
  */
 export default function ArticleBody({ blocks }: { blocks: Block[] }) {
   return (
@@ -11,6 +12,14 @@ export default function ArticleBody({ blocks }: { blocks: Block[] }) {
       {blocks.map((block, i) => {
         if (typeof block === "string") {
           return <p key={i}>{block}</p>;
+        }
+
+        if ("heading" in block) {
+          return (
+            <h2 key={i} className={styles.subhead}>
+              {block.heading}
+            </h2>
+          );
         }
 
         if ("list" in block) {
