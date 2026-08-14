@@ -66,6 +66,107 @@ export const author = {
 export const articles: Article[] = [
   /* ------------------------------------------------------------------ 01 */
   {
+    slug: "when-the-salary-disappears",
+    category: "The Tablemakers Compass",
+    title: "When the Salary Disappears",
+    dek: "Part Two: The real cost of job loss, and why career security may need a new definition.",
+    excerpt:
+      "A company may employ you. It should never own your entire ability to survive.",
+    date: "2026-08-14",
+    image: "/brand/insights/when-the-salary-disappears.jpg",
+    imageAlt:
+      "A Black woman executive in a burgundy suit reviewing documents and notes at a table in a warm, candlelit dining room.",
+    body: [
+      "Earlier this week, we talked about the employment losses Black women experienced during 2025.",
+      "But counting jobs only tells part of the story.",
+      "Because when a professional position disappears, a salary disappears with it.",
+      "And that salary may be supporting far more than one person.",
+
+      { heading: "Let’s talk about $75,000." },
+      "According to U.S. Census Bureau data, approximately 7.06 million Black women between ages 25 and 64 worked full-time, year-round in 2024.",
+      "Of that group, approximately 1.95 million earned at least $75,000 annually.",
+      "That’s about 27.6% of full-time, year-round Black female workers in that age range.",
+      "To be clear: that does not mean 1.95 million women earning $75,000 were laid off.",
+      "The available public data do not allow us to make that connection.",
+      "But the number tells us something important.",
+      "There is a substantial population of Black women who spent years building careers capable of producing middle- and upper-middle-income salaries.",
+      "And when those careers are disrupted, the consequences extend far beyond a job title.",
+      "An $85,000 salary may be paying a mortgage.",
+      "A $100,000 salary may be supporting children and an aging parent.",
+      "That paycheck may be funding health insurance, tuition, retirement contributions, childcare, transportation and the emergency savings that took years to build.",
+      "So when the job goes away, we shouldn’t simply say:",
+      "“She lost her job.”",
+      {
+        quote:
+          "She may have lost the financial structure holding an entire household together.",
+      },
+
+      { heading: "And “just get another job” isn’t always that simple." },
+      "In 2025, the Bureau of Labor Statistics counted an annual average of approximately 769,000 unemployed Black women.",
+      "About 222,000 had been unemployed for 27 weeks or longer.",
+      "The average duration of unemployment for Black women was 27.1 weeks.",
+      "That’s more than six months.",
+      "Six months of applications.",
+      "Six months of résumé changes.",
+      "Six months of hearing that the company “decided to move in another direction.”",
+      "Six months of wondering whether your experience now makes you overqualified.",
+      "Six months of watching savings shrink.",
+      "And if the next opportunity comes with a salary $20,000 or $30,000 lower than the previous one, employment may return—but the financial recovery may take considerably longer.",
+
+      { heading: "So what does career security mean now?" },
+      "This is the part I believe professionals need to think about differently.",
+      "This is not an argument against education.",
+      "It is not an argument against corporate careers.",
+      "And it is certainly not an argument that everybody should quit tomorrow and become an entrepreneur.",
+      "But I do believe the days of allowing one employer to represent our entire economic plan deserve reconsideration.",
+      "A company can value you and still restructure.",
+      "A manager can love your work and still be told to eliminate your department.",
+      "Twenty years of service can still end with a severance package.",
+      "So perhaps the question becomes:",
+      "What belongs to you when the company no longer does?",
+      "Your knowledge does.",
+      "Your reputation does.",
+      "Your relationships do.",
+      "Your skills do.",
+      "Your network does.",
+      "Your ideas do.",
+      "And the ability to generate income outside one employer can belong to you too.",
+      "That may mean consulting. Freelancing. Teaching. Speaking. Contract work. Maintaining a professional portfolio. Building stronger industry relationships. Obtaining another certification. Creating a second stream of income. Or simply keeping your résumé and LinkedIn profile current before you need them.",
+      "The answer doesn’t have to be entrepreneurship.",
+      "The answer is options.",
+
+      { heading: "The Compass Point" },
+      "Maybe the new definition of professional security isn’t:",
+      "“I have a good job.”",
+      "Maybe it’s:",
+      "“I have options if this job goes away.”",
+      "Build the degree.",
+      "Build the career.",
+      "Build the retirement.",
+      "Build the savings.",
+      "But also build your skills, your network, your reputation and your ability to move.",
+      "Because a company may employ you.",
+      "It should never own your entire ability to survive.",
+
+      { heading: "And there is another part of today’s employment environment we need to discuss." },
+      "When someone has been unemployed for months, they’re tired.",
+      "They’re applying everywhere.",
+      "They’re watching savings disappear.",
+      "Then suddenly an email arrives:",
+      "“We reviewed your résumé and believe you’d be perfect for our remote management position. Salary: $95,000.”",
+      "The message comes from Gmail.",
+      "The interview happens by text.",
+      "And the “recruiter” needs personal information immediately.",
+      "When you’ve been searching for six months, a fraudulent job offer doesn’t always look like a scam.",
+      "Sometimes it looks like relief.",
+      "That’s where The Tablemakers Compass goes next.",
+      "The Tablemakers Compass — where leadership, hospitality, business and the human experience meet.",
+      "Sources: U.S. Census Bureau Current Population Survey/ASEC; U.S. Bureau of Labor Statistics; Economic Policy Institute; Institute for Women’s Policy Research.",
+    ],
+  },
+
+  /* ------------------------------------------------------------------ 02 */
+  {
     slug: "she-got-the-degree-part-one",
     category: "The Tablemakers Compass",
     title:
@@ -139,7 +240,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 02 */
+  /* ------------------------------------------------------------------ 03 */
   {
     slug: "future-of-events-is-more-meaningful",
     category: "Events & Experience",
@@ -215,7 +316,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 03 */
+  /* ------------------------------------------------------------------ 04 */
   {
     slug: "hospitality-basics-are-disappearing",
     category: "Hospitality",
@@ -304,7 +405,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 04 */
+  /* ------------------------------------------------------------------ 05 */
   {
     slug: "people-cannot-carry-an-untaught-standard",
     category: "Training & Workforce Development",
@@ -412,7 +513,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 05 */
+  /* ------------------------------------------------------------------ 06 */
   {
     slug: "ai-should-support-leadership",
     category: "Artificial Intelligence & Leadership",
@@ -520,7 +621,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 06 */
+  /* ------------------------------------------------------------------ 07 */
   {
     slug: "culture-after-the-meeting",
     category: "Culture & Leadership",
@@ -634,7 +735,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 07 */
+  /* ------------------------------------------------------------------ 08 */
   {
     slug: "strong-story-needs-strong-structure",
     category: "Media & Storytelling",
