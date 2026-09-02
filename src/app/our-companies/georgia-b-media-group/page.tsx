@@ -71,7 +71,6 @@ export default function GeorgiaBMediaGroupPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             breadcrumbSchema([
-              { label: "Our Companies", path: "/our-companies" },
               {
                 label: "The Georgia B. Media Group",
                 path: "/our-companies/georgia-b-media-group",

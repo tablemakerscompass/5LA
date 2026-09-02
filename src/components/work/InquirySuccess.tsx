@@ -42,7 +42,7 @@ export default function InquirySuccess() {
               Return to the Homepage
             </Button>
             <Button href="/insights" variant="outline" size="lg">
-              Explore 5LA Insights
+              Explore The Tablemakers Compass
             </Button>
           </div>
         </div>

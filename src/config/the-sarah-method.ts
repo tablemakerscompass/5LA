@@ -431,7 +431,7 @@ export const smEcosystem: {
 }[] = [
   {
     name: "Aunt Sarah’s Girls",
-    href: "/our-companies/aunt-sarahs-girls",
+    href: "/aunt-sarahs-girls",
     kind: "company",
     role: "Provides the story world, themes, voice, emotional foundation, and invitation into truth-centered conversation.",
   },

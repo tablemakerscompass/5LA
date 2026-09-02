@@ -67,7 +67,7 @@ export const articles: Article[] = [
   /* ------------------------------------------------------------------ 01 */
   {
     slug: "when-the-salary-disappears",
-    category: "The Tablemakers Compass",
+    category: "Training & Workforce Development",
     title: "When the Salary Disappears",
     dek: "Part Two: The real cost of job loss, and why career security may need a new definition.",
     excerpt:
@@ -168,7 +168,7 @@ export const articles: Article[] = [
   /* ------------------------------------------------------------------ 02 */
   {
     slug: "she-got-the-degree-part-one",
-    category: "The Tablemakers Compass",
+    category: "Training & Workforce Development",
     title:
       "She Got the Degree. She Built the Career. Then the Job Disappeared.",
     dek: "Part One: What happened to Black women in the workforce? The labor market changed around us, and the numbers deserve our attention.",
@@ -861,17 +861,18 @@ export const featuredArticle = articles[0];
 /** The remaining articles, in publication order. */
 export const supportingArticles = articles.slice(1);
 
-/** Editorial category used by pieces published under The Tablemakers Compass. */
-export const COMPASS_CATEGORY = "The Tablemakers Compass";
-
 /**
  * Published Compass pieces, newest first. The Tablemakers page reads this to
  * decide whether the Compass has anything to link to — when it is empty, that
  * page shows themes only and never implies a publication exists.
+ *
+ * This is now every article: the whole publication carries the Compass name,
+ * so a per-post "The Tablemakers Compass" category no longer distinguishes
+ * anything. It used to filter on that category, which would leave this empty
+ * once the category was retired — and the Tablemakers page would then claim
+ * nothing had been published.
  */
-export const compassArticles = articles.filter(
-  (a) => a.category === COMPASS_CATEGORY
-);
+export const compassArticles = articles;
 
 /** Look up a single article by slug. */
 export function getArticle(slug: string): Article | undefined {

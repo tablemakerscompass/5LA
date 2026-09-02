@@ -18,7 +18,7 @@ export default function ArticleGrid({ articles }: { articles: Article[] }) {
     <section className={`section ${styles.wrap}`} aria-labelledby="more-insights-heading">
       <Container>
         <div className={styles.head}>
-          <p className="eyebrow">More Insights</p>
+          <p className="eyebrow">More from the Compass</p>
           <hr className="rule" />
           <h2 id="more-insights-heading" className="section-heading">
             Perspective From Across the Work.

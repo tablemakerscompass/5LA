@@ -22,7 +22,6 @@ export default function GbHero() {
       <div className={styles.inner}>
         <Breadcrumbs
           items={[
-            { label: "Our Companies", href: "/our-companies" },
             { label: brand?.name ?? "The Georgia B. Media Group" },
           ]}
           className={styles.crumbs}

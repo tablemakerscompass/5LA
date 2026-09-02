@@ -108,7 +108,6 @@ export default function TablemakersPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             breadcrumbSchema([
-              { label: "Our Companies", path: "/our-companies" },
               { label: tmBrand.name, path: tmBrand.path },
             ])
           ),

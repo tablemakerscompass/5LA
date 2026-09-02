@@ -134,10 +134,7 @@ export default function AuntSarahsGirlsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            breadcrumbSchema([
-              { label: "Our Companies", path: "/our-companies" },
-              { label: asgBrand.name, path: asgBrand.path },
-            ])
+            breadcrumbSchema([{ label: asgBrand.name, path: asgBrand.path }])
           ),
         }}
       />

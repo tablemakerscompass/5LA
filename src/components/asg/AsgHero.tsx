@@ -25,7 +25,6 @@ export default function AsgHero() {
       <Container className={styles.container}>
         <Breadcrumbs
           items={[
-            { label: "Our Companies", href: "/our-companies" },
             { label: asgBrand.name },
           ]}
           className={styles.crumbs}

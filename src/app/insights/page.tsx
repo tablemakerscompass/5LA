@@ -7,9 +7,10 @@ import ArticleGrid from "@/components/insights/ArticleGrid";
 import CTABanner from "@/components/ui/CTABanner";
 import { featuredArticle, supportingArticles } from "@/config/articles";
 
-const title = "5LA Insights | Leadership, Hospitality, Technology & Experience";
+const title =
+  "The Tablemakers Compass | Hospitality, Leadership & Experience | 5LA";
 const description =
-  "Explore practical 5LA insight on leadership, hospitality, culture, artificial intelligence, training, events, storytelling, and meaningful experience.";
+  "The Tablemakers Compass is the thought-leadership and editorial voice of the Tablemakers platform, exploring hospitality, leadership, service, culture, operations, workforce development, events, and professional standards.";
 const url = `${site.url}/insights`;
 
 export const metadata: Metadata = {
@@ -41,16 +42,21 @@ export default function InsightsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            breadcrumbSchema([{ label: "Insights", path: "/insights" }])
+            breadcrumbSchema([{ label: "The Tablemakers Compass", path: "/insights" }])
           ),
         }}
       />
 
       <PageHero
-        eyebrow="5LA Insights"
-        title="Ideas for the People Building the Experience Behind the Brand."
-        lead="Practical perspective on leadership, hospitality, culture, artificial intelligence, training, events, storytelling, and the systems shaping how organizations serve people."
-        crumbs={[{ label: "Insights" }]}
+        /*
+         * Language taken from the Compass section on the Tablemakers page
+         * (components/tablemakers/TmCompass.tsx), so the publication describes
+         * itself the same way in both places.
+         */
+        eyebrow="The Tablemakers Compass"
+        title="Insight for the People Guiding the Experience."
+        lead="The thought-leadership and editorial voice of the Tablemakers platform — exploring the realities of hospitality, leadership, service, culture, operations, workforce development, events, professional standards, and the future of meaningful experiences."
+        crumbs={[{ label: "The Tablemakers Compass" }]}
       />
 
       <FeaturedArticle article={featuredArticle} />
@@ -62,7 +68,7 @@ export default function InsightsPage() {
         title="Insight Should Change the Experience."
         body="Explore how 5LA can help strengthen the systems, technology, people, and stories behind your organization."
         primary={{ label: "Work With 5LA", href: "/work-with-us" }}
-        secondary={{ label: "Explore Our Experience Sectors", href: "/what-we-do" }}
+        secondary={{ label: "Explore What We Do", href: "/what-we-do" }}
       />
     </>
   );

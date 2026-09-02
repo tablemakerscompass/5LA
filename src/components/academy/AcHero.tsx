@@ -20,7 +20,6 @@ export default function AcHero() {
       <Container className={styles.container}>
         <Breadcrumbs
           items={[
-            { label: "Our Companies", href: "/our-companies" },
             { label: acBrand.name },
           ]}
           className={styles.crumbs}

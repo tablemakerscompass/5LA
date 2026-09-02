@@ -44,6 +44,20 @@ const nextConfig = {
         destination: "/what-we-do",
         statusCode: 301,
       },
+
+      /*
+       * The Our Companies overview was retired. The individual company pages
+       * stay live at their existing URLs — so this matches the overview only,
+       * never /our-companies/:slug.
+       */
+      { source: "/our-companies", destination: "/", statusCode: 301 },
+
+      /* Aunt Sarah's Girls was promoted to a top-level route. */
+      {
+        source: "/our-companies/aunt-sarahs-girls",
+        destination: "/aunt-sarahs-girls",
+        statusCode: 301,
+      },
     ];
   },
 };

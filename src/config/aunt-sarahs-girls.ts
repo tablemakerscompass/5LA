@@ -27,7 +27,8 @@ export const statusLabel: Record<AsgStatus, string> = {
 export const asgBrand = {
   name: "Aunt Sarah’s Girls",
   slug: "aunt-sarahs-girls",
-  path: "/our-companies/aunt-sarahs-girls",
+  /* Promoted to a top-level route; /aunt-sarahs-girls 301s here. */
+  path: "/aunt-sarahs-girls",
   category: "Literary · Theatrical · Healing",
   type: "Original literary, theatrical, and community-centered property",
   parent: "The 5 Loaves Agency, LLC",
@@ -98,7 +99,7 @@ export const asgAssets: Record<string, string | undefined> = {
   auntSarah: "/brand/asg/asg-aunt-sarah.jpg",
   /** Approved Sarah Method branding — the same logo the Sarah Method page uses. */
   sarahMethod: "/brand/sarah-method/sarah-method-logo.png",
-  /** Social-sharing image for /our-companies/aunt-sarahs-girls. */
+  /** Social-sharing image for /aunt-sarahs-girls. */
   ogImage: undefined,
 };
 

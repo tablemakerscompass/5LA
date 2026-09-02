@@ -64,7 +64,7 @@ export default function SmAsgConnection() {
 
         <Reveal delay={180} className={styles.ctaWrap}>
           <Button
-            href="/our-companies/aunt-sarahs-girls"
+            href="/aunt-sarahs-girls"
             variant="gold"
             size="lg"
             className={styles.cta}

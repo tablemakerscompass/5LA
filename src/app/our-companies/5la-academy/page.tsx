@@ -125,7 +125,6 @@ export default function AcademyPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             breadcrumbSchema([
-              { label: "Our Companies", path: "/our-companies" },
               { label: acBrand.name, path: acBrand.path },
             ])
           ),

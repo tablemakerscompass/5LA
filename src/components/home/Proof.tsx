@@ -101,7 +101,7 @@ export default function Proof() {
 
         {featured && (
           <Reveal delay={120} className={styles.insight}>
-            <p className={`eyebrow ${styles.insightEyebrow}`}>Insights From the Table</p>
+            <p className={`eyebrow ${styles.insightEyebrow}`}>The Tablemakers Compass</p>
             <Link href={`/insights/${featured.slug}`} className={styles.card}>
               <div className={styles.cardMedia}>
                 <Image
@@ -123,7 +123,7 @@ export default function Proof() {
             </Link>
             <div className={styles.insightCta}>
               <Button href="/insights" variant="text">
-                Read More Insights
+                Read More from the Compass
               </Button>
             </div>
           </Reveal>

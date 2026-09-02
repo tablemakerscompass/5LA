@@ -1,14 +1,13 @@
 /**
  * Global navigation structure — single source of truth for header, mobile menu,
- * and footer. Company children are derived from the company config so
- * navigation never duplicates that data.
+ * and footer.
  *
- * The Experience Sectors dropdown was retired with the /experience-sectors
- * routes: Business is now the "What We Do" flow, and Technology, Training and
- * Media live on the company pages that actually do that work.
+ * The nav is deliberately flat — five items, no dropdowns. The Experience
+ * Sectors menu went with the /experience-sectors routes, and the Our Companies
+ * menu went with its overview page: the company pages are still live, reached
+ * from the ecosystem strip on the homepage rather than from the nav. Aunt
+ * Sarah's Girls is the exception, promoted to a top-level route of its own.
  */
-
-import { companies } from "./companies";
 
 export type NavLink = {
   label: string;
@@ -21,15 +20,9 @@ export type NavLink = {
 export const primaryNav: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  {
-    label: "Our Companies",
-    href: "/our-companies",
-    children: companies.map((c) => ({
-      label: c.name,
-      href: `/our-companies/${c.slug}`,
-    })),
-  },
-  { label: "Insights", href: "/insights" },
+  /* The publication kept its /insights route; only the name changed. */
+  { label: "Tablemakers Compass", href: "/insights" },
+  { label: "Aunt Sarah’s Girls", href: "/aunt-sarahs-girls" },
   { label: "Work With Us", href: "/work-with-us" },
 ];
 
@@ -43,8 +36,8 @@ export const footerNav = {
     links: [
       { label: "About", href: "/about" },
       { label: "What We Do", href: "/what-we-do" },
-      { label: "Our Companies", href: "/our-companies" },
-      { label: "Insights", href: "/insights" },
+      { label: "Tablemakers Compass", href: "/insights" },
+      { label: "Aunt Sarah’s Girls", href: "/aunt-sarahs-girls" },
     ] as NavLink[],
   },
   connect: {

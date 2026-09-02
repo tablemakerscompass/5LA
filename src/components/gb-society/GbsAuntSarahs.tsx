@@ -51,7 +51,7 @@ export default function GbsAuntSarahs() {
 
             <Reveal delay={180}>
               <Button
-                href="/our-companies/aunt-sarahs-girls"
+                href="/aunt-sarahs-girls"
                 variant="gold"
                 size="lg"
               >

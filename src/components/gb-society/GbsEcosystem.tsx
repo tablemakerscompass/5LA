@@ -15,7 +15,7 @@ const groups = [
       },
       {
         name: "Aunt Sarah’s Girls",
-        href: "/our-companies/aunt-sarahs-girls",
+        href: "/aunt-sarahs-girls",
         body: "Creates literary, theatrical, and conversation-based opportunities centered on women, family, truth, survival, healing, and legacy.",
       },
       {

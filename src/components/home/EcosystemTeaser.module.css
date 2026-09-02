@@ -40,11 +40,34 @@
  * acknowledged here, and explored on /our-companies.
  */
 .names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0;
+  list-style: none;
+  padding: 0;
   font-size: var(--fs-caption);
   letter-spacing: 0.04em;
   line-height: 1.7;
+}
+
+/* The interpuncts are drawn between items rather than baked into a string. */
+.nameItem:not(:last-child)::after {
+  content: "·";
+  margin-inline: 0.5rem;
+  color: var(--cream-200);
+  opacity: 0.45;
+}
+
+.nameLink {
   color: var(--cream-200);
   opacity: 0.72;
+  text-decoration: none;
+  transition: color var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+.nameLink:hover,
+.nameLink:focus-visible {
+  color: var(--gold-500);
+  opacity: 1;
 }
 
 .action {

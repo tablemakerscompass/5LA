@@ -102,7 +102,7 @@ function sarahMethodSchema() {
     isBasedOn: {
       "@type": "CreativeWorkSeries",
       name: smBrand.origin,
-      url: new URL("/our-companies/aunt-sarahs-girls", site.url).toString(),
+      url: new URL("/aunt-sarahs-girls", site.url).toString(),
     },
     about: [
       "Truth",
@@ -128,7 +128,6 @@ export default function TheSarahMethodPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             breadcrumbSchema([
-              { label: "Our Companies", path: "/our-companies" },
               { label: smBrand.name, path: smBrand.path },
             ])
           ),
@@ -177,7 +176,7 @@ export default function TheSarahMethodPage() {
         }}
         secondary={{
           label: "Explore Aunt Sarah’s Girls",
-          href: "/our-companies/aunt-sarahs-girls",
+          href: "/aunt-sarahs-girls",
         }}
         tertiary={{
           label: "Discuss a Community or Organizational Partnership",

@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     "/about",
     "/what-we-do",
-    "/our-companies",
+    "/aunt-sarahs-girls",
     "/insights",
     "/work-with-us",
     "/contact",
@@ -18,7 +18,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/accessibility",
   ];
 
-  const companyRoutes = companies.map((c) => `/our-companies/${c.slug}`);
+  // Aunt Sarah's Girls is now a top-level route, listed above.
+  const companyRoutes = companies
+    .filter((c) => c.slug !== "aunt-sarahs-girls")
+    .map((c) => `/our-companies/${c.slug}`);
   const articleRoutes = articles.map((a) => `/insights/${a.slug}`);
 
   return [
