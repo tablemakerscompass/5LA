@@ -1,10 +1,13 @@
 /**
  * Global navigation structure — single source of truth for header, mobile menu,
- * and footer. Sector/company children are derived from their config files so
+ * and footer. Company children are derived from the company config so
  * navigation never duplicates that data.
+ *
+ * The Experience Sectors dropdown was retired with the /experience-sectors
+ * routes: Business is now the "What We Do" flow, and Technology, Training and
+ * Media live on the company pages that actually do that work.
  */
 
-import { sectors } from "./sectors";
 import { companies } from "./companies";
 
 export type NavLink = {
@@ -18,14 +21,6 @@ export type NavLink = {
 export const primaryNav: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  {
-    label: "Experience Sectors",
-    href: "/experience-sectors",
-    children: sectors.map((s) => ({
-      label: s.name,
-      href: `/experience-sectors/${s.slug}`,
-    })),
-  },
   {
     label: "Our Companies",
     href: "/our-companies",
@@ -47,17 +42,10 @@ export const footerNav = {
     heading: "Explore",
     links: [
       { label: "About", href: "/about" },
-      { label: "Experience Sectors", href: "/experience-sectors" },
+      { label: "What We Do", href: "/what-we-do" },
       { label: "Our Companies", href: "/our-companies" },
       { label: "Insights", href: "/insights" },
     ] as NavLink[],
-  },
-  sectors: {
-    heading: "Experience Sectors",
-    links: sectors.map((s) => ({
-      label: s.name,
-      href: `/experience-sectors/${s.slug}`,
-    })) as NavLink[],
   },
   connect: {
     heading: "Connect",

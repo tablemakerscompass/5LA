@@ -628,19 +628,19 @@ export const tmEcosystem: {
   },
   {
     name: "Business Experience",
-    href: "/experience-sectors/business",
+    href: "/what-we-do",
     kind: "sector",
     role: "Provides operational, organizational, leadership, culture, and service insight shaping Tablemakers conversations.",
   },
   {
     name: "Training Experience",
-    href: "/experience-sectors/training",
+    href: "/our-companies/5la-academy",
     kind: "sector",
     role: "Provides the learning, facilitation, leadership-development, and professional-development foundation.",
   },
   {
     name: "Media Experience",
-    href: "/experience-sectors/media",
+    href: "/our-companies/georgia-b-media-group",
     kind: "sector",
     role: "Supports The Tablemakers Compass, editorial content, conversations, events, and audience development.",
   },

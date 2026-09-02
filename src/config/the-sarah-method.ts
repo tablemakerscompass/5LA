@@ -449,19 +449,19 @@ export const smEcosystem: {
   },
   {
     name: "Technology Experience",
-    href: "/experience-sectors/technology",
+    href: "/our-companies/velaxity",
     kind: "sector",
     role: "Supports application development, user experience, digital systems, responsible AI use, privacy communication, and platform improvement.",
   },
   {
     name: "Training Experience",
-    href: "/experience-sectors/training",
+    href: "/our-companies/5la-academy",
     kind: "sector",
     role: "Supports guided resources, facilitators, workshops, organizational programs, and learning experiences.",
   },
   {
     name: "Media Experience",
-    href: "/experience-sectors/media",
+    href: "/our-companies/georgia-b-media-group",
     kind: "sector",
     role: "Supports story, content, brand voice, audience connection, and companion experiences.",
   },

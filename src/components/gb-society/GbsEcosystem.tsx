@@ -30,17 +30,17 @@ const groups = [
     items: [
       {
         name: "Business Experience",
-        href: "/experience-sectors/business",
+        href: "/what-we-do",
         body: "Supports event planning, partnerships, operating structure, project development, and implementation.",
       },
       {
         name: "Training Experience",
-        href: "/experience-sectors/training",
+        href: "/our-companies/5la-academy",
         body: "Supports facilitators, workshops, guided discussions, leadership development, and community-learning experiences.",
       },
       {
         name: "Media Experience",
-        href: "/experience-sectors/media",
+        href: "/our-companies/georgia-b-media-group",
         body: "Supports publishing, storytelling, content, production, cultural programming, and audience experience.",
       },
     ],

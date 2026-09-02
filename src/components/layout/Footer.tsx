@@ -7,7 +7,7 @@ import styles from "./Footer.module.css";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const columns = [footerNav.explore, footerNav.sectors];
+  const columns = [footerNav.explore];
 
   return (
     <footer className={styles.footer} data-surface="dark">

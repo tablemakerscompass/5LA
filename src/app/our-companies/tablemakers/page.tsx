@@ -18,6 +18,8 @@ import TmEcosystem from "@/components/tablemakers/TmEcosystem";
 import TmFuture from "@/components/tablemakers/TmFuture";
 import TmJoin from "@/components/tablemakers/TmJoin";
 import theme from "@/components/tablemakers/tm-theme.module.css";
+import CapabilityAccordion from "@/components/ui/CapabilityAccordion";
+import { tablemakersCapabilities } from "@/config/training-capabilities";
 import { tmAssets, tmBrand } from "@/config/tablemakers";
 import { site } from "@/config/site";
 import { breadcrumbSchema, createMetadata } from "@/lib/seo";
@@ -135,6 +137,13 @@ export default function TablemakersPage() {
       <TmAcademy />
       {/* 11 */}
       <TmStandards />
+      {/* Inherited from the retired /our-companies/5la-academy page. */}
+      <CapabilityAccordion
+        id="workforce-development"
+        eyebrow="Workforce Development"
+        title="Resources for the People Doing the Work."
+        categories={tablemakersCapabilities}
+      />
       {/* 12 */}
       <TmEngagement />
       {/* 13 */}

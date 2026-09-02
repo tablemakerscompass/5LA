@@ -8,8 +8,16 @@ export type Sector = {
   name: string;
   /** Short label used in compact navigation. */
   shortName: string;
-  /** URL slug (route: /experience-sectors/[slug]). */
+  /** Stable key for this sector. No longer a route — see `href`. */
   slug: string;
+  /**
+   * Where this sector's work now lives. The /experience-sectors routes were
+   * retired: Business became the What We Do flow, and Technology, Training and
+   * Media moved onto the company pages that do that work. The sectors remain
+   * as a descriptive taxonomy on the company pages, so each one still needs a
+   * destination to point at.
+   */
+  href: string;
   /** One-line positioning statement. */
   statement: string;
   /** Fuller description of what the sector covers. */
@@ -41,6 +49,7 @@ export const sectors: Sector[] = [
     name: "Business Experience",
     shortName: "Business",
     slug: "business",
+    href: "/what-we-do",
     statement:
       "We build the operational foundation behind exceptional organizations.",
     summary:
@@ -73,6 +82,7 @@ export const sectors: Sector[] = [
     name: "Technology Experience",
     shortName: "Technology",
     slug: "technology",
+    href: "/our-companies/velaxity",
     statement: "We make technology useful, intelligent, and human.",
     summary:
       "AI strategy, workflow automation, digital systems, executive technology, application development, and VelaXity.",
@@ -104,6 +114,7 @@ export const sectors: Sector[] = [
     name: "Training Experience",
     shortName: "Training",
     slug: "training",
+    href: "/our-companies/5la-academy",
     statement:
       "We develop the people responsible for delivering the promise.",
     summary:
@@ -136,6 +147,7 @@ export const sectors: Sector[] = [
     name: "Media Experience",
     shortName: "Media",
     slug: "media",
+    href: "/our-companies/georgia-b-media-group",
     statement: "We create stories and experiences that live beyond the moment.",
     summary:
       "Publishing, theater, original content, live experiences, brand storytelling, The Georgia B. Media Group, and Aunt Sarah’s Girls.",

@@ -70,7 +70,7 @@ export default function VxHero() {
             </Reveal>
             <Reveal delay={300}>
               <p className={styles.tertiary}>
-                <Button href="/experience-sectors/technology" variant="text">
+                <Button href="/our-companies/velaxity" variant="text">
                   Explore 5LA Technology Experience
                 </Button>
               </p>

@@ -50,7 +50,7 @@ export default function AboutPage() {
         title="Let's Build the Experience Behind Your Vision."
         body="Whether you are strengthening an organization, developing your people, implementing practical technology, or bringing a meaningful story to life, 5LA begins with understanding what you are building and why it matters."
         primary={{ label: "Work With 5LA", href: "/work-with-us" }}
-        secondary={{ label: "Explore Our Experience Sectors", href: "/experience-sectors" }}
+        secondary={{ label: "Explore Our Experience Sectors", href: "/what-we-do" }}
       />
     </>
   );

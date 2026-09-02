@@ -704,25 +704,25 @@ export const acEcosystem: {
 }[] = [
   {
     name: "Training Experience",
-    href: "/experience-sectors/training",
+    href: "/our-companies/5la-academy",
     kind: "sector",
     role: "Provides the learning, leadership, facilitation, workforce-development, and professional-development foundation.",
   },
   {
     name: "Business Experience",
-    href: "/experience-sectors/business",
+    href: "/what-we-do",
     kind: "sector",
     role: "Ensures learning aligns with operations, SOPs, leadership expectations, service standards, and accountability.",
   },
   {
     name: "Technology Experience",
-    href: "/experience-sectors/technology",
+    href: "/our-companies/velaxity",
     kind: "sector",
     role: "May support digital learning, knowledge access, adoption, AI tools, and VelaXity.",
   },
   {
     name: "Media Experience",
-    href: "/experience-sectors/media",
+    href: "/our-companies/georgia-b-media-group",
     kind: "sector",
     role: "Supports branded learning, storytelling, training content, guides, and audience-facing educational experiences.",
   },

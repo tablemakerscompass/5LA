@@ -18,6 +18,8 @@ import AcEcosystem from "@/components/academy/AcEcosystem";
 import AcFuture from "@/components/academy/AcFuture";
 import AcInquiry from "@/components/academy/AcInquiry";
 import theme from "@/components/academy/ac-theme.module.css";
+import CapabilityAccordion from "@/components/ui/CapabilityAccordion";
+import { academyCapabilities } from "@/config/training-capabilities";
 import { acAssets, acBrand } from "@/config/academy";
 import { site } from "@/config/site";
 import { breadcrumbSchema, createMetadata } from "@/lib/seo";
@@ -150,6 +152,13 @@ export default function AcademyPage() {
       <AcFormats />
       {/* 10 */}
       <AcOrgTraining />
+      {/* Inherited from the retired /our-companies/5la-academy page. */}
+      <CapabilityAccordion
+        id="training-capabilities"
+        eyebrow="What We Teach"
+        title="Programs Built Around the People Who Carry the Standard."
+        categories={academyCapabilities}
+      />
       {/* 11 */}
       <AcIndividual />
       {/* 12 + 13 */}

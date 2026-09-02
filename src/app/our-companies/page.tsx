@@ -72,7 +72,7 @@ export default function OurCompaniesPage() {
         primary={{ label: "Work With 5LA", href: "/work-with-us" }}
         secondary={{
           label: "Explore Our Experience Sectors",
-          href: "/experience-sectors",
+          href: "/what-we-do",
         }}
       />
     </>

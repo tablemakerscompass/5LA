@@ -61,7 +61,7 @@ export default function CompaniesParent() {
               {sectors.map((sector) => (
                 <li key={sector.slug} className={styles.sector}>
                   <Link
-                    href={`/experience-sectors/${sector.slug}`}
+                    href={sector.href}
                     className={styles.sectorLink}
                   >
                     <span className={styles.sectorNumber} aria-hidden="true">

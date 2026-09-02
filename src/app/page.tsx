@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { site } from "@/config/site";
 import Hero from "@/components/home/Hero";
-import WhatWeDo from "@/components/home/WhatWeDo";
+import WhatWeDoOfferings from "@/components/what-we-do/WhatWeDoOfferings";
 import Proof from "@/components/home/Proof";
 import EcosystemTeaser from "@/components/home/EcosystemTeaser";
 import CTABanner from "@/components/ui/CTABanner";
@@ -44,7 +44,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <WhatWeDo />
+      <WhatWeDoOfferings />
       <Proof />
       <EcosystemTeaser />
       <CTABanner

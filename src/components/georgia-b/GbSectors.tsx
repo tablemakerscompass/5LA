@@ -7,22 +7,22 @@ import styles from "./GbSectors.module.css";
 const sectorRoles = [
   {
     name: "Business Experience",
-    href: "/experience-sectors/business",
+    href: "/what-we-do",
     body: "Supports operations, project management, timelines, budgets, partnerships, events, structure, and implementation.",
   },
   {
     name: "Technology Experience",
-    href: "/experience-sectors/technology",
+    href: "/our-companies/velaxity",
     body: "Supports digital platforms, applications, audience tools, automation, content systems, and online experiences.",
   },
   {
     name: "Training Experience",
-    href: "/experience-sectors/training",
+    href: "/our-companies/5la-academy",
     body: "Supports facilitator development, cast or team preparation, partner education, workshops, and companion learning experiences.",
   },
   {
     name: "Media Experience",
-    href: "/experience-sectors/media",
+    href: "/our-companies/georgia-b-media-group",
     body: "Supports publishing, storytelling, production, audience development, visual content, and live experiences.",
   },
 ];

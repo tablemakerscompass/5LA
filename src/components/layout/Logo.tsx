@@ -17,6 +17,17 @@ import { site } from "@/config/site";
 
 type LogoVariant = "horizontal" | "stacked" | "monogram";
 
+/**
+ * The descriptor rendered INSIDE the logo artwork.
+ *
+ * Deliberately not `site.descriptor`: the brand line changed to
+ * "Business · Hospitality · Events", but the approved PNGs still read
+ * "Business · Technology · Training · Media" and must not be redrawn. Alt text
+ * has to describe the image as it actually is, so it stays pinned here until
+ * new artwork is supplied — at which point update this constant with it.
+ */
+const ARTWORK_DESCRIPTOR = "Business · Technology · Training · Media";
+
 const ASSETS: Record<
   LogoVariant,
   { src: string; width: number; height: number; alt: string }
@@ -25,13 +36,13 @@ const ASSETS: Record<
     src: "/brand/5la-logo-horizontal.png",
     width: 794,
     height: 214,
-    alt: `${site.name} — ${site.descriptor}`,
+    alt: `${site.name} — ${ARTWORK_DESCRIPTOR}`,
   },
   stacked: {
     src: "/brand/5la-logo-stacked.png",
     width: 1024,
     height: 1024,
-    alt: `${site.name} — ${site.descriptor}`,
+    alt: `${site.name} — ${ARTWORK_DESCRIPTOR}`,
   },
   monogram: {
     src: "/brand/5la-monogram.png",

@@ -155,7 +155,7 @@ export default function StyleGuidePage() {
         <SectionIntro eyebrow="Components" title="Breadcrumbs" divider />
         <Breadcrumbs
           items={[
-            { label: "Experience Sectors", href: "/experience-sectors" },
+            { label: "Experience Sectors", href: "/what-we-do" },
             { label: "Business" },
           ]}
         />
@@ -282,7 +282,7 @@ export default function StyleGuidePage() {
         title="Bring structure to your vision."
         body="A reusable call-to-action banner in the dark treatment."
         primary={{ label: "Work With Us", href: "/work-with-us" }}
-        secondary={{ label: "Explore Sectors", href: "/experience-sectors" }}
+        secondary={{ label: "Explore Sectors", href: "/what-we-do" }}
       />
     </>
   );

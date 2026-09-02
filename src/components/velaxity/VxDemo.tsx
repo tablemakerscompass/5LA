@@ -42,7 +42,7 @@ export default function VxDemo() {
                   Request a VelaXity Demo
                 </Button>
                 <Button
-                  href="/experience-sectors/technology"
+                  href="/our-companies/velaxity"
                   variant="outline"
                   size="lg"
                 >
