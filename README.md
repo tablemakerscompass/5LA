@@ -1,3 +1,21 @@
+# 5LA — Operational Foundation Platform
+
+Built for **The 5 Loaves Agency**, a hospitality and organizational-development consultancy. This platform gives service-based businesses the operational backbone they're usually missing: structured systems, AI-assisted tools, and workflows built around real people, not generic software defaults.
+
+## The Problem
+Hospitality and service organizations often run on scattered SOPs, inconsistent training, and disconnected tools — leading to burnout, inconsistent guest experience, and lost institutional knowledge.
+
+## The Approach
+- Behavioral, plain-language AI systems (not generic chatbot responses)
+- Live, workspace-scoped data — no fake demos or placeholder metrics
+- Built for real teams: role-aware, emotionally intelligent, and grounded in actual operations
+
+## Stack
+TypeScript · Supabase · [add your other tools]
+
+## Status
+Active development — building toward a full hospitality intelligence platform.
+
 # The 5 Loaves Agency (5LA)
 
 Website for **The 5 Loaves Agency, LLC** — a multidisciplinary experience
