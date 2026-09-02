@@ -2,7 +2,6 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import Reveal from "@/components/ui/Reveal";
-import { site } from "@/config/site";
 import styles from "./AboutHero.module.css";
 
 export default function AboutHero() {
@@ -18,22 +17,23 @@ export default function AboutHero() {
             </Reveal>
             <Reveal delay={80}>
               <h1 id="about-hero-heading" className={`page-title ${styles.headline}`}>
-                We Build What People Experience—and What Makes the{" "}
+                We Build What Guests Experience—and What Makes the{" "}
                 <em className={styles.accent}>Experience</em> Possible.
               </h1>
             </Reveal>
             <Reveal delay={160}>
               <p className={`lead ${styles.lead}`}>
-                The 5 Loaves Agency is a multidisciplinary parent company helping
-                organizations and communities build stronger systems,
-                better-equipped people, practical technology, and stories that
-                create meaningful connection.
+                The 5 Loaves Agency helps hospitality-driven organizations
+                strengthen their operations, develop their people, and produce
+                events and experiences guests remember. It is also the parent
+                company of a growing family of ventures in technology, training,
+                and media.
               </p>
             </Reveal>
             <Reveal delay={240}>
               <div className={styles.actions}>
-                <Button href="/experience-sectors" variant="gold" size="lg">
-                  Explore Our Experience Sectors
+                <Button href="/experience-sectors/business" variant="gold" size="lg">
+                  Explore What We Do
                 </Button>
                 <Button href="/work-with-us" variant="outline" size="lg">
                   Work With 5LA
@@ -41,7 +41,9 @@ export default function AboutHero() {
               </div>
             </Reveal>
             <Reveal delay={320}>
-              <p className={styles.descriptor}>{site.descriptor}</p>
+              <p className={styles.stat}>
+                20+ years in hospitality operations and events.
+              </p>
             </Reveal>
           </div>
 
