@@ -1,5 +1,5 @@
+import Link from "next/link";
 import Container from "@/components/layout/Container";
-import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import { companies } from "@/config/companies";
 import styles from "./EcosystemTeaser.module.css";
@@ -13,6 +13,13 @@ import styles from "./EcosystemTeaser.module.css";
  * companies config so the strip can never drift out of sync with
  * /our-companies, which still carries all seven in full.
  */
+/** Aunt Sarah's Girls was promoted to a top-level route; the rest stay nested. */
+function companyHref(slug: string) {
+  return slug === "aunt-sarahs-girls"
+    ? "/aunt-sarahs-girls"
+    : `/our-companies/${slug}`;
+}
+
 export default function EcosystemTeaser() {
   return (
     <section
@@ -29,15 +36,23 @@ export default function EcosystemTeaser() {
               Part of a growing vision — 5LA is also home to a family of ventures
               in technology, training, and media.
             </p>
-            <p className={styles.names}>
-              {companies.map((company) => company.name).join(" · ")}
-            </p>
-          </div>
-
-          <div className={styles.action}>
-            <Button href="/our-companies" variant="outline">
-              Explore the 5LA Ecosystem
-            </Button>
+            {/*
+              * Each venture links to its own page. This used to be a plain
+              * list beside one "Explore the 5LA Ecosystem" button pointing at
+              * the /our-companies overview; that overview is retired, and the
+              * company pages are no longer in the nav, so this strip is now
+              * their only route in. A single button to a redirect would have
+              * stranded all seven.
+              */}
+            <ul className={styles.names}>
+              {companies.map((company) => (
+                <li key={company.slug} className={styles.nameItem}>
+                  <Link href={companyHref(company.slug)} className={styles.nameLink}>
+                    {company.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
       </Container>

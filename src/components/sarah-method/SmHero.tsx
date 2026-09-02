@@ -23,7 +23,6 @@ export default function SmHero() {
       <Container className={styles.container}>
         <Breadcrumbs
           items={[
-            { label: "Our Companies", href: "/our-companies" },
             { label: smBrand.name },
           ]}
           className={styles.crumbs}
@@ -88,7 +87,7 @@ export default function SmHero() {
             </Reveal>
             <Reveal delay={340}>
               <p className={styles.tertiary}>
-                <Button href="/our-companies/aunt-sarahs-girls" variant="text">
+                <Button href="/aunt-sarahs-girls" variant="text">
                   Discover Aunt Sarah’s Girls
                 </Button>
               </p>

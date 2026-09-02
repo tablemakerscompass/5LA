@@ -75,7 +75,7 @@ export default async function ArticlePage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             breadcrumbSchema([
-              { label: "Insights", path: "/insights" },
+              { label: "The Tablemakers Compass", path: "/insights" },
               { label: article.title, path },
             ])
           ),

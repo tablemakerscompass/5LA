@@ -72,7 +72,6 @@ export default function GeorgiaBSocietyPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             breadcrumbSchema([
-              { label: "Our Companies", path: "/our-companies" },
               {
                 label: "The Georgia B. Society",
                 path: "/our-companies/georgia-b-society",

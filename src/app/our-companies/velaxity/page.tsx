@@ -125,7 +125,6 @@ export default function VelaXityPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             breadcrumbSchema([
-              { label: "Our Companies", path: "/our-companies" },
               { label: vxBrand.name, path: vxBrand.path },
             ])
           ),

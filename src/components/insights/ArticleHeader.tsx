@@ -11,7 +11,10 @@ export default function ArticleHeader({ article }: { article: Article }) {
     <header className={styles.wrap}>
       <Container>
         <Breadcrumbs
-          items={[{ label: "Insights", href: "/insights" }, { label: article.category }]}
+          items={[
+            { label: "The Tablemakers Compass", href: "/insights" },
+            { label: article.category },
+          ]}
           className={styles.crumbs}
         />
 

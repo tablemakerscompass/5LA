@@ -23,7 +23,6 @@ export default function VxHero() {
       <Container className={styles.container}>
         <Breadcrumbs
           items={[
-            { label: "Our Companies", href: "/our-companies" },
             { label: vxBrand.name },
           ]}
           className={styles.crumbs}

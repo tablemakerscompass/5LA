@@ -54,7 +54,6 @@ export default async function CompanyPage({
         eyebrow={company.category}
         title={company.name}
         crumbs={[
-          { label: "Our Companies", href: "/our-companies" },
           { label: company.name },
         ]}
       />

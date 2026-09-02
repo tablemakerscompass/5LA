@@ -23,7 +23,6 @@ export default function TmHero() {
       <Container className={styles.container}>
         <Breadcrumbs
           items={[
-            { label: "Our Companies", href: "/our-companies" },
             { label: tmBrand.name },
           ]}
           className={styles.crumbs}
