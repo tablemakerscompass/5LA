@@ -32,6 +32,14 @@ export const asgBrand = {
   category: "Literary · Theatrical · Healing",
   type: "Original literary, theatrical, and community-centered property",
   parent: "The 5 Loaves Agency, LLC",
+  /**
+   * Carries the March show, which is presented under Learical Jonez. The
+   * property moves under The Georgia B. Media Group after that, so this is
+   * expected to change back — `asgEcosystem` below still describes Georgia B.
+   * as its long-term home, and that disagreement is deliberate rather than
+   * stale. This field is the hero attribution and the JSON-LD publisher and
+   * author, so changing it here moves all three together.
+   */
   division: "Learical Jonez",
   primarySector: "Media Experience",
   supportingSectors: [
