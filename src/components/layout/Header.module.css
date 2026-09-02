@@ -37,6 +37,19 @@
 }
 .logoWide {
   display: block;
+  /*
+   * The artwork carries four lines (wordmark, rule, positioning line, and the
+   * BUSINESS · HOSPITALITY · EVENTS descriptor), so it needs more height than
+   * the previous three-line lockup to stay legible. It shrinks with the bar on
+   * scroll — at 94px it would overflow the 92px scrolled header and print the
+   * descriptor over the page.
+   */
+  height: 94px;
+  width: auto;
+  transition: height var(--dur) var(--ease);
+}
+.scrolled .logoWide {
+  height: 74px;
 }
 .logoMark {
   display: none;

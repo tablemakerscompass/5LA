@@ -65,7 +65,7 @@ export default function Header() {
     >
       <div className={styles.inner}>
         <Link href="/" className={styles.brand} aria-label="The 5 Loaves Agency — home">
-          <Logo variant="horizontal" height={78} priority className={styles.logoWide} />
+          <Logo variant="horizontal" height={94} fluid priority className={styles.logoWide} />
           <Logo variant="monogram" height={54} priority className={styles.logoMark} />
         </Link>
 

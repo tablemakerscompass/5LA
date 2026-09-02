@@ -56,6 +56,12 @@ type LogoProps = {
   /** Rendered height in px; width scales to preserve aspect ratio. */
   height?: number;
   priority?: boolean;
+  /**
+   * Let CSS own the rendered height instead of pinning it inline. `height` is
+   * still required — it sets the intrinsic width/height next/image reserves,
+   * so the aspect ratio and the no-layout-shift guarantee are unaffected.
+   */
+  fluid?: boolean;
   className?: string;
   /** Override alt text (e.g. empty string when adjacent text repeats it). */
   alt?: string;
@@ -65,6 +71,7 @@ export default function Logo({
   variant = "horizontal",
   height = 48,
   priority = false,
+  fluid = false,
   className,
   alt,
 }: LogoProps) {
@@ -79,7 +86,7 @@ export default function Logo({
       alt={alt ?? asset.alt}
       priority={priority}
       className={className}
-      style={{ height, width: "auto" }}
+      style={fluid ? { width: "auto" } : { height, width: "auto" }}
       sizes={`${width}px`}
     />
   );
