@@ -41,13 +41,28 @@
   gap: var(--space-4);
   margin-top: var(--space-2);
 }
-.descriptor {
+/*
+ * The hero credibility line. Sentence case rather than the uppercase
+ * descriptor it replaces: a tracked-out all-caps stat reads as another label,
+ * and this line needs to read as a fact. The gold hairline keeps it in the
+ * same visual family as the section eyebrows.
+ */
+.stat {
   margin-top: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   font-size: var(--fs-caption);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold-500);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--cream-200);
+}
+.stat::before {
+  content: "";
+  flex: none;
+  width: 34px;
+  height: 2px;
+  background: var(--gold-500);
 }
 
 .figure {

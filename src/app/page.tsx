@@ -1,28 +1,21 @@
 import type { Metadata } from "next";
 import { site } from "@/config/site";
 import Hero from "@/components/home/Hero";
-import Belief from "@/components/home/Belief";
-import Sectors from "@/components/home/Sectors";
-import Difference from "@/components/home/Difference";
-import Ecosystem from "@/components/home/Ecosystem";
-import Outcomes from "@/components/home/Outcomes";
-import Loaves from "@/components/home/Loaves";
-import Leadership from "@/components/home/Leadership";
-import InsightsPreview from "@/components/home/InsightsPreview";
-import Clients from "@/components/home/Clients";
+import WhatWeDo from "@/components/home/WhatWeDo";
+import Proof from "@/components/home/Proof";
+import EcosystemTeaser from "@/components/home/EcosystemTeaser";
 import CTABanner from "@/components/ui/CTABanner";
 
+const title = "The 5 Loaves Agency | Hospitality, Events & Business Experience";
 const description =
-  "The 5 Loaves Agency is a multidisciplinary experience company helping organizations strengthen operations, develop people, implement technology, and create meaningful media and experiences.";
+  "The 5 Loaves Agency helps hospitality-driven organizations strengthen their operations, develop their people, and produce events and experiences guests actually remember.";
 
 export const metadata: Metadata = {
-  title: {
-    absolute: "The 5 Loaves Agency | Business, Technology, Training & Media",
-  },
+  title: { absolute: title },
   description,
   alternates: { canonical: `${site.url}/` },
   openGraph: {
-    title: "The 5 Loaves Agency | Business, Technology, Training & Media",
+    title,
     description,
     url: `${site.url}/`,
     siteName: site.name,
@@ -31,25 +24,29 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The 5 Loaves Agency | Business, Technology, Training & Media",
+    title,
     description,
     images: ["/brand/og-image.png"],
   },
 };
 
+/**
+ * The homepage is deliberately five sections: promise, offer, proof, context,
+ * ask.
+ *
+ * 5LA now leads with hospitality, events, and business. The company story that
+ * used to live here — the 5LA Difference, the LOAVES framework, the founder's
+ * background, the full sector and ecosystem grids — is carried on /about,
+ * /experience-sectors, and /our-companies, which this page links into rather
+ * than reproducing.
+ */
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Belief />
-      <Sectors />
-      <Difference />
-      <Ecosystem />
-      <Outcomes />
-      <Loaves />
-      <Leadership />
-      <InsightsPreview />
-      <Clients />
+      <WhatWeDo />
+      <Proof />
+      <EcosystemTeaser />
       <CTABanner
         eyebrow="Let's Begin"
         title="What Experience Are You Ready to Build?"
