@@ -1,29 +1,21 @@
 import type { Metadata } from "next";
 import { site } from "@/config/site";
 import AboutHero from "@/components/about/AboutHero";
-import WhyExists from "@/components/about/WhyExists";
-import WhatIs from "@/components/about/WhatIs";
-import Approach from "@/components/about/Approach";
-import LoavesFramework from "@/components/about/LoavesFramework";
-import BuiltFrom from "@/components/about/BuiltFrom";
+import OurStory from "@/components/about/OurStory";
 import Founder from "@/components/about/Founder";
-import EcosystemArchitecture from "@/components/about/EcosystemArchitecture";
-import WhoServes from "@/components/about/WhoServes";
-import Different from "@/components/about/Different";
-import FutureVision from "@/components/about/FutureVision";
 import CTABanner from "@/components/ui/CTABanner";
 
 const description =
-  "Learn about The 5 Loaves Agency, a multidisciplinary experience company connecting business operations, technology, training, hospitality, media, and storytelling.";
+  "Learn about The 5 Loaves Agency and its founder, L.J. — more than two decades of hospitality, events, and operations experience behind organizations that want the structure to match the promise.";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "About The 5 Loaves Agency | Our Vision, Values & Experience",
+    absolute: "About The 5 Loaves Agency | Our Story & Founder",
   },
   description,
   alternates: { canonical: `${site.url}/about` },
   openGraph: {
-    title: "About The 5 Loaves Agency | Our Vision, Values & Experience",
+    title: "About The 5 Loaves Agency | Our Story & Founder",
     description,
     url: `${site.url}/about`,
     siteName: site.name,
@@ -32,26 +24,27 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About The 5 Loaves Agency | Our Vision, Values & Experience",
+    title: "About The 5 Loaves Agency | Our Story & Founder",
     description,
     images: ["/brand/og-image.png"],
   },
 };
 
+/**
+ * About is four sections: hero, story, founder, ask.
+ *
+ * It previously ran eleven. The sector grid, the ecosystem tree, the LOAVES
+ * framework, the five-stage approach, "Who We Serve", "The 5LA Difference",
+ * and "Where We Are Going" all restated, at length, what the sector pages and
+ * /our-companies already say in place. What only About can carry is why the
+ * company exists and who is behind it, so that is what it carries.
+ */
 export default function AboutPage() {
   return (
     <>
       <AboutHero />
-      <WhyExists />
-      <WhatIs />
-      <Approach />
-      <LoavesFramework />
-      <BuiltFrom />
+      <OurStory />
       <Founder />
-      <EcosystemArchitecture />
-      <WhoServes />
-      <Different />
-      <FutureVision />
       <CTABanner
         eyebrow="Let's Begin"
         title="Let's Build the Experience Behind Your Vision."

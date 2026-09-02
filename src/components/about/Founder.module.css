@@ -1,5 +1,12 @@
 .wrap {
   background: var(--surface);
+  /*
+   * With only two body sections left on About, the seam between two identical
+   * cream blocks reads as dead air rather than as a new section. The section
+   * background stays put so the pull-quote card keeps its contrast; a hairline
+   * is enough to mark the transition.
+   */
+  border-top: 1px solid var(--border);
 }
 .grid {
   display: grid;

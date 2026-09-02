@@ -26,21 +26,26 @@ export default function Founder() {
           </Reveal>
 
           <Reveal delay={120} className={styles.text}>
-            <p className="eyebrow">Founder &amp; Experience Architect</p>
+            {/*
+              * Not "Founder & Experience Architect" — the nameplate under the
+              * portrait already carries that title, and on mobile the two stack
+              * directly on top of each other.
+              */}
+            <p className="eyebrow">Meet the Founder</p>
             <hr className={`rule ${styles.rule}`} />
             <h2 id="founder-heading" className="section-heading">
               L.J. — Building Structure Around Vision and Meaning Around Experience.
             </h2>
+            {/*
+              * The discipline list that opened this section now sits directly
+              * above it in Our Story, so this leads with the career instead of
+              * repeating the résumé line two paragraphs later.
+              */}
             <p className="body">
-              L.J. is the founder of The 5 Loaves Agency and a hospitality,
-              operations, events, workforce-development, media, and
-              theatrical-production professional with more than 20 years of
-              hands-on experience.
-            </p>
-            <p className="body">
-              Her career has included leadership and operational roles, event
-              strategy and execution, sales coordination, training development,
-              culture building, content creation, and the writing, directing, and
+              L.J. is the founder of The 5 Loaves Agency. Her career has included
+              hospitality leadership and operational roles, event strategy and
+              execution, sales coordination, training development, culture
+              building, content creation, and the writing, directing, and
               producing of more than 15 theatrical productions.
             </p>
             <p className="body">
