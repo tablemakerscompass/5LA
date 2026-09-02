@@ -5,7 +5,7 @@ import { site } from "@/config/site";
  * Official 5LA logo.
  *
  * The source artwork (burgundy + gold monogram, wordmark, gold divider, and
- * "BUSINESS · TECHNOLOGY · TRAINING · MEDIA" descriptor) must NOT be redrawn,
+ * "BUSINESS · HOSPITALITY · EVENTS" descriptor) must NOT be redrawn,
  * recolored, cropped, or distorted. This component only scales the approved
  * transparent-PNG assets.
  *
@@ -20,13 +20,12 @@ type LogoVariant = "horizontal" | "stacked" | "monogram";
 /**
  * The descriptor rendered INSIDE the logo artwork.
  *
- * Deliberately not `site.descriptor`: the brand line changed to
- * "Business · Hospitality · Events", but the approved PNGs still read
- * "Business · Technology · Training · Media" and must not be redrawn. Alt text
- * has to describe the image as it actually is, so it stays pinned here until
- * new artwork is supplied — at which point update this constant with it.
+ * Kept separate from `site.descriptor` so alt text always describes the image
+ * as it actually is, rather than whatever the brand line happens to say. The
+ * two agree today; if the artwork is replaced again, update this constant to
+ * match the new PNGs.
  */
-const ARTWORK_DESCRIPTOR = "Business · Technology · Training · Media";
+const ARTWORK_DESCRIPTOR = "Business · Hospitality · Events";
 
 const ASSETS: Record<
   LogoVariant,
