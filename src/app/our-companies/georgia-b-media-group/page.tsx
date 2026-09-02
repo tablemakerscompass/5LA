@@ -14,6 +14,8 @@ import GbPathways from "@/components/georgia-b/GbPathways";
 import GbDeliverables from "@/components/georgia-b/GbDeliverables";
 import GbStandard from "@/components/georgia-b/GbStandard";
 import CTABanner from "@/components/ui/CTABanner";
+import CapabilityAccordion from "@/components/ui/CapabilityAccordion";
+import { gbMediaCapabilities } from "@/config/media-capabilities";
 
 const title =
   "The Georgia B. Media Group | Publishing, Productions & Original Stories";
@@ -94,6 +96,13 @@ export default function GeorgiaBMediaGroupPage() {
       <GbPartners />
       <GbPathways />
       <GbDeliverables />
+      {/* Inherited from the retired /our-companies/georgia-b-media-group page. */}
+      <CapabilityAccordion
+        id="media-capabilities"
+        eyebrow="What We Create"
+        title="Stories, Properties, Platforms, and Experiences Built With Purpose."
+        categories={gbMediaCapabilities}
+      />
       <GbStandard />
 
       <CTABanner
@@ -103,7 +112,7 @@ export default function GeorgiaBMediaGroupPage() {
         primary={{ label: "Discuss a Creative Partnership", href: "/work-with-us?interest=georgia-b-media-group" }}
         secondary={{
           label: "Explore the 5LA Media Experience",
-          href: "/experience-sectors/media",
+          href: "/our-companies/georgia-b-media-group",
         }}
       />
     </>

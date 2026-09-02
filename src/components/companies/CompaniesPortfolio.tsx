@@ -106,7 +106,7 @@ export default function CompaniesPortfolio() {
                           <h4 className={styles.metaLabel}>Experience sectors</h4>
                           <p className={styles.sectors}>
                             <Link
-                              href={`/experience-sectors/${primary.slug}`}
+                              href={primary.href}
                               className={styles.sectorPrimary}
                             >
                               {primary.name}
@@ -121,7 +121,7 @@ export default function CompaniesPortfolio() {
                                   return (
                                     <span key={slug}>
                                       <Link
-                                        href={`/experience-sectors/${slug}`}
+                                        href={s.href}
                                         className={styles.sectorLink}
                                       >
                                         {s.shortName}

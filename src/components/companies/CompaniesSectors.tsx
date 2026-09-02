@@ -7,22 +7,22 @@ import styles from "./CompaniesSectors.module.css";
 const sectorRoles = [
   {
     name: "Business Experience",
-    href: "/experience-sectors/business",
+    href: "/what-we-do",
     body: "Provides strategy, structure, operations, standards, partnerships, project management, and implementation.",
   },
   {
     name: "Technology Experience",
-    href: "/experience-sectors/technology",
+    href: "/our-companies/velaxity",
     body: "Provides AI, applications, digital systems, automation, user experience, and organizational intelligence.",
   },
   {
     name: "Training Experience",
-    href: "/experience-sectors/training",
+    href: "/our-companies/5la-academy",
     body: "Provides leadership development, workforce learning, facilitation, professional resources, and adoption support.",
   },
   {
     name: "Media Experience",
-    href: "/experience-sectors/media",
+    href: "/our-companies/georgia-b-media-group",
     body: "Provides publishing, storytelling, production, content, live experiences, and audience development.",
   },
 ];

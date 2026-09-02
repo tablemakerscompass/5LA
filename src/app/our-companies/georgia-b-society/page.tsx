@@ -15,6 +15,8 @@ import GbsExamples from "@/components/gb-society/GbsExamples";
 import GbsExperience from "@/components/gb-society/GbsExperience";
 import GbsFuture from "@/components/gb-society/GbsFuture";
 import CTABanner from "@/components/ui/CTABanner";
+import CapabilityAccordion from "@/components/ui/CapabilityAccordion";
+import { gbSocietyCapabilities } from "@/config/media-capabilities";
 
 const title = "The Georgia B. Society | Legacy, Community & Culture";
 const description =
@@ -95,6 +97,13 @@ export default function GeorgiaBSocietyPage() {
       <GbsAudience />
       <GbsPathways />
       <GbsExamples />
+      {/* Inherited from the retired /our-companies/georgia-b-media-group page. */}
+      <CapabilityAccordion
+        id="live-experiences"
+        eyebrow="Live Experiences"
+        title="Gatherings Built for Conversation, Not Just Attendance."
+        categories={gbSocietyCapabilities}
+      />
       <GbsExperience />
       <GbsFuture />
 

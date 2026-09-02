@@ -14,7 +14,7 @@ type SectorCardProps = {
  * serif number stands in for final photography.
  */
 export default function SectorCard({ sector, className = "" }: SectorCardProps) {
-  const href = `/experience-sectors/${sector.slug}`;
+  const href = sector.href;
 
   return (
     <Link

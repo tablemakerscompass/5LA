@@ -47,7 +47,7 @@ export default function PlaceholderPage({
           title="Bring structure to your vision."
           body="Tell us what you're building. We'll help align the systems, people, technology, and stories behind it."
           primary={{ label: "Work With Us", href: "/work-with-us" }}
-          secondary={{ label: "Explore the Sectors", href: "/experience-sectors" }}
+          secondary={{ label: "Explore the Sectors", href: "/what-we-do" }}
         />
       )}
     </>

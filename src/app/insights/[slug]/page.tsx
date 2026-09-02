@@ -122,7 +122,7 @@ export default async function ArticlePage({
         title="Insight Should Change the Experience."
         body="Explore how 5LA can help strengthen the systems, technology, people, and stories behind your organization."
         primary={{ label: "Work With 5LA", href: "/work-with-us" }}
-        secondary={{ label: "Explore Our Experience Sectors", href: "/experience-sectors" }}
+        secondary={{ label: "Explore Our Experience Sectors", href: "/what-we-do" }}
       />
     </>
   );

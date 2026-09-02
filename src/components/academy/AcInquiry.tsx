@@ -42,7 +42,7 @@ export default function AcInquiry() {
                   Discuss Organizational Training
                 </Button>
                 <Button
-                  href="/experience-sectors/training"
+                  href="/our-companies/5la-academy"
                   variant="outline"
                   size="lg"
                 >

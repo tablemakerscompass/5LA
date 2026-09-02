@@ -11,7 +11,7 @@ export const site = {
   legalName: "The 5 Loaves Agency, LLC",
   name: "The 5 Loaves Agency",
   shortName: "5LA",
-  descriptor: "Business · Technology · Training · Media",
+  descriptor: "Business · Hospitality · Events",
 
   /** Canonical production URL. Update if the domain changes. */
   url: "https://www.the5loavesagency.com",

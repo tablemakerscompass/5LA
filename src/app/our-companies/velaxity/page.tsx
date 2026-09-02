@@ -16,6 +16,8 @@ import VxTrust from "@/components/velaxity/VxTrust";
 import VxEcosystem from "@/components/velaxity/VxEcosystem";
 import VxFuture from "@/components/velaxity/VxFuture";
 import VxDemo from "@/components/velaxity/VxDemo";
+import VxAgencyServices from "@/components/velaxity/VxAgencyServices";
+import VxAgencyOutcomes from "@/components/velaxity/VxAgencyOutcomes";
 import theme from "@/components/velaxity/vx-theme.module.css";
 import { vxAssets, vxBrand } from "@/config/velaxity";
 import { site } from "@/config/site";
@@ -160,6 +162,14 @@ export default function VelaXityPage() {
       <VxEcosystem />
       {/* 15 */}
       <VxFuture />
+      {/*
+        * Parent-company technology services, moved here when
+        * /our-companies/velaxity was retired. Placed after the product
+        * story and clearly labelled as 5LA engagements so nothing here reads
+        * as a VelaXity platform capability.
+        */}
+      <VxAgencyServices />
+      <VxAgencyOutcomes />
       {/* 16 + 17 */}
       <VxDemo />
 
@@ -170,7 +180,7 @@ export default function VelaXityPage() {
         primary={{ label: "Request a VelaXity Demo", href: vxBrand.demoPath }}
         secondary={{
           label: "Explore 5LA Technology Experience",
-          href: "/experience-sectors/technology",
+          href: "/our-companies/velaxity",
         }}
       />
     </div>

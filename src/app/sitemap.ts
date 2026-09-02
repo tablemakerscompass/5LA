@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/config/site";
-import { sectors } from "@/config/sectors";
 import { companies } from "@/config/companies";
 import { articles } from "@/config/articles";
 
@@ -9,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "/",
     "/about",
-    "/experience-sectors",
+    "/what-we-do",
     "/our-companies",
     "/insights",
     "/work-with-us",
@@ -19,13 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/accessibility",
   ];
 
-  const sectorRoutes = sectors.map((s) => `/experience-sectors/${s.slug}`);
   const companyRoutes = companies.map((c) => `/our-companies/${c.slug}`);
   const articleRoutes = articles.map((a) => `/insights/${a.slug}`);
 
   return [
     ...staticRoutes,
-    ...sectorRoutes,
     ...companyRoutes,
     ...articleRoutes,
   ].map((path) => ({

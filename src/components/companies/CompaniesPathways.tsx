@@ -14,7 +14,7 @@ const pathways: Pathway[] = [
   {
     interest: "You are seeking business or organizational support",
     prompt: "Explore the 5LA Experience Sectors.",
-    links: [{ label: "Experience Sectors", href: "/experience-sectors" }],
+    links: [{ label: "Experience Sectors", href: "/what-we-do" }],
   },
   {
     interest:

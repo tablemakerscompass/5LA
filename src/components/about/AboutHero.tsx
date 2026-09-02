@@ -32,7 +32,7 @@ export default function AboutHero() {
             </Reveal>
             <Reveal delay={240}>
               <div className={styles.actions}>
-                <Button href="/experience-sectors/business" variant="gold" size="lg">
+                <Button href="/what-we-do" variant="gold" size="lg">
                   Explore What We Do
                 </Button>
                 <Button href="/work-with-us" variant="outline" size="lg">

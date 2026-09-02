@@ -562,19 +562,19 @@ export const vxEcosystem: {
 }[] = [
   {
     name: "Technology Experience",
-    href: "/experience-sectors/technology",
+    href: "/our-companies/velaxity",
     kind: "sector",
     role: "Provides the AI, application, automation, digital-system, and user-experience foundation.",
   },
   {
     name: "Business Experience",
-    href: "/experience-sectors/business",
+    href: "/what-we-do",
     kind: "sector",
     role: "Provides the operational, organizational, leadership, culture, standards, and implementation foundation.",
   },
   {
     name: "Training Experience",
-    href: "/experience-sectors/training",
+    href: "/our-companies/5la-academy",
     kind: "sector",
     role: "Provides leadership development, adoption support, learning, manager preparation, and workforce development.",
   },

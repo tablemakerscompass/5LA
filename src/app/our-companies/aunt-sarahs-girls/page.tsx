@@ -16,6 +16,8 @@ import AsgEcosystem from "@/components/asg/AsgEcosystem";
 import AsgPartnerships from "@/components/asg/AsgPartnerships";
 import AsgStandard from "@/components/asg/AsgStandard";
 import theme from "@/components/asg/asg-theme.module.css";
+import CapabilityAccordion from "@/components/ui/CapabilityAccordion";
+import { asgCapabilities } from "@/config/media-capabilities";
 import { asgAssets, asgBrand } from "@/config/aunt-sarahs-girls";
 import { site } from "@/config/site";
 import { breadcrumbSchema, createMetadata } from "@/lib/seo";
@@ -164,6 +166,13 @@ export default function AuntSarahsGirlsPage() {
       <AsgBookClubs />
       {/* 12 */}
       <AsgFuture />
+      {/* Inherited from the retired /our-companies/georgia-b-media-group page. */}
+      <CapabilityAccordion
+        id="original-ip"
+        eyebrow="Original Intellectual Property"
+        title="Story Worlds Built to Last Beyond a Single Telling."
+        categories={asgCapabilities}
+      />
       {/* 13 */}
       <AsgEcosystem />
       {/* 14 */}
