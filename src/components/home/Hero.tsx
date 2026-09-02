@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
-import { site } from "@/config/site";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -10,25 +9,27 @@ export default function Hero() {
       <div className={styles.inner}>
         <div className={styles.content}>
           <Reveal>
-            <p className={`eyebrow ${styles.eyebrow}`}>The 5 Loaves Agency</p>
+            <p className={`eyebrow ${styles.eyebrow}`}>
+              Business &middot; Hospitality &middot; Events
+            </p>
           </Reveal>
           <Reveal delay={80}>
             <h1 id="hero-heading" className={`hero-headline ${styles.headline}`}>
-              We Build the <em className={styles.accent}>Experience</em> Behind the
-              Brand.
+              The business behind the{" "}
+              <em className={styles.accent}>business</em>.
             </h1>
           </Reveal>
           <Reveal delay={160}>
             <p className={`lead ${styles.lead}`}>
-              The 5 Loaves Agency helps organizations strengthen operations,
-              develop people, implement technology, and create stories and
-              experiences that leave a lasting impact.
+              The 5 Loaves Agency helps hospitality-driven organizations
+              strengthen their operations, develop their people, and produce
+              events and experiences guests actually remember.
             </p>
           </Reveal>
           <Reveal delay={240}>
             <div className={styles.actions}>
-              <Button href="/experience-sectors" variant="gold" size="lg">
-                Explore Our Experience Sectors
+              <Button href="/experience-sectors/business" variant="gold" size="lg">
+                Explore What We Do
               </Button>
               <Button href="/work-with-us" variant="outline" size="lg">
                 Work With 5LA
@@ -36,7 +37,14 @@ export default function Hero() {
             </div>
           </Reveal>
           <Reveal delay={320}>
-            <p className={styles.descriptor}>{site.descriptor}</p>
+            {/*
+             * Credibility carried inside the hero rather than as its own strip:
+             * one line of proof next to the ask, so the page can move straight
+             * from the promise to what we actually do.
+             */}
+            <p className={styles.stat}>
+              20+ years in hospitality operations and events.
+            </p>
           </Reveal>
         </div>
 

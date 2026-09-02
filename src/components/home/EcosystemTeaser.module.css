@@ -1,0 +1,61 @@
+.wrap {
+  background: var(--ink-900);
+  /*
+   * The closing CTA is dark too, so without a seam the two read as one very
+   * long dark block. A gold hairline separates them in the same vocabulary as
+   * the section rules.
+   */
+  border-bottom: 1px solid rgba(200, 164, 93, 0.18);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  max-width: 46rem;
+}
+
+.rule {
+  margin: 0;
+}
+
+.statement {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.7rem);
+  line-height: 1.35;
+  color: var(--cream-100);
+  text-wrap: balance;
+}
+
+/*
+ * The venture names as a single quiet line rather than seven cards: they are
+ * acknowledged here, and explored on /our-companies.
+ */
+.names {
+  font-size: var(--fs-caption);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  color: var(--cream-200);
+  opacity: 0.72;
+}
+
+.action {
+  flex: none;
+}
+
+@media (min-width: 940px) {
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-7);
+  }
+}
