@@ -1,18 +1,20 @@
 import Container from "@/components/layout/Container";
 import AsgImageFrame from "./AsgImageFrame";
 import Reveal from "@/components/ui/Reveal";
-import AsgPendingAction from "./AsgPendingAction";
 import AsgStatusPill from "./AsgStatusPill";
-import { asgAssets, productionElements } from "@/config/aunt-sarahs-girls";
+import { asgAssets } from "@/config/aunt-sarahs-girls";
 import styles from "./AsgStage.module.css";
 
 /**
- * Section 5 — The stage production.
+ * The stage production — now the second section on the page, directly after
+ * the hero.
+ *
+ * The production-elements list and the production-information actions were
+ * removed while the property is still early in development; only the
+ * descriptive copy remains.
  *
  * FOR EDITORS: no dates, venues, ticket links, or casting details appear here,
- * and none may be added until they are approved and supplied. When a
- * destination is approved, swap the matching <AsgPendingAction> for a
- * <Button href="…">.
+ * and none may be added until they are approved and supplied.
  */
 export default function AsgStage() {
   return (
@@ -60,43 +62,6 @@ export default function AsgStage() {
             />
           </Reveal>
         </div>
-
-        <Reveal delay={80} className={styles.elementsBlock}>
-          <h3 className={styles.subhead}>Production elements</h3>
-          <ul className={styles.elements}>
-            {productionElements.map((element) => (
-              <li key={element} className={styles.element}>
-                {element}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-
-        <Reveal delay={120} className={styles.actionsBlock}>
-          <h3 className={styles.subhead}>Production information</h3>
-          <div className={styles.actions}>
-            <AsgPendingAction
-              label="Learn About the Production"
-              note="Detail page in development"
-            />
-            <AsgPendingAction
-              label="Production Updates"
-              note="Sign-up not yet connected"
-            />
-            <AsgPendingAction
-              label="Partnership or Venue Inquiry"
-              note="Routes to Work With Us once approved"
-            />
-            <AsgPendingAction
-              label="Casting Information"
-              note="No casting notice has been issued"
-            />
-          </div>
-          <p className={`caption ${styles.note}`}>
-            Performance dates, venues, ticketing, and casting will be published
-            here only once they are confirmed.
-          </p>
-        </Reveal>
       </Container>
     </section>
   );

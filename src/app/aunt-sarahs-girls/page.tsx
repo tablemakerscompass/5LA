@@ -5,16 +5,9 @@ import AsgStoryWorld from "@/components/asg/AsgStoryWorld";
 import AsgThemes from "@/components/asg/AsgThemes";
 import AsgNovel from "@/components/asg/AsgNovel";
 import AsgStage from "@/components/asg/AsgStage";
-import AsgCharacters from "@/components/asg/AsgCharacters";
-import AsgAuntSarah from "@/components/asg/AsgAuntSarah";
 import AsgHealingMission from "@/components/asg/AsgHealingMission";
 import AsgSarahMethod from "@/components/asg/AsgSarahMethod";
-import AsgCommunity from "@/components/asg/AsgCommunity";
-import AsgBookClubs from "@/components/asg/AsgBookClubs";
-import AsgFuture from "@/components/asg/AsgFuture";
-import AsgEcosystem from "@/components/asg/AsgEcosystem";
 import AsgPartnerships from "@/components/asg/AsgPartnerships";
-import AsgStandard from "@/components/asg/AsgStandard";
 import theme from "@/components/asg/asg-theme.module.css";
 import CapabilityAccordion from "@/components/ui/CapabilityAccordion";
 import { asgCapabilities } from "@/config/media-capabilities";
@@ -123,6 +116,12 @@ function asgSchema() {
   };
 }
 
+/**
+ * Pared back while the property is early in development: the cast grid, the
+ * Aunt Sarah portrait, the community, book-club, future, ecosystem and
+ * experience-standard sections are gone, and the stage production moved up to
+ * sit directly under the hero. Detail returns as production moves forward.
+ */
 export default function AuntSarahsGirlsPage() {
   return (
     <div className={theme.theme}>
@@ -141,43 +140,29 @@ export default function AuntSarahsGirlsPage() {
 
       {/* 1 */}
       <AsgHero />
-      {/* 2 */}
-      <AsgStoryWorld />
-      {/* 3 */}
-      <AsgThemes />
-      {/* 4 */}
-      <AsgNovel />
-      {/* 5 */}
+      {/* 2 — moved up from position 5: the stage work leads now. */}
       <AsgStage />
+      {/* 3 */}
+      <AsgStoryWorld />
+      {/* 4 */}
+      <AsgThemes />
+      {/* 5 */}
+      <AsgNovel />
       {/* 6 */}
-      <AsgCharacters />
-      {/* 7 */}
-      <AsgAuntSarah />
-      {/* 8 */}
       <AsgHealingMission />
-      {/* 9 */}
+      {/* 7 */}
       <AsgSarahMethod />
-      {/* 10 */}
-      <AsgCommunity />
-      {/* 11 */}
-      <AsgBookClubs />
-      {/* 12 */}
-      <AsgFuture />
-      {/* Inherited from the retired /our-companies/georgia-b-media-group page. */}
+      {/* 8 — inherited from the retired /experience-sectors/media page. */}
       <CapabilityAccordion
         id="original-ip"
         eyebrow="Original Intellectual Property"
         title="Story Worlds Built to Last Beyond a Single Telling."
         categories={asgCapabilities}
       />
-      {/* 13 */}
-      <AsgEcosystem />
-      {/* 14 */}
+      {/* 9 */}
       <AsgPartnerships />
-      {/* 15 */}
-      <AsgStandard />
 
-      {/* 16 — the shared global CTA banner, wearing the ASG identity. */}
+      {/* 10 — the shared global CTA banner, wearing the ASG identity. */}
       <CTABanner
         title="Come On In. The Story Is Ready to Be Told—and the Conversation Is Ready to Begin."
         body="Explore the novel, follow the theatrical journey, experience the women’s stories, or discuss bringing Aunt Sarah’s Girls into your organization, community, venue, or book club."
