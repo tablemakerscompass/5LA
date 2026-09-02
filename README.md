@@ -10,9 +10,6 @@ Hospitality and service organizations often run on scattered SOPs, inconsistent 
 - Live, workspace-scoped data — no fake demos or placeholder metrics
 - Built for real teams: role-aware, emotionally intelligent, and grounded in actual operations
 
-## Stack
-TypeScript · Supabase · [add your other tools]
-
 ## Status
 Active development — building toward a full hospitality intelligence platform.
 
