@@ -23,7 +23,11 @@ export const primaryNav: NavLink[] = [
   /* The publication kept its /insights route; only the name changed. */
   { label: "Tablemakers Compass", href: "/insights" },
   { label: "Aunt Sarah’s Girls", href: "/aunt-sarahs-girls" },
-  { label: "Work With Us", href: "/work-with-us" },
+  /*
+   * No "Work With Us" entry here: it is the header CTA (`primaryCta` below),
+   * rendered as the standalone button on desktop and as the full-width button
+   * at the foot of the mobile drawer. Listing it here too rendered it twice.
+   */
 ];
 
 /** Primary call-to-action surfaced in the header. */
