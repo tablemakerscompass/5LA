@@ -33,7 +33,7 @@ export default function AsgHero() {
           <div className={styles.content}>
             <Reveal>
               <p className={`eyebrow ${styles.eyebrow}`}>
-                An Original Property of The Georgia B. Media Group
+                An Original Property of {asgBrand.division}
               </p>
             </Reveal>
             <Reveal delay={70}>

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   title: { absolute: asgBrand.metaTitle },
   keywords: [
     "Aunt Sarah’s Girls",
-    "The Georgia B. Media Group",
+    "Learical Jonez",
     "original novel",
     "stage production",
     "womanhood",
