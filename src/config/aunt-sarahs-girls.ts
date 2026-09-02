@@ -2,7 +2,7 @@
  * AUNT SARAH'S GIRLS — brand data.
  *
  * Original literary, theatrical, and healing-centered property developed within
- * The Georgia B. Media Group and supported by The 5 Loaves Agency, LLC.
+ * Learical Jonez and supported by The 5 Loaves Agency, LLC.
  *
  * NOTE FOR EDITORS:
  * - Nothing in this file may be presented as launched, scheduled, or for sale
@@ -32,7 +32,7 @@ export const asgBrand = {
   category: "Literary · Theatrical · Healing",
   type: "Original literary, theatrical, and community-centered property",
   parent: "The 5 Loaves Agency, LLC",
-  division: "The Georgia B. Media Group",
+  division: "Learical Jonez",
   primarySector: "Media Experience",
   supportingSectors: [
     "Business Experience",
