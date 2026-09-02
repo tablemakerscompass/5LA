@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
-import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import { asgAssets, asgBrand } from "@/config/aunt-sarahs-girls";
 import styles from "./AsgHero.module.css";
@@ -53,23 +52,6 @@ export default function AsgHero() {
                 Aunt Sarah’s Girls is a literary, theatrical, and healing-centered
                 property exploring truth, womanhood, family, survival, identity,
                 secrets, and legacy.
-              </p>
-            </Reveal>
-            <Reveal delay={250}>
-              <div className={styles.actions}>
-                <Button href="#story-world" variant="gold" size="lg">
-                  Enter the World of Aunt Sarah’s Girls
-                </Button>
-                <Button href="#the-novel" variant="outline" size="lg">
-                  Explore the Novel
-                </Button>
-              </div>
-            </Reveal>
-            <Reveal delay={310}>
-              <p className={styles.tertiary}>
-                <Button href="/our-companies/the-sarah-method" variant="text">
-                  Discover The Sarah Method
-                </Button>
               </p>
             </Reveal>
           </div>
