@@ -53,6 +53,13 @@ export function configuredTransport(): Transport | null {
   return null;
 }
 
+/**
+ * Replace anything address-shaped so a provider's rejection text can be logged
+ * without carrying an address out of the request with it.
+ */
+const redactAddresses = (value: string) =>
+  value.replace(/[^\s<>(),;"]+@[^\s<>(),;"]+/g, "[address]");
+
 const escapeHtml = (value: string) =>
   value
     .replace(/&/g, "&amp;")
@@ -210,14 +217,28 @@ export async function deliverInquiry(
     if (transport === "resend") return await deliverViaResend(inquiry);
     return await deliverViaWebhook(inquiry);
   } catch (error) {
-    // Log the error type and any transport code (EAUTH, ECONNECTION, …) — not
-    // the message, which can echo addresses from the request.
+    // Log the error type and any transport code (EAUTH, ECONNECTION, …), plus
+    // the provider's own rejection reason, which is the only thing that says
+    // WHY a send failed — a bare code cannot distinguish a spam refusal from a
+    // policy one. Addresses are stripped first: the reason must never echo
+    // anything from the request, and the inquirer's address rides along as the
+    // Reply-To header.
     const name = error instanceof Error ? error.name : "unknown error";
-    const code =
-      typeof error === "object" && error !== null && "code" in error
-        ? String((error as { code: unknown }).code)
+    const detail = (key: string) =>
+      typeof error === "object" && error !== null && key in error
+        ? String((error as Record<string, unknown>)[key] ?? "")
         : "";
-    console.error(`[inquiry] ${transport} threw ${name}${code ? ` (${code})` : ""}`);
+
+    const code = detail("code");
+    const status = detail("responseCode");
+    const reason = redactAddresses(detail("response")).slice(0, 300);
+
+    console.error(
+      `[inquiry] ${transport} threw ${name}` +
+        `${code ? ` (${code})` : ""}` +
+        `${status ? ` status ${status}` : ""}` +
+        `${reason ? ` — ${reason}` : ""}`
+    );
     return { ok: false, reason: "failed" };
   }
 }
