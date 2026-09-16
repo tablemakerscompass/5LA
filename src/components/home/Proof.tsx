@@ -24,7 +24,7 @@ import styles from "./Proof.module.css";
  */
 
 /** The featured post, chosen for the hospitality / events / business lead. */
-const FEATURED_SLUG = "future-of-events-is-more-meaningful";
+const FEATURED_SLUG = "your-event-was-beautiful-but-was-it-hospitable";
 
 function ClientMark({ client }: { client: Client }) {
   const hasLogo = Boolean(client.logo && client.logoWidth && client.logoHeight);
