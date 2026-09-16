@@ -21,24 +21,23 @@ export type InterestGroup = {
   options: InterestOption[];
 };
 
-/** The six ways to work with 5LA — values match the service slugs. */
+/**
+ * The six ways to work with 5LA — values match the service slugs — then the
+ * strategy session, then a way through for someone who cannot place their own
+ * need yet.
+ *
+ * This page is small-business service intake. Speaking, media and community
+ * partnership inquiries are not listed: /contact is the route for those, and
+ * the Other Requests section at the foot of this page points at it.
+ */
 const serviceOptions: InterestOption[] = [
   ...services.map((s) => ({ value: s.slug, label: s.name })),
   { value: strategySession.slug, label: "Strategy Session" },
-];
-
-/** Inquiries that do not map to a single service. */
-const otherOptions: InterestOption[] = [
-  { value: "speaking-facilitation", label: "Speaking or facilitation" },
-  { value: "creative-partnership", label: "Creative or media partnership" },
-  { value: "community-partnership", label: "Community partnership" },
-  { value: "general", label: "General inquiry" },
   { value: "not-sure", label: "I'm not sure yet" },
 ];
 
 export const interestGroups: InterestGroup[] = [
   { heading: "Ways to Work With Us", options: serviceOptions },
-  { heading: "Additional Inquiries", options: otherOptions },
 ];
 
 /** Every interest option, flattened. */
@@ -88,10 +87,6 @@ const spellingAliases: Record<string, string> = {
   "the-georgia-b-media-group": "georgia-b-media-group",
   "the-georgia-b-society": "georgia-b-society",
   "sarah-method": "the-sarah-method",
-  /* Additional inquiries. */
-  speaking: "speaking-facilitation",
-  partnership: "creative-partnership",
-  community: "community-partnership",
 };
 
 const interestAliases: Record<string, string> = {
