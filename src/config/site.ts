@@ -34,9 +34,18 @@ export const site = {
   /**
    * Contact details — the approved business email and phone. No address or
    * service area is published; contact is by email and phone only.
+   *
+   * Two addresses, because they are read by people in different situations.
+   * `inquiries` is what the site publishes to someone deciding whether to get
+   * in touch. `email` is the business address of record, and is what the legal
+   * documents cite for a formal notice, a privacy request, or an accessibility
+   * report — those should reach the business itself rather than a channel
+   * named for new work. Both are delivered to the same mailbox.
    */
   contact: {
     email: "admin@the5loavesagency.com",
+    /** Published wherever the site invites someone to make contact. */
+    inquiries: "inquiries@the5loavesagency.com",
     phone: "470-252-8258",
     /** E.164 form used for `tel:` links. */
     phoneHref: "+14702528258",

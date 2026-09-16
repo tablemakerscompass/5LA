@@ -41,12 +41,12 @@ export default function ContactMethods() {
 
             <div className={styles.details}>
               <dl className={styles.list}>
-                {site.contact.email && (
+                {site.contact.inquiries && (
                   <div className={styles.item}>
                     <dt className={styles.term}>Email</dt>
                     <dd>
-                      <a href={`mailto:${site.contact.email}`} className={styles.link}>
-                        {site.contact.email}
+                      <a href={`mailto:${site.contact.inquiries}`} className={styles.link}>
+                        {site.contact.inquiries}
                       </a>
                     </dd>
                   </div>

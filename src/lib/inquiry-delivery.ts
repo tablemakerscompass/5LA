@@ -13,8 +13,12 @@
  *     SMTP_PASSWORD       required — an app password, never the login password
  *     SMTP_HOST           optional — defaults to smtp.zoho.com
  *     SMTP_PORT           optional — defaults to 465 (implicit TLS)
+ *     SMTP_FROM_EMAIL     optional — the address to send AS. Must exist at the
+ *                         provider as a mailbox or a verified alias of
+ *                         SMTP_USER. An unverified one is refused, so delivery
+ *                         falls back to SMTP_USER rather than failing.
  *     INQUIRY_TO_EMAIL    optional — defaults to the site contact address
- *     (mail always sends AS SMTP_USER; INQUIRY_FROM_EMAIL is Resend-only)
+ *     (INQUIRY_FROM_EMAIL is Resend-only and is ignored here)
  *
  *   Email (Resend)
  *     RESEND_API_KEY      required — https://resend.com API key
@@ -121,7 +125,7 @@ function htmlBody(inquiry: InquiryPayload) {
  * account login password for SMTP once MFA is on.
  */
 async function deliverViaSmtp(inquiry: InquiryPayload): Promise<DeliveryResult> {
-  const to = process.env.INQUIRY_TO_EMAIL || site.contact.email;
+  const to = process.env.INQUIRY_TO_EMAIL || site.contact.inquiries;
   if (!to) return { ok: false, reason: "unconfigured" };
 
   const port = Number(process.env.SMTP_PORT ?? 465);
@@ -137,29 +141,56 @@ async function deliverViaSmtp(inquiry: InquiryPayload): Promise<DeliveryResult> 
     },
   });
 
-  await transporter.sendMail({
+  /**
+   * The mailbox we authenticated as. A provider will always relay for this
+   * one, which makes it the safe sender of last resort.
+   */
+  const authenticated = process.env.SMTP_USER as string;
+
+  /**
+   * Send as SMTP_FROM_EMAIL when it is set — an address like inquiries@ reads
+   * better on a notification than a personal mailbox. It has to exist at the
+   * provider as a real mailbox or an alias verified against the authenticated
+   * account; anything else is refused.
+   */
+  const preferred = process.env.SMTP_FROM_EMAIL?.trim() || authenticated;
+
+  const send = (from: string) =>
+    transporter.sendMail({
+      from,
+      to,
+      replyTo: inquiry.email,
+      subject: `Inquiry — ${interestLabel(inquiry.interest)} — ${inquiry.organization}`,
+      text: textBody(inquiry),
+      html: htmlBody(inquiry),
+    });
+
+  try {
+    await send(preferred);
+  } catch (error) {
     /*
-     * Always the mailbox we authenticated as. Zoho, and most providers, relay
-     * only for that address or an alias verified against it — anything else
-     * comes back as "553 Sender is not allowed to relay emails", which is what
-     * this form was failing with. INQUIRY_FROM_EMAIL exists for Resend, where
-     * the sender has to be an address on a domain verified in that account;
-     * honouring it here too let one variable silently break SMTP. The inquirer
-     * stays reachable through Reply-To below.
+     * An unverified sender is refused outright — "553 Sender is not allowed to
+     * relay emails" — and that once took this form down for every visitor
+     * while the credentials were perfectly valid. A preferred sender is a
+     * presentational choice, so it must never cost us the inquiry: fall back
+     * to the mailbox we authenticated as, which the provider always accepts.
+     * Retrying on any failure rather than on a matched error string is
+     * deliberate — a refusal we failed to pattern-match would put us straight
+     * back into that outage, and a second attempt costs far less than a lost
+     * lead.
      */
-    from: process.env.SMTP_USER as string,
-    to,
-    replyTo: inquiry.email,
-    subject: `Inquiry — ${interestLabel(inquiry.interest)} — ${inquiry.organization}`,
-    text: textBody(inquiry),
-    html: htmlBody(inquiry),
-  });
+    if (preferred === authenticated) throw error;
+    console.warn(
+      `[inquiry] smtp refused "${preferred}" as sender; retrying as the authenticated mailbox`
+    );
+    await send(authenticated);
+  }
 
   return { ok: true, transport: "smtp" };
 }
 
 async function deliverViaResend(inquiry: InquiryPayload): Promise<DeliveryResult> {
-  const to = process.env.INQUIRY_TO_EMAIL || site.contact.email;
+  const to = process.env.INQUIRY_TO_EMAIL || site.contact.inquiries;
   if (!to) return { ok: false, reason: "unconfigured" };
 
   const res = await fetch(RESEND_ENDPOINT, {
