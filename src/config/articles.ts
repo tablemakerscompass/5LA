@@ -73,7 +73,7 @@ export const articles: Article[] = [
     excerpt:
       "You can spend $50,000 on an event and still make people feel like an inconvenience.",
     date: "2026-09-16",
-    image: "/brand/insights/future-of-events.jpg",
+    image: "/brand/insights/your-event-was-beautiful.jpg",
     imageAlt:
       "An event director in a burgundy suit welcoming arriving guests with an outstretched hand beside the registration tables in a warm hotel lobby.",
     body: [
