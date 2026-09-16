@@ -51,6 +51,21 @@ export const site = {
     phoneHref: "+14702528258",
   },
 
+  /**
+   * Scheduling. The free 30-minute discovery call, booked directly.
+   *
+   * Deliberately NOT in the navigation or used as a standalone page CTA: the
+   * Work With Us form stays the primary route so a call starts with the
+   * business name, service area, and described challenge already in hand.
+   * It belongs only where someone has already told us something (the inquiry
+   * confirmation and its auto-reply) or has said they would rather talk first
+   * (the quiet link beneath "Not Sure Which One Fits?").
+   */
+  booking: {
+    discoveryCall: "https://calendly.com/the5loavesagency/discovery-call",
+    discoveryCallLabel: "Book a Discovery Call",
+  },
+
   /** Approved social profiles. LinkedIn is the founder's personal profile. */
   social: [
     {
