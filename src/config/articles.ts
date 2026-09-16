@@ -67,7 +67,7 @@ export const articles: Article[] = [
   /* ------------------------------------------------------------------ 01 */
   {
     slug: "your-event-was-beautiful-but-was-it-hospitable",
-    category: "Events & Experience",
+    category: "Hospitality & Events",
     title: "Your Event Was Beautiful. But Was It Hospitable?",
     dek: "Somewhere along the way, we started confusing a beautiful event with a hospitable event. They are not the same thing.",
     excerpt:
