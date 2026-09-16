@@ -27,13 +27,7 @@ const serviceOptions: InterestOption[] = [
   { value: strategySession.slug, label: "Strategy Session" },
 ];
 
-/** Brands and platforms — values match the company slugs. */
-const brandOptions: InterestOption[] = companies.map((c) => ({
-  value: c.slug,
-  label: c.name,
-}));
-
-/** Inquiries that do not map to a single service or brand. */
+/** Inquiries that do not map to a single service. */
 const otherOptions: InterestOption[] = [
   { value: "speaking-facilitation", label: "Speaking or facilitation" },
   { value: "creative-partnership", label: "Creative or media partnership" },
@@ -44,7 +38,6 @@ const otherOptions: InterestOption[] = [
 
 export const interestGroups: InterestGroup[] = [
   { heading: "Ways to Work With Us", options: serviceOptions },
-  { heading: "5LA Brands and Platforms", options: brandOptions },
   { heading: "Additional Inquiries", options: otherOptions },
 ];
 
@@ -57,12 +50,25 @@ export const interestOptions: InterestOption[] = interestGroups.flatMap(
 export const interestValues: string[] = interestOptions.map((o) => o.value);
 
 /**
- * Extra `?interest=` spellings accepted for convenience, mapped to a canonical
- * value. Keeps older or shorthand links working without a redirect.
+ * A brand is no longer a selectable interest, but the brand pages still
+ * deep-link their own slug. Each resolves to the service that brand leads
+ * with, so those links keep preselecting something sensible. Derived from
+ * `companies` rather than restated, so the two cannot disagree.
  */
-const interestAliases: Record<string, string> = {
-  /* Retired Experience Sector slugs, kept working as links to the service
-     that now carries that work. */
+const brandAliases: Record<string, string> = Object.fromEntries(
+  companies
+    .filter((c) => c.primaryService)
+    .map((c) => [c.slug, c.primaryService as string])
+);
+
+/**
+ * Extra `?interest=` spellings accepted for convenience. Keeps older and
+ * shorthand links working without a redirect. Values may name a brand slug —
+ * `resolveInterest` follows that second hop.
+ */
+const spellingAliases: Record<string, string> = {
+  /* Retired Experience Sector slugs, pointing at the service that carries
+     that work now. */
   business: "business-setup",
   "business-experience": "business-setup",
   technology: "websites-technology",
@@ -76,14 +82,21 @@ const interestAliases: Record<string, string> = {
   hospitality: "hospitality-training",
   brand: "brand-creative",
   strategy: "strategy-session",
+  /* Shorthand for a brand, resolved on to that brand's service. */
   academy: "5la-academy",
   "georgia-b": "georgia-b-media-group",
   "the-georgia-b-media-group": "georgia-b-media-group",
   "the-georgia-b-society": "georgia-b-society",
   "sarah-method": "the-sarah-method",
+  /* Additional inquiries. */
   speaking: "speaking-facilitation",
   partnership: "creative-partnership",
   community: "community-partnership",
+};
+
+const interestAliases: Record<string, string> = {
+  ...brandAliases,
+  ...spellingAliases,
 };
 
 /**
@@ -94,7 +107,15 @@ export function resolveInterest(raw: string | null | undefined) {
   if (!raw) return undefined;
   const key = raw.trim().toLowerCase();
   if (interestValues.includes(key)) return key;
-  return interestAliases[key];
+
+  const aliased = interestAliases[key];
+  if (!aliased) return undefined;
+  if (interestValues.includes(aliased)) return aliased;
+
+  // One more hop: a spelling alias may name a brand slug, which is itself an
+  // alias for that brand's service.
+  const viaBrand = brandAliases[aliased];
+  return interestValues.includes(viaBrand) ? viaBrand : undefined;
 }
 
 /** Human-readable label for an interest value. */
