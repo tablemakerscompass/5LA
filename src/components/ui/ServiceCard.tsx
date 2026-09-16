@@ -1,31 +1,31 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { Sector } from "@/config/sectors";
-import styles from "./SectorCard.module.css";
+import type { ServicePackage } from "@/config/services";
+import styles from "./ServiceCard.module.css";
 
-type SectorCardProps = {
-  sector: Sector;
+type ServiceCardProps = {
+  service: ServicePackage;
   className?: string;
 };
 
 /**
- * Editorial card for one of the four Experience Sectors.
- * When `sector.image` is absent, an accent-toned editorial panel with a large
+ * Editorial card for one of the six services.
+ * When `service.image` is absent, an accent-toned editorial panel with a large
  * serif number stands in for final photography.
  */
-export default function SectorCard({ sector, className = "" }: SectorCardProps) {
-  const href = sector.href;
+export default function ServiceCard({ service, className = "" }: ServiceCardProps) {
+  const href = service.href;
 
   return (
     <Link
       href={href}
       className={`${styles.card} ${className}`}
-      data-accent={sector.accent}
+      data-accent={service.accent}
     >
       <div className={styles.visual}>
-        {sector.image ? (
+        {service.image ? (
           <Image
-            src={sector.image}
+            src={service.image}
             alt=""
             fill
             sizes="(min-width: 900px) 30vw, 90vw"
@@ -35,13 +35,13 @@ export default function SectorCard({ sector, className = "" }: SectorCardProps) 
           <span className={styles.placeholderNote}>Editorial imagery</span>
         )}
         <span className={`numeral ${styles.number}`} aria-hidden="true">
-          {sector.number}
+          {service.number}
         </span>
       </div>
 
       <div className={styles.body}>
-        <h3 className={`subheading ${styles.name}`}>{sector.name}</h3>
-        <p className={`body-sm ${styles.statement}`}>{sector.statement}</p>
+        <h3 className={`subheading ${styles.name}`}>{service.name}</h3>
+        <p className={`body-sm ${styles.statement}`}>{service.statement}</p>
         <span className={styles.cue} aria-hidden="true">
           Explore <span className={styles.arrow}>&rarr;</span>
         </span>

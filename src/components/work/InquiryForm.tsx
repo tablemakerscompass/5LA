@@ -86,7 +86,7 @@ export default function InquiryForm() {
 
   /**
    * Preselect the area of interest from `?interest=` so visitors arriving from
-   * a sector or brand page land on the right choice. Unknown values are
+   * a service or brand page land on the right choice. Unknown values are
    * ignored rather than shown as an error.
    */
   useEffect(() => {
@@ -169,17 +169,19 @@ export default function InquiryForm() {
   return (
     <form onSubmit={handleSubmit} noValidate>
       {/* ---------------------------------------------- Area of interest */}
-      <section className="section" aria-labelledby="interest-heading">
+      <section id="start" className="section" aria-labelledby="interest-heading">
         <Container>
           <div className={styles.head}>
             <p className="eyebrow">Area of Interest</p>
             <hr className="rule" />
             <h2 id="interest-heading" className="section-heading">
-              Where Should the Conversation Begin?
+              Start Here
             </h2>
             <p className="body">
-              Choose the one area closest to your need. If more than one applies,
-              or none does, select the closest option and tell us more below.
+              A few questions so the right person reads this first — and
+              you&rsquo;re not waiting on a form that goes nowhere. Choose the
+              one area closest to your need. If more than one applies, or none
+              does, select the closest option and tell us more below.
             </p>
           </div>
 
@@ -200,7 +202,7 @@ export default function InquiryForm() {
             <p className="eyebrow">Inquiry</p>
             <hr className="rule" />
             <h2 id="inquiry-heading" className="section-heading">
-              Tell Us About the Work.
+              Tell Us What&rsquo;s Happening in Your Business.
             </h2>
           </div>
 
@@ -314,7 +316,7 @@ export default function InquiryForm() {
               label="Brief description of the need"
               htmlFor="description"
               required
-              hint="Tell us what you are building, what is currently challenging, and what kind of support you believe may be helpful."
+              hint="What are you trying to build, fix, improve, launch, or take off your plate?"
               error={errors.description}
             >
               <Textarea
@@ -455,10 +457,12 @@ export default function InquiryForm() {
 
             <div className={styles.actions}>
               <Button type="submit" variant="primary" size="lg" disabled={sending}>
-                {sending ? "Submitting…" : "Submit Inquiry"}
+                {sending ? "Submitting…" : "Start the Conversation"}
               </Button>
               <p className="caption" role="status">
-                {sending ? "Sending your inquiry…" : "Required fields are marked with an asterisk."}
+                {sending
+                  ? "Sending your inquiry…"
+                  : "We read every one of these ourselves. Required fields are marked with an asterisk."}
               </p>
             </div>
           </div>

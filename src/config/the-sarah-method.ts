@@ -34,7 +34,7 @@ export const smBrand = {
   parent: "The 5 Loaves Agency, LLC",
   division: "The Georgia B. Media Group",
   origin: "Aunt Sarah’s Girls",
-  primarySector: "Media Experience",
+  primaryService: "Content, Media & Marketing",
 
   /** VERIFIED live, HTTP 200, 2026-07-27. Installable PWA; works offline. */
   appUrl: "https://www.thesarahmethod.com",
@@ -427,7 +427,7 @@ export const smEcosystem: {
   name: string;
   href: string;
   role: string;
-  kind: "company" | "sector";
+  kind: "company" | "service";
 }[] = [
   {
     name: "Aunt Sarah’s Girls",
@@ -448,21 +448,21 @@ export const smEcosystem: {
     role: "May extend themes of women, family, legacy, communication, and community into gatherings and cultural experiences.",
   },
   {
-    name: "Technology Experience",
-    href: "/our-companies/velaxity",
-    kind: "sector",
+    name: "Websites, Technology & AI",
+    href: "/what-we-do#websites-technology",
+    kind: "service",
     role: "Supports application development, user experience, digital systems, responsible AI use, privacy communication, and platform improvement.",
   },
   {
-    name: "Training Experience",
-    href: "/our-companies/5la-academy",
-    kind: "sector",
+    name: "Hospitality, Training & Culture",
+    href: "/what-we-do#hospitality-training",
+    kind: "service",
     role: "Supports guided resources, facilitators, workshops, organizational programs, and learning experiences.",
   },
   {
-    name: "Media Experience",
-    href: "/our-companies/georgia-b-media-group",
-    kind: "sector",
+    name: "Content, Media & Marketing",
+    href: "/what-we-do#content-media",
+    kind: "service",
     role: "Supports story, content, brand voice, audience connection, and companion experiences.",
   },
 ];

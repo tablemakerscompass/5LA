@@ -178,8 +178,8 @@ export default function VelaXityPage() {
         body="VelaXity is designed to help leaders bring priorities, people, standards, learning, organizational context, and AI support into one executive environment."
         primary={{ label: "Request a VelaXity Demo", href: vxBrand.demoPath }}
         secondary={{
-          label: "Explore 5LA Technology Experience",
-          href: "/our-companies/velaxity",
+          label: "Explore Websites, Technology & AI",
+          href: "/what-we-do#websites-technology",
         }}
       />
     </div>

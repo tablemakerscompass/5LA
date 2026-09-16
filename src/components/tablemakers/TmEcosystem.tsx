@@ -32,7 +32,7 @@ export default function TmEcosystem() {
               <Link href={entry.href} className={styles.itemLink}>
                 <span className={styles.itemName}>
                   {entry.name}
-                  {entry.name === tmBrand.primarySector && (
+                  {entry.name === tmBrand.primaryService && (
                     <span className={styles.primaryTag}>Primary</span>
                   )}
                   <span className={styles.arrow} aria-hidden="true">

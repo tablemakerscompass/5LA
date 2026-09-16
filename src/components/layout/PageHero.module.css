@@ -27,3 +27,13 @@
 .center .lead {
   margin-inline: auto;
 }
+
+.callout {
+  margin-top: var(--space-5);
+  font-size: var(--fs-h4);
+  max-width: 42ch;
+  text-wrap: pretty;
+}
+.center .callout {
+  margin-inline: auto;
+}

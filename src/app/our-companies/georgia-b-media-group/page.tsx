@@ -8,7 +8,7 @@ import GbCreativeAreas from "@/components/georgia-b/GbCreativeAreas";
 import GbPhilosophy from "@/components/georgia-b/GbPhilosophy";
 import GbProperties from "@/components/georgia-b/GbProperties";
 import GbDevelopment from "@/components/georgia-b/GbDevelopment";
-import GbSectors from "@/components/georgia-b/GbSectors";
+import GbServices from "@/components/georgia-b/GbServices";
 import GbPartners from "@/components/georgia-b/GbPartners";
 import GbPathways from "@/components/georgia-b/GbPathways";
 import GbDeliverables from "@/components/georgia-b/GbDeliverables";
@@ -91,7 +91,7 @@ export default function GeorgiaBMediaGroupPage() {
       <GbPhilosophy />
       <GbProperties />
       <GbDevelopment />
-      <GbSectors />
+      <GbServices />
       <GbPartners />
       <GbPathways />
       <GbDeliverables />
@@ -110,8 +110,8 @@ export default function GeorgiaBMediaGroupPage() {
         body="The Georgia B. Media Group begins with the story, the audience, and the reason the work must exist—then builds the structure required to bring it forward with purpose."
         primary={{ label: "Discuss a Creative Partnership", href: "/work-with-us?interest=georgia-b-media-group" }}
         secondary={{
-          label: "Explore the 5LA Media Experience",
-          href: "/our-companies/georgia-b-media-group",
+          label: "Explore Content, Media & Marketing",
+          href: "/what-we-do#content-media",
         }}
       />
     </>

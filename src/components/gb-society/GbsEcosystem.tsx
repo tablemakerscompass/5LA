@@ -26,21 +26,21 @@ const groups = [
     ],
   },
   {
-    label: "Supporting sectors",
+    label: "Supporting services",
     items: [
       {
-        name: "Business Experience",
-        href: "/what-we-do",
+        name: "Business Setup & Operations",
+        href: "/what-we-do#business-setup",
         body: "Supports event planning, partnerships, operating structure, project development, and implementation.",
       },
       {
-        name: "Training Experience",
-        href: "/our-companies/5la-academy",
+        name: "Hospitality, Training & Culture",
+        href: "/what-we-do#hospitality-training",
         body: "Supports facilitators, workshops, guided discussions, leadership development, and community-learning experiences.",
       },
       {
-        name: "Media Experience",
-        href: "/our-companies/georgia-b-media-group",
+        name: "Content, Media & Marketing",
+        href: "/what-we-do#content-media",
         body: "Supports publishing, storytelling, content, production, cultural programming, and audience experience.",
       },
     ],
@@ -59,7 +59,7 @@ export default function GbsEcosystem() {
           eyebrow="Part of a Larger Vision"
           title={
             <span id="ecosystem-heading">
-              The Society Is Supported by the Experience Sectors and Creative
+              The Society Is Supported by the 5LA Services and Creative
               Properties of 5LA.
             </span>
           }

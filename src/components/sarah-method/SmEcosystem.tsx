@@ -8,7 +8,7 @@ import styles from "./SmEcosystem.module.css";
 /** Section 15 — Connection to the 5LA ecosystem. */
 export default function SmEcosystem() {
   const companies = smEcosystem.filter((e) => e.kind === "company");
-  const sectors = smEcosystem.filter((e) => e.kind === "sector");
+  const supportingServices = smEcosystem.filter((e) => e.kind === "service");
 
   return (
     <section
@@ -66,18 +66,19 @@ export default function SmEcosystem() {
 
         <div className={styles.block}>
           <h3 className={styles.blockLabel}>
-            Supported by the Experience Sectors
+            Supported by the 5LA Services
             <span className={styles.blockNote}>
-              Media Experience is the primary sector for this platform.
+              {smBrand.primaryService} is the primary service for this
+              platform.
             </span>
           </h3>
           <ul className={styles.list}>
-            {sectors.map((entry, i) => (
+            {supportingServices.map((entry, i) => (
               <Reveal key={entry.href} as="li" delay={i * 70} className={styles.item}>
                 <Link href={entry.href} className={styles.itemLink}>
                   <span className={styles.itemName}>
                     {entry.name}
-                    {entry.name === smBrand.primarySector && (
+                    {entry.name === smBrand.primaryService && (
                       <span className={styles.primaryTag}>Primary</span>
                     )}
                     <span className={styles.arrow} aria-hidden="true">

@@ -7,6 +7,8 @@ type PageHeroProps = {
   eyebrow?: string;
   title: ReactNode;
   lead?: ReactNode;
+  /** Optional serif line under the lead, for a hero that closes on a thought. */
+  callout?: ReactNode;
   crumbs?: Crumb[];
   dark?: boolean;
   align?: "left" | "center";
@@ -17,6 +19,7 @@ export default function PageHero({
   eyebrow,
   title,
   lead,
+  callout,
   crumbs,
   dark = false,
   align = "left",
@@ -33,6 +36,7 @@ export default function PageHero({
           <hr className={`rule ${align === "center" ? "rule-center" : ""}`} />
           <h1 className={`page-title ${styles.title}`}>{title}</h1>
           {lead && <p className={`lead ${styles.lead}`}>{lead}</p>}
+          {callout && <p className={`quote ${styles.callout}`}>{callout}</p>}
         </div>
       </Container>
     </header>

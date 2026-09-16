@@ -53,7 +53,7 @@ export const tmBrand = {
   category: "Community · Thought Leadership · Professional Development",
   type: "Professional community, thought-leadership, and continued-development platform",
   parent: "The 5 Loaves Agency, LLC",
-  primarySector: "Training Experience",
+  primaryService: "Hospitality, Training & Culture",
 
   positioning:
     "A community for the people building stronger teams, cultures, businesses, and experiences.",
@@ -618,7 +618,7 @@ export const tmEcosystem: {
   name: string;
   href: string;
   role: string;
-  kind: "sector" | "company";
+  kind: "service" | "company";
 }[] = [
   {
     name: "The 5LA Academy",
@@ -627,21 +627,21 @@ export const tmEcosystem: {
     role: "Provides structured hospitality, leadership, manager, culture, and workforce-development learning.",
   },
   {
-    name: "Business Experience",
-    href: "/what-we-do",
-    kind: "sector",
+    name: "Business Setup & Operations",
+    href: "/what-we-do#business-setup",
+    kind: "service",
     role: "Provides operational, organizational, leadership, culture, and service insight shaping Tablemakers conversations.",
   },
   {
-    name: "Training Experience",
-    href: "/our-companies/5la-academy",
-    kind: "sector",
+    name: "Hospitality, Training & Culture",
+    href: "/what-we-do#hospitality-training",
+    kind: "service",
     role: "Provides the learning, facilitation, leadership-development, and professional-development foundation.",
   },
   {
-    name: "Media Experience",
-    href: "/our-companies/georgia-b-media-group",
-    kind: "sector",
+    name: "Content, Media & Marketing",
+    href: "/what-we-do#content-media",
+    kind: "service",
     role: "Supports The Tablemakers Compass, editorial content, conversations, events, and audience development.",
   },
   {

@@ -1,0 +1,17 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.title {
+  text-wrap: balance;
+}
+.close {
+  font-weight: 600;
+  color: var(--text);
+}

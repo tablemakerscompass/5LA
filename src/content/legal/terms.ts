@@ -43,7 +43,6 @@ export const termsSections: LegalSection[] = [
       {
         list: [
           "The services 5LA offers",
-          "The 5LA Experience Sectors",
           "Brands, platforms, and initiatives within the 5LA ecosystem",
           "Insights articles and editorial perspective",
           "Training and workforce-development approaches",

@@ -42,11 +42,11 @@ export default function AcInquiry() {
                   Discuss Organizational Training
                 </Button>
                 <Button
-                  href="/our-companies/5la-academy"
+                  href="/what-we-do#hospitality-training"
                   variant="outline"
                   size="lg"
                 >
-                  Explore Training Experience
+                  Explore Hospitality, Training &amp; Culture
                 </Button>
               </div>
             </Reveal>

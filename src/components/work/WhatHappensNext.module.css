@@ -25,10 +25,18 @@
 .title {
   text-wrap: balance;
 }
-.note {
+.promise {
   margin-top: clamp(2rem, 4vw, 3rem);
   padding-top: var(--space-5);
   border-top: 1px solid var(--border);
+  max-width: 46rem;
+}
+.promise strong {
+  color: var(--text);
+  font-weight: 700;
+}
+.note {
+  margin-top: var(--space-5);
   max-width: 46rem;
 }
 

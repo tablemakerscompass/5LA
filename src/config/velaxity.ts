@@ -41,7 +41,7 @@ export const vxBrand = {
   category: "Artificial Intelligence · Leadership · Operations",
   type: "AI-powered executive operating system",
   parent: "The 5 Loaves Agency, LLC",
-  primarySector: "Technology Experience",
+  primaryService: "Websites, Technology & AI",
 
   positioning:
     "An AI-powered executive operating system built around people, performance, standards, culture, and organizational growth.",
@@ -558,24 +558,24 @@ export const vxEcosystem: {
   name: string;
   href: string;
   role: string;
-  kind: "sector" | "company";
+  kind: "service" | "company";
 }[] = [
   {
-    name: "Technology Experience",
-    href: "/our-companies/velaxity",
-    kind: "sector",
+    name: "Websites, Technology & AI",
+    href: "/what-we-do#websites-technology",
+    kind: "service",
     role: "Provides the AI, application, automation, digital-system, and user-experience foundation.",
   },
   {
-    name: "Business Experience",
-    href: "/what-we-do",
-    kind: "sector",
+    name: "Business Setup & Operations",
+    href: "/what-we-do#business-setup",
+    kind: "service",
     role: "Provides the operational, organizational, leadership, culture, standards, and implementation foundation.",
   },
   {
-    name: "Training Experience",
-    href: "/our-companies/5la-academy",
-    kind: "sector",
+    name: "Hospitality, Training & Culture",
+    href: "/what-we-do#hospitality-training",
+    kind: "service",
     role: "Provides leadership development, adoption support, learning, manager preparation, and workforce development.",
   },
   {

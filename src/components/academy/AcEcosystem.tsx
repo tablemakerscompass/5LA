@@ -31,7 +31,7 @@ export default function AcEcosystem() {
               <Link href={entry.href} className={styles.itemLink}>
                 <span className={styles.itemName}>
                   {entry.name}
-                  {entry.name === acBrand.primarySector && (
+                  {entry.name === acBrand.primaryService && (
                     <span className={styles.primaryTag}>Primary</span>
                   )}
                   <span className={styles.arrow} aria-hidden="true">

@@ -26,9 +26,9 @@ type Props = {
 
 /**
  * The capability accordion shared by the pages that inherited content from the
- * retired Experience Sectors.
+ * retired Experience Sectors, now the 5LA services.
  *
- * Each sector page carried its own copy of this markup. When that content was
+ * Each of those pages carried its own copy of this markup. When that content was
  * split across What We Do and the company pages, one shared component was the
  * only way to avoid a fifth and sixth copy of the same accordion.
  */

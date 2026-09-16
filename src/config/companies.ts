@@ -43,10 +43,10 @@ export type Company = {
   audience?: string[];
   /** How 5LA supports the brand. */
   connection?: string;
-  /** Sector slug this brand leads with. */
-  primarySector?: string;
-  /** Sector slugs that support it. */
-  supportingSectors?: string[];
+  /** Service slug this brand leads with (see config/services.ts). */
+  primaryService?: string;
+  /** Service slugs that support it. */
+  supportingServices?: string[];
   /**
    * Accent key for the brand's editorial treatment. Maps to tokens already
    * in the design system — no new brand colors are introduced.
@@ -81,8 +81,8 @@ export const companies: Company[] = [
     ],
     connection:
       "5LA provides the strategy, operations, technology, training, experience development, and business infrastructure supporting the media group and its properties.",
-    primarySector: "media",
-    supportingSectors: ["business", "technology", "training"],
+    primaryService: "content-media",
+    supportingServices: ["business-setup", "websites-technology", "hospitality-training"],
     accent: "burgundy",
   hasOwnPage: true,
   },
@@ -114,8 +114,8 @@ export const companies: Company[] = [
     ],
     connection:
       "VelaXity was developed from 5LA’s hands-on experience in operations, hospitality, workforce development, leadership, culture, and organizational systems.",
-    primarySector: "technology",
-    supportingSectors: ["business", "training"],
+    primaryService: "websites-technology",
+    supportingServices: ["business-setup", "hospitality-training"],
     accent: "gold",
   },
   {
@@ -145,8 +145,8 @@ export const companies: Company[] = [
     ],
     connection:
       "The Academy transforms 5LA’s operational, hospitality, leadership, culture, and workforce-development expertise into practical learning experiences.",
-    primarySector: "training",
-    supportingSectors: ["business", "technology"],
+    primaryService: "hospitality-training",
+    supportingServices: ["business-setup", "websites-technology"],
     accent: "burgundy",
   },
   {
@@ -173,8 +173,8 @@ export const companies: Company[] = [
     ],
     connection:
       "The Society is supported through 5LA’s media, event, training, community-experience, storytelling, and operational capabilities.",
-    primarySector: "media",
-    supportingSectors: ["business", "training"],
+    primaryService: "content-media",
+    supportingServices: ["business-setup", "hospitality-training"],
     accent: "green",
   hasOwnPage: true,
   },
@@ -204,8 +204,8 @@ export const companies: Company[] = [
     ],
     connection:
       "Aunt Sarah’s Girls is developed within The Georgia B. Media Group and supported by 5LA’s media, business, technology, training, event, and experience-development capabilities.",
-    primarySector: "media",
-    supportingSectors: ["business", "technology", "training"],
+    primaryService: "content-media",
+    supportingServices: ["business-setup", "websites-technology", "hospitality-training"],
     accent: "maroon",
   },
   {
@@ -232,8 +232,8 @@ export const companies: Company[] = [
     ],
     connection:
       "The Sarah Method is supported by 5LA’s technology, media, training, content-development, and user-experience capabilities.",
-    primarySector: "media",
-    supportingSectors: ["technology", "training"],
+    primaryService: "content-media",
+    supportingServices: ["websites-technology", "hospitality-training"],
     accent: "maroon",
   },
   {
@@ -262,8 +262,8 @@ export const companies: Company[] = [
     ],
     connection:
       "Tablemakers extends 5LA’s thought leadership, training, community, hospitality, and professional-development mission.",
-    primarySector: "training",
-    supportingSectors: ["business", "media"],
+    primaryService: "hospitality-training",
+    supportingServices: ["business-setup", "content-media"],
     accent: "green",
   },
 ];

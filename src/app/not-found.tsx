@@ -19,7 +19,7 @@ export default function NotFound() {
               Back to Home
             </Button>
             <Button href="/what-we-do" variant="text">
-              Explore the Sectors
+              Explore What We Do
             </Button>
           </div>
         </div>

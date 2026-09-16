@@ -41,11 +41,11 @@ export const asgBrand = {
    * author, so changing it here moves all three together.
    */
   division: "Learical Jonez",
-  primarySector: "Media Experience",
-  supportingSectors: [
-    "Business Experience",
-    "Technology Experience",
-    "Training Experience",
+  primaryService: "Content, Media & Marketing",
+  supportingServices: [
+    "Business Setup & Operations",
+    "Websites, Technology & AI",
+    "Hospitality, Training & Culture",
   ],
   positioning:
     "A storytelling and healing platform exploring truth, womanhood, family, survival, and legacy.",
@@ -349,7 +349,7 @@ export const asgEcosystem: {
   name: string;
   href: string;
   role: string;
-  kind: "company" | "sector";
+  kind: "company" | "service";
 }[] = [
   {
     name: "The Georgia B. Media Group",
@@ -364,27 +364,27 @@ export const asgEcosystem: {
     role: "May extend the themes of family, women, story, truth, and legacy into community conversations and cultural experiences.",
   },
   {
-    name: "Business Experience",
-    href: "/what-we-do",
-    kind: "sector",
+    name: "Business Setup & Operations",
+    href: "/what-we-do#business-setup",
+    kind: "service",
     role: "Supports production planning, partnerships, events, timelines, operating structure, and implementation.",
   },
   {
-    name: "Technology Experience",
-    href: "/our-companies/velaxity",
-    kind: "sector",
+    name: "Websites, Technology & AI",
+    href: "/what-we-do#websites-technology",
+    kind: "service",
     role: "Supports digital platforms, audience experiences, content systems, applications, and The Sarah Method.",
   },
   {
-    name: "Training Experience",
-    href: "/our-companies/5la-academy",
-    kind: "sector",
+    name: "Hospitality, Training & Culture",
+    href: "/what-we-do#hospitality-training",
+    kind: "service",
     role: "Supports facilitators, discussion leaders, community partners, companion learning, and guided experiences.",
   },
   {
-    name: "Media Experience",
-    href: "/our-companies/georgia-b-media-group",
-    kind: "sector",
+    name: "Content, Media & Marketing",
+    href: "/what-we-do#content-media",
+    kind: "service",
     role: "Supports publishing, theater, visual storytelling, content, live experiences, and audience development.",
   },
 ];
