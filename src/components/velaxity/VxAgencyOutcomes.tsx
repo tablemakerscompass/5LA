@@ -32,7 +32,7 @@ export default function VxAgencyOutcomes() {
           </h2>
           <p className={`body ${styles.intro}`}>
             Results depend on the organization and how the work is carried
-            forward, so this sector is designed to help create:
+            forward, so this service is designed to help create:
           </p>
         </Reveal>
 

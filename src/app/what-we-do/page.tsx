@@ -3,14 +3,14 @@ import { site } from "@/config/site";
 import { breadcrumbSchema } from "@/lib/seo";
 import PageHero from "@/components/layout/PageHero";
 import WhatWeDoOfferings from "@/components/what-we-do/WhatWeDoOfferings";
-import WhatWeDoCapabilities from "@/components/what-we-do/WhatWeDoCapabilities";
+import WhatWeDoServices from "@/components/what-we-do/WhatWeDoServices";
 import WhatWeDoOutcomes from "@/components/what-we-do/WhatWeDoOutcomes";
 import CTABanner from "@/components/ui/CTABanner";
 
 const title =
   "What We Do | Hospitality Operations, Training & Events | The 5 Loaves Agency";
 const description =
-  "Business operations and strategy, hospitality and culture training, and events and experience design — the operational foundation The 5 Loaves Agency builds for hospitality-driven organizations.";
+  "The six ways to work with The 5 Loaves Agency: business setup and operations, brand and creative direction, content and marketing, websites and technology, hospitality training and culture, and events and experiences.";
 const url = `${site.url}/what-we-do`;
 
 export const metadata: Metadata = {
@@ -34,12 +34,11 @@ export const metadata: Metadata = {
 };
 
 /**
- * What We Do — the destination that replaced /what-we-do.
+ * What We Do — the full statement of the six services.
  *
- * The capability and outcome sections are the Business Experience page's own,
- * moved here intact rather than rewritten: they are the most detailed
- * statement of the work anywhere on the site, and the sector page they lived
- * on is retired.
+ * The cards say what each service is; the section below them says what each
+ * one covers, anchored by service slug so any link can land on one. Work With
+ * Us carries the same six with their starting investments and the form.
  */
 export default function WhatWeDoPage() {
   return (
@@ -61,14 +60,14 @@ export default function WhatWeDoPage() {
       />
 
       <WhatWeDoOfferings showIntro={false} />
-      <WhatWeDoCapabilities />
+      <WhatWeDoServices />
       <WhatWeDoOutcomes />
 
       <CTABanner
         eyebrow="Begin Here"
         title="Is the Experience Stronger Than the Structure Behind It?"
         body="5LA helps organizations identify the gaps between what they promise, how they operate, and what people actually experience."
-        primary={{ label: "Work With 5LA", href: "/work-with-us?interest=business" }}
+        primary={{ label: "Work With 5LA", href: "/work-with-us" }}
         secondary={{ label: "Start a Conversation", href: "/contact" }}
       />
     </>

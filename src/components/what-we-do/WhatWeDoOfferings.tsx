@@ -2,7 +2,7 @@ import Link from "next/link";
 import Container from "@/components/layout/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/ui/Reveal";
-import { offerings } from "@/config/what-we-do";
+import { services } from "@/config/services";
 import styles from "./WhatWeDoOfferings.module.css";
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
   showIntro?: boolean;
 };
 
-/** The three core offerings, as cards. Shared by the homepage and /what-we-do. */
+/** The six services, as cards. Shared by the homepage and /what-we-do. */
 export default function WhatWeDoOfferings({ showIntro = true }: Props) {
   return (
     <section
@@ -39,16 +39,19 @@ export default function WhatWeDoOfferings({ showIntro = true }: Props) {
         )}
 
         <div className={styles.grid}>
-          {offerings.map((offering, i) => (
-            <Reveal key={offering.n} delay={i * 80}>
+          {services.map((service, i) => (
+            <Reveal key={service.slug} delay={(i % 3) * 80}>
               <article className={styles.card}>
                 <span className={`numeral ${styles.n}`} aria-hidden="true">
-                  {offering.n}
+                  {service.number}
                 </span>
-                <h3 className={`subheading ${styles.title}`}>{offering.title}</h3>
-                <p className={`body ${styles.body}`}>{offering.body}</p>
-                <Link href={offering.href} className={styles.cta}>
-                  {offering.cta}
+                <h3 className={`subheading ${styles.title}`}>{service.name}</h3>
+                <p className={`body ${styles.body}`}>{service.statement}</p>
+                <p className={`body-sm ${styles.starting}`}>
+                  {service.startingAt}
+                </p>
+                <Link href={service.href} className={styles.cta}>
+                  What This Covers
                   <span className={styles.arrow} aria-hidden="true">
                     &rarr;
                   </span>

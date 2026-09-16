@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Section from "@/components/layout/Section";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Button from "@/components/ui/Button";
-import SectorCard from "@/components/ui/SectorCard";
+import ServiceCard from "@/components/ui/ServiceCard";
 import CompanyCard from "@/components/ui/CompanyCard";
 import QuoteBlock from "@/components/ui/QuoteBlock";
 import StatBlock from "@/components/ui/StatBlock";
@@ -10,7 +10,7 @@ import CTABanner from "@/components/ui/CTABanner";
 import EditorialImage from "@/components/ui/EditorialImage";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { Field, Input, Textarea, Select, Choice, FileUpload, FormMessage } from "@/components/ui/FormFields";
-import { sectors } from "@/config/sectors";
+import { services } from "@/config/services";
 import { companies } from "@/config/companies";
 import { site } from "@/config/site";
 import styles from "./style-guide.module.css";
@@ -155,18 +155,18 @@ export default function StyleGuidePage() {
         <SectionIntro eyebrow="Components" title="Breadcrumbs" divider />
         <Breadcrumbs
           items={[
-            { label: "Experience Sectors", href: "/what-we-do" },
-            { label: "Business" },
+            { label: "What We Do", href: "/what-we-do" },
+            { label: "Business Setup & Operations" },
           ]}
         />
       </Section>
 
-      {/* SECTOR CARDS */}
-      <Section muted id="sector-cards">
-        <SectionIntro eyebrow="Components" title="Experience Sector cards" divider />
-        <div className={styles.cardGrid4}>
-          {sectors.map((s) => (
-            <SectorCard key={s.slug} sector={s} />
+      {/* SERVICE CARDS */}
+      <Section muted id="service-cards">
+        <SectionIntro eyebrow="Components" title="Service cards" divider />
+        <div className={styles.cardGrid3}>
+          {services.map((s) => (
+            <ServiceCard key={s.slug} service={s} />
           ))}
         </div>
       </Section>
@@ -244,9 +244,9 @@ export default function StyleGuidePage() {
           <Field label="Area of interest" htmlFor="sg-select">
             <Select id="sg-select" defaultValue="">
               <option value="" disabled>
-                Select a sector
+                Select a service
               </option>
-              {sectors.map((s) => (
+              {services.map((s) => (
                 <option key={s.slug} value={s.slug}>
                   {s.name}
                 </option>
@@ -282,7 +282,7 @@ export default function StyleGuidePage() {
         title="Bring structure to your vision."
         body="A reusable call-to-action banner in the dark treatment."
         primary={{ label: "Work With Us", href: "/work-with-us" }}
-        secondary={{ label: "Explore Sectors", href: "/what-we-do" }}
+        secondary={{ label: "Explore What We Do", href: "/what-we-do" }}
       />
     </>
   );

@@ -1,0 +1,112 @@
+.wrap {
+  background: var(--bg);
+}
+
+.list {
+  list-style: none;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+  padding: 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  padding-block: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--border);
+  /* Clears the sticky header when a link lands on this anchor. */
+  scroll-margin-top: calc(var(--header-height) + var(--space-5));
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+.n {
+  font-size: var(--fs-h3);
+  color: var(--gold-500);
+}
+.name {
+  text-wrap: balance;
+}
+.statement {
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.cta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--divider);
+  padding-bottom: 0.15rem;
+  transition: color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease);
+}
+.cta:hover {
+  color: var(--gold-500);
+  border-bottom-color: var(--gold-500);
+}
+.cta span:last-child {
+  transition: transform var(--dur-fast) var(--ease);
+}
+.cta:hover span:last-child {
+  transform: translateX(3px);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.overview {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: var(--measure);
+}
+
+.capabilities {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+}
+.capability {
+  font-size: var(--fs-small);
+  line-height: 1.4;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.8rem;
+}
+
+.outcome {
+  font-size: var(--fs-small);
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: var(--measure);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+}
+.outcomeLabel {
+  color: var(--gold-500);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 860px) {
+  .item {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+    gap: var(--space-7);
+  }
+}

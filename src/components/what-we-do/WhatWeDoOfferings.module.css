@@ -40,8 +40,12 @@
 }
 .body {
   color: var(--text-muted);
-  /* Holds the CTA on a common baseline across three cards of unequal copy. */
+  /* Holds the CTA on a common baseline across cards of unequal copy. */
   flex: 1;
+}
+.starting {
+  color: var(--accent-strong);
+  font-weight: 600;
 }
 .cta {
   margin-top: var(--space-2);

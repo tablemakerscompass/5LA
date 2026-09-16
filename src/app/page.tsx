@@ -6,7 +6,7 @@ import Proof from "@/components/home/Proof";
 import EcosystemTeaser from "@/components/home/EcosystemTeaser";
 import CTABanner from "@/components/ui/CTABanner";
 
-const title = "The 5 Loaves Agency | Hospitality, Events & Business Experience";
+const title = "The 5 Loaves Agency | Hospitality, Events & Business Operations";
 const description =
   "The 5 Loaves Agency helps hospitality-driven organizations strengthen their operations, develop their people, and produce events and experiences guests actually remember.";
 
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
  *
  * 5LA now leads with hospitality, events, and business. The company story that
  * used to live here — the 5LA Difference, the LOAVES framework, the founder's
- * background, the full sector and ecosystem grids — is carried on /about,
- * /experience-sectors, and /our-companies, which this page links into rather
+ * background, the full service and ecosystem grids — is carried on /about,
+ * /what-we-do, and /our-companies, which this page links into rather
  * than reproducing.
  */
 export default function HomePage() {

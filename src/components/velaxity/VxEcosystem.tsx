@@ -7,7 +7,7 @@ import styles from "./VxEcosystem.module.css";
 
 /** Section 14 — VelaXity and the 5LA ecosystem. */
 export default function VxEcosystem() {
-  const sectors = vxEcosystem.filter((e) => e.kind === "sector");
+  const supportingServices = vxEcosystem.filter((e) => e.kind === "service");
   const companies = vxEcosystem.filter((e) => e.kind === "company");
 
   return (
@@ -31,18 +31,18 @@ export default function VxEcosystem() {
 
         <div className={styles.block}>
           <h3 className={styles.blockLabel}>
-            The Experience Sectors behind the platform
+            The 5LA services behind the platform
             <span className={styles.blockNote}>
-              Technology Experience is the primary sector.
+              {vxBrand.primaryService} is the primary service.
             </span>
           </h3>
           <ul className={styles.list}>
-            {sectors.map((entry, i) => (
+            {supportingServices.map((entry, i) => (
               <Reveal key={entry.href} as="li" delay={i * 70} className={styles.item}>
                 <Link href={entry.href} className={styles.itemLink}>
                   <span className={styles.itemName}>
                     {entry.name}
-                    {entry.name === vxBrand.primarySector && (
+                    {entry.name === vxBrand.primaryService && (
                       <span className={styles.primaryTag}>Primary</span>
                     )}
                     <span className={styles.arrow} aria-hidden="true">

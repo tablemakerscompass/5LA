@@ -86,7 +86,7 @@ export default function InquiryForm() {
 
   /**
    * Preselect the area of interest from `?interest=` so visitors arriving from
-   * a sector or brand page land on the right choice. Unknown values are
+   * a service or brand page land on the right choice. Unknown values are
    * ignored rather than shown as an error.
    */
   useEffect(() => {

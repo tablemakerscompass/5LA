@@ -33,9 +33,9 @@ export const metadata: Metadata = {
 /**
  * About is four sections: hero, story, founder, ask.
  *
- * It previously ran eleven. The sector grid, the ecosystem tree, the LOAVES
+ * It previously ran eleven. The service grid, the ecosystem tree, the LOAVES
  * framework, the five-stage approach, "Who We Serve", "The 5LA Difference",
- * and "Where We Are Going" all restated, at length, what the sector pages and
+ * and "Where We Are Going" all restated, at length, what the service pages and
  * /our-companies already say in place. What only About can carry is why the
  * company exists and who is behind it, so that is what it carries.
  */
@@ -50,7 +50,7 @@ export default function AboutPage() {
         title="Let's Build the Experience Behind Your Vision."
         body="Whether you are strengthening an organization, developing your people, implementing practical technology, or bringing a meaningful story to life, 5LA begins with understanding what you are building and why it matters."
         primary={{ label: "Work With 5LA", href: "/work-with-us" }}
-        secondary={{ label: "Explore Our Experience Sectors", href: "/what-we-do" }}
+        secondary={{ label: "Explore What We Do", href: "/what-we-do" }}
       />
     </>
   );

@@ -47,7 +47,7 @@ export const acBrand = {
   category: "Hospitality · Leadership · Workforce Development",
   type: "Training, leadership-development, and organizational-learning division",
   parent: "The 5 Loaves Agency, LLC",
-  primarySector: "Training Experience",
+  primaryService: "Hospitality, Training & Culture",
 
   positioning:
     "Training experiences that equip people to lead, serve, and operate with excellence.",
@@ -84,7 +84,7 @@ export const acBrand = {
 export const acAssets = {
   /** Official 5LA monogram, unaltered. Sits on a light tile — it is opaque. */
   monogram: "/brand/5la-monogram.png",
-  /** Approved 5LA training photography (also used by the Training sector). */
+  /** Approved 5LA training photography. */
   hero: "/brand/sectors/training.jpg",
   heroAlt:
     "A facilitator presenting a development framework on a flip chart to an engaged group of professionals seated around a table in a green-panelled room.",
@@ -700,30 +700,30 @@ export const acEcosystem: {
   name: string;
   href: string;
   role: string;
-  kind: "sector" | "company";
+  kind: "service" | "company";
 }[] = [
   {
-    name: "Training Experience",
-    href: "/our-companies/5la-academy",
-    kind: "sector",
+    name: "Hospitality, Training & Culture",
+    href: "/what-we-do#hospitality-training",
+    kind: "service",
     role: "Provides the learning, leadership, facilitation, workforce-development, and professional-development foundation.",
   },
   {
-    name: "Business Experience",
-    href: "/what-we-do",
-    kind: "sector",
+    name: "Business Setup & Operations",
+    href: "/what-we-do#business-setup",
+    kind: "service",
     role: "Ensures learning aligns with operations, SOPs, leadership expectations, service standards, and accountability.",
   },
   {
-    name: "Technology Experience",
-    href: "/our-companies/velaxity",
-    kind: "sector",
+    name: "Websites, Technology & AI",
+    href: "/what-we-do#websites-technology",
+    kind: "service",
     role: "May support digital learning, knowledge access, adoption, AI tools, and VelaXity.",
   },
   {
-    name: "Media Experience",
-    href: "/our-companies/georgia-b-media-group",
-    kind: "sector",
+    name: "Content, Media & Marketing",
+    href: "/what-we-do#content-media",
+    kind: "service",
     role: "Supports branded learning, storytelling, training content, guides, and audience-facing educational experiences.",
   },
   {

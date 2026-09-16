@@ -8,7 +8,7 @@ import styles from "./AsgEcosystem.module.css";
 /** Section 13 — How Aunt Sarah's Girls connects to the 5LA ecosystem. */
 export default function AsgEcosystem() {
   const companies = asgEcosystem.filter((e) => e.kind === "company");
-  const sectors = asgEcosystem.filter((e) => e.kind === "sector");
+  const supportingServices = asgEcosystem.filter((e) => e.kind === "service");
 
   return (
     <section
@@ -62,18 +62,19 @@ export default function AsgEcosystem() {
 
         <div className={styles.block}>
           <h3 className={styles.blockLabel}>
-            Supported by the Experience Sectors
+            Supported by the 5LA Services
             <span className={styles.blockNote}>
-              Media Experience is the primary sector for this property.
+              {asgBrand.primaryService} is the primary service for this
+              property.
             </span>
           </h3>
           <ul className={styles.list}>
-            {sectors.map((entry, i) => (
+            {supportingServices.map((entry, i) => (
               <Reveal key={entry.href} as="li" delay={i * 70} className={styles.item}>
                 <Link href={entry.href} className={styles.itemLink}>
                   <span className={styles.itemName}>
                     {entry.name}
-                    {entry.name === asgBrand.primarySector && (
+                    {entry.name === asgBrand.primaryService && (
                       <span className={styles.primaryTag}>Primary</span>
                     )}
                     <span className={styles.arrow} aria-hidden="true">
