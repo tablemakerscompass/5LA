@@ -1,4 +1,5 @@
 import Section from "@/components/layout/Section";
+import { site } from "@/config/site";
 import styles from "./NotSureWhichFits.module.css";
 
 /**
@@ -22,6 +23,24 @@ export default function NotSureWhichFits() {
         <p className={`body ${styles.close}`}>
           Tell us what&rsquo;s happening. We&rsquo;ll help you figure out what
           comes next.
+        </p>
+        {/*
+          Deliberately a quiet text link rather than a button: the form stays
+          the default route, because an inquiry gives us the business name,
+          service area, and challenge before the call rather than during it.
+          This is here for the person who would genuinely rather talk first.
+        */}
+        <p className={`caption ${styles.talkFirst}`}>
+          Prefer to talk it through first?{" "}
+          <a
+            href={site.booking.discoveryCall}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.talkFirstLink}
+          >
+            Book a free 30-minute call
+          </a>{" "}
+          &mdash; no form required.
         </p>
       </div>
     </Section>

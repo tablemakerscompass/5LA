@@ -35,6 +35,13 @@
  *
  * With neither configured the route reports the form as not yet connected
  * rather than silently accepting and dropping a real inquiry.
+ *
+ * Both email transports also send the inquirer a short acknowledgement with
+ * the discovery-call link. It rides the same transport as the notification —
+ * there is no second sending service to configure — and a failure there is
+ * logged but never reported to the visitor, because the inquiry itself has
+ * already been delivered. The webhook transport sends no acknowledgement:
+ * whatever receives the JSON owns that decision.
  */
 
 import { interestLabel } from "@/config/inquiry";
@@ -70,6 +77,20 @@ const escapeHtml = (value: string) =>
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+
+/** One outbound email, independent of the transport that carries it. */
+type Message = {
+  to: string;
+  replyTo?: string;
+  subject: string;
+  text: string;
+  html: string;
+};
+
+/** Where inquiries are delivered, and the address a reply should reach. */
+function ownerAddress(): string | null {
+  return process.env.INQUIRY_TO_EMAIL || site.contact.inquiries || null;
+}
 
 /** Ordered label/value rows for the notification body. */
 function rows(inquiry: InquiryPayload): [string, string][] {
@@ -117,17 +138,67 @@ function htmlBody(inquiry: InquiryPayload) {
 </div>`;
 }
 
+/** Subject line shared by the notification and its acknowledgement thread. */
+const notificationSubject = (inquiry: InquiryPayload) =>
+  `Inquiry — ${interestLabel(inquiry.interest)} — ${inquiry.organization}`;
+
+/** The notification sent to the site owner. */
+function notification(inquiry: InquiryPayload, to: string): Message {
+  return {
+    to,
+    replyTo: inquiry.email,
+    subject: notificationSubject(inquiry),
+    text: textBody(inquiry),
+    html: htmlBody(inquiry),
+  };
+}
+
+/**
+ * The acknowledgement sent to the person who submitted the form — the same
+ * words as the on-screen confirmation, because most people close the tab and
+ * read this instead. Replies reach the inquiries mailbox rather than the
+ * sending address, so answering it continues the conversation.
+ */
+function acknowledgement(inquiry: InquiryPayload, replyTo: string): Message {
+  const { discoveryCall } = site.booking;
+  const firstName = inquiry.firstName.trim();
+  const greeting = firstName ? `${firstName}, thank you` : "Thank you";
+
+  const text = [
+    `${greeting} — we have your inquiry.`,
+    "We read every submission ourselves and will follow up within two business days. In the meantime, if you would like to get on the calendar now, you are welcome to book a free 30-minute discovery call:",
+    discoveryCall,
+    `— ${site.name}`,
+  ].join("\n\n");
+
+  const html = `<div style="font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:15px;line-height:1.6;color:#171514;">
+<p style="margin:0 0 16px;">${escapeHtml(greeting)} — we have your inquiry.</p>
+<p style="margin:0 0 16px;">We read every submission ourselves and will follow up within two business days. In the meantime, if you would like to get on the calendar now, you are welcome to book a free 30-minute discovery call:</p>
+<p style="margin:0 0 24px;"><a href="${escapeHtml(discoveryCall)}" style="color:#68161a;font-weight:600;">${escapeHtml(
+    site.booking.discoveryCallLabel
+  )} &rarr;</a></p>
+<p style="margin:0;color:#574f49;">&mdash; ${escapeHtml(site.name)}</p>
+</div>`;
+
+  return {
+    to: inquiry.email,
+    replyTo,
+    subject: `We have your inquiry — ${site.name}`,
+    text,
+    html,
+  };
+}
+
 /**
  * Send through the mailbox provider's own SMTP server. Preferred over an API
  * transport when the domain already has a mailbox: the notification arrives
  * from a real address on the domain, with no separate sending service to
  * verify. The credential must be an app password — providers reject the
  * account login password for SMTP once MFA is on.
+ *
+ * Throws on failure, so the caller decides what a failed send costs.
  */
-async function deliverViaSmtp(inquiry: InquiryPayload): Promise<DeliveryResult> {
-  const to = process.env.INQUIRY_TO_EMAIL || site.contact.inquiries;
-  if (!to) return { ok: false, reason: "unconfigured" };
-
+async function sendViaSmtp(message: Message): Promise<void> {
   const port = Number(process.env.SMTP_PORT ?? 465);
   const nodemailer = (await import("nodemailer")).default;
 
@@ -155,15 +226,7 @@ async function deliverViaSmtp(inquiry: InquiryPayload): Promise<DeliveryResult> 
    */
   const preferred = process.env.SMTP_FROM_EMAIL?.trim() || authenticated;
 
-  const send = (from: string) =>
-    transporter.sendMail({
-      from,
-      to,
-      replyTo: inquiry.email,
-      subject: `Inquiry — ${interestLabel(inquiry.interest)} — ${inquiry.organization}`,
-      text: textBody(inquiry),
-      html: htmlBody(inquiry),
-    });
+  const send = (from: string) => transporter.sendMail({ from, ...message });
 
   try {
     await send(preferred);
@@ -185,14 +248,10 @@ async function deliverViaSmtp(inquiry: InquiryPayload): Promise<DeliveryResult> 
     );
     await send(authenticated);
   }
-
-  return { ok: true, transport: "smtp" };
 }
 
-async function deliverViaResend(inquiry: InquiryPayload): Promise<DeliveryResult> {
-  const to = process.env.INQUIRY_TO_EMAIL || site.contact.inquiries;
-  if (!to) return { ok: false, reason: "unconfigured" };
-
+/** Send one message through Resend. Logs and returns false when refused. */
+async function sendViaResend(message: Message): Promise<boolean> {
   const res = await fetch(RESEND_ENDPOINT, {
     method: "POST",
     headers: {
@@ -201,15 +260,15 @@ async function deliverViaResend(inquiry: InquiryPayload): Promise<DeliveryResult
     },
     body: JSON.stringify({
       from: process.env.INQUIRY_FROM_EMAIL,
-      to: [to],
-      reply_to: inquiry.email,
-      subject: `Inquiry — ${interestLabel(inquiry.interest)} — ${inquiry.organization}`,
-      text: textBody(inquiry),
-      html: htmlBody(inquiry),
+      to: [message.to],
+      ...(message.replyTo ? { reply_to: message.replyTo } : {}),
+      subject: message.subject,
+      text: message.text,
+      html: message.html,
     }),
   });
 
-  if (res.ok) return { ok: true, transport: "resend" };
+  if (res.ok) return true;
 
   // Log why Resend refused — its own error name and message, never the
   // inquiry contents. Without this the cause is invisible in production.
@@ -222,7 +281,51 @@ async function deliverViaResend(inquiry: InquiryPayload): Promise<DeliveryResult
   }
   console.error(`[inquiry] resend refused ${res.status}${detail ? `: ${detail}` : ""}`);
 
-  return { ok: false, reason: "failed" };
+  return false;
+}
+
+async function deliverViaSmtp(inquiry: InquiryPayload): Promise<DeliveryResult> {
+  const to = ownerAddress();
+  if (!to) return { ok: false, reason: "unconfigured" };
+
+  await sendViaSmtp(notification(inquiry, to));
+  return { ok: true, transport: "smtp" };
+}
+
+async function deliverViaResend(inquiry: InquiryPayload): Promise<DeliveryResult> {
+  const to = ownerAddress();
+  if (!to) return { ok: false, reason: "unconfigured" };
+
+  return (await sendViaResend(notification(inquiry, to)))
+    ? { ok: true, transport: "resend" }
+    : { ok: false, reason: "failed" };
+}
+
+/**
+ * Send the inquirer their acknowledgement, over the transport that just
+ * carried the notification. Never throws and never changes the delivery
+ * result: the inquiry is already with us, so a failed courtesy email is a log
+ * line, not an error the visitor is asked to act on by submitting again.
+ */
+async function acknowledge(inquiry: InquiryPayload, transport: Transport) {
+  if (transport === "webhook") return;
+
+  // Replies to the acknowledgement should reach the inbox that is holding the
+  // inquiry, not whichever address the transport happens to send as.
+  const replyTo = ownerAddress() ?? site.contact.email;
+
+  try {
+    const message = acknowledgement(inquiry, replyTo);
+
+    if (transport === "smtp") {
+      await sendViaSmtp(message);
+    } else if (!(await sendViaResend(message))) {
+      console.warn("[inquiry] resend refused the acknowledgement");
+    }
+  } catch (error) {
+    const name = error instanceof Error ? error.name : "unknown error";
+    console.warn(`[inquiry] ${transport} could not send the acknowledgement (${name})`);
+  }
 }
 
 async function deliverViaWebhook(inquiry: InquiryPayload): Promise<DeliveryResult> {
@@ -253,9 +356,18 @@ export async function deliverInquiry(
   if (!transport) return { ok: false, reason: "unconfigured" };
 
   try {
-    if (transport === "smtp") return await deliverViaSmtp(inquiry);
-    if (transport === "resend") return await deliverViaResend(inquiry);
-    return await deliverViaWebhook(inquiry);
+    const result =
+      transport === "smtp"
+        ? await deliverViaSmtp(inquiry)
+        : transport === "resend"
+          ? await deliverViaResend(inquiry)
+          : await deliverViaWebhook(inquiry);
+
+    // Only once the inquiry itself is safely delivered — an acknowledgement
+    // for something we dropped would be worse than none at all.
+    if (result.ok) await acknowledge(inquiry, transport);
+
+    return result;
   } catch (error) {
     // Log the error type and any transport code (EAUTH, ECONNECTION, …), plus
     // the provider's own rejection reason, which is the only thing that says
