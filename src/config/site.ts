@@ -52,18 +52,23 @@ export const site = {
   },
 
   /**
-   * Scheduling. The free 30-minute discovery call, booked directly.
+   * Scheduling — the two calls that can be booked directly.
    *
-   * Deliberately NOT in the navigation or used as a standalone page CTA: the
-   * Work With Us form stays the primary route so a call starts with the
-   * business name, service area, and described challenge already in hand.
-   * It belongs only where someone has already told us something (the inquiry
-   * confirmation and its auto-reply) or has said they would rather talk first
-   * (the quiet link beneath "Not Sure Which One Fits?").
+   * `discoveryCall` is the free 30-minute conversation, and is deliberately
+   * kept out of the navigation and off standalone CTAs: the Work With Us form
+   * stays the primary route so a call starts with the business name, service
+   * area, and described challenge already in hand. It belongs only where
+   * someone has already told us something (the inquiry confirmation and its
+   * auto-reply) or has said they would rather talk first (the quiet link
+   * beneath "Not Sure Which One Fits?").
+   *
+   * `strategySession` is the paid working session, so its own block on Work
+   * With Us books it directly rather than routing through the intake form.
    */
   booking: {
     discoveryCall: "https://calendly.com/the5loavesagency/discovery-call",
     discoveryCallLabel: "Book a Discovery Call",
+    strategySession: "https://calendly.com/the5loavesagency/strategy-session",
   },
 
   /** Approved social profiles. LinkedIn is the founder's personal profile. */

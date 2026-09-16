@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Section from "@/components/layout/Section";
 import { strategySession } from "@/config/services";
+import { site } from "@/config/site";
 import styles from "./StrategySession.module.css";
 
 /**
@@ -22,13 +22,20 @@ export default function StrategySession() {
         <div className={styles.body}>
           <p className="body">{strategySession.summary}</p>
           <p className={`body ${styles.note}`}>{strategySession.note}</p>
-          <Link
-            href={`/work-with-us?interest=${strategySession.slug}#start`}
+          {/*
+            Books the session directly rather than routing through the intake
+            form. Opens in a new tab: the booking page is off-site, and the
+            visitor should not lose their place on Work With Us.
+          */}
+          <a
+            href={site.booking.strategySession}
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.cta}
           >
             <span>{strategySession.cta}</span>
             <span aria-hidden="true">&rarr;</span>
-          </Link>
+          </a>
         </div>
       </div>
     </Section>
