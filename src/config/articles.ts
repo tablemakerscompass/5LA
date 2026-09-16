@@ -66,6 +66,95 @@ export const author = {
 export const articles: Article[] = [
   /* ------------------------------------------------------------------ 01 */
   {
+    slug: "your-event-was-beautiful-but-was-it-hospitable",
+    category: "Events & Experience",
+    title: "Your Event Was Beautiful. But Was It Hospitable?",
+    dek: "Somewhere along the way, we started confusing a beautiful event with a hospitable event. They are not the same thing.",
+    excerpt:
+      "You can spend $50,000 on an event and still make people feel like an inconvenience.",
+    date: "2026-09-16",
+    image: "/brand/insights/future-of-events.jpg",
+    imageAlt:
+      "An event director in a burgundy suit welcoming arriving guests with an outstretched hand beside the registration tables in a warm hotel lobby.",
+    body: [
+      "We have gotten very good at producing events.",
+      "Beautiful backdrops. Custom signage. Great lighting. Photo booths. Specialty cocktails. Perfect playlists.",
+      "But somewhere along the way, I think we started confusing a beautiful event with a hospitable event.",
+      "They are not the same thing.",
+      "Hospitality at an event starts long before the guest sees the centerpieces.",
+      "It starts when they pull into the parking lot.",
+      "Do they know where to go?",
+      "Is there someone directing traffic? Is the entrance clearly marked? If they have mobility challenges, have we considered how far they have to walk?",
+      "Then they reach the door.",
+      "Who greets them?",
+      "Not who scans the ticket. Who actually welcomes them?",
+      "There is a difference.",
+      "Hospitality sounds like:",
+      {
+        list: [
+          "“Good evening. We’re glad you’re here.”",
+          "“Let me show you where registration is.”",
+          "“The restroom is right around the corner.”",
+          "“Can I help you find your seat?”",
+        ],
+      },
+      "Those moments may never appear in the event photos, but they are often the moments guests remember.",
+      "And in 2026, the event industry is putting even more emphasis on the attendee experience. Planners are increasingly designing events around engagement, intentional spaces, and the emotional journey of the guest—not simply filling a room.",
+      { heading: "Hospitality is in the details." },
+      {
+        list: [
+          "Was registration organized, or did your guest stand in a long line while staff tried to figure out what was happening?",
+          "Was there enough seating?",
+          "Could people hear?",
+          "Was the room too hot?",
+          "Were the restrooms clean?",
+          "Did the food come out on time?",
+          "Did someone think about the elderly guest, the person with a disability, or the attendee who does not know anyone in the room?",
+        ],
+      },
+      "And most importantly: did your team know they were part of the experience?",
+      "Because everybody working an event is in hospitality.",
+      {
+        list: [
+          "The person at registration",
+          "The security team",
+          "The bartender",
+          "The caterer",
+          "The AV technician",
+          "The volunteer standing near the elevator",
+          "The person collecting plates",
+          "And yes—even the person working the parking lot",
+        ],
+      },
+      "Your guest does not know which company hired which vendor. They only know your event.",
+      "So when one person is rude, distracted, uninformed, or unprepared, it becomes part of how they remember your brand.",
+      { heading: "Luxury is not hospitality." },
+      "You can spend $50,000 on an event and still make people feel like an inconvenience.",
+      "And you can produce a much smaller event and make every person who walks through the door feel seen, welcomed, and cared for.",
+      "That is hospitality.",
+      "Interestingly, even as event costs continue to rise, planners report looking for savings that do not damage the attendee experience.",
+      "That tells us something.",
+      { quote: "The experience is not the extra anymore. The experience is the product." },
+      "So before your next event, do not just have a production meeting. Have a hospitality meeting.",
+      "Walk through the event from the guest’s perspective:",
+      {
+        list: [
+          "Where do I park?",
+          "Where do I go?",
+          "Who helps me?",
+          "Where do I sit?",
+          "What happens if something goes wrong?",
+          "How do I feel when I leave?",
+        ],
+      },
+      "Because guests may forget the linen color. They may forget what was served for dinner. They may even forget who gave the keynote.",
+      "But they will remember whether your event made them feel welcomed, considered, and valued.",
+      "And that is the difference between simply hosting an event and practicing hospitality.",
+    ],
+  },
+
+  /* ------------------------------------------------------------------ 02 */
+  {
     slug: "when-the-salary-disappears",
     category: "Training & Workforce Development",
     title: "When the Salary Disappears",
@@ -165,7 +254,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 02 */
+  /* ------------------------------------------------------------------ 03 */
   {
     slug: "she-got-the-degree-part-one",
     category: "Training & Workforce Development",
@@ -240,7 +329,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 03 */
+  /* ------------------------------------------------------------------ 04 */
   {
     slug: "future-of-events-is-more-meaningful",
     category: "Events & Experience",
@@ -316,7 +405,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 04 */
+  /* ------------------------------------------------------------------ 05 */
   {
     slug: "hospitality-basics-are-disappearing",
     category: "Hospitality",
@@ -405,7 +494,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 05 */
+  /* ------------------------------------------------------------------ 06 */
   {
     slug: "people-cannot-carry-an-untaught-standard",
     category: "Training & Workforce Development",
@@ -513,7 +602,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 06 */
+  /* ------------------------------------------------------------------ 07 */
   {
     slug: "ai-should-support-leadership",
     category: "Artificial Intelligence & Leadership",
@@ -621,7 +710,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 07 */
+  /* ------------------------------------------------------------------ 08 */
   {
     slug: "culture-after-the-meeting",
     category: "Culture & Leadership",
@@ -735,7 +824,7 @@ export const articles: Article[] = [
     ],
   },
 
-  /* ------------------------------------------------------------------ 08 */
+  /* ------------------------------------------------------------------ 09 */
   {
     slug: "strong-story-needs-strong-structure",
     category: "Media & Storytelling",
