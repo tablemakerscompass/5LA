@@ -13,8 +13,8 @@ export default function Founder() {
               <Image
                 src="/brand/5la-founder-headshot.jpg"
                 alt="Corporate headshot of L.J., founder of The 5 Loaves Agency"
-                width={1000}
-                height={1500}
+                width={1145}
+                height={1374}
                 sizes="(min-width: 900px) 34vw, 100vw"
                 className={styles.image}
               />
