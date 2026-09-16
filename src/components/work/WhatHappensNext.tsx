@@ -4,18 +4,18 @@ import styles from "./WhatHappensNext.module.css";
 const steps = [
   {
     number: "01",
-    title: "We review the inquiry",
-    body: "5LA reviews the organization, need, timing, and area of support requested.",
+    title: "We read it — really",
+    body: "Every submission goes to a real person, not a queue. You will hear back within two business days.",
   },
   {
     number: "02",
-    title: "We determine alignment",
-    body: "If the inquiry appears aligned, we will contact you to arrange an introductory conversation or request additional information.",
+    title: "We book a real conversation",
+    body: "A short call to understand your business before we talk about anything else. No pitch deck, no pressure.",
   },
   {
     number: "03",
-    title: "We define the next step",
-    body: "The next step may include a discovery call, consultation, project assessment, partnership conversation, or referral to the appropriate 5LA brand.",
+    title: "You get a clear next step",
+    body: "A proposal, a straight answer that we are not the right fit, or a referral to someone who is.",
   },
 ];
 
@@ -28,7 +28,7 @@ export default function WhatHappensNext() {
           <p className="eyebrow">Next Steps</p>
           <hr className="rule" />
           <h2 id="next-heading" className="section-heading">
-            What Happens After You Submit
+            What Happens After You Hit Send
           </h2>
         </div>
 
@@ -42,9 +42,15 @@ export default function WhatHappensNext() {
           ))}
         </ol>
 
+        <p className={`body ${styles.promise}`}>
+          <strong>Our promise:</strong> we will not leave you guessing. If we
+          are not the right fit, we will tell you plainly and point you
+          somewhere better.
+        </p>
+
         <p className={`caption ${styles.note}`}>
-          Submission does not guarantee project acceptance, partnership,
-          availability, or a specific response time.
+          Submission does not guarantee project acceptance, partnership, or
+          availability.
         </p>
       </Container>
     </section>

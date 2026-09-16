@@ -3,10 +3,11 @@
  *
  * Single source of truth for the interest selector and the form's select
  * fields. Interest values double as the `?interest=` query-parameter values,
- * so Experience Sector and brand pages can deep-link a preselected choice.
+ * so a service package, brand page, or company page can deep-link a
+ * preselected choice.
  */
 
-import { sectors } from "./sectors";
+import { services, strategySession } from "./services";
 import { companies } from "./companies";
 
 export type InterestOption = {
@@ -20,11 +21,11 @@ export type InterestGroup = {
   options: InterestOption[];
 };
 
-/** Experience Sectors — values match the sector slugs. */
-const sectorOptions: InterestOption[] = sectors.map((s) => ({
-  value: s.slug,
-  label: s.name,
-}));
+/** The six ways to work with 5LA — values match the service slugs. */
+const serviceOptions: InterestOption[] = [
+  ...services.map((s) => ({ value: s.slug, label: s.name })),
+  { value: strategySession.slug, label: "Strategy Session" },
+];
 
 /** Brands and platforms — values match the company slugs. */
 const brandOptions: InterestOption[] = companies.map((c) => ({
@@ -32,18 +33,17 @@ const brandOptions: InterestOption[] = companies.map((c) => ({
   label: c.name,
 }));
 
-/** Inquiries that do not map to a single sector or brand. */
+/** Inquiries that do not map to a single service or brand. */
 const otherOptions: InterestOption[] = [
-  { value: "events-hospitality", label: "Event or hospitality support" },
   { value: "speaking-facilitation", label: "Speaking or facilitation" },
   { value: "creative-partnership", label: "Creative or media partnership" },
   { value: "community-partnership", label: "Community partnership" },
   { value: "general", label: "General inquiry" },
-  { value: "not-sure", label: "Not sure yet" },
+  { value: "not-sure", label: "I'm not sure yet" },
 ];
 
 export const interestGroups: InterestGroup[] = [
-  { heading: "5LA Experience Sectors", options: sectorOptions },
+  { heading: "Ways to Work With Us", options: serviceOptions },
   { heading: "5LA Brands and Platforms", options: brandOptions },
   { heading: "Additional Inquiries", options: otherOptions },
 ];
@@ -61,17 +61,26 @@ export const interestValues: string[] = interestOptions.map((o) => o.value);
  * value. Keeps older or shorthand links working without a redirect.
  */
 const interestAliases: Record<string, string> = {
-  "business-experience": "business",
-  "technology-experience": "technology",
-  "training-experience": "training",
-  "media-experience": "media",
+  /* Retired Experience Sector slugs, kept working as links to the service
+     that now carries that work. */
+  business: "business-setup",
+  "business-experience": "business-setup",
+  technology: "websites-technology",
+  "technology-experience": "websites-technology",
+  training: "hospitality-training",
+  "training-experience": "hospitality-training",
+  media: "content-media",
+  "media-experience": "content-media",
+  events: "events-experiences",
+  "events-hospitality": "events-experiences",
+  hospitality: "hospitality-training",
+  brand: "brand-creative",
+  strategy: "strategy-session",
   academy: "5la-academy",
   "georgia-b": "georgia-b-media-group",
   "the-georgia-b-media-group": "georgia-b-media-group",
   "the-georgia-b-society": "georgia-b-society",
   "sarah-method": "the-sarah-method",
-  events: "events-hospitality",
-  hospitality: "events-hospitality",
   speaking: "speaking-facilitation",
   partnership: "creative-partnership",
   community: "community-partnership",
@@ -94,26 +103,26 @@ export function interestLabel(value: string) {
 }
 
 export const timelineOptions = [
-  "As soon as possible",
+  "Right away",
   "Within 30 days",
-  "Within 60–90 days",
-  "Within three to six months",
-  "Planning for the future",
-  "Not sure yet",
+  "Within one to three months",
+  "More than three months away",
+  "I'm still planning",
 ];
 
 /**
- * Optional investment ranges. Deliberately framed as a range question, not a
- * price list — 5LA does not publish packages, and not every project fits these.
+ * Investment ranges. The brackets line up with the starting investments
+ * published on the service packages, so the answer is informative rather than
+ * a guess.
  */
 export const budgetOptions = [
-  "Not determined",
-  "Under $2,500",
+  "Under $500",
+  "$500–$1,000",
+  "$1,000–$2,500",
   "$2,500–$5,000",
   "$5,000–$10,000",
-  "$10,000–$25,000",
-  "$25,000+",
-  "Prefer to discuss",
+  "$10,000+",
+  "I'm not sure yet",
 ];
 
 export const organizationTypes = [
@@ -133,11 +142,13 @@ export const organizationTypes = [
 export const contactMethods = ["Email", "Phone", "Either"];
 
 export const referralSources = [
-  "Search",
-  "Social media",
   "Referral or word of mouth",
-  "Event or speaking engagement",
-  "A 5LA brand or platform",
-  "Existing relationship",
+  "Google or search",
+  "LinkedIn",
+  "Facebook",
+  "Instagram",
+  "TikTok",
+  "Event or community",
+  "Previous client",
   "Other",
 ];
