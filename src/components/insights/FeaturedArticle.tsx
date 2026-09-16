@@ -21,13 +21,23 @@ export default function FeaturedArticle({ article }: { article: Article }) {
           <Reveal className={styles.figureCol}>
             <Link href={href} className={styles.imageLink} tabIndex={-1} aria-hidden="true">
               <div className={styles.imageFrame}>
+                {/*
+                 * `fill` rather than fixed dimensions: this frame shows
+                 * whichever article leads, and their source files are not one
+                 * shape. The hardcoded 1000x1500 here described none of them.
+                 *
+                 * `sizes` is deliberately larger than the frame. The frame is
+                 * 4:5 and crops with object-fit: cover, so a landscape source
+                 * is drawn far wider than the frame and then clipped — a 16:9
+                 * photo in a 582px frame is painted at ~1294px. Sizing the
+                 * hint to the frame fetched a 750px variant and upscaled it.
+                 */}
                 <Image
                   src={article.image}
                   alt={article.imageAlt}
-                  width={1000}
-                  height={1500}
+                  fill
                   priority
-                  sizes="(min-width: 1000px) 46vw, 100vw"
+                  sizes="100vw"
                   className={styles.image}
                 />
               </div>
