@@ -13,8 +13,8 @@
  *     SMTP_PASSWORD       required — an app password, never the login password
  *     SMTP_HOST           optional — defaults to smtp.zoho.com
  *     SMTP_PORT           optional — defaults to 465 (implicit TLS)
- *     INQUIRY_FROM_EMAIL  optional — defaults to SMTP_USER
  *     INQUIRY_TO_EMAIL    optional — defaults to the site contact address
+ *     (mail always sends AS SMTP_USER; INQUIRY_FROM_EMAIL is Resend-only)
  *
  *   Email (Resend)
  *     RESEND_API_KEY      required — https://resend.com API key
@@ -138,7 +138,16 @@ async function deliverViaSmtp(inquiry: InquiryPayload): Promise<DeliveryResult> 
   });
 
   await transporter.sendMail({
-    from: process.env.INQUIRY_FROM_EMAIL || (process.env.SMTP_USER as string),
+    /*
+     * Always the mailbox we authenticated as. Zoho, and most providers, relay
+     * only for that address or an alias verified against it — anything else
+     * comes back as "553 Sender is not allowed to relay emails", which is what
+     * this form was failing with. INQUIRY_FROM_EMAIL exists for Resend, where
+     * the sender has to be an address on a domain verified in that account;
+     * honouring it here too let one variable silently break SMTP. The inquirer
+     * stays reachable through Reply-To below.
+     */
+    from: process.env.SMTP_USER as string,
     to,
     replyTo: inquiry.email,
     subject: `Inquiry — ${interestLabel(inquiry.interest)} — ${inquiry.organization}`,
